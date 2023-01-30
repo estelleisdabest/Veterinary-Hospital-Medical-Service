@@ -137,7 +137,7 @@ div {
 								</div>
 
 								<div class="col-8">
-									<label for="address" class="form-label"></label>
+									<label for="address" class="form-label">주소</label>
 									<input type="text" class="form-control" id="address" value="경기도 수원시 팔달구 중부대로 100" disabled="disabled">		
 								</div>
 
