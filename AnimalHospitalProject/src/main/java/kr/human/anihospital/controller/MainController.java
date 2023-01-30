@@ -15,4 +15,26 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
+	
+	@GetMapping("/map")
+	public String map() {
+		return "map";
+	} 
+	
+	@GetMapping("/doctorInfo")
+	public String doctorInfo() {
+		return "doctorInfo";
+	} 
+	@GetMapping("/doctorInformation")
+	public String doctorInformation() {
+		return "doctorInformation";
+	} 
+	@GetMapping("/inner")
+	public String inner() {
+		return "inner";
+	} 
+	@GetMapping("/list")
+	public String list() {
+		return "list";
+	} 
 }
