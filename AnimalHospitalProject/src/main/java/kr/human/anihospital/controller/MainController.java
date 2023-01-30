@@ -24,7 +24,7 @@ public class MainController {
 	
 	@GetMapping("/doctorInfo")
 	public String doctorInfo() {
-		return "doctorInfo";
+		return "doctorInformation";
 	} 
 	
 	@GetMapping("/doctorInfoEdit")
