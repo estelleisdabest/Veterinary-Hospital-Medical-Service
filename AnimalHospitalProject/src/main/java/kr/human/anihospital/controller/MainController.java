@@ -15,4 +15,9 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
+	
+	@GetMapping("/roleCheck")
+	public String roleCheck() {
+		return "roleCheck";
+	}
 }
