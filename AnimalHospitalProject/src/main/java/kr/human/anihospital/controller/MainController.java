@@ -21,13 +21,15 @@ public class MainController {
 		return "map";
 	} 
 	
+	
 	@GetMapping("/doctorInfo")
 	public String doctorInfo() {
 		return "doctorInfo";
 	} 
-	@GetMapping("/doctorInformation")
-	public String doctorInformation() {
-		return "doctorInformation";
+	
+	@GetMapping("/doctorInfoEdit")
+	public String doctorInfoEdit() {
+		return "doctorInfoEdit";
 	} 
 	@GetMapping("/inner")
 	public String inner() {
