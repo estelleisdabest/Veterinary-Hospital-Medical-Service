@@ -63,20 +63,19 @@ div {
 	margin-left: 8%;
 }
 
-input[name="address"] {
-	width: 70%;
-	height: 38px;
-	border: 1px solid #ced4da;
-	padding-left: 5px;
-	display: inline;
-}
-
-input[name="searching_address"] {
-	width: 30%;
-	height: 38px;
-	display: inline;
-	margin-left: -5px;
-}
+input[name="address"]{
+      width:70%;
+      height:38px;
+      border:1px solid #ced4da;
+      padding-left: 5px;
+      display:inline;
+    }
+    input[name="searching_address"]{
+      width: 30%;
+      height:38px;
+      display:inline;
+      margin-left: -5px;
+    }
 </style>
 </head>
 
@@ -167,10 +166,10 @@ input[name="searching_address"] {
 										class="form-control" id="email" placeholder="010-1111-1111">
 								</div>
 
-								<div class="col-8" >
-									<label for="address" class="form-label" >주소</label> 
-									<button name="searching_address" class="btn btn-primary btn-sm" style="float: right;">주소찾기</button>
-									<input type="text" class="form-control" id="address" placeholder=""  required >
+								<div class="col-13" >
+									<label for="address" class="form-label" >주소</label> <br />
+									<input type="text" class="form-control" id="address" name="address" placeholder=""  required >
+									<button name="searching_address" class="btn btn-primary" >주소찾기</button>
 <!-- 									<div class="invalid-feedback">Please enter your shipping -->
 <!-- 										address.</div> -->
 								</div>
@@ -191,17 +190,17 @@ input[name="searching_address"] {
 								<!--               </div> -->
 								<br />
 
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="학력"></textarea>
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="이력"></textarea>
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="인사말"></textarea>
 							</div>
 
-							<hr class="my-4">
-
-							<button class="w-100 btn btn-primary btn-lg" type="submit">수정하기</button>
+<!-- 							<hr class="my-4"> -->
+								<br />
+							<button class="btn btn-primary btn-lg" type="submit" style="float: right;">수정하기</button>
 						</form>
 					</div>
 				</div>

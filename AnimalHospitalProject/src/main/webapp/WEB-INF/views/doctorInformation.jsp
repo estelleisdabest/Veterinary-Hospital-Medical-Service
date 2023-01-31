@@ -156,14 +156,15 @@ div {
 
 
 							<div id=doctor>
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="학력" disabled="disabled">학력</textarea>
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="이력" disabled="disabled">이력</textarea>
-								<textarea rows="5" cols="100" style="width: 10; height: 10;"
+								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="인사말" disabled="disabled">인사말</textarea>
 							</div>
-							<button class="w-100 btn btn-primary btn-lg" type="submit">수정하기</button>
+							<br />
+							<button class="btn btn-primary btn-lg" type="submit" style="float: right;">정보수정</button>
 						</form>
 					</div>
 				</div>
