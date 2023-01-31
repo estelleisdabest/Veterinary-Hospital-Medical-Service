@@ -5,38 +5,45 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class MainController {
-	
+
 	@GetMapping("/")
-    public String home() {
-        return "index";
-    }
-	
+	public String home() {
+		return "index";
+	}
+
 	@GetMapping("/signin")
 	public String signin() {
 		return "signin";
 	}
-	
+
+	@GetMapping("/roleCheck")
+	public String roleCheck() {
+		return "roleCheck";
+	}
+
+	@GetMapping("/doctorJoinMember")
+	public String doctorJoinMember() {
+		return "doctorJoinMember";
+	}
+
+	@GetMapping("/protectorMemberJoin")
+	public String protectorMemberJoin() {
+		return "protectorMemberJoin";
+	}
+
 	@GetMapping("/map")
 	public String map() {
 		return "map";
-	} 
-	
-	
+	}
+
 	@GetMapping("/doctorInfo")
 	public String doctorInfo() {
 		return "doctorInformation";
-	} 
-	
+	}
+
 	@GetMapping("/doctorInfoEdit")
 	public String doctorInfoEdit() {
 		return "doctorInfoEdit";
-	} 
-	@GetMapping("/inner")
-	public String inner() {
-		return "inner";
-	} 
-	@GetMapping("/list")
-	public String list() {
-		return "list";
-	} 
+	}
+
 }
