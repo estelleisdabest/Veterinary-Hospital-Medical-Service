@@ -15,22 +15,7 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
-
-	@GetMapping("/roleCheck")
-	public String roleCheck() {
-		return "roleCheck";
-	}
-
-	@GetMapping("/doctorJoinMember")
-	public String doctorJoinMember() {
-		return "doctorJoinMember";
-	}
-
-	@GetMapping("/protectorMemberJoin")
-	public String protectorMemberJoin() {
-		return "protectorMemberJoin";
-	}
-
+  
 	@GetMapping("/map")
 	public String map() {
 		return "map";
@@ -45,5 +30,4 @@ public class MainController {
 	public String doctorInfoEdit() {
 		return "doctorInfoEdit";
 	}
-
 }
