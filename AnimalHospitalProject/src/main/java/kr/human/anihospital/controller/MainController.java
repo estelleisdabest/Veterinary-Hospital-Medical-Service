@@ -7,14 +7,26 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
 	@GetMapping("/")
-	public String home() {
-		return "index";
-	}
+  public String home() {
+     return "index";
+  }
 
 	@GetMapping("/signin")
 	public String signin() {
 		return "signin";
 	}
+	@GetMapping("/patientAdd")
+	public String patientAdd() {
+		return "patientAdd";
+	}
+	@GetMapping("/inner")
+	public String inner() {
+		return "inner";
+	}
+	@GetMapping("/patientlist")
+	public String patientlist() {
+		return "patientlist";
+	} 
   
 	@GetMapping("/map")
 	public String map() {
