@@ -15,4 +15,19 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
+	
+	@GetMapping("/animallookup")
+	public String animallookup() {
+		return "animallookup";
+	}
+	
+	@GetMapping("/animallookupdetail")
+	public String animallookupdetail() {
+		return "animallookupdetail";
+	}
+	
+	@GetMapping("/diagnosis")
+	public String diagnosis() {
+		return "diagnosis";
+	}
 }
