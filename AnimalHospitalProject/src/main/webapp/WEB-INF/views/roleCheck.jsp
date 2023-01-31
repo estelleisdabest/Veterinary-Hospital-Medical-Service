@@ -50,7 +50,7 @@
 					<h2>약관동의 및 역할체크</h2>
 				</div>
 				<div>
-					<span class="input_chk" style="text-align: center; display: inline-block; margin: auto; width: 250px; line-height: 50px;">
+					<span class="input_chk" style="text-align: center; display: inline-block; margin: auto; width: 430px; line-height: 50px;">
 						<input type="checkbox" id="using_check" name="using_check" class="using_check" value="3">
 						<label for="using_check">
 							이용약관 동의
@@ -107,6 +107,16 @@
 						checked="checked" value="2"> <label for="roll_protector">보호자</label>
 					</span>
 				</div>
+				<br>
+				<div class="row">
+        			<div class="col-md-2 form-group">
+	          		<div class="validate"></div>
+	        	</div>
+        		<div class="col-md-8 form-group">
+        			<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
+	    			<input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="회원가입" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
+      			</div>
+      	</div>
 			</div>
 		</section>
 		<!-- End Appointment Section -->

@@ -20,4 +20,14 @@ public class MainController {
 	public String roleCheck() {
 		return "roleCheck";
 	}
+	
+	@GetMapping("/doctorJoinMember")
+	public String doctorJoinMember() {
+		return "doctorJoinMember";
+	}
+	
+	@GetMapping("/protectorMemberJoin")
+	public String protectorMemberJoin() {
+		return "protectorMemberJoin";
+	}
 }
