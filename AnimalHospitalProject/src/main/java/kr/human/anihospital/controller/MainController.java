@@ -46,4 +46,33 @@ public class MainController {
 		return "scheduleDoctor";
 	}
 
+	@GetMapping("/patientAdd")
+	public String patientAdd() {
+		return "patientAdd";
+	}
+  
+	@GetMapping("/inner")
+	public String inner() {
+		return "inner";
+	}
+  
+	@GetMapping("/patientlist")
+	public String patientlist() {
+		return "patientlist";
+	} 
+  
+	@GetMapping("/map")
+	public String map() {
+		return "map";
+	}
+
+	@GetMapping("/doctorInfo")
+	public String doctorInfo() {
+		return "doctorInformation";
+	}
+
+	@GetMapping("/doctorInfoEdit")
+	public String doctorInfoEdit() {
+		return "doctorInfoEdit";
+	}
 }
