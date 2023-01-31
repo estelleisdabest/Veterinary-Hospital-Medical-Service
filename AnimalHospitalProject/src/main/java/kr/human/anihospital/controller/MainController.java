@@ -10,9 +10,20 @@ public class MainController {
     public String home() {
         return "index";
     }
-	
 	@GetMapping("/signin")
 	public String signin() {
 		return "signin";
 	}
+	@GetMapping("/patientAdd")
+	public String patientAdd() {
+		return "patientAdd";
+	}
+	@GetMapping("/inner")
+	public String inner() {
+		return "inner";
+	}
+	@GetMapping("/patientlist")
+	public String patientlist() {
+		return "patientlist";
+	} 
 }
