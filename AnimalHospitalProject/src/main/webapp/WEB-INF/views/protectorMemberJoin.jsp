@@ -67,23 +67,23 @@
 
 <body>
 
+ <main id="main">
+
   <%@ include file="/WEB-INF/includes/header.jsp" %>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-    <div class="container">
-
-  </section><!-- End Hero -->
-
-  <main id="main">
-    <!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
+    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
       <div class="container">
 
-        <div class="section-title">
-          <h2>보호자 전용 회원가입</h2>
+	<br />
+		<div class="section-title">
+          <h2 style="font-weight: bold; font-size: 30px;">보호자 전용 회원가입</h2>
         </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
+    <section class="inner-page">
+      <div class="container">
         <div class="row">
             <div class="col-md-4 form-group mt-3">
               <div class="validate"></div>
@@ -138,7 +138,7 @@
 	              <div class="validate"></div>
 	           </div>
           </div>
-        <div class="row" style="margin: auto; width:800px;height:100px;display: flex;justify-content: center; ">
+        <div class="row" style="margin: auto; width:800px;height:100px;display: flex;justify-content: center;  ">
             <div class="col-md-2 form-group mt-3">
           	<label for="text">생년월일</label>
               <input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도">
@@ -176,7 +176,7 @@
 	        <div class="col-md-6 form-group mt-3">
 	           <label for="email">주소</label><br>
 	          <input type="text" class="form-control" name="protector_address" id="protector_address" placeholder="주소를 입력해주세요." data-rule="text">
-	          <input type="button" class="btn btn-primary" name="searching_address" value="주소검색">
+	          &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="searching_address" value="주소검색" style="width: 140px; text-align: center;">
 	        </div>
         </div>
         <div class="row">
@@ -186,7 +186,7 @@
 	        <div class="col-md-6 form-group mt-3">
 	           <label for="email">핸드폰번호</label><br>
 	          <input type="text" class="form-control" name="protector_phoneNumber" id="protector_phoneNumber" placeholder="전화번호를 입력해주세요." data-rule="text">
-	          <input type="button" class="btn btn-primary" name="send_certificationNumber" value="인증번호 받기">
+	          &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="send_certificationNumber" value="인증번호 받기" style="width: 140px; text-align: center;">
 	        </div>
         </div>
 		<div class="row">
@@ -214,8 +214,8 @@
 	          <div class="validate"></div>
 	        </div>
         	<div class="col-md-4 form-group mt-3">
-        		<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
-	    		<input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="회원가입" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
+        		<input type="button" class="btn btn-secondary " name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="width: 110px;margin: auto;text-align: center;color: white;">
+	    		<input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="회원가입" style="width: 110px;margin: auto;text-align: center;float: right;color: white;">
       		</div>
       	</div>
       </div>
