@@ -22,7 +22,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -44,7 +43,6 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/orm-validation.css" rel="stylesheet">
-
 <style>
 /*       .bd-placeholder-img { */
 /*         font-size: 1.125rem; */
@@ -84,19 +82,16 @@ input[name="address"]{
 
 <body class="bg-light">
 
-	<!-- ======= Breadcrumbs Section ======= -->
-	<section class="breadcrumbs">
-		<div class="container">
+	    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
 
-			<br />
-			<div class="section-title">
-				<h2>
-					<h1 class="mt-4">내 정보 수정</h1>
-				</h2>
-			</div>
-		</div>
-	</section>
-	<!-- End Breadcrumbs Section -->
+   <br />
+      <div class="section-title">
+          <h2 style="font-weight: bold; font-size: 30px;">내 정보 수정</h2>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
 	<section class="inner-page">
 		<div id="layoutSidenav_content">

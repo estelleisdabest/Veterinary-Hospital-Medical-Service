@@ -70,26 +70,21 @@ div {
 
 <body class="bg-light">
 
-	<!-- ======= Breadcrumbs Section ======= -->
-	<section class="breadcrumbs">
-		<div class="container">
+	    <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
 
-			<br />
-			<div class="section-title">
-				<h2>
-					<h1 class="mt-4">내 정보</h1>
-				</h2>
-			</div>
-		</div>
-	</section>
-	<!-- End Breadcrumbs Section -->
+   <br />
+      <div class="section-title">
+          <h2 style="font-weight: bold; font-size: 30px;">내 정보</h2>
+        </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
 	<section class="inner-page">
 		<div id="layoutSidenav_content">
 			<main>
-
 				<div class="row g-5">
-
 					<div id="doctorImg" style="padding-left: 8%;">
 						<img alt="의사" src="img/doctors/doctors-1.jpg"
 							style="width: 200px; height: 200px;">
@@ -164,7 +159,7 @@ div {
 									placeholder="인사말" disabled="disabled">인사말</textarea>
 							</div>
 							<br />
-							<button class="btn btn-primary btn-lg" type="submit" style="float: right;">정보수정</button>
+							<button class="btn btn-primary btn-lg" type="submit" style="float: right;" >정보수정</button>
 						</form>
 					</div>
 				</div>
