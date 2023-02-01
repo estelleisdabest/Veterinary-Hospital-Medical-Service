@@ -21,14 +21,14 @@ public class MainController {
 		return "signin";
 	}
 
-	@GetMapping("/postscript_save")
-	public String postscript_save() {
-		return "postscript_save";
+	@GetMapping("/postscriptSave")
+	public String postscriptSave() {
+		return "postscriptSave";
 	}
   
-	@GetMapping("/postscript_update")
-	public String postscript_update() {
-		return "postscript_update";
+	@GetMapping("/postscriptUpdate")
+	public String postscriptUpdate() {
+		return "postscriptUpdate";
 	}
   
 	@GetMapping("/notice")
@@ -46,9 +46,9 @@ public class MainController {
 		return "noticeModify";
 	}
 
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
+	@GetMapping("/patientInfoEditDoctor")
+	public String patientInfoEditDoctor() {
+		return "patientInfoEditDoctor";
 	}
 
 	@GetMapping("/animallookup")
@@ -148,15 +148,5 @@ public class MainController {
 	@GetMapping("/medicineList")
 	public String medicineList() {
 		return "medicineList";
-	}
-	
-	@GetMapping("/animallookupdetail")
-	public String animallookupdetail() {
-		return "animallookupdetail";
-	}
-	
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
 	}
 }
