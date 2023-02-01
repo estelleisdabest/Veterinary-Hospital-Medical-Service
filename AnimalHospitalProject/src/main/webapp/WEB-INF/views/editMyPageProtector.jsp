@@ -51,48 +51,104 @@
 
 	<br />
 		<div class="section-title">
-          <h2>내 정보 수정</h2>
+          <h2 style="font-weight: bold; font-size: 30px;">내 정보 수정</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
 
     <section class="inner-page">
       <div class="container">
-  
-		<form action="edit">
-		<table align="center">
-			<tr> 
-				<th>이름</th>
-					<td><input type="text" name="name" id="name" readonly="readonly" size="30" ></td>
-			</tr>
-			<tr> 
-				<th>ID</th>
-					<td><input type="text" name="id" id="id" readonly="readonly" size="30"></td>
-			</tr>
-			<tr> 
-				<th>비밀번호</th>
-					<td><input type="password" name="password" id="password" required="required" placeholder="수정할 비밀번호를 입력해주세요." size="30"></td>
-			</tr>
-			<tr> 
-				<th>생년월일</th>
-					<td><input type="text" name="birthday" id="birth" readonly="readonly" size="30"></td>
-			</tr>
-			<tr> 
-				<th>전화번호</th>
-					<td><input type="text" name="phone" id="phone" size="30" placeholder="수정할 전화번호를 입력해주세요."></td>
-			</tr>
-			<tr>
-	            <th>주소</th>
-	            <td><input type="text" id="address_kakao" name="address" readonly="readonly" size="30" placeholder="클릭시 주소가 검색됩니다."/></td>
-	        </tr>
-    	    <tr>
-	            <th>상세 주소</th>
-	            <td><input type="text" name="address_detail" size="30" placeholder="상세주소를 입력해주세요"/></td>
-	        </tr>
- 		</table>
- 		<hr/>
-  			 <div style="text-align: center"><input class="btn btn-primary btn-sm" type="submit" value="수정" size="30"></div>
-		</form>
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="name">이름</label> <input type="text" class="form-control"
+					name="name" id="name" readonly="readonly">
+				<div class="validate"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="id">ID</label> <input type="text"
+					class="form-control" name="text" id="text"
+					readonly="readonly" data-rule="id" data-msg="필수입력 항목입니다.">
+				<div class="validate"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="password">비밀번호</label> <input type="password"
+					class="form-control" name="password" id="password"
+					placeholder="수정할 비밀번호를 입력해주세요" data-rule="species" data-msg="필수입력 항목입니다.">
+				<div class="validate"></div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="">생년월일</label> <input type="text" class="form-control"
+					name="name" id="name" readonly="readonly">
+				<div class="validate"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="phone">전화번호</label> <input type="text" class="form-control" 
+				name="phone" id="phone" placeholder="수정할 전화번호를 입력해주세요"
+					data-rule="age" data-msg="필수입력 항목입니다.">
+				<div class="validate"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="phone">주소</label> <input type="text" class="form-control" 
+				name="address_kakao" readonly="readonly" id="address_kakao" placeholder="클릭시 주소가 검색됩니다">
+				<div class="validate"></div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-md-4 form-group mt-3">
+				<div class="validate"></div>
+			</div>
+			<div class="col-md-4 form-group mt-3">
+				<label for="address">상세주소</label> <input type="text" class="form-control" 
+				name="address" id="address" placeholder="수정할 상세주소를 입력해주세요"
+					data-rule="age" data-msg="필수입력 항목입니다.">
+				<div class="validate"></div>
+			</div>
+		</div>
+		
+
+		<div class="row">
+			<p></p>
+			<p>
+			<div class="submit" style="position: relative;">
+				<input type="button" value="추가" class="btn btn-primary"
+					style="width: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" />
+				</p>
+			</div>
+		</div>
 
       </div>
     </section>
