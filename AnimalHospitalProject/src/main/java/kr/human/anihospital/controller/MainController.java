@@ -29,7 +29,8 @@ public class MainController {
 	@GetMapping("/diagnosis")
 	public String diagnosis() {
 		return "diagnosis";
-
+	}
+	
 	@GetMapping("/roleCheck")
 	public String roleCheck() {
 		return "roleCheck";
