@@ -74,7 +74,7 @@
 
 	<br />
 		<div class="section-title">
-          <h2>공지사항 수정 및 삭제</h2>
+          <h2 style="font-weight: bold; font-size: 30px;">공지사항 수정 및 삭제</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->

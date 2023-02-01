@@ -134,7 +134,7 @@ public class MainController {
 	public String doctorInfoEdit() {
 		return "doctorInfoEdit";
 	}
-	
+
 	@GetMapping("/medicine")
 	public String medicine() {
 		return "medicine";
