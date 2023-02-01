@@ -85,6 +85,10 @@ public class MainController {
 	public String scheduleDoctor() {
 		return "scheduleDoctor";
 	}
+	@GetMapping("/scheduleProtector")
+	public String scheduleProtector() {
+		return "scheduleProtector";
+	}
 
 	@GetMapping("/patientAdd")
 	public String patientAdd() {

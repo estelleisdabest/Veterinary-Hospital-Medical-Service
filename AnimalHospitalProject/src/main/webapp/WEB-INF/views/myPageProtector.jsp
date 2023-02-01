@@ -105,9 +105,9 @@ h3 {
 						<div
 							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 540px;">
 							<h3>나의 정보</h3>
-							<input type="button" class="btn btn-primary bt-sm"
+							<input type="button" class="btn btn-primary btn-sm"
 								onclick="/editMyPageProtector.jsp" value="정보수정"> <input
-								type="button" class="btn btn-primary bt-sm" onclick=""
+								type="button" class="btn btn-primary btn-sm" onclick=""
 								value="회원탈퇴">
 							<table>
 								<tr>
@@ -126,7 +126,7 @@ h3 {
 						</div>
 						<br />
 						<h3>환자 정보</h3>
-						<input type="button" class="btn btn-primary bt-sm" onclick=""
+						<input type="button" class="btn btn-primary btn-sm" onclick=""
 							value="환자추가">
 						<p />
 						<div class="card mb-3" style="max-width: 540px;">
@@ -142,7 +142,7 @@ h3 {
 											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
 										</p>
 										<div align="right">
-											<a href="#" class="btn btn-primary bt-sm">정보수정</a>
+											<a href="#" class="btn btn-primary btn-sm">정보수정</a>
 										</div>
 									</div>
 								</div>
@@ -161,7 +161,7 @@ h3 {
 											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
 										</p>
 										<div align="right">
-											<a href="#" class="btn btn-primary bt-sm">정보수정</a>
+											<a href="#" class="btn btn-primary btn-sm">정보수정</a>
 										</div>
 									</div>
 								</div>
@@ -185,7 +185,7 @@ h3 {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary bt-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick=""
 									value="후기작성" />
 							</div>
 							<br />
@@ -201,7 +201,7 @@ h3 {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary bt-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick=""
 									value="후기작성" />
 							</div>
 							<table>
@@ -209,14 +209,14 @@ h3 {
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>질료 일 : 2023년 1월 30일</td>
+									<td>진료 일 : 2023년 1월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary bt-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick=""
 									value="후기작성" />
 							</div>
 							<table>
@@ -224,14 +224,14 @@ h3 {
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>질료 일 : 2023년 1월 30일</td>
+									<td>진료 일 : 2023년 1월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary bt-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick=""
 									value="후기작성" />
 							</div>
 						</div>
@@ -260,7 +260,7 @@ h3 {
 
 							</table>
 							<div align="right" >
-							<input type="button" class="btn btn-primary bt-sm" onclick=""
+							<input type="button" class="btn btn-primary btn-sm" onclick=""
 								value="수정" />
 							</div>
 						</div>
