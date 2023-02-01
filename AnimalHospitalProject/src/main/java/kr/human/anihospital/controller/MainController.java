@@ -20,7 +20,17 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
-	
+
+	@GetMapping("/postscript_save")
+	public String postscript_save() {
+		return "postscript_save";
+	}
+  
+	@GetMapping("/postscript_update")
+	public String postscript_update() {
+		return "postscript_update";
+	}
+  
 	@GetMapping("/notice")
 	public String notice() {
 		return "notice";
