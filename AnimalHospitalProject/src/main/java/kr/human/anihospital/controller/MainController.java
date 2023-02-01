@@ -20,7 +20,17 @@ public class MainController {
 	public String signin() {
 		return "signin";
 	}
-	
+
+	@GetMapping("/postscriptSave")
+	public String postscriptSave() {
+		return "postscriptSave";
+	}
+  
+	@GetMapping("/postscriptUpdate")
+	public String postscriptUpdate() {
+		return "postscriptUpdate";
+	}
+  
 	@GetMapping("/notice")
 	public String notice() {
 		return "notice";
@@ -61,6 +71,16 @@ public class MainController {
 		return "roleCheck";
 	}
 
+	@GetMapping("/doctorMemberJoin")
+	public String doctorMemberJoin() {
+		return "doctorMemberJoin";
+	}
+	
+	@GetMapping("/protectorMemberJoin")
+	public String protectorMemberJoin() {
+		return "protectorMemberJoin";
+	}
+	
 	@GetMapping("/editMyPageProtector")
 	public String editMyPageProtector() {
 		return "editMyPageProtector";
@@ -84,6 +104,10 @@ public class MainController {
 	@GetMapping("/scheduleDoctor")
 	public String scheduleDoctor() {
 		return "scheduleDoctor";
+	}
+	@GetMapping("/scheduleProtector")
+	public String scheduleProtector() {
+		return "scheduleProtector";
 	}
 
 	@GetMapping("/patientAdd")
@@ -111,5 +135,18 @@ public class MainController {
 		return "doctorInfoEdit";
 	}
 
-
+	@GetMapping("/medicine")
+	public String medicine() {
+		return "medicine";
+	}
+	
+	@GetMapping("/medicineEdit")
+	public String medicineEdit() {
+		return "medicineEdit";
+	}
+	
+	@GetMapping("/medicineList")
+	public String medicineList() {
+		return "medicineList";
+	}
 }
