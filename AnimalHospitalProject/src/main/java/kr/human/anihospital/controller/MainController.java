@@ -36,6 +36,16 @@ public class MainController {
 		return "roleCheck";
 	}
 
+	@GetMapping("/doctorMemberJoin")
+	public String doctorMemberJoin() {
+		return "doctorMemberJoin";
+	}
+	
+	@GetMapping("/protectorMemberJoin")
+	public String protectorMemberJoin() {
+		return "protectorMemberJoin";
+	}
+	
 	@GetMapping("/editMyPageProtector")
 	public String editMyPageProtector() {
 		return "editMyPageProtector";

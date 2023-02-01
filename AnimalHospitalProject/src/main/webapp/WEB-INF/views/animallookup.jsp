@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -37,48 +38,56 @@
 <link href="css/style.css" rel="stylesheet">
 
 <style type="text/css">
-table{
- 	border-collapse: collapse;
- 	
-  }
-.pageInfo{
-	margin-left:25%;
-	margin-right:20%;
-  	list-style : none;
-  	text-align: center;
-    
-  }
-.pageInfo_btn{
-  	float: left;
-    font-size: 15px;
-    margin-left: 13px;
-    padding: 3px;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    }
-    
-.pageInfo_btn.next{
-  	float: left;
-    font-size: 15px;
-    margin-left: 13px;
-    padding: 3px;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    width: 45px;
-    height: 30px;
-    
-    }
+table {
+	border-collapse: collapse;
+}
 
-    
-a:link {color:black; text-decoration: none;}
-a:visited {color:black; text-decoration: none;}
-a:hover {color:black; text-decoration: underline;}
+.pageInfo {
+	margin-left: 25%;
+	margin-right: 20%;
+	list-style: none;
+	text-align: center;
+}
 
+.pageInfo_btn {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+.pageInfo_btn.next {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 45px;
+	height: 30px;
+}
+
+a:link {
+	color: black;
+	text-decoration: none;
+}
+
+a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
 </style>
 
 </head>
@@ -94,7 +103,7 @@ a:hover {color:black; text-decoration: underline;}
 
 			<br />
 			<div class="section-title">
-				<h2>
+				<h2 style="font-weight: bold; font-size: 30px;">
 					<br />환자조회
 				</h2>
 			</div>
@@ -104,18 +113,12 @@ a:hover {color:black; text-decoration: underline;}
 
 	<section class="inner-page">
 		<main>
-							<div>
-							<h3>&nbsp;&nbsp;&nbsp;환자조회</h3>
-								<a href="" class="appointment-btn scrollto"
-									style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
-							</div>
-							<br />
-							<br />
 			<!-- table section -->
-			<div class="col-md-12" >
+			<div class="col-md-9" style="margin-left:200px;">
+				<a href="" class="appointment-btn scrollto"
+					style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
+				<br /> <br />
 				<div class="white_shd full margin_bottom_30">
-					<div class="full graph_head">
-					</div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
 							<table class="table table-hover" style="text-align: center">
@@ -128,10 +131,11 @@ a:hover {color:black; text-decoration: underline;}
 										<th style="width: 8%">진료일</th>
 									</tr>
 								</thead>
-								<tbody >
+								<tbody>
 									<tr>
-	                                   <td colspan="5" style="text-align: center;">등록된 진료내역이 없습니다.</td>
-                                    </tr>
+										<td colspan="5" style="text-align: center;">등록된 진료내역이
+											없습니다.</td>
+									</tr>
 									<tr>
 										<td>751</td>
 										<td>아리</td>
@@ -211,49 +215,40 @@ a:hover {color:black; text-decoration: underline;}
 									</tr>
 								</tbody>
 							</table>
-							<div class="pageInfo_wrap" >
-									<div class="pageInfo_area">
-									      <ul id="pageInfo" class="pageInfo">
-										  <li class="pageInfo_btn next"><a href="">이전</a></li>
-										  <!-- 		<li>1</li>
-										  		<li>2</li>
-										  		<li>3</li>
-										  		<li>4</li>
-										  		<li>5</li>
-										  		<li>6</li>
-										  		<li>7</li>
-										  		<li>8</li>
-										  		<li>9</li>
-										  		<li>10</li> -->
-									        	<li class="pageInfo_btn">1</li>
-									        	<li class="pageInfo_btn">2</li>
-									        	<li class="pageInfo_btn">3</li>
-									        	<li class="pageInfo_btn">4</li>
-									        	<li class="pageInfo_btn">5</li>
-									        	<li class="pageInfo_btn">6</li>
-									        	<li class="pageInfo_btn">7</li>
-									        	<li class="pageInfo_btn">8</li>
-									        	<li class="pageInfo_btn">9</li>
-									        	<li class="pageInfo_btn">10</li>
-										  <li class="pageInfo_btn next"><a href="">다음</a></li>
-									       <!-- 각 번호 페이지 버튼
-								                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-								                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-								                </c:forEach>
-									        -->
-									       </ul>
-									</div>
-					            	<!--  다음페이지 버튼-->
-					            	<!-- 
-					              	<c:if test="${pageMaker.next}">
-					                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-					                </c:if> 
-					                 -->
-							</div>
+				<div class="pageInfo_wrap">
+					<div class="pageInfo_area">
+						<ul id="pageInfo" class="pageInfo">
+							<li class="pageInfo_btn next"><a href="">이전</a></li>
+							<li class="pageInfo_btn">1</li>
+							<li class="pageInfo_btn">2</li>
+							<li class="pageInfo_btn">3</li>
+							<li class="pageInfo_btn">4</li>
+							<li class="pageInfo_btn">5</li>
+							<li class="pageInfo_btn">6</li>
+							<li class="pageInfo_btn">7</li>
+							<li class="pageInfo_btn">8</li>
+							<li class="pageInfo_btn">9</li>
+							<li class="pageInfo_btn">10</li>
+							<li class="pageInfo_btn next"><a href="">다음</a></li>
+							<!-- 각 번호 페이지 버튼
+							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+								 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+							 </c:forEach>
+						 -->
+						</ul>
+					</div>
+					<!--  다음페이지 버튼-->
+					<!-- 
+					    <c:if test="${pageMaker.next}">
+					        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+					    </c:if> 
+					    -->
+				</div>
+			</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			
 		</main>
 
 	</section>

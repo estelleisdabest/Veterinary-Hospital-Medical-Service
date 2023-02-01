@@ -37,21 +37,23 @@
 
   <%@ include file="/WEB-INF/includes/header.jsp" %>
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex align-items-center">
-
-  </section><!-- End Hero -->
-
+  
   <main id="main">
-   	<!-- ======= Appointment Section ======= -->
-    <section id="appointment" class="appointment section-bg">
+     <!-- ======= Breadcrumbs Section ======= -->
+    <section class="breadcrumbs">
       <div class="container">
 
-        <div class="section-title">
-          <h2>의사전용 회원가입</h2>
+	<br />
+		<div class="section-title">
+          <h2 style="font-weight: bold; font-size: 30px;">의사전용 회원가입</h2>
+          <br />
           <p>동물병원에 근무하고 계시는 <b>수의사 전용 회원가입 폼</b>입니다. <br>보호자이신 분들은 <b>뒤로 가기 -> 보호자에 체크한 상태</b>에서 회원가입하기 버튼을 눌러주세요.</p>
         </div>
+      </div>
+    </section><!-- End Breadcrumbs Section -->
 
+    <section class="inner-page">
+      <div class="container">
         <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
           <div class="row">
             <div class="col-md-4 form-group mt-3">
@@ -170,15 +172,11 @@
             </div>
           </div>
 		  
-          <div class="form-group mt-3">
+          <div class="col-md-4 form-group mt-3" style="margin: auto;">
             <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
             <div class="validate"></div>
           </div>
-          <div class="mb-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-          </div>
+          <br />
           <div class="text-center"><button type="submit">Make an Appointment</button></div>
         </form>
 
