@@ -36,9 +36,9 @@ public class MainController {
 		return "noticeModify";
 	}
 
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
+	@GetMapping("/patientInfoEditDoctor")
+	public String patientInfoEditDoctor() {
+		return "patientInfoEditDoctor";
 	}
 
 	@GetMapping("/animallookup")
@@ -110,4 +110,6 @@ public class MainController {
 	public String doctorInfoEdit() {
 		return "doctorInfoEdit";
 	}
+
+
 }
