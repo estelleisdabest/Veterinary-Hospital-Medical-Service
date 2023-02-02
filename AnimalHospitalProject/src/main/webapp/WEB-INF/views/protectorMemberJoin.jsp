@@ -188,18 +188,6 @@ input[name="send_certificationNumber"] {
 							id="doctor_date" placeholder="일">
 						<div class="validate"></div>
 					</div>
-					<div class="row">
-						<div class="col-md-4 form-group mt-3">
-							<div class="validate"></div>
-						</div>
-						<div class="col-md-4 form-group mt-3">
-							<label for="email">아이디</label> <input type="email"
-								class="form-control" name="email" id="email"
-								placeholder="아이디를 입력해주세요" data-rule="email"
-								data-msg="아이디는 필수입력 항목입니다.">
-							<div class="validate"></div>
-						</div>
-					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
