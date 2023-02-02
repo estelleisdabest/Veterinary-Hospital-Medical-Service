@@ -84,7 +84,6 @@ h3 {
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 
 
-
 	<main id="main">
 
 		<!-- ======= Breadcrumbs Section ======= -->
@@ -92,7 +91,7 @@ h3 {
 			<div class="container">
 				<br />
 				<div class="section-title">
-					<h2>나의 정보</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">나의 정보</h2>
 				</div>
 			</div>
 		</section>

@@ -47,7 +47,7 @@
       <div class="container">
 
         <div class="section-title">
-					<h2>서비스 소개</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">서비스 소개</h2>
 				</div>
 			</div>
 		</section>
