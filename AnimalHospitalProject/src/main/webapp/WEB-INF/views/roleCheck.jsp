@@ -113,8 +113,8 @@
 	          		<div class="validate"></div>
 	        	</div>
         		<div class="col-md-8 form-group">
-        			<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
-	    			<input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="회원가입" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
+        			<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="width: 110px;margin: auto;text-align: center;color: white;">
+	    			<input type="button" class="btn btn-primary" name="join_membership" id="join_membership" value="회원가입" style="width: 110px;margin: auto;text-align: center;float: right;color: white;">
       			</div>
       	</div>
 			</div>
