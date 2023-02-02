@@ -83,13 +83,15 @@
       <div class="container">
         <form>        
           작성자 <br />
-          <input id="username" type="text" name="username" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          <input id="witer" type="text" name="witer" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
           진료병원 <br />
           <input id="animalHospital" type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          작성일 <br />
+          <input id="writeDate" type="date" value="2023-01-30"/> <br /> <%-- 현재날짜를 띄움 --%>
           제목 <br />
-          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30"></textarea> <br />
+          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"></textarea> <br />
           내용 <br />
-          <textarea id="content" name="content" rows="20" cols="100" maxlength="500"></textarea> <br />
+          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"></textarea> <br />
         </form>
         <div class="submit" style="position: relative;">
         <input type="button" value="확인" class="btn btn-primary" 
