@@ -103,8 +103,8 @@ a:hover {
 
 			<br />
 			<div class="section-title">
-				<h2>
-					<br />담당 환자 조회
+				<h2 style="font-weight: bold; font-size: 30px;">
+					<br />담당 환자 전체 조회
 				</h2>
 			</div>
 		</div>
@@ -118,7 +118,7 @@ a:hover {
 			</div>
 			<br /> <br />
 			<!-- table section -->
-			<div class="col-md-12">
+			<div class="col-md-9" style="margin-left: 200px">
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
