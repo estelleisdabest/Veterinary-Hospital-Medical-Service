@@ -138,7 +138,7 @@
 
 			<br />
 			<div class="section-title">
-				<h2>
+				<h2 style="font-weight: bold; font-size: 30px;">
 					<br />진료내역
 				</h2>
 			</div>

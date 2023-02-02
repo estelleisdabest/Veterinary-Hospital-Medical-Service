@@ -63,7 +63,7 @@
 
 	<br />
 		<div class="section-title">
-          <h2>환자 추가</h2>
+          <h2 style="font-weight: bold; font-size: 30px;">환자 추가</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->

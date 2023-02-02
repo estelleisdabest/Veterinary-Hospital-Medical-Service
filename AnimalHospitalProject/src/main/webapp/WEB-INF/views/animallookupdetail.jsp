@@ -94,7 +94,7 @@ a:hover {color:black; text-decoration: underline;}
 
 			<br />
 			<div class="section-title">
-				<h2>
+				<h2 style="font-weight: bold; font-size: 30px;">
 					<br />환자조회
 				</h2>
 			</div>
@@ -177,16 +177,6 @@ a:hover {color:black; text-decoration: underline;}
 									<div class="pageInfo_area">
 									      <ul id="pageInfo" class="pageInfo">
 										  <li class="pageInfo_btn next"><a href="">이전</a></li>
-										  <!-- 		<li>1</li>
-										  		<li>2</li>
-										  		<li>3</li>
-										  		<li>4</li>
-										  		<li>5</li>
-										  		<li>6</li>
-										  		<li>7</li>
-										  		<li>8</li>
-										  		<li>9</li>
-										  		<li>10</li> -->
 									        	<li class="pageInfo_btn">1</li>
 									        	<li class="pageInfo_btn">2</li>
 									        	<li class="pageInfo_btn">3</li>
