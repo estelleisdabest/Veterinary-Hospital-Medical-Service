@@ -148,6 +148,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 						
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -162,6 +163,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -176,6 +178,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -190,6 +193,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -204,6 +208,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -221,6 +226,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -235,6 +241,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -248,6 +255,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -260,6 +268,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -274,6 +283,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -293,6 +303,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
+						<br />
 
 						<div class="row">
 							<div class="col-md-8 form-group">

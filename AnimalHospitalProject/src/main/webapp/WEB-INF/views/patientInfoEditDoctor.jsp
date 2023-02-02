@@ -86,7 +86,6 @@
 	<br />
 		<div class="section-title">
           <h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정</h2>
-          <h2>환자 정보 수정</h2>
           <%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
         </div>
       </div>

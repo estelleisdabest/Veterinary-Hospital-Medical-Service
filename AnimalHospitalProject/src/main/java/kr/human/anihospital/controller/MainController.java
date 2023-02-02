@@ -125,6 +125,11 @@ public class MainController {
 		return "map";
 	}
 
+	@GetMapping("/patientInfo")
+	public String patientInfo() {
+		return "patientInfo";
+	}
+	
 	@GetMapping("/doctorInfo")
 	public String doctorInfo() {
 		return "doctorInformation";
