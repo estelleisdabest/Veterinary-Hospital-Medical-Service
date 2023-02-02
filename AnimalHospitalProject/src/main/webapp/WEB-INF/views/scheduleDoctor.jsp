@@ -77,7 +77,7 @@
 
 				<br />
 				<div class="section-title">
-					<h2>스케줄 관리</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">스케줄 관리</h2>
 				</div>
 			</div>
 		</section>

@@ -84,7 +84,6 @@ h3 {
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 
 
-
 	<main id="main">
 
 		<!-- ======= Breadcrumbs Section ======= -->
