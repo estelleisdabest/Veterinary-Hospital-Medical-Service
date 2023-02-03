@@ -104,15 +104,13 @@ a:hover {color:black; text-decoration: underline;}
 
 	<section class="inner-page">
 		<main>
-							<div>
-							<h3>&nbsp;&nbsp;&nbsp;환자조회</h3>
-								<a href="" class="appointment-btn scrollto"
-									style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
-							</div>
-							<br />
-							<br />
-			<!-- table section -->
-			<div class="col-md-12" >
+			<div class="col-md-9" style="margin-left:200px;">
+				<div>
+					<a href="" class="appointment-btn scrollto"
+						style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
+				</div>
+				<br />
+				<br />
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head">
 					</div>
