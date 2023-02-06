@@ -171,7 +171,7 @@ h3 {
 					<div id="rightContent">
 						<div
 							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 350px; margin-left: auto;">
-							<h5>이전 진료 내역</h5>
+							<h5><b>이전 진료 내역</b></h5>
 							<table>
 								<tr>
 									<td>진료병원 : A동물병원</td>
@@ -180,11 +180,13 @@ h3 {
 									<td>질료 일 : 2023년 1월 30일</td>
 								</tr>
 								<tr>
-									<td>증상 : 건강검진</td>
+									<td>증상 : 구토</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
+									value="상세보기" />
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
 									value="후기작성" />
 							</div>
 							<br />
@@ -193,51 +195,57 @@ h3 {
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>질료 일 : 2023년 1월 30일</td>
+									<td>질료 일 : 2022년 12월 2일</td>
 								</tr>
 								<tr>
-									<td>증상 : 건강검진</td>
+									<td>증상 : 감기</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
+									value="상세보기" />
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
 									value="후기작성" />
 							</div>
 							<table>
 								<tr>
-									<td>진료병원 : A동물병원</td>
+									<td>진료병원 : B동물병원</td>
 								</tr>
 								<tr>
-									<td>진료 일 : 2023년 1월 30일</td>
+									<td>진료 일 : 2022년 10월 6일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
+									value="상세보기" />
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
 									value="후기작성" />
 							</div>
 							<table>
 								<tr>
-									<td>진료병원 : A동물병원</td>
+									<td>진료병원 : B동물병원</td>
 								</tr>
 								<tr>
-									<td>진료 일 : 2023년 1월 30일</td>
+									<td>진료 일 : 2021년 10월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick=""
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
+									value="상세보기" />
+								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
 									value="후기작성" />
 							</div>
 						</div>
 						<p>
 						<div
 							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 350px; margin-left: auto;">
-							<h5>작성 한 후기</h5>
+							<h5><b>작성 한 후기</b></h5>
 							<table>
 								<tr>
 									<td>작성일 : 2023년 01월 31일</td>

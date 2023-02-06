@@ -142,7 +142,8 @@
 								<option value="patient2" >나비</option>
 								<option value="patient3" >초코</option>
 							</select>
-							<a href="#" class="btn btn-primary btn-sm">환자추가</a>
+							<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/patientAdd'"
+										value="환자추가" />
 							<br/>
 							<br/>
 							<textarea rows="5" cols="30" placeholder="증상을 입력한 후 올리기 버튼을 눌러주세요"></textarea>							
@@ -152,7 +153,7 @@
 									<input type="submit" class="btn btn-outline-primary btn-sm" value="증상올리기">
 								</div>
 								<div align="left">
-									<input type="button" class="btn btn-primary btn-sm" value="사진/동영상 추가">
+									<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/patientInfoEdit_guardian'" value="사진/동영상 추가 ">
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
