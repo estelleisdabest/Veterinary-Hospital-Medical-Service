@@ -37,7 +37,7 @@ public class MainController {
 	}
 
 	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {		
+	public String patientInfoEdit_doctor() {
 		return "patientInfoEdit_doctor";
 	}
 
@@ -140,8 +140,13 @@ public class MainController {
 		return "medicineList";
 	}
 	
-	@GetMapping("/patientInfoEdit_guardian")
-	public String patientInfoEdit_guardian() {
-		return "patientInfoEdit_guardian";
+	@GetMapping("/animallookupdetail")
+	public String animallookupdetail() {
+		return "animallookupdetail";
+	}
+	
+	@GetMapping("/patientInfoEdit_doctor")
+	public String patientInfoEdit_doctor() {
+		return "patientInfoEdit_doctor";
 	}
 }
