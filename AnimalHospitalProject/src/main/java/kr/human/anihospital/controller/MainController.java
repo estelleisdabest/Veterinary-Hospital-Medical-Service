@@ -36,19 +36,19 @@ public class MainController {
 		return "noticeModify";
 	}
 
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
+	@GetMapping("/patientInfoEditDoctor")
+	public String patientInfoEditDoctor() {
+		return "patientInfoEditDoctor";
+	}
+	
+	@GetMapping("/patientInfoEditGuardian")
+	public String patientInfoEditGuardian() {
+		return "patientInfoEditGuardian";
 	}
 
 	@GetMapping("/animallookup")
 	public String animallookup() {
 		return "animallookup";
-	}
-	
-	@GetMapping("/animallookupdetail")
-	public String animallookupdetail() {
-		return "animallookupdetail";
 	}
 	
 	@GetMapping("/diagnosis")
@@ -143,10 +143,5 @@ public class MainController {
 	@GetMapping("/animallookupdetail")
 	public String animallookupdetail() {
 		return "animallookupdetail";
-	}
-	
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
 	}
 }

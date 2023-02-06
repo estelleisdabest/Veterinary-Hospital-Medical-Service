@@ -223,11 +223,23 @@
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
-               <label for="etc">특이사항</label>
+              <label for="etc">특이사항</label>
               <input type="text" class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요" >
               <div class="validate"></div>
             </div>
             </div>
+            <%--
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+               <label for="etc">사진 및 동영상 추가</label>
+              <input type="file" class="form-control" name="file" id="file" placeholder="">
+              <div class="validate"></div>
+            </div>
+            </div>   
+             --%>
             <div class="row"><p></p>
             <p>
             <br />
