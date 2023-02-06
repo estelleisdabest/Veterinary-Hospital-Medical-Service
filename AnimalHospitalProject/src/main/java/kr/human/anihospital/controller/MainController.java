@@ -154,4 +154,9 @@ public class MainController {
 	public String medicineList() {
 		return "medicineList";
 	}
+	
+	@GetMapping("/patientInfoEditGuardian")
+	public String patientInfoEditGuardian() {
+		return "patientInfoEditGuardian";
+	}
 }
