@@ -113,10 +113,7 @@ a:hover {
 
 	<section class="inner-page">
 		<main>
-			<div>
-				<h3>&nbsp;&nbsp;&nbsp;환자조회</h3>
-			</div>
-			<br /> <br />
+			<br />
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px">
 				<div class="white_shd full margin_bottom_30">

@@ -116,9 +116,9 @@ public class MainController {
 		return "patientAdd";
 	}
 
-	@GetMapping("/patientlist")
-	public String patientlist() {
-		return "patientlist";
+	@GetMapping("/patientList")
+	public String patientList() {
+		return "patientList";
 	}
 
 	@GetMapping("/hosMap")

@@ -85,7 +85,7 @@
             </div>
             <div class="col-md-4 form-group mt-3">
                <label for="species">종</label>
-              <input type="text" class="form-control" name="species" id="species" placeholder="종을 입력해주세요" data-rule="species" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
+              <input type="text" class="form-control" name="species" id="species" placeholder="종을 입력해주세요" data-rule="species" data-msg="필수입력 항목입니다.">
               <div class="validate"></div>
             </div>
           </div>
@@ -95,7 +95,7 @@
             </div>
             <div class="col-md-4 form-group mt-3">
                <label for="age">나이</label>
-              <input type="number" min="1" class="form-control" name="age" id="age" placeholder="나이를 입력해주세요" data-rule="age" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
+              <input type="number" min="1" class="form-control" name="age" id="age" placeholder="나이를 입력해주세요" data-rule="age" data-msg="필수입력 항목입니다.">
               <div class="validate"></div>
             </div>
           </div>
@@ -105,7 +105,7 @@
             </div>
             <div class="col-md-4 form-group mt-3">
                <label for="weight">몸무게</label>
-              <input type="number" min="1" class="form-control" name="weight" id="weight" placeholder="몸무게를 입력해주세요" data-rule="weight" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
+              <input type="number" min="1" class="form-control" name="weight" id="weight" placeholder="몸무게를 입력해주세요" data-rule="weight" data-msg="필수입력 항목입니다." >
               <div class="validate"></div>
             </div>
           </div>
@@ -124,16 +124,26 @@
               <div class="validate"></div>
             </div>
             <div class="col-md-4 form-group mt-3">
-               <label for="etc">사진 및 동영상 추가</label>
-              <input type="file" class="form-control" name="file" id="file" placeholder="">
+               <label for="pic">사진 추가</label>
+              <input type="file" accept="image/*" class="form-control" name="pic" id="pic" placeholder="">
+              <div class="validate"></div>
+            </div>
+            </div>   
+          <div class="row">
+            <div class="col-md-4 form-group mt-3">
+              <div class="validate"></div>
+            </div>
+            <div class="col-md-4 form-group mt-3">
+               <label for="vid">동영상 추가</label>
+              <input type="file" accept="video/*" class="form-control" name="vid" id="vid" placeholder="">
               <div class="validate"></div>
             </div>
             </div>   
             <div class="row"><p></p>
             <p>
                              <div class="col-md-4 form-group" style="margin: auto;">
-                 <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
-                <input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="환자추가" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
+                 <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location.href='/myPageProtector'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
+                <input type="button" class="btn btn-primary" name="mypage_protector" id="mypage_protector" value="환자추가" onclick="location.href='/myPageProtector'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
                </div>
    </p>
       </div>
