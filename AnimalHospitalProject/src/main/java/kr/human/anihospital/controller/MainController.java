@@ -121,9 +121,14 @@ public class MainController {
 		return "patientlist";
 	}
 
-	@GetMapping("/map")
-	public String map() {
-		return "map";
+	@GetMapping("/hosMap")
+	public String hosMap() {
+		return "hosMap";
+	}
+	
+	@GetMapping("/pharmMap")
+	public String pharmMap() {
+		return "pharmMap";
 	}
 
 	@GetMapping("/patientInfo")

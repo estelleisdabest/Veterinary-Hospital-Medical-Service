@@ -158,8 +158,15 @@ div {
 								<textarea rows="5" cols="90" style="width: 10; height: 10;"
 									placeholder="인사말" disabled="disabled">인사말</textarea>
 							</div>
-							<br />
-							<button class="btn btn-primary btn-lg" type="submit" style="float: right;" >정보수정</button>
+							<div class="row">
+								<div class="col-md-4 form-group mt-3"
+									style="margin-left: 520px;">
+									<a href="/" class="btn btn-secondary">이전페이지</a> <a
+										href="/roleCheck" class="btn btn-primary"
+										style="float: right;">수정하기</a>
+									<div class="validate"></div>
+								</div>
+							</div>
 						</form>
 					</div>
 				</div>
