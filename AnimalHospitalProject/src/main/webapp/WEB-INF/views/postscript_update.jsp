@@ -39,7 +39,7 @@ table {
 	width: 800px;
 	margin: auto;
 	padding: 10px;
-	border: 3px solid black;
+	border: 1px solid black;
 }
 
 tr {
@@ -111,7 +111,7 @@ tr {
 }
 .mb-3 tr{
   position : relative;
-  border: solid black 3px;
+  border: solid black 1px;
   width : 800px;
   height : 40px;
   border-radius: 150px;
@@ -149,7 +149,7 @@ tr {
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 	<!-- ======= Hero Section ======= -->
-	<section id="hero" class="d-flex align-items-center">
+	<section class="d-flex align-items-center">
 		<div class="container"></div>
 	</section>
 	<!-- End Hero -->
@@ -159,7 +159,7 @@ tr {
 			<div class="container">
 
 				<div class="section-title">
-					<h2>후기</h2>
+					<h2>후기 수정</h2>
 				</div>
 				<form class="mb-3" name="myForm" id="myform" method="post">
 					<table style="background-color: white;">
@@ -190,14 +190,19 @@ tr {
 							</td>
 						</tr>
 						<tr>
-							<td align="right" valign="top" style="font-size: 16pt;font-weight: bold;">내용 :</td>
-							<td colspan="3">
-								<textarea name="content" id="content" rows="10" cols="95" required="required"></textarea>
+							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 :</td>
+							<td colspan="4">
+								<textarea name="content" id="content" rows="10" cols="90" required="required" ></textarea>
 							</td>
 						</tr>
 						<tr>
-							<td colspan="4" align="right">
-								<input type="submit" class="btn btn-outline-primary btn-sm" value="수정하기" />
+							<td  align="right">
+								<input type="button" onclick="location.href='/diagnosis'" class="btn btn-secondary"
+									style="float: left; margin-left: 5%;" value="이 전" />
+							</td>
+							<td align="right">
+								<input type="submit" a href="" class="appointment-btn scrollto"
+									style="float: right; margin-right: 10px;" value="수정하기" />
 							</td>
 						</tr>
 					</table>
