@@ -42,6 +42,7 @@
   form{
   margin-bottom : 60px;
   margin-left : 15%;
+  margin-right: 10%;
   width: 20%;
   }
   
@@ -93,10 +94,10 @@
           내용 <br />
           <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"></textarea> <br />
         </form>
-        <div class="submit" style="position: relative;">
-        <input type="button" value="확인" class="btn btn-primary" 
-      		  style="width:100px; position: absolute;left: 50%;top: 50%; transform: translate(-50%,-50%)"/>
-        </div>
+            <div class="col-md-4 form-group" style="margin: auto;">
+               <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
+               <input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
+            </div>
       </div>
     </section>
 
