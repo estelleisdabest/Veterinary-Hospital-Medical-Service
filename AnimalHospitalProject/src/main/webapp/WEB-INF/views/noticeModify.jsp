@@ -42,6 +42,7 @@
   form{
   margin-bottom : 60px;
   margin-left : 15%;
+  margin-right: 10%;
   width: 20%;
   }
   
@@ -88,25 +89,25 @@
           진료병원 <br />
           <input id="animalHospital" type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
           작성일 <br />
-          <input type="date" id="writeDate" value="2023-01-30" readonly style="background-color: #F5F5F5;" /> <br />  <%-- 현재날짜를 띄움 --%>
+          <input type="date" id="writeDate" value="2023-01-30" readonly style="background-color: #F5F5F5;" /> <br />  <%-- 열람시에는 작성일, 글을 수정한다면 수정한날짜로 변경 --%>
           제목 <br />
-          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 수정 및 삭제 --%>
+          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
           내용 <br />
-          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 수정 및 삭제 --%>
+          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
         </form>
         
         <div id="button">
-        <button type="submit" id="modify" class="btn btn-primary" style="width:100px; margin-left: 40%">수정</button>
-        <button type="submit" id="delete" class="btn btn-danger" style="width:100px;"><i class="bi bi-x-circle"></i> 삭제</button> <br />
+        <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%"  onclick="location='notice.jsp' ">수정</button>
+        <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;"><i class="bi bi-x-circle"></i> 삭제</button> <br />
         </div>
         
         <%-- 보호자로 로그인하여 열람만 할 시 if문 사용하여 보여줄 버튼 --%>
-        <%--
+       <%--
         <div class="before-page" style="position: relative;">
-        <input type="button" id="bofore" name="before" value="이전" class="btn btn-primary" 
-      		  style="width:100px; position: absolute;left: 50%;top: 50%; transform: translate(-50%,-50%)"/>
+        	<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
         </div>
-         --%>
+        --%>
+        
 
       </div>
     </section>

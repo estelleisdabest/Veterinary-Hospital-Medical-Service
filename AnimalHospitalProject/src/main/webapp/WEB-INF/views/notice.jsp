@@ -53,6 +53,45 @@
 <link rel="stylesheet" href="js/pluto/semantic.min.css" />
 <!-- fancy box js -->
 <link rel="stylesheet" href="css/pluto/jquery.fancybox.css" />
+<style type="text/css">
+.pageInfo {
+	margin-left: 25%;
+	margin-right: 20%;
+	list-style: none;
+	text-align: center;
+}
+
+.pageInfo_btn {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+.pageInfo_btn.next {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 45px;
+	height: 30px;
+}
+a:hover {
+	color: black;
+	text-decoration: underline;
+}
+
+
+</style>
 
 </head>
 
@@ -78,13 +117,13 @@
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
-			<div class="col-md-9" style="margin-left: 200px">
+			<div class="col-md-9" style="margin-left: 10%; margin-right:30%; text-align: center; position: static;">
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head">
 					</div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
-							<table class="table table-hover" style="text-align: center">
+							<table class="table table-hover" >
 								<thead>
 									<tr>
 										<th style="width: 5%">No</th>
@@ -105,11 +144,36 @@
 								</tbody>
 							</table>
 							<div>
-								<a href="" class="appointment-btn scrollto"
-									style="float: right; margin-right: 10px;">추가</a>
+							<%-- 보호자로 로그인했을때는 이 버튼이 보이지 않는다. --%>
+							<input type="button" name="notice_add_btn" id="notice_add_btn" value="추가" class="btn btn-primary" onclick="location='noticeAdd'"style="float: right; margin-right: 10px; border-radius:50px; width: 90px; left: 50%; top: 50%;" />
 							</div>
+							<br />
 						</div>
 					</div>
+				</div>
+				<div class="pageInfo_wrap">
+					<div class="pageInfo_area">
+						<ul id="pageInfo" class="pageInfo">
+							<li class="pageInfo_btn next"><a href="">이전</a></li>
+							<li class="pageInfo_btn">1</li>
+							<li class="pageInfo_btn">2</li>
+							<li class="pageInfo_btn">3</li>
+							<li class="pageInfo_btn">4</li>
+							<li class="pageInfo_btn">5</li>
+							<li class="pageInfo_btn next"><a href="">다음</a></li>
+							<!-- 각 번호 페이지 버튼
+							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+								 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+							 </c:forEach>
+						 -->
+						</ul>
+					</div>
+					<!--  다음페이지 버튼-->
+					<!-- 
+					    <c:if test="${pageMaker.next}">
+					        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+					    </c:if> 
+					    -->
 				</div>
 			</div>
 		</main>
