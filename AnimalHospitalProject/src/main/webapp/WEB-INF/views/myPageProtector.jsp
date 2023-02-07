@@ -49,24 +49,14 @@ img {
 	width: 300px;
 	height: 150px;
 	object-fit: cover;
-	object-position: 50% 50%;	
+	object-position: 50% 50%;
 }
 
 #gridContainer {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 2fr 1fr;
-}
-
-#mainContent {
-	grid-row: 1/4;
-	grid-column: 1/3;
-}
-
-#rightContent {
-	grid-row: 1/5;
-	grid-column: 3/4;
-	text-align: center;
+	grid-template-columns: 55% 45%;
+	position: static;
 }
 
 tr, td {
@@ -91,7 +81,7 @@ h3 {
 			<div class="container">
 				<br />
 				<div class="section-title">
-					 <h2 style="font-weight: bold; font-size: 30px;">나의 정보</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">나의 정보</h2>
 				</div>
 			</div>
 		</section>
@@ -102,11 +92,11 @@ h3 {
 				<div id="gridContainer">
 					<div id="mainContent">
 						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 540px;">
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%;">
 							<h3>나의 정보</h3>
-							<input type="button" class="btn btn-primary btn-sm"
-								onclick="/editMyPageProtector.jsp" value="정보수정"> <input
-								type="button" class="btn btn-primary btn-sm" onclick=""
+							&nbsp;<input type="button" class="btn btn-primary btn-sm"
+								onclick="location.href='/editMyPageProtector'" value="정보수정">
+							<input type="button" class="btn btn-primary btn-sm" onclick=""
 								value="회원탈퇴">
 							<table>
 								<tr>
@@ -125,14 +115,14 @@ h3 {
 						</div>
 						<br />
 						<h3>환자 정보</h3>
-						<input type="button" class="btn btn-primary btn-sm" onclick=""
-							value="환자추가">
+						&nbsp;<input type="button" class="btn btn-primary btn-sm"
+							onclick="location.href='/patientAdd'" value="환자추가">
 						<p />
 						<div class="card mb-3" style="max-width: 540px;">
 							<div class="row g-0">
-								<div class="col-md-4" >
+								<div class="col-md-4">
 									<img src="img/dog.jpg" class="img-fluid rounded-start"
-										alt="..." style="width: 100%;height: 100%;">
+										alt="..." style="width: 100%; height: 100%;">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
@@ -141,7 +131,8 @@ h3 {
 											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
 										</p>
 										<div align="right">
-											<a href="#" class="btn btn-primary btn-sm">정보수정</a>
+											<a onclick="location.href='/patientInfoEditGuardian'"
+												class="btn btn-primary btn-sm">정보수정</a>
 										</div>
 									</div>
 								</div>
@@ -151,7 +142,7 @@ h3 {
 							<div class="row g-0">
 								<div class="col-md-4">
 									<img src="img/cat.jpg" class="img-fluid rounded-start"
-										alt="..." style="width: 100%;height: 100%;">
+										alt="..." style="width: 100%; height: 100%;">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
@@ -160,7 +151,8 @@ h3 {
 											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
 										</p>
 										<div align="right">
-											<a href="#" class="btn btn-primary btn-sm">정보수정</a>
+											<a onclick="location.href='/patientInfoEditGuardian'"
+												class="btn btn-primary btn-sm">정보수정</a>
 										</div>
 									</div>
 								</div>
@@ -170,24 +162,26 @@ h3 {
 
 					<div id="rightContent">
 						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 350px; margin-left: auto;">
-							<h5><b>이전 진료 내역</b></h5>
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
+							<h5>
+								<b>이전 진료 내역</b>
+							</h5>
 							<table>
 								<tr>
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>질료 일 : 2023년 1월 30일</td>
+									<td>진료 일 : 2023년 1월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 구토</td>
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
-									value="상세보기" />
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
-									value="후기작성" />
+								<input type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/diagnosis'" value="상세보기" /> <input
+									type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/postscriptSave'" value="후기작성" />
 							</div>
 							<br />
 							<table>
@@ -202,10 +196,10 @@ h3 {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
-									value="상세보기" />
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
-									value="후기작성" />
+								<input type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/diagnosis'" value="상세보기" /> <input
+									type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/postscriptSave'" value="후기작성" />
 							</div>
 							<table>
 								<tr>
@@ -219,10 +213,10 @@ h3 {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
-									value="상세보기" />
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
-									value="후기작성" />
+								<input type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/diagnosis'" value="상세보기" /> <input
+									type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/postscriptSave'" value="후기작성" />
 							</div>
 							<table>
 								<tr>
@@ -236,46 +230,79 @@ h3 {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/diagnosis'"
-									value="상세보기" />
-								<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/postscriptUpdate'"
-									value="후기작성" />
+								<input type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/diagnosis'" value="상세보기" /> <input
+									type="button" class="btn btn-primary btn-sm"
+									onclick="location.href='/postscriptSave'" value="후기작성" />
 							</div>
 						</div>
 						<p>
 						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 350px; margin-left: auto;">
-							<h5><b>작성 한 후기</b></h5>
-							<table>
-								<tr>
-									<td>작성일 : 2023년 01월 31일</td>
-								</tr>
-								<tr>
-									<td>진료병원 : A동물병원</td>
-								</tr>
-								<tr>
-									<td>진료일 : 2023년 01월 31일</td>
-								</tr>
-								<tr>
-									<td>별점 : ★★★★★</td>
-								</tr>
-								<tr>
-									<td>내용 :
-										<p>의사 선생님이 너무 친절했어요~!.....</p>
-									</td>
-								</tr>
-
-							</table>
-							<div align="right" >
-							<input type="button" class="btn btn-primary btn-sm" onclick=""
-								value="수정" />
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
+							<h5>
+								<b>작성 한 후기</b>
+							</h5>
+							<div class="white_shd full margin_bottom_30">
+								<div class="full graph_head"></div>
+								<div class="table_section padding_infor_info">
+									<div class="table-responsive-sm">
+										<table class="table" style="text-align: center">
+											<thead>
+												<tr>
+													<th style="width: 16%">환자명</th>
+													<th style="width: 17%">별점</th>
+													<th style="width: 20%">진료병원</th>
+													<th style="width: 16%">진료일</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>토리</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2023.01.10</td>
+												</tr>
+												<tr>
+													<td>두둥</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2022.01.30</td>
+												</tr>
+												<tr>
+													<td>토리</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2021.12.30</td>
+												</tr>
+												<tr>
+													<td>나비</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2021.09.30</td>
+												</tr>
+												<tr>
+													<td>두둥</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2021.07.10</td>
+												</tr>
+												<tr>
+													<td>두둥</td>
+													<td>★★★★★</td>
+													<td>A병원</td>
+													<td>2021.04.05</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<!-- 페이지 수 표시하기 -->
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
 
