@@ -43,7 +43,7 @@
         background-size: contain;
      background-position:  1px center;
      background-repeat: no-repeat;
-     text-align: center;
+     text-align: left;
      text-indent: 0;
      }
   </style>
@@ -131,8 +131,10 @@
             </div>   
             <div class="row"><p></p>
             <p>
-         <div class="submit" style="position: relative;">        
-        <input type="button" value="추가" class="btn btn-primary" style="width:100px; position: absolute;left: 50%;top: 50%; transform: translate(-50%,-50%)"/>
+                             <div class="col-md-4 form-group" style="margin: auto;">
+                 <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
+                <input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="환자추가" style="border-radius:50px;width: 110px;margin: auto;text-align: center;float: right;color: white;">
+               </div>
    </p>
       </div>
         </div>
