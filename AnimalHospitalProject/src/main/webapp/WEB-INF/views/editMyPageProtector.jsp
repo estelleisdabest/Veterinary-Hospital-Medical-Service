@@ -141,7 +141,8 @@
 								id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요"> &nbsp;<input
 								type="button" name="address_kakao" id="address_kakao"
 								onclick="sample4_execDaumPostcode()"
-								class="btn btn-primary btn-sm" value="주소찾기">
+								class="btn btn-primary btn-sm" value="주소찾기"
+								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 						</div>
 						<div class="validate"></div>
 					</div>
@@ -198,13 +199,20 @@
 						"click",
 						function() { //주소입력칸을 클릭하면
 							//카카오 지도 발생
+							var width = 500; //팝업의 너비
+							var height = 600; //팝업의 높이
 							new daum.Postcode(
 									{
+										width : width, //생성자에 크기 값을 명시적으로 지정
+										height : height,
 										oncomplete : function(data) { //선택시 입력값 세팅
 											document
 													.getElementById("inputKakao").value = data.address; // 주소 넣기
 										}
-									}).open();
+									}).open({
+									    left: (window.screen.width / 2) - (width / 2),
+									    top: (window.screen.height / 2) - (height / 2)
+									});
 						});
 	}
 </script>
