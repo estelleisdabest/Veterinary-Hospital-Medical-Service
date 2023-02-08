@@ -71,6 +71,7 @@ input[name="medicineAdd"] {
 	margin-top: 4px;
 	margin-right: 5px;
 	font-size: 10pt;
+	border-radius:50px;
 }
 
 input[name="medicineEdit"] {
@@ -80,13 +81,24 @@ input[name="medicineEdit"] {
 	margin-top: 4px;
 	margin-right: 5px;
 	font-size: 10pt;
+	border-radius:50px;
 }
+
 label[id="recoFeedAdd_input"] {
 	height: 38px;
 	display: inline;
 	float: right;
 	margin-right: 5px;
 	font-size: 10pt;
+	border-radius:50px;
+}
+input[name="recoFeed_excel_download"] {
+	height: 38px;
+	display: inline;
+	float: right;
+	margin-right: 5px;
+	font-size: 10pt;
+	border-radius:50px;
 }
 
 img {
@@ -296,8 +308,8 @@ img {
 									<li>프로펜정</li>
 								</ul>
 								</div>
-								<input type="button" class="btn btn-primary" name="medicineEdit" onclick="location='/medicineEdit'" value="수정"  style="border-radius:50px;" />
-								<input type="button" class="btn btn-primary" name="medicineAdd" onclick="location='/medicine'" value="추가"  style="border-radius:50px;"/>
+								<input type="button" class="btn btn-primary" name="medicineEdit" onclick="location='/medicineEdit'" value="수정" />
+								<input type="button" class="btn btn-primary" name="medicineAdd" onclick="location='/medicine'" value="추가"/>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -316,6 +328,7 @@ img {
 									<li>소형견 추천 영양제.xlsx	</li>
 								</ul>
 								</div>
+								<input type="button" class="btn btn-primary" name="recoFeed_excel_download" id="recoFeed_excel_download" value="양식 다운받기" onclick="" />
 								<label for="recoFeedAdd" class="btn btn-primary" id="recoFeedAdd_input"  style="border-radius:50px;">추가(Excel)</label>
 								<input type="file" name="recoFeedAdd" id="recoFeedAdd" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none; " />
 								<div class="validate"></div>
