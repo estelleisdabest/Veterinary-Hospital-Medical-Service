@@ -115,7 +115,7 @@ input[type=file]::file-selector-button {
 								<option value="c" >C동물병원</option>
 								<option value="d" >D동물병원</option>
 							</select>
-							<a onclick="location.href='/map'" class="btn btn-primary btn-sm">병원찾기</a>
+							<a onclick="location.href='/map'" class="btn btn-primary btn-sm" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">병원찾기</a>
 							<br/>
 						<iframe src="https://calendar.google.com/calendar/embed?src=75e1efd2c444b0e1d243b7fe83e3e542f03f13b5b91f3b49d8aef1660d7b819d%40group.calendar.google.com&ctz=Asia%2FSeoul" style="border: 0" width="95%" height="100%" frameborder="0" scrolling="no"></iframe>
 					</div>
@@ -172,7 +172,7 @@ input[type=file]::file-selector-button {
 								</div>
 								<br/>
 								<div align="left">
-									<input type="file" class="form-control" name="file" id="file1">
+									<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
