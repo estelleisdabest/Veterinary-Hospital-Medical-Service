@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -43,6 +43,21 @@
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		var withdrawal = document.getElementById('withdrawal');
+		withdrawal.addEventListener('click', function () {
+			var result = window.confirm('탈퇴하시면 모든 내역이 사라집니다.\r\n정말로 회원 탈퇴하시겠습니까?');
+			
+			if(result) {
+				alert('정상적으로 처리되었습니다.');
+				location.href='/';
+			}
+		});
+	}
+	
+</script>
 
 <style type="text/css">
 img {
@@ -65,6 +80,9 @@ tr, td {
 
 h3 {
 	display: inline;
+}
+.pagination {
+  justify-content: center;
 }
 </style>
 </head>
@@ -97,7 +115,7 @@ h3 {
 							&nbsp;<input type="button" class="btn btn-primary btn-sm"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
 								style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
-							<input type="button" class="btn btn-primary btn-sm" onclick=""
+							<input type="button" class="btn btn-primary btn-sm" id="withdrawal" onclick="clickEvent()"
 								value="회원탈퇴" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 							<table>
 								<tr>
@@ -236,7 +254,7 @@ h3 {
 						</div>
 						<p>
 						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; height:400px; margin-left: auto;">
 							<h5>
 								<b>작성 한 후기</b>
 							</h5>
@@ -292,8 +310,51 @@ h3 {
 												</tr>
 											</tbody>
 										</table>
+										<!-- 페이지 수 표시하기 -->
+										
+										<!-- <div class="pageInfo_wrap">
+											<div class="pageInfo_area">
+												<ul id="pageInfo" class="pageInfo">
+													<li class="pageInfo_btn next"><a href="">이전</a></li>
+													<li class="pageInfo_btn">1</li>
+													<li class="pageInfo_btn">2</li>
+													<li class="pageInfo_btn">3</li>
+													<li class="pageInfo_btn">4</li>
+													<li class="pageInfo_btn">5</li>
+													<li class="pageInfo_btn next"><a href="">다음</a></li>
+													각 번호 페이지 버튼
+														<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+															 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+														 </c:forEach>
+													
+												</ul>
+											</div>
+											 다음페이지 버튼
+											
+											    <c:if test="${pageMaker.next}">
+											        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+											    </c:if> 
+											   
+										</div> -->
+										
+										<nav aria-label="Page navigation example">
+										  <ul class="pagination">
+										    <li class="page-item">
+										      <a class="page-link" href="#" aria-label="Previous">
+										        <span aria-hidden="true">&laquo;</span>
+										      </a>
+										    </li>
+										    <li class="page-item"><a class="page-link" href="#">1</a></li>
+										    <li class="page-item"><a class="page-link" href="#">2</a></li>
+										    <li class="page-item"><a class="page-link" href="#">3</a></li>
+										    <li class="page-item">
+										      <a class="page-link" href="#" aria-label="Next">
+										        <span aria-hidden="true">&raquo;</span>
+										      </a>
+										    </li>
+										  </ul>
+										</nav>
 									</div>
-									<!-- 페이지 수 표시하기 -->
 								</div>
 							</div>
 						</div>
