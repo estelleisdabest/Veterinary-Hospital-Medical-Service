@@ -41,18 +41,11 @@
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 <style type="text/css">
+
 #gridContainer {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto);
 	grid-template-columns: 2fr 1fr;
-}
-
-#mainContainer {
-	grid-column: 1/3;
-}
-
-#rightContainer {
-	grid-column: 3/4;
 }
 
 tr, td {
@@ -67,7 +60,9 @@ h4 {
 textarea {
 	resize: none;
 	height: 150px;
+	text-align: left;
 }
+
 
 input[name="medicineAdd"] {
 	height: 38px;
@@ -75,6 +70,7 @@ input[name="medicineAdd"] {
 	float: right;
 	margin-top: 4px;
 	margin-right: 5px;
+	font-size: 10pt;
 }
 
 input[name="medicineEdit"] {
@@ -83,22 +79,25 @@ input[name="medicineEdit"] {
 	float: right;
 	margin-top: 4px;
 	margin-right: 5px;
+	font-size: 10pt;
 }
-
-input[name="recoFeedAdd"] {
+label[id="recoFeedAdd_input"] {
 	height: 38px;
 	display: inline;
 	float: right;
-	margin-top: 4px;
 	margin-right: 5px;
+	font-size: 10pt;
 }
+
 img {
-	width: 300px;
-	height: 250px;
-	object-fit: cover;
+	width: 200px;
+	height: 200px; 
+	display : block;
 	border-radius:10%;
-	object-position: 50% 50%;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
 }
+
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -123,13 +122,12 @@ img {
 		<!-- End Breadcrumbs Section -->
 
 		<section class="inner-page">
-			<div class="container">
+			<div class="container" style="position: static;">
 				<div id="gridContainer">
 					<div id="mainContainer">
 						<h4>
 							<b>환자 정보</b> 
-							<input type="button" class="btn btn-primary bt-sm"
-							name="patientInfoEdit_doctor" onclick="" value="수정"/>
+							<button type="button" class="btn btn-primary bt-sm" name="patientInfoEditDoctor" onclick="location='patientInfoEditDoctor'" style="border-radius:50px;">수정</button>
 						<br />
 						<br />
 						<img src="img/dog.jpg" alt="...">
@@ -291,15 +289,15 @@ img {
 							</div>
 							<div class="col-md-8 form-group">
 								<label for="medicine">처방</label>
-								<%-- 의사가 진단한 내용 띄움 --%>
-								<textarea rows="1" cols="43" class="form-control"
-									name="medicine" id="medicine">파모시드정20mg(내복)</textarea>
-								<div class="validate"></div>
-
-								<input type="button" class="btn btn-primary bt-sm"
-									name="medicineEdit" onclick="" value="수정" /> <input
-									type="button" class="btn btn-primary bt-sm" name="medicineAdd"
-									onclick="" value="추가" />
+								<%-- 의사가 처방한 내용 띄움 --%>
+								<div class="form-control">
+								<ul id="medicine_list" style="margin-bottom: 4px;">
+									<li>세라치오펩티다제</li>
+									<li>프로펜정</li>
+								</ul>
+								</div>
+								<input type="button" class="btn btn-primary" name="medicineEdit" onclick="location='/medicineEdit'" value="수정"  style="border-radius:50px;" />
+								<input type="button" class="btn btn-primary" name="medicineAdd" onclick="location='/medicine'" value="추가"  style="border-radius:50px;"/>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -311,13 +309,15 @@ img {
 							</div>
 							<div class="col-md-8 form-group">
 								<label for="recoFeed">추천사료 및 영양제</label>
-								<%-- 의사가 진단한 내용 띄움 --%>
-								<textarea rows="1" cols="43" class="form-control"
-									name="recoFeed" id="recoFeed">[DOG]로얄캐닌 레날 스몰독 1.5kg(처방식-신장질환)</textarea>
-								<div class="validate"></div>
-
-								<input type="button" class="btn btn-primary bt-sm"
-									name="recoFeedAdd" onclick="" value="추가" />
+								<%-- 의사가 추가한 엑셀파일 목록을 띄움 --%>
+								<div class="form-control"  style="margin-bottom: 4px;">
+								<ul id="recoFeed_list">
+									<li>신장질환 추천 사료(소형견).xlsx</li>
+									<li>소형견 추천 영양제.xlsx	</li>
+								</ul>
+								</div>
+								<label for="recoFeedAdd" class="btn btn-primary" id="recoFeedAdd_input"  style="border-radius:50px;">추가(Excel)</label>
+								<input type="file" name="recoFeedAdd" id="recoFeedAdd" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none; " />
 								<div class="validate"></div>
 							</div>
 						</div>

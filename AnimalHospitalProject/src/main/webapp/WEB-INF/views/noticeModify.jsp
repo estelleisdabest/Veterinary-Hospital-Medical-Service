@@ -97,7 +97,7 @@
         </form>
         
         <div id="button">
-        <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%"  onclick="location='notice.jsp' ">수정</button>
+        <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%" onclick="location='/notice'">수정</button>
         <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;"><i class="bi bi-x-circle"></i> 삭제</button> <br />
         </div>
         
