@@ -1,12 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%
-String referer = request.getHeader("referer");
-if(referer==null || referer.trim().length()==0){ // 이전주소가 없다면
-referer = "diagnosis";
-}
-response.sendRedirect(referer); 
-%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -204,7 +197,7 @@ tr {
 						</tr>
 						<tr>
 							<td  align="right">
-								<input type="button" onclick="history.go(-1)" class="btn btn-secondary"
+								<input type="button" onclick="location.href='/diagnosis'" class="btn btn-secondary"
 									style="float: left; margin-left: 5%;" value="이 전" />
 							</td>
 							<td align="right">
