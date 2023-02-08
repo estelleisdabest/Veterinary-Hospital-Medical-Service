@@ -48,10 +48,6 @@
 	position: static;
 }
 
-::placeholder {
-	font-size: 12px;
-}
-
 
 </style>
 <!-- Template Main CSS File -->

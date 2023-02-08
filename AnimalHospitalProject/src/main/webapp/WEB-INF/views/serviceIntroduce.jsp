@@ -73,7 +73,7 @@
 					<h4>보호자 및 반려동물 서비스 제공 내용</h4>
 
 					<div align="right">
-						<a href="#doctorPage" class="btn btn-primary">의사전용 소개 페이지에 가기</a>
+						<a href="#doctorPage" class="btn btn-primary" style="border-radius: 50px; width: 250px; margin: auto; text-align: center; color: white;">의사전용 소개 페이지에 가기</a>
 					</div>
 					<br />
 					<div
@@ -99,7 +99,7 @@
 						<p>우리 가족을 위해서 시작해보세요!</p>
 						<div align="center">
 							<input type="button" class="btn btn-primary btn-sm"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" />
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 					<a name="doctorPage"></a>
@@ -110,7 +110,7 @@
 				<div>
 					<h4>의사 시스템 제공내용</h4>
 					<div align="right">
-						<a href="#protectorPage" class="btn btn-primary">보호자 전용 소개
+						<a href="#protectorPage" class="btn btn-primary" style="border-radius: 50px; width: 280px; margin: auto; text-align: center; color: white;">보호자 전용 소개
 							페이지에 가기</a>
 					</div>
 					<br />
@@ -152,7 +152,7 @@
 						<p>시작해보세요!</p>
 						<div align="center">
 							<input type="button" class="btn btn-primary btn-sm"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" />
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 				</div>
