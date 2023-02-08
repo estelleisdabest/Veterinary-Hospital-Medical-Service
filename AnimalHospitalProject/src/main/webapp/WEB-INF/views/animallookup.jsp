@@ -74,20 +74,7 @@ table {
 	height: 30px;
 }
 
-a:link {
-	color: black;
-	text-decoration: none;
-}
 
-a:visited {
-	color: black;
-	text-decoration: none;
-}
-
-a:hover {
-	color: black;
-	text-decoration: underline;
-}
 </style>
 
 </head>
@@ -115,7 +102,7 @@ a:hover {
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left:200px;">
-				<a href="" class="appointment-btn scrollto"
+				<a href="/patientAdd" class="btn btn-primary"
 					style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
 				<br /> <br />
 				<div class="white_shd full margin_bottom_30">
