@@ -124,10 +124,10 @@ table {
 			</tr>
 			<tr>
 				<td style="text-align: center;">
-					<label class="btn btn-primary" for="file1">수정</label>
+					<label class="btn btn-primary" for="file1" style="border-radius: 50px; width: 90px">수정</label>
 				</td>
 				<td style="text-align: center;">
-					<label class="btn btn-primary" for="file2">수정</label>
+					<label class="btn btn-primary" for="file2" style="border-radius: 50px; width: 90px">수정</label>
 				</td>
 			</tr>
 			<tr>
