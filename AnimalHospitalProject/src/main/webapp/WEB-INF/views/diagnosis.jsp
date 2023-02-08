@@ -159,6 +159,7 @@
 							<div class="diagnosis">
 							 	<h6>진료번호 : 226<!-- {$diagnosisVO.seqDiagnosis } --> </h6>
 							 	<h6>진료일 : 2022.09.30<!-- {$diagnosisVO.diagnosisDate } --> </h6> 
+							 	<h6>진료병원 : 사랑별동물병원<!-- {$animalHospital.animalHospitalName } --> </h6> 
 							 	<h6>의사번호 : 2<!-- {$diagnosisVO.seqDoctor } --> </h6> 
 							 	<h6>의사명 : 김OO<!-- {$diagnosisVO.doctorName } --> </h6> 
 							 	<h6>환자명 : 토리<!-- {$diagnosisVO.animalName } --> </h6> 
@@ -211,8 +212,12 @@
 
 							</table>
 						</div>
+						<!-- <div align="right" >
+							<a href="postscriptSava" class="btn btn-primary bt-sm">작성하기</a>
+						</div>
+						 -->
 						<div align="right" >
-							<input type="button" class="btn btn-primary bt-sm" onclick="" value="수정" />
+							<a href="postscriptUpdate" class="btn btn-primary bt-sm">수정하기</a>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
@@ -234,7 +239,7 @@
 							</div>
 						</div>
 						<div align="right">
-							<a href="#" class="btn btn-primary bt-sm">정보수정</a>
+							<a href="/scheduleProtector" class="btn btn-primary bt-sm">예약확인</a>
 						</div>
 					</div>
 				</div>
