@@ -54,42 +54,9 @@
 <!-- fancy box js -->
 <link rel="stylesheet" href="css/pluto/jquery.fancybox.css" />
 <style type="text/css">
-.pageInfo {
-	margin-left: 25%;
-	margin-right: 20%;
-	list-style: none;
-	text-align: center;
+.pagination {
+  justify-content: center;
 }
-
-.pageInfo_btn {
-	float: left;
-	font-size: 15px;
-	margin-left: 13px;
-	padding: 3px;
-	font-weight: 500;
-	text-align: center;
-	border: 1px solid #dee2e6;
-	width: 30px;
-	height: 30px;
-	display: inline-block;
-}
-
-.pageInfo_btn.next {
-	float: left;
-	font-size: 15px;
-	margin-left: 13px;
-	padding: 3px;
-	font-weight: 500;
-	text-align: center;
-	border: 1px solid #dee2e6;
-	width: 45px;
-	height: 30px;
-}
-a:hover {
-	color: black;
-	text-decoration: underline;
-}
-
 
 </style>
 
@@ -117,13 +84,13 @@ a:hover {
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
-			<div class="col-md-9" style="margin-left: 10%; margin-right:30%; text-align: center; position: static;">
+			<div class="col-md-9"
+				style="margin-left: 10%; margin-right: 30%; text-align: center; position: static;">
 				<div class="white_shd full margin_bottom_30">
-					<div class="full graph_head">
-					</div>
+					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
-							<table class="table table-hover" >
+							<table class="table table-hover">
 								<thead>
 									<tr>
 										<th style="width: 5%">No</th>
@@ -133,7 +100,7 @@ a:hover {
 										<th>작성일</th>
 									</tr>
 								</thead>
-								<tbody >
+								<tbody>
 									<tr>
 										<td>1</td>
 										<td style="text-align: left;">휴무안내</td>
@@ -144,37 +111,31 @@ a:hover {
 								</tbody>
 							</table>
 							<div>
-							<%-- 보호자로 로그인했을때는 이 버튼이 보이지 않는다. --%>
-							<input type="button" name="notice_add_btn" id="notice_add_btn" value="추가" class="btn btn-primary" onclick="location='noticeAdd'"style="float: right; margin-right: 10px; border-radius:50px; width: 90px; left: 50%; top: 50%;" />
+								<%-- 보호자로 로그인했을때는 이 버튼이 보이지 않는다. --%>
+								<input type="button" name="notice_add_btn" id="notice_add_btn"
+									value="추가" class="btn btn-primary"
+									onclick="location='noticeAdd'"
+									style="border-radius:50px;width: 90px;text-align: center;color: white; float: right;" />
 							</div>
-							<br />
+							<br /> <br />
 						</div>
 					</div>
 				</div>
-				<div class="pageInfo_wrap">
-					<div class="pageInfo_area">
-						<ul id="pageInfo" class="pageInfo">
-							<li class="pageInfo_btn next"><a href="">이전</a></li>
-							<li class="pageInfo_btn">1</li>
-							<li class="pageInfo_btn">2</li>
-							<li class="pageInfo_btn">3</li>
-							<li class="pageInfo_btn">4</li>
-							<li class="pageInfo_btn">5</li>
-							<li class="pageInfo_btn next"><a href="">다음</a></li>
-							<!-- 각 번호 페이지 버튼
-							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-								 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-							 </c:forEach>
-						 -->
-						</ul>
-					</div>
-					<!--  다음페이지 버튼-->
-					<!-- 
-					    <c:if test="${pageMaker.next}">
-					        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-					    </c:if> 
-					    -->
-				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+						</a></li>
+					</ul>
+				</nav>
 			</div>
 		</main>
 
