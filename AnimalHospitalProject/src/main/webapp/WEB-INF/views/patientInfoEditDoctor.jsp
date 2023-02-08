@@ -125,6 +125,7 @@ table{
 			</tr>
 		</table>
 		
+		<!-- 
 		<%-- 사진만 등록되어 있을 경우 --%>
 		<div class="contact-form pt-20"></div>
 		<br />
@@ -165,8 +166,7 @@ table{
 				</td>
 			</tr>
 		</table>
-		
-
+		 -->
 
 		<br /> <br />
 
@@ -312,10 +312,10 @@ table{
 			<p></p>
 			<p>
 				<br />
-			<div class="submit" style="position: relative;">
-				<input type="button" value="확인" class="btn btn-primary" onclick="location='patientInfo'"
-					style="border-radius:50px; width: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" />
-			</div>
+		            <div class="col-md-4 form-group" style="margin: auto;">
+               <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/patientInfo'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
+               <input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/patientInfo'" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
+            </div>
 			</p>
 		</div>
 		<section class="inner-page">
