@@ -145,8 +145,8 @@ input[type=file]::file-selector-button {
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm" value="예약수정">
-								<input type="button" class="btn btn-primary btn-sm" value="예약취소">
+								<input type="button" class="btn btn-primary btn-sm" value="예약수정" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+								<input type="button" class="btn btn-primary btn-sm" value="예약취소" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 							</div>
 						<hr style="border: none; border-top: 1px dashed gray;"/>
 						</div>
@@ -162,13 +162,13 @@ input[type=file]::file-selector-button {
 								<option value="patient3" >초코</option>
 							</select>
 							<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/patientAdd'"
-										value="환자추가" />
+										value="환자추가" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 							<br/>
 							<br/>
 							<textarea style="width: 100%" rows="5" cols="30" placeholder="증상을 입력한 후 올리기 버튼을 눌러주세요"></textarea>							
 							<div align="right">
 								<div>
-									<input type="submit" class="btn btn-outline-primary btn-sm" value="증상올리기">
+									<input type="submit" class="btn btn-outline-primary btn-sm" value="증상올리기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center;">
 								</div>
 								<br/>
 								<div align="left">
@@ -196,7 +196,7 @@ input[type=file]::file-selector-button {
 							</table>
 							<br/>
 							<div align="right">
-								<input type="submit" class="btn btn-primary btn-sm" value="예약하기">
+								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 							</div>
 							</form>
 						</div>
