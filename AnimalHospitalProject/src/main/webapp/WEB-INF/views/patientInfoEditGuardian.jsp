@@ -22,6 +22,7 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
+
 <!-- Vendor CSS Files -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -56,71 +57,88 @@ select option[value=""][disabled] {
 }
 
 img {
-	width: 415px;
-	height: 475px;
+	width: 200px;
+	height: 200px;
 	display: block;
-	margin: auto;
 	border-radius: 10%;
 	object-fit: cover;
-	border: 3px solid gray;
+	border: 3px solid #F5F5F5;
 }
 
 video {
-	width: 540px;
-	height: 360px;
-	float: left;
-	margin-top: 50px;
+	width: 300px;
+	height: 200px;
+	margin: auto;
 	border-radius: 10%;
 	object-fit: cover;
-	border: 3px solid gray;
+	border: 3px solid #F5F5F5;
+}
+
+.no_content {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+	text-align: center;
+	font-size: 9pt;
+}
+
+table {
+	margin: auto;
 }
 </style>
 </head>
 
 <body>
+
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
+
+
+
 	<main id="main">
 
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
+
 				<br />
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정 (보호자 수정 용)</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정 (보호자
+						용)</h2>
 					<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				</div>
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-		
+
+		<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
 		<div class="contact-form pt-20"></div>
-		<form id="contact-form" action="assets/contact.php" method="post"
-			data-toggle="validator"></form>
 		<br />
-		<div class="row">
-			<div class="col-md-6 form-group mt-2">
-				<img src="img/dog.jpg" alt="...">
-				<div class="validate"></div>
-				<br />
-				<div>
-					<label class="btn btn-primary" style="margin-left: 380px;"
-						for="file1">수정</label>
-				</div>
-				<div class="col-md-4 form-group mt-3">
-					<input type="file" class="form-control" name="file" id="file1"
-						style="display: none;">
-				</div>
-			</div>
-			<div class="col-md-6 form-group mt-2">
-				<video muted autoplay loop>
-					<source src="videos/dog.mp4" type="video/mp4">
-				</video>
-				<label class="btn btn-primary"
-					style="margin-left: 250px; margin-top: 80px;" for="file2">수정</label>
-				<input type="file" class="form-control" name="file" id="file2" style="display: none;">
-			</div>
-		</div>
-		<br /> <br />
+		<table>
+			<tr>
+				<td ><img src="img/dog.jpg" /></td>
+				<td><video controls="controls">
+						<source src="videos/dog.mp4" type="video/mp4">
+					</video></td>
+			</tr>
+			<tr>
+				<td style="text-align: center;">
+					<label class="btn btn-primary" for="file1">수정</label>
+				</td>
+				<td style="text-align: center;">
+					<label class="btn btn-primary" for="file2">수정</label>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<input type="file" class="form-control" name="file" id="file1" style="display: none;" accept="image/*">
+				</td>
+				<td>
+					<input type="file" class="form-control" name="file" id="file2" style="display: none;"  accept="video/*">
+				</td>				
+			</tr>
+		</table>
 
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
@@ -194,6 +212,7 @@ video {
 					value="Female" checked> <label for="Female"> Female</label>
 				<input type="radio" name="gender" id="Male" data-rule="gender"
 					value="Male"> <label for="Male"> Male</label>
+
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -253,9 +272,8 @@ video {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for="etc">특이사항</label>
-				<textarea class="form-control" name="etc" rows="5"
-					placeholder="특이사항을 입력해주세요"></textarea>
+				<label for="etc">특이사항</label> <input type="text"
+					class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요">
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -265,10 +283,10 @@ video {
 				<br />
 			<div class="submit" style="position: relative;">
 				<input type="button" value="확인" class="btn btn-primary"
-					style="width: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" />
+					style="border-radius: 50px; width: 100px; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%)" />
 			</div>
+			</p>
 		</div>
-
 		<section class="inner-page">
 			<div class="container">
 				<p></p>
@@ -277,8 +295,9 @@ video {
 
 	</main>
 	<!-- End #main -->
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
+
 </body>
+
 </html>
