@@ -168,7 +168,9 @@
 						 		&nbsp;&nbsp;건강검진 <!-- {$diagnosisVO.diagnosisSymptom } --> 
 						 	</div>
 						 	<hr />
-						 	<div id="MedicineList">처방목록</div> <input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"/>
+						 	<div id="MedicineList" style="margin-top: 10px;">처방목록</div> 
+						 	<input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"
+						 		style="border-radius: 50px; margin-right: 10px; color: white; margin-top: -8px;"/>
 							 	<h6 style="margin-left: 10px; font-size: 16px;">약품명<!-- {$ medicineVO.medicineName} --></h6>
 							 	<ul id="MedicineListUl">
 							 		<!-- <dd id="Medicine_detail"></dd> -->
@@ -217,7 +219,8 @@
 						</div>
 						 -->
 						<div align="right" >
-							<a href="postscriptUpdate" class="btn btn-primary bt-sm">수정하기</a>
+							<a href="postscriptUpdate" class="btn btn-primary bt-sm"
+								 style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">수정하기</a>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
@@ -239,7 +242,8 @@
 							</div>
 						</div>
 						<div align="right">
-							<a href="/scheduleProtector" class="btn btn-primary bt-sm">예약확인</a>
+							<a href="/scheduleProtector" class="btn btn-primary bt-sm"
+								style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">예약확인</a>
 						</div>
 					</div>
 				</div>
