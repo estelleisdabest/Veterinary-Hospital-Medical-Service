@@ -146,9 +146,19 @@ public class MainController {
 		return "medicine";
 	}
 
-	@GetMapping("/medicineEdit")
-	public String medicineEdit() {
-		return "medicineEdit";
+	@GetMapping("/medicineAdd")
+	public String medicineAdd() {
+		return "medicineAdd";
+	}
+	
+	@GetMapping("/hospitalAdd")
+	public String hospitalAdd() {
+		return "hospitalAdd";
+	}
+	
+	@GetMapping("/hospitalEdit")
+	public String hospitalEdit() {
+		return "hospitalEdit";
 	}
 
 	@GetMapping("/medicineList")
