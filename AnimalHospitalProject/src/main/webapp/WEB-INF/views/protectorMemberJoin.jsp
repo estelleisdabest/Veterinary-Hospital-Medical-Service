@@ -199,7 +199,7 @@ input[name="send_certificationNumber"] {
 							id="protector_address" placeholder="주소를 입력해주세요." data-rule="text">
 						&nbsp;&nbsp;<input type="button" class="btn btn-primary"
 							name="searching_address" value="주소검색"
-							style="width: 140px; text-align: center;">
+							style="width: 140px; text-align: center; border-radius: 50px;">
 					</div>
 				</div>
 				<div class="row">
@@ -212,7 +212,7 @@ input[name="send_certificationNumber"] {
 							id="protector_phoneNumber" placeholder="전화번호를 입력해주세요."
 							data-rule="text"> &nbsp;&nbsp;<input type="button"
 							class="btn btn-primary" name="send_certificationNumber"
-							value="인증번호 받기" style="width: 140px; text-align: center;">
+							value="인증번호 받기" style="width: 140px; text-align: center; border-radius: 50px;">
 					</div>
 				</div>
 				<div class="row">
@@ -245,8 +245,8 @@ input[name="send_certificationNumber"] {
 					</div>
 					<div class="row">
 			            <div class="col-md-12 form-group" style="text-align: center;">
-						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" >이전페이지</a>
-						      <a href="/" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector">회원가입</a>
+						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;" >이전페이지</a>
+						      <a href="/" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;">회원가입</a>
 			              <div class="validate"></div>
 			            </div>
 					</div>

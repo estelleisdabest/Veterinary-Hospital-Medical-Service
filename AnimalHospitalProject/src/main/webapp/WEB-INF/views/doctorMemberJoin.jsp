@@ -291,7 +291,7 @@ input[name="pictureAdd"] {
 				        <div class="col-md-6 form-group mt-3">
 				           <label for="email">주소</label><br>
 				          <input type="text" class="form-control" name="doctor_address" id="doctor_address" placeholder="주소를 입력해주세요." data-rule="text">
-				          &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="searching_address" value="주소검색" style="width: 140px; text-align: center;">
+				          &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="searching_address" value="주소검색" style="width: 140px; text-align: center; border-radius: 50px;">
 				        </div>
 			        </div>
 			        <div class="row">
@@ -301,7 +301,7 @@ input[name="pictureAdd"] {
 				        <div class="col-md-6 form-group mt-3">
 				           <label for="email">핸드폰번호</label><br>
 							<input type="text" class="form-control" name="doctor_phoneNumber" id="doctor_phoneNumber" placeholder="전화번호를 입력해주세요." data-rule="text">
-					         &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="send_certificationNumber" value="인증번호 받기" style="width: 140px; text-align: center;">
+					         &nbsp;&nbsp;<input type="button" class="btn btn-primary" name="send_certificationNumber" value="인증번호 받기" style="width: 140px; text-align: center; border-radius: 50px;">
 					        </div>
 				        </div>
 						<div class="row">
@@ -330,7 +330,7 @@ input[name="pictureAdd"] {
 							<img alt="의사" src="img/doctors/doctors-1.jpg"
 								style="width: 200px; height: 200px;"> <br />
 						<div class="FileBtn">
-							<label for="myFileUp">사진추가</label> 
+							<label for="myFileUp" style="border-radius: 50px;">사진추가</label> 
 							<input type="file" id="myFileUp">
 						</div>
 					</div>
@@ -356,8 +356,8 @@ input[name="pictureAdd"] {
 					<br />
 					 <div class="row">
 			            <div class="col-md-12 form-group" style="text-align: center;">
-						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" >이전페이지</a>
-						      <a href="/" class="btn btn-primary" name="join_membership_doctor" id="join_membership_doctor">회원가입</a>
+						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;" >이전페이지</a>
+						      <a href="/" class="btn btn-primary" name="join_membership_doctor" id="join_membership_doctor" style="border-radius: 50px;">회원가입</a>
 			              <div class="validate"></div>
 			            </div>
 					</div>

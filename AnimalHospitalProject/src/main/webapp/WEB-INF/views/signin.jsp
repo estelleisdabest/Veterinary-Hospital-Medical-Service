@@ -80,15 +80,15 @@
             </div>
           </div>
           <br />
-          <button type="submit" class="w-40 btn btn-lg btn-primary" style="margin:auto;display:block;width:420px;">login with email</button>
-          <button type="button" class="w-40 btn kakao_login_btn" style="margin:auto;display:block;"><img src="img/kakaologinbtn.png" style="border-radius: 8px; width:420px;height:53px;"></button>
-          <button type="button" class="w-40 btn naver_login_btn" style="margin:auto;display:block;"><img src="img/naverloginbtn.png" style="border-radius: 8px; width:420px;height:53px;"></button>
-          <button type="button" class="w-40 btn google_login_btn" style="margin:auto;display:block;"><img src="img/googleloginbtn.png" style="border-radius: 8px; width:420px;height:53px;"></button>
+          <button type="submit" class="w-40 btn btn-lg btn-primary" style="margin:auto;display:block;width:420px;border-radius: 50px;">login with email</button>
+          <button type="button" class="w-40 btn kakao_login_btn" style="margin:auto;display:block;"><img src="img/kakaologinbtn.png" style="border-radius: 50px; width:420px;height:53px;"></button>
+          <button type="button" class="w-40 btn naver_login_btn" style="margin:auto;display:block;"><img src="img/naverloginbtn.png" style="border-radius: 50px; width:420px;height:53px;"></button>
+          <button type="button" class="w-40 btn google_login_btn" style="margin:auto;display:block;"><img src="img/googleloginbtn.png" style="border-radius: 50px; width:420px;height:53px;"></button>
         </form>
       <br />
       	<div style="text-align: center;">
-			<a href="/" class="btn btn-secondary" style="" >이전페이지</a>
-			<a href="/roleCheck" class="btn btn-primary" style="display: inline;">회원가입</a>
+			<a href="/" class="btn btn-secondary" style="border-radius: 50px;" >이전페이지</a>
+			<a href="/roleCheck" class="btn btn-primary" style="display: inline;border-radius: 50px;">회원가입</a>
 		</div>
       </div>
     </section>

@@ -91,11 +91,6 @@ public class MainController {
 		return "myPageProtector";
 	}
 
-	@GetMapping("/editPatientProtector")
-	public String editPatientProtector() {
-		return "editPatientProtector";
-	}
-
 	@GetMapping("/serviceIntroduce")
 	public String serviceIntroduce() {
 		return "serviceIntroduce";
@@ -164,5 +159,15 @@ public class MainController {
 	@GetMapping("/patientInfoEditGuardian")
 	public String patientInfoEditGuardian() {
 		return "patientInfoEditGuardian";
+	}
+	
+	@GetMapping("/pharmacyInfoAdd")
+	public String pharmacyInfoAdd() {
+		return "pharmacyInfoAdd";
+	}
+	
+	@GetMapping("/pharmacyInfoEdit")
+	public String pharmacyInfoEdit() {
+		return "pharmacyInfoEdit";
 	}
 }
