@@ -1,8 +1,8 @@
-package kr.human.anihospital.mybatis;
+package kr.human.anihospital.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface TestMapper {
-	public int totSize();
+	int selectTotalCount();
 }
