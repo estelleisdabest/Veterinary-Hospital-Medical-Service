@@ -44,19 +44,8 @@
 #gridContainer {
 	display: grid;
 	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 2fr 1fr;
-}
-
-#mainContainer {
-	grid-column: 1/3;
-}
-
-#rightContainer {
-	grid-column: 3/4;
-}
-
-::placeholder {
-	font-size: 12px;
+	grid-template-columns: 75% 25%;
+	position: static;
 }
 
 
@@ -77,7 +66,7 @@
 
 				<br />
 				<div class="section-title">
-					<h2>스케줄 관리</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">스케줄 관리</h2>
 				</div>
 			</div>
 		</section>
@@ -88,11 +77,11 @@
 				<div id="gridContainer">
 					<div id="mainContainer">
 						<h4><b>나의 스케줄</b></h4>
-						<iframe src="https://calendar.google.com/calendar/embed?src=75e1efd2c444b0e1d243b7fe83e3e542f03f13b5b91f3b49d8aef1660d7b819d%40group.calendar.google.com&ctz=Asia%2FSeoul" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+						<iframe src="https://calendar.google.com/calendar/embed?src=75e1efd2c444b0e1d243b7fe83e3e542f03f13b5b91f3b49d8aef1660d7b819d%40group.calendar.google.com&ctz=Asia%2FSeoul" style="border: 0" width="95%" height="600" frameborder="0" scrolling="no"></iframe>
 					</div>
 					<div id="rightContainer">
 						<div id="toDoList">
-							<h4><b>to do list</b></h4>
+							<h4 style="text-align: center;"><b>to do list</b></h4>
 						</div>
 					</div>
 				</div>

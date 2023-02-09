@@ -7,65 +7,65 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class MainController {
 
 	@GetMapping("/")
-  public String home() {
-    return "index";
-  }
-  
+	public String home() {
+		return "index";
+	}
+
 	@GetMapping("inner")
 	public String inner() {
 		return "inner";
 	}
-  
+
 	@GetMapping("/signin")
 	public String signin() {
 		return "signin";
 	}
 
-	@GetMapping("/postscript_save")
-	public String postscript_save() {
-		return "postscript_save";
+	@GetMapping("/postscriptSave")
+	public String postscriptSave() {
+		return "postscriptSave";
 	}
-  
-	@GetMapping("/postscript_update")
-	public String postscript_update() {
-		return "postscript_update";
+
+	@GetMapping("/postscriptUpdate")
+	public String postscriptUpdate() {
+		return "postscriptUpdate";
 	}
-  
+
 	@GetMapping("/notice")
 	public String notice() {
 		return "notice";
 	}
-  
+
 	@GetMapping("/noticeAdd")
 	public String noticeAdd() {
 		return "noticeAdd";
 	}
-  
+
 	@GetMapping("/noticeModify")
 	public String noticeModify() {
 		return "noticeModify";
 	}
 
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
+	@GetMapping("/patientInfoEditDoctor")
+	public String patientInfoEditDoctor() {
+		return "patientInfoEditDoctor";
 	}
 
 	@GetMapping("/animallookup")
 	public String animallookup() {
 		return "animallookup";
 	}
-	
+
 	@GetMapping("/animallookupdetail")
 	public String animallookupdetail() {
 		return "animallookupdetail";
 	}
-	
+
 	@GetMapping("/diagnosis")
 	public String diagnosis() {
 		return "diagnosis";
 	}
-	
+
 	@GetMapping("/roleCheck")
 	public String roleCheck() {
 		return "roleCheck";
@@ -75,12 +75,12 @@ public class MainController {
 	public String doctorMemberJoin() {
 		return "doctorMemberJoin";
 	}
-	
+
 	@GetMapping("/protectorMemberJoin")
 	public String protectorMemberJoin() {
 		return "protectorMemberJoin";
 	}
-	
+
 	@GetMapping("/editMyPageProtector")
 	public String editMyPageProtector() {
 		return "editMyPageProtector";
@@ -89,11 +89,6 @@ public class MainController {
 	@GetMapping("/myPageProtector")
 	public String myPageProtector() {
 		return "myPageProtector";
-	}
-
-	@GetMapping("/editPatientProtector")
-	public String editPatientProtector() {
-		return "editPatientProtector";
 	}
 
 	@GetMapping("/serviceIntroduce")
@@ -105,6 +100,7 @@ public class MainController {
 	public String scheduleDoctor() {
 		return "scheduleDoctor";
 	}
+
 	@GetMapping("/scheduleProtector")
 	public String scheduleProtector() {
 		return "scheduleProtector";
@@ -114,15 +110,25 @@ public class MainController {
 	public String patientAdd() {
 		return "patientAdd";
 	}
-  
-	@GetMapping("/patientlist")
-	public String patientlist() {
-		return "patientlist";
-	} 
-  
-	@GetMapping("/map")
-	public String map() {
-		return "map";
+
+	@GetMapping("/patientList")
+	public String patientList() {
+		return "patientList";
+	}
+
+	@GetMapping("/hosMap")
+	public String hosMap() {
+		return "hosMap";
+	}
+	
+	@GetMapping("/pharmMap")
+	public String pharmMap() {
+		return "pharmMap";
+	}
+
+	@GetMapping("/patientInfo")
+	public String patientInfo() {
+		return "patientInfo";
 	}
 
 	@GetMapping("/doctorInfo")
@@ -134,29 +140,44 @@ public class MainController {
 	public String doctorInfoEdit() {
 		return "doctorInfoEdit";
 	}
-	
+
 	@GetMapping("/medicine")
 	public String medicine() {
 		return "medicine";
 	}
-	
-	@GetMapping("/medicineEdit")
-	public String medicineEdit() {
-		return "medicineEdit";
+
+	@GetMapping("/medicineAdd")
+	public String medicineAdd() {
+		return "medicineAdd";
 	}
 	
+	@GetMapping("/hospitalAdd")
+	public String hospitalAdd() {
+		return "hospitalAdd";
+	}
+	
+	@GetMapping("/hospitalEdit")
+	public String hospitalEdit() {
+		return "hospitalEdit";
+	}
+
 	@GetMapping("/medicineList")
 	public String medicineList() {
 		return "medicineList";
 	}
-	
-	@GetMapping("/animallookupdetail")
-	public String animallookupdetail() {
-		return "animallookupdetail";
+
+	@GetMapping("/patientInfoEditGuardian")
+	public String patientInfoEditGuardian() {
+		return "patientInfoEditGuardian";
 	}
 	
-	@GetMapping("/patientInfoEdit_doctor")
-	public String patientInfoEdit_doctor() {
-		return "patientInfoEdit_doctor";
+	@GetMapping("/pharmacyInfoAdd")
+	public String pharmacyInfoAdd() {
+		return "pharmacyInfoAdd";
+	}
+	
+	@GetMapping("/pharmacyInfoEdit")
+	public String pharmacyInfoEdit() {
+		return "pharmacyInfoEdit";
 	}
 }

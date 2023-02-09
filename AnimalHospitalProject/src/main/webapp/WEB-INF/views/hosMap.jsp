@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>공지사항</title>
+  <title>Medilab Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -37,28 +37,6 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-  
-  <style type="text/css">
-  form{
-  margin-bottom : 60px;
-  margin-left : 15%;
-  margin-right: 10%;
-  width: 20%;
-  }
-  
-  input{
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  }
-  
-  textarea {
-  border-radius: 5px;
-  border: 1px solid gray;
-  resize: none
-}
-  </style>
-  
 </head>
 
 <body>
@@ -75,29 +53,34 @@
 
 	<br />
 		<div class="section-title">
-          <h2 style="font-weight: bold; font-size: 30px;">공지사항 추가</h2>
+		<h2 style="font-weight: bold; font-size: 30px;">동물병원 위치 조회</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
-
+    <!-- 지도 검색 -->
+    <br />
+    <div class="col-sm-6" style="padding-left: 75px;">
+		<input id="address" type="text" placeholder="검색할 주소">
+		<input id="submit" type="button" value="주소검색">
+	</div>
+	<br />
+	<div class=map-section>
+	<div class=container>
+		<div class=row>
+			<div class=col-12>
+				<div class=mapouter>
+					<div class=gmap_canvas>
+						<iframe width="100%" height=500 id=gmap_canvas
+							src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+							frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
     <section class="inner-page">
       <div class="container">
-        <form>        
-          작성자 <br />
-          <input id="witer" type="text" name="witer" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
-          진료병원 <br />
-          <input id="animalHospital" type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
-          작성일 <br />
-          <input id="writeDate" type="date" value="2023-01-30"/> <br /> <%-- 현재날짜를 띄움 --%>
-          제목 <br />
-          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"></textarea> <br />
-          내용 <br />
-          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"></textarea> <br />
-        </form>
-            <div class="col-md-4 form-group" style="margin: auto;">
-               <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
-               <input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
-            </div>
       </div>
     </section>
 

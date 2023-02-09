@@ -37,15 +37,13 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-  
-  <style type="text/css">
-	
-  </style>
 </head>
 
 <body>
 
   <%@ include file="/WEB-INF/includes/header.jsp" %>
+
+
 
   <main id="main">
 
@@ -55,75 +53,34 @@
 
 	<br />
 		<div class="section-title">
-          <h2>환자 정보 수정</h2>
+		<h2 style="font-weight: bold; font-size: 30px;">약국 위치 조회</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
-
+    <!-- 지도 검색 -->
+    <br />
+    <div class="col-sm-6" style="padding-left: 75px;">
+		<input id="address" type="text" placeholder="검색할 주소">
+		<input id="submit" type="button" value="주소검색">
+	</div>
+	<br />
+	<div class=map-section>
+	<div class=container>
+		<div class=row>
+			<div class=col-12>
+				<div class=mapouter>
+					<div class=gmap_canvas>
+						<iframe width="100%" height=500 id=gmap_canvas
+							src="https://maps.google.com/maps?q=New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+							frameborder=0 scrolling=no marginheight=0 marginwidth=0></iframe>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
     <section class="inner-page">
       <div class="container">
-      <div class="main">
-		<form action="">
-		<table align="center">
-			<tr>
-				<th>사진수정</th>
-					<td><input type="file" id="photo" name="photo"></td>
-			</tr>
-			<tr>
-				<th>동영상 수정</th>
-					<td><input type="file" id="movie" name="movie"></td>
-			</tr>
-			<tr>
-				<th>이름</th>
-					<td><input type="text" id="name" name="name"></td>
-			</tr>
-			<tr>
-				<th>나이</th>
-					<td><input type="number" id="age" name="age" > 살</td>
-			</tr>
-			<tr>
-				<th>동물종</th>
-					<td>
-						<input type="text" id="type1" name="type1" autocomplete="on" list="keywords1">
-						<datalist id="keywords1">
-							<option value="강아지"></option>
-							<option value="고양이"></option>
-							<option value="새"></option>
-							<option value="토끼"></option>
-							<option value="햄스터"></option>
-						</datalist>
-					</td>
-			</tr>
-			<tr>
-				<th>품종</th>
-					<td><input type="text" id="type2" name="type2"></td>
-			</tr>
-			<tr>
-				<th>동물크기</th>
-					<td>
-						<input type="text" id="height" name="height" autocomplete="on" list="keyword2">
-						<datalist id="keyword2">
-							<option value="대형"/>
-							<option value="중형"/>
-							<option value="소형"/>
-						</datalist>
-						</td>
-			</tr>
-			<tr>
-				<th>동물몸무개</th>
-					<td><input type="number" id="weight" name="weight"> g</td>
-			</tr>
-			<tr>
-				<th>특이 사항</th>
-					<td><textarea type="text" id="name" name="name" style="width: 185px;"></textarea></td>
-			</tr>
-
-      </table>
-	  <hr/>
-  	  		<div style="text-align: center"><input class="btn btn-primary btn-sm" type="submit" value="수정"></div>
-      
-      </form>
-      </div>
       </div>
     </section>
 

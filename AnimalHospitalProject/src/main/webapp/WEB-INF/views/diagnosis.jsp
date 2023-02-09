@@ -159,6 +159,7 @@
 							<div class="diagnosis">
 							 	<h6>진료번호 : 226<!-- {$diagnosisVO.seqDiagnosis } --> </h6>
 							 	<h6>진료일 : 2022.09.30<!-- {$diagnosisVO.diagnosisDate } --> </h6> 
+							 	<h6>진료병원 : 사랑별동물병원<!-- {$animalHospital.animalHospitalName } --> </h6> 
 							 	<h6>의사번호 : 2<!-- {$diagnosisVO.seqDoctor } --> </h6> 
 							 	<h6>의사명 : 김OO<!-- {$diagnosisVO.doctorName } --> </h6> 
 							 	<h6>환자명 : 토리<!-- {$diagnosisVO.animalName } --> </h6> 
@@ -167,7 +168,9 @@
 						 		&nbsp;&nbsp;건강검진 <!-- {$diagnosisVO.diagnosisSymptom } --> 
 						 	</div>
 						 	<hr />
-						 	<div id="MedicineList">처방목록</div> <input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"/>
+						 	<div id="MedicineList" style="margin-top: 10px;">처방목록</div> 
+						 	<input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"
+						 		style="border-radius: 50px; margin-right: 10px; color: white; margin-top: -8px;"/>
 							 	<h6 style="margin-left: 10px; font-size: 16px;">약품명<!-- {$ medicineVO.medicineName} --></h6>
 							 	<ul id="MedicineListUl">
 							 		<!-- <dd id="Medicine_detail"></dd> -->
@@ -211,8 +214,13 @@
 
 							</table>
 						</div>
+						<!-- <div align="right" >
+							<a href="postscriptSava" class="btn btn-primary bt-sm">작성하기</a>
+						</div>
+						 -->
 						<div align="right" >
-							<input type="button" class="btn btn-primary bt-sm" onclick="" value="수정" />
+							<a href="postscriptUpdate" class="btn btn-primary bt-sm"
+								 style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">수정하기</a>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
@@ -234,7 +242,8 @@
 							</div>
 						</div>
 						<div align="right">
-							<a href="#" class="btn btn-primary bt-sm">정보수정</a>
+							<a href="/scheduleProtector" class="btn btn-primary bt-sm"
+								style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">예약확인</a>
 						</div>
 					</div>
 				</div>

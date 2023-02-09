@@ -22,7 +22,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -44,7 +43,6 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <link href="css/orm-validation.css" rel="stylesheet">
-
 <style>
 /*       .bd-placeholder-img { */
 /*         font-size: 1.125rem; */
@@ -63,19 +61,20 @@ div {
 	margin-left: 8%;
 }
 
-input[name="address"]{
-      width:70%;
-      height:38px;
-      border:1px solid #ced4da;
-      padding-left: 5px;
-      display:inline;
-    }
-    input[name="searching_address"]{
-      width: 30%;
-      height:38px;
-      display:inline;
-      margin-left: -5px;
-    }
+input[name="address"] {
+	width: 70%;
+	height: 38px;
+	border: 1px solid #ced4da;
+	padding-left: 5px;
+	display: inline;
+}
+
+input[name="searching_address"] {
+	width: 30%;
+	height: 38px;
+	display: inline;
+	margin-left: -5px;
+}
 </style>
 </head>
 
@@ -90,9 +89,7 @@ input[name="address"]{
 
 			<br />
 			<div class="section-title">
-				<h2>
-					<h1 class="mt-4">내 정보 수정</h1>
-				</h2>
+				<h2 style="font-weight: bold; font-size: 30px;">내 정보 수정</h2>
 			</div>
 		</div>
 	</section>
@@ -101,28 +98,27 @@ input[name="address"]{
 	<section class="inner-page">
 		<div id="layoutSidenav_content">
 			<main>
-
 				<div class="row g-5">
-
 					<div id="doctorImg" style="">
 						<img alt="의사" src="img/doctors/doctors-1.jpg"
 							style="width: 200px; height: 200px; margin-left: 60px;"> <br />
-					<button name="upload_photo" class="btn btn-primary btn-sm" style="margin-left: 60px;">사진업로드</button>
+						<br /> <input type="file" class="col-md-4 " name="upload_photo"
+							id="file" style="margin-left: 60px;" placeholder="">
 					</div>
-
 					<div class="col-md-3 col-lg-8">
 						<form class="needs-validation" novalidate>
 							<div class="row g-3">
 								<div class="col-sm-6">
 									<label for="id" class="form-label">ID</label> <input
-										type="text" class="form-control" id="id" 
-										value="doctorhi" disabled="disabled">
+										type="text" class="form-control" id="id" value="doctorhi"
+										disabled="disabled">
 								</div>
 
 								<div class="col-6">
-								<label for="gender" class="form-label">성별<span
-										class="text-muted"></span></label>
-								<input type="text" class="form-control" id="gender" value="남자" disabled="disabled">
+									<label for="gender" class="form-label">성별<span
+										class="text-muted"></span></label> <input type="text"
+										class="form-control" id="gender" value="남자"
+										disabled="disabled">
 								</div>
 
 								<!--             <div class="col-12"> -->
@@ -138,14 +134,16 @@ input[name="address"]{
 
 								<div class="col-6">
 									<label for="name" class="form-label">이름 <span
-										class="text-muted"></span></label> 
-										<input type="email" class="form-control" id="name" value="Jack" disabled="disabled">
+										class="text-muted"></span></label> <input type="email"
+										class="form-control" id="name" value="Jack"
+										disabled="disabled">
 								</div>
 
 								<div class="col-6">
 									<label for="birth" class="form-label">생년월일 <span
 										class="text-muted"></span></label> <input type="date"
-										class="form-control" id="birth" value="1980-01-01" disabled="disabled">
+										class="form-control" id="birth" value="1980-01-01"
+										disabled="disabled">
 								</div>
 
 								<div class="col-6">
@@ -166,12 +164,13 @@ input[name="address"]{
 										class="form-control" id="email" placeholder="010-1111-1111">
 								</div>
 
-								<div class="col-13" >
-									<label for="address" class="form-label" >주소</label> <br />
-									<input type="text" class="form-control" id="address" name="address" placeholder=""  required >
-									<button name="searching_address" class="btn btn-primary" >주소찾기</button>
-<!-- 									<div class="invalid-feedback">Please enter your shipping -->
-<!-- 										address.</div> -->
+								<div class="col-13">
+									<label for="address" class="form-label">주소</label> <br /> <input
+										type="text" class="form-control" id="address" name="address"
+										placeholder="" required>
+									<button name="searching_address" class="btn btn-primary">주소찾기</button>
+									<!-- 									<div class="invalid-feedback">Please enter your shipping -->
+									<!-- 										address.</div> -->
 								</div>
 
 								<div class="col-8">
@@ -198,16 +197,18 @@ input[name="address"]{
 									placeholder="인사말"></textarea>
 							</div>
 
-<!-- 							<hr class="my-4"> -->
-								<br />
-							<button class="btn btn-primary btn-lg" type="submit" style="float: right;">수정하기</button>
-						</form>
+							<div class="row">
+								<div class="col-md-4 form-group mt-3"
+									style="margin-left: 520px;">
+									<a href="/" class="btn btn-secondary">이전페이지</a> <a
+										href="/roleCheck" class="btn btn-primary"
+										style="float: right;">수정하기</a>
+									<div class="validate"></div>
+								</div>
+							</div>
 					</div>
 				</div>
-			</main>
-
 		</div>
-
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 			crossorigin="anonymous"></script>

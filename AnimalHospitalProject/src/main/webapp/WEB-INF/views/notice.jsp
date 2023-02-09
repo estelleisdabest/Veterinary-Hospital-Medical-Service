@@ -53,6 +53,12 @@
 <link rel="stylesheet" href="js/pluto/semantic.min.css" />
 <!-- fancy box js -->
 <link rel="stylesheet" href="css/pluto/jquery.fancybox.css" />
+<style type="text/css">
+.pagination {
+  justify-content: center;
+}
+
+</style>
 
 </head>
 
@@ -67,7 +73,7 @@
 
 			<br />
 			<div class="section-title">
-				<h2>
+				<h2 style="font-weight: bold; font-size: 30px;">
 					<br />공지사항
 				</h2>
 			</div>
@@ -78,13 +84,13 @@
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
-			<div class="col-md-12" >
+			<div class="col-md-9"
+				style="margin-left: 10%; margin-right: 30%; text-align: center; position: static;">
 				<div class="white_shd full margin_bottom_30">
-					<div class="full graph_head">
-					</div>
+					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
-							<table class="table table-hover" style="text-align: center">
+							<table class="table table-hover">
 								<thead>
 									<tr>
 										<th style="width: 5%">No</th>
@@ -94,7 +100,7 @@
 										<th>작성일</th>
 									</tr>
 								</thead>
-								<tbody >
+								<tbody>
 									<tr>
 										<td>1</td>
 										<td style="text-align: left;">휴무안내</td>
@@ -105,12 +111,31 @@
 								</tbody>
 							</table>
 							<div>
-								<a href="" class="appointment-btn scrollto"
-									style="float: right; margin-right: 10px;">추가</a>
+								<%-- 보호자로 로그인했을때는 이 버튼이 보이지 않는다. --%>
+								<input type="button" name="notice_add_btn" id="notice_add_btn"
+									value="추가" class="btn btn-primary"
+									onclick="location='noticeAdd'"
+									style="border-radius:50px;width: 90px;text-align: center;color: white; float: right;" />
 							</div>
+							<br /> <br />
 						</div>
 					</div>
 				</div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination">
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+						</a></li>
+						<li class="page-item"><a class="page-link" href="#">1</a></li>
+						<li class="page-item"><a class="page-link" href="#">2</a></li>
+						<li class="page-item"><a class="page-link" href="#">3</a></li>
+						<li class="page-item"><a class="page-link" href="#">4</a></li>
+						<li class="page-item"><a class="page-link" href="#">5</a></li>
+						<li class="page-item"><a class="page-link" href="#"
+							aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+						</a></li>
+					</ul>
+				</nav>
 			</div>
 		</main>
 
