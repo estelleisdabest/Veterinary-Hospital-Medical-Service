@@ -204,7 +204,9 @@ tr {
 						</tr>
 						<tr>
 							<td  align="right">
+
 								<input type="button" onclick="history.go(-1)" class="btn btn-secondary"
+
 									style="float: left; margin-left: 5%;" value="이 전" />
 							</td>
 							<td align="right">
