@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -37,45 +38,13 @@
 <link href="css/style.css" rel="stylesheet">
 
 <style type="text/css">
-table{
- 	border-collapse: collapse;
- 	
-  }
-.pageInfo{
-	margin-left:25%;
-	margin-right:20%;
-  	list-style : none;
-  	text-align: center;
-    
-  }
-.pageInfo_btn{
-  	float: left;
-    font-size: 15px;
-    margin-left: 13px;
-    padding: 3px;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    width: 30px;
-    height: 30px;
-    display: inline-block;
-    }
-    
-.pageInfo_btn.next{
-  	float: left;
-    font-size: 15px;
-    margin-left: 13px;
-    padding: 3px;
-    font-weight: 500;
-    text-align: center;
-    border: 1px solid #dee2e6;
-    width: 45px;
-    height: 30px;
-    
-    }
+table {
+	border-collapse: collapse;
+}
 
-    
-
+.pagination {
+	justify-content: center;
+}
 </style>
 
 </head>
@@ -101,16 +70,14 @@ table{
 
 	<section class="inner-page">
 		<main>
-			<div class="col-md-9" style="margin-left:200px;">
+			<div class="col-md-9" style="margin-left: 200px;">
 				<div>
-					<a href="/patientAdd" class="btn btn-primary"
-						style="float: right; margin-right: 10px; color: white;">환자추가</a>&nbsp;
+					<a href="/patientAdd" class="btn btn-primary btn-sm"
+						style="float: right; border-radius: 50px; margin-right: 10px; color: white; width: 90px;">환자추가</a>&nbsp;
 				</div>
-				<br />
-				<br />
+				<br /> <br />
 				<div class="white_shd full margin_bottom_30">
-					<div class="full graph_head">
-					</div>
+					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
 							<table class="table table-hover" style="text-align: center">
@@ -123,7 +90,7 @@ table{
 										<th style="width: 8%">진료일</th>
 									</tr>
 								</thead>
-								<tbody >
+								<tbody>
 									<tr>
 										<td>667</td>
 										<td>토리</td>
@@ -168,36 +135,38 @@ table{
 									</tr>
 								</tbody>
 							</table>
-							<div class="pageInfo_wrap" >
-									<div class="pageInfo_area">
-									      <ul id="pageInfo" class="pageInfo">
-										  <li class="pageInfo_btn next"><a href="">이전</a></li>
-									        	<li class="pageInfo_btn">1</li>
-									        	<li class="pageInfo_btn">2</li>
-									        	<li class="pageInfo_btn">3</li>
-									        	<li class="pageInfo_btn">4</li>
-									        	<li class="pageInfo_btn">5</li>
-									        	<li class="pageInfo_btn">6</li>
-									        	<li class="pageInfo_btn">7</li>
-									        	<li class="pageInfo_btn">8</li>
-									        	<li class="pageInfo_btn">9</li>
-									        	<li class="pageInfo_btn">10</li>
-										  <li class="pageInfo_btn next"><a href="">다음</a></li>
-									       <!-- 각 번호 페이지 버튼
+							<nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+									</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">4</a></li>
+									<li class="page-item"><a class="page-link" href="#">5</a></li>
+									<li class="page-item"><a class="page-link" href="#">6</a></li>
+									<li class="page-item"><a class="page-link" href="#">7</a></li>
+									<li class="page-item"><a class="page-link" href="#">8</a></li>
+									<li class="page-item"><a class="page-link" href="#">9</a></li>
+									<li class="page-item"><a class="page-link" href="#">10</a></li>
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</ul>
+							</nav>
+						<!-- 각 번호 페이지 버튼
 								                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
 								                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
 								                </c:forEach>
 									        -->
-									       </ul>
-									</div>
-					            	<!--  다음페이지 버튼-->
-					            	<!-- 
+						</div>
+						<!--  다음페이지 버튼-->
+						<!-- 
 					              	<c:if test="${pageMaker.next}">
 					                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
 					                </c:if> 
 					                 -->
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
