@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>공지사항</title>
+  <title>공지사항 수정 및 삭제</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -51,21 +51,15 @@
 </head>
 
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
-
-
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
-	<br />
+		<br />
 		<div class="section-title">
           <h2 style="font-weight: bold; font-size: 30px;">공지사항 수정 및 삭제</h2>
-          <%-- <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
+          <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
           <%--
           <h2 style="font-weight: bold; font-size: 30px;">공지사항</h2>
            --%>
@@ -101,16 +95,10 @@
         </div>
         --%>
         
-
       </div>
     </section>
-
   </main><!-- End #main -->
-
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
-
 </html>

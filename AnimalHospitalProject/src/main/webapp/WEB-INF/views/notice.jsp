@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>공지사항</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -35,33 +35,26 @@
 }
 
 </style>
-
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
-
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
-
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
 					<br />공지사항
 				</h2>
-				
 			</div>
 		</div>
 	</section>
 	<!-- End Breadcrumbs Section -->
-
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
 			<div class="col-md-9"
+			
 				style="margin-left: 10%; margin-right: 30%; text-align: center; position: static;">
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head"></div>
@@ -116,13 +109,9 @@
 				</nav>
 			</div>
 		</main>
-
 	</section>
-
-
 </body>
 <!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 
 </html>
