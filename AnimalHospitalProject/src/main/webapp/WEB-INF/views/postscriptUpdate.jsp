@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Medilab Bootstrap Template - Index</title>
+<title>후기 수정</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -19,14 +19,9 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -69,7 +64,7 @@ tr {
 	padding: 0 0.2em;
 	text-align: left;
 	width: 7em;
-	left: -500px;
+	left: -100px;
 }
 
 .star-rating input {
@@ -149,7 +144,7 @@ tr {
 				<form class="mb-3" name="myForm" id="myform" method="post">
 					<table style="background-color: white;">
 						<tr >
-							<td style="font-size: 18pt;font-weight: bold;">별점 :</td>
+							<td style="font-size: 18pt;font-weight: bold;">별점 : </td>
 							<td class="star-rating space-x-4 mx-auto">
 								<input type="radio" id="5-stars" name="rating" value="5" /> 
 								<label	for="5-stars" class="star pr-4">★</label> 
@@ -175,7 +170,7 @@ tr {
 							</td>
 						</tr>
 						<tr>
-							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 :</td>
+							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 : &nbsp;</td>
 							<td colspan="4">
 								<textarea name="content" id="content" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
 							</td>
@@ -187,10 +182,10 @@ tr {
 					<table>
 						<tr>
 							<td  align="left" colspan="4">
-								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전 페이지" />
+								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
 							<td align="right" colspan="4">
-								<input type="submit" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;" value="수정 하기" />
+								<input type="submit" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;" value="수정하기" />
 							</td>
 						</tr>
 					</table>
