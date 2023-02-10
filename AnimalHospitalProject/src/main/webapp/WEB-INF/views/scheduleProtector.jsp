@@ -35,17 +35,20 @@
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-function fileUpload(){
-	var fileInput = document.getElementsByClassName("form-control");
-
-	for( var i=0; i<fileInput.length; i++ ){
-		if( fileInput[i].files.length > 0 ){
-			for( var j = 0; j < fileInput[i].files.length; j++ ){
-				console.log(fileInput[i].files[j].name); // 파일명 출력
-			}
+window.onload=function(){
+	target=document.getElementById('file'); 
+	target.addEventListener('change',function(){		
+		if(target.value.length){ 
+			$('#originName').html(target.files[0].name);
+		}else{
+			$('#originName').html("");
 		}
-	}
-
+		
+	});
+	function test(){
+		  var obj = document.getElementById("f1");
+		  obj.value = "";
+		}
 }
 </script>
 <style type="text/css">
@@ -182,9 +185,9 @@ input[type="file"] {
 								</div>
 								<div align="left" id="app">
 									<label>
-										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">&nbsp;사진/동영상 추가&nbsp; 
+										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file" onchange="fileUpload()" multiple="multiple">&nbsp;사진/동영상 추가&nbsp; 
 									</label>
-									<p id="select">파일을 선택해주세요</p>
+										<input type="button" id="btn1" value="test" onclick="test();"/>
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
@@ -203,12 +206,13 @@ input[type="file"] {
 									<td>내원 이유 : 정밀검사</td> <%-- 자동입력 필요  --%>
 								</tr>
 								<tr>
-									<td>사진 및 동영상 : </td><%-- 자동입력 필요 js or jquery  --%>
+									<td>사진 및 동영상 : <p id="originName" style="display : inline-block"></p>
+									</td>
 								</tr>
 							</table>
 							<br/>
 							<div align="right">
-								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px;">
 							</div>
 							</form>
 						</div>
