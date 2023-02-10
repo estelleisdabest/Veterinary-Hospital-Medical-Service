@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -35,12 +34,8 @@
 }
 
 </style>
-
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
 
 	<!-- ======= Breadcrumbs Section ======= -->
@@ -116,13 +111,8 @@
 				</nav>
 			</div>
 		</main>
-
 	</section>
-
-
 </body>
 <!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
-
-
 </html>

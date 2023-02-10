@@ -51,15 +51,9 @@
   </style>
   
 </head>
-
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
-
-
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
@@ -93,11 +87,7 @@
     </section>
 
   </main><!-- End #main -->
-
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
-
 </html>

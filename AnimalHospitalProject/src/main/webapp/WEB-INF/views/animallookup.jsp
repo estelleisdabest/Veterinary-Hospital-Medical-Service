@@ -47,14 +47,9 @@ window.onload = function(){
 }
 
 </script> -->
-
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
-
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
@@ -213,12 +208,7 @@ window.onload = function(){
 			</div>
 		</main>
 	</section>
-
-
 </body>
 <!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
-
-
-
 </html>

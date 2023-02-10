@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -21,7 +19,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
-
 
 <!-- Vendor CSS Files -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -49,9 +46,7 @@
 }
 </style>
 </head>
-
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 
 	<main id="main">
@@ -177,17 +172,12 @@
 						<%-- JS alert로 '수정완료했습니다' 띄운 후 myPageProtector에 이동 --%>
 					</div>
 				</div>
-
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
-
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

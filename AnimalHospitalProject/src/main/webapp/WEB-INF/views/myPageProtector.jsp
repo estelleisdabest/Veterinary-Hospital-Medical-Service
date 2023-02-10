@@ -22,7 +22,6 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -88,10 +87,7 @@ h3 {
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 	<main id="main">
 
 		<!-- ======= Breadcrumbs Section ======= -->
@@ -310,32 +306,6 @@ h3 {
 												</tr>
 											</tbody>
 										</table>
-										<!-- 페이지 수 표시하기 -->
-										
-										<!-- <div class="pageInfo_wrap">
-											<div class="pageInfo_area">
-												<ul id="pageInfo" class="pageInfo">
-													<li class="pageInfo_btn next"><a href="">이전</a></li>
-													<li class="pageInfo_btn">1</li>
-													<li class="pageInfo_btn">2</li>
-													<li class="pageInfo_btn">3</li>
-													<li class="pageInfo_btn">4</li>
-													<li class="pageInfo_btn">5</li>
-													<li class="pageInfo_btn next"><a href="">다음</a></li>
-													각 번호 페이지 버튼
-														<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-															 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-														 </c:forEach>
-													
-												</ul>
-											</div>
-											 다음페이지 버튼
-											
-											    <c:if test="${pageMaker.next}">
-											        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-											    </c:if> 
-											   
-										</div> -->
 										
 										<nav aria-label="Page navigation example">
 										  <ul class="pagination">
@@ -364,7 +334,6 @@ h3 {
 		</section>
 	</main>
 	<!-- End #main -->
-
 
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
