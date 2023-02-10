@@ -21,14 +21,9 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 .
 
 <!-- Template Main CSS File -->
@@ -124,6 +119,10 @@
 	
 	
 </style>
+<script type="text/javascript">
+// 해당 일자에 후기 내용이 없을 경우 수정하기 버튼이 보이지않고 작성하기 버튼이 보여야 한다.
+// 해당 일자에 후기 내용이 있을 경우 작성하기 버튼은 보이지 않으며 수정하기 버튼을 보여야 한다.
+</script>
 
 </head>
 
@@ -214,13 +213,14 @@
 
 							</table>
 						</div>
-						<!-- <div align="right" >
-							<a href="postscriptSava" class="btn btn-primary bt-sm">작성하기</a>
-						</div>
-						 -->
 						<div align="right" >
-							<a href="postscriptUpdate" class="btn btn-primary bt-sm"
-								 style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">수정하기</a>
+						<!-- <input type="button" class="btn btn-primary btn" id="saveBtn"
+									onclick="location.href='/postscriptSave'" value="작성하기" 
+										style="border-radius: 50px; margin-right: 10px; color: white;"/> --> 
+							
+						<input type="button" class="btn btn-primary btn" id="updateBtn"
+									onclick="location.href='/postscriptUpdate'" value="수정하기" 
+										style="border-radius: 50px; margin-right: 10px; color: white;"/>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
@@ -243,7 +243,7 @@
 						</div>
 						<div align="right">
 							<a href="/scheduleProtector" class="btn btn-primary bt-sm"
-								style="border-radius: 50px; margin-right: 10px; color: white; width: 90px;">예약확인</a>
+								style="border-radius: 50px; margin-right: 10px; color: white;">예약확인</a>
 						</div>
 					</div>
 				</div>
