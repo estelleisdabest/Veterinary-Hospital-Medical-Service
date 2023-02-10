@@ -24,25 +24,60 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+<script
+	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	window.onload = function() {
+		document.getElementById("address_kakao")
+				.addEventListener("click",function() { 
+						var width = 500;
+						var height = 600; 
+						new daum.Postcode({
+								width : width,
+								height : height,
+								oncomplete : function(data) {
+								document.getElementById("inputKakao").value = data.address;
+								}
+						}).open({
+							left: (window.screen.width / 2) - (width / 2),
+							top: (window.screen.height / 2) - (height / 2)
+						});
+				});
+		var updateMyInfo = document.getElementById('updateMyInfo');
+		updateMyInfo.addEventListener('click', function () {
+			var result = window.confirm('수정하시겠습니까?');
+			
+			if(result) {
+				alert('정상적으로 처리되었습니다.');
+				location.href='/myPageProtector';
+			}
+		});
+		document.getElementById('name').onclick = function () {
+			document.getElementById('uneditableName').innerHTML = "이름은 수정할 수 없습니다";
+		}
+		document.getElementById('id').onclick = function () {
+			document.getElementById('uneditableId').innerHTML = "ID는 수정할 수 없습니다";
+		}
+		document.getElementById('birthday').onclick = function () {
+			document.getElementById('uneditableBirthday').innerHTML = "생년월일은 수정할 수 없습니다";
+		}
+	
+	}
+			
+		
+</script>
 <style type="text/css">
 .wrap {
 	display: flex;
@@ -63,6 +98,9 @@
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">내 정보 수정</h2>
+					<br/>
+					<p style="font-size: 11pt;">회원정보를 수정할 수 있습니다.</p>
+					<p style="font-size: 11pt; color: red; display: inline;">이름, ID, 생년월일</p><p style="font-size: 11pt; display: inline;">은 수정할 수 없습니다.</p>
 				</div>
 			</div>
 		</section>
@@ -70,6 +108,7 @@
 
 		<section class="inner-page">
 			<div class="container">
+				<form action="">
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -77,6 +116,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label> <input type="text"
 							class="form-control" name="name" id="name" readonly="readonly">
+							<div id="uneditableName" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -87,8 +127,9 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="id">ID</label> <input type="text" class="form-control"
-							name="text" id="text" readonly="readonly" data-rule="id"
+							name="id" id="id" readonly="readonly" data-rule="id"
 							data-msg="필수입력 항목입니다.">
+							<div id="uneditableId" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -102,6 +143,7 @@
 							class="form-control" name="password" id="password"
 							placeholder="수정할 비밀번호를 입력해주세요" data-rule="species"
 							data-msg="필수입력 항목입니다.">
+							<div id="uneditablePassword" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -112,7 +154,8 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="">생년월일</label> <input type="text" class="form-control"
-							name="name" id="name" readonly="readonly">
+							name="birthday" id="birthday" readonly="readonly">
+							<div id="uneditableBirthday" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -124,8 +167,9 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="phone">전화번호</label> <input type="text"
 							class="form-control" name="phone" id="phone"
-							placeholder="수정할 전화번호를 입력해주세요" data-rule="age"
+							placeholder="수정할 전화번호를 입력해주세요" maxlength="13" data-rule="age"
 							data-msg="필수입력 항목입니다.">
+							<div id="uneditablePhone" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -171,13 +215,13 @@
 							onclick="location='/myPageProtector'"
 							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
 						<input type="button" class="btn btn-primary"
-							name="join_membership_protector" id="join_membership_protector"
-							value="수정하기" onclick="location='/myPageProtector'"
+							name="updateMyInfo" id="updateMyInfo"
+							value="수정하기"
 							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 						<%-- JS alert로 '수정완료했습니다' 띄운 후 myPageProtector에 이동 --%>
 					</div>
 				</div>
-
+				</form>
 			</div>
 		</section>
 
@@ -189,31 +233,4 @@
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	window.onload = function() {
-		document
-				.getElementById("address_kakao")
-				.addEventListener(
-						"click",
-						function() { //주소입력칸을 클릭하면
-							//카카오 지도 발생
-							var width = 500; //팝업의 너비
-							var height = 600; //팝업의 높이
-							new daum.Postcode(
-									{
-										width : width, //생성자에 크기 값을 명시적으로 지정
-										height : height,
-										oncomplete : function(data) { //선택시 입력값 세팅
-											document
-													.getElementById("inputKakao").value = data.address; // 주소 넣기
-										}
-									}).open({
-									    left: (window.screen.width / 2) - (width / 2),
-									    top: (window.screen.height / 2) - (height / 2)
-									});
-						});
-	}
-</script>
 </html>

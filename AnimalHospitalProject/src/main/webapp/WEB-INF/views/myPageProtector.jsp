@@ -24,20 +24,13 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
@@ -84,6 +77,12 @@ h3 {
 .pagination {
   justify-content: center;
 }
+#myinfo{
+	padding: 10px; 
+	margin-bottom: 10px; 
+	border: 1px solid #DDDDDD; 
+	border-radius: 10px; width: 88%;	
+}
 </style>
 </head>
 
@@ -109,8 +108,7 @@ h3 {
 			<div class="container">
 				<div id="gridContainer">
 					<div id="mainContent">
-						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%;">
+						<div id="myinfo">
 							<h3>나의 정보</h3>
 							&nbsp;<input type="button" class="btn btn-primary btn-sm"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
