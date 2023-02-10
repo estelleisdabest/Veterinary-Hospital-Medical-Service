@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>보호자 전용 회원가입</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -21,14 +20,7 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -74,11 +66,8 @@ input[name="send_certificationNumber"] {
 </head>
 
 <body>
-
 	<main id="main">
-
 		<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -198,7 +187,7 @@ input[name="send_certificationNumber"] {
 							class="form-control" name="protector_address"
 							id="protector_address" placeholder="주소를 입력해주세요." data-rule="text">
 						&nbsp;&nbsp;<input type="button" class="btn btn-primary"
-							name="searching_address" value="주소검색"
+							name="searching_address" id="searching_address" value="주소검색"
 							style="width: 140px; text-align: center; border-radius: 50px;">
 					</div>
 				</div>
@@ -220,7 +209,7 @@ input[name="send_certificationNumber"] {
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="email">인증번호 확인</label> <input type="int"
+						<label for="email">인증번호 확인</label> <input type="number"
 							class="form-control" name="confirm_certificationNumber"
 							id="confirm_certificationNumber" placeholder="인증번호를 입력해주세요."
 							data-rule="text" required="required">
@@ -239,25 +228,48 @@ input[name="send_certificationNumber"] {
 						<div class="validate"></div>
 					</div>
 				</div>
+				<br>
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
 					</div>
 					<div class="row">
-			            <div class="col-md-12 form-group" style="text-align: center;">
-						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;" >이전페이지</a>
-						      <a href="/" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;">회원가입</a>
+			            <div class="col-md-4 form-group" style="margin: auto;">
+						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius:50px;width: 110px;text-align: center;color: white;">이전페이지</a>
+						      <a href="/" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">회원가입</a>
 			              <div class="validate"></div>
 			            </div>
 					</div>
 				</div>
 			</div>
 		</section>
+		<br>
 		<!-- End Appointment Section -->
 	</main>
 	<!-- End #main -->
-
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
-
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+	window.onload = function() {
+		document.getElementById("searching_address")
+				.addEventListener("click", function() { //주소입력칸을 클릭하면
+							//카카오 지도 발생
+							var width = 500; //팝업의 너비
+							var height = 600; //팝업의 높이
+							new daum.Postcode(
+									{
+										width : width, //생성자에 크기 값을 명시적으로 지정
+										height : height,
+										oncomplete : function(data) { //선택시 입력값 세팅
+											document
+													.getElementById("protector_address").value = data.address; // 주소 넣기
+										}
+									}).open({
+									    left: (window.screen.width / 2) - (width / 2),
+									    top: (window.screen.height / 2) - (height / 2)
+									});
+						});
+	}
+</script>
 </html>
