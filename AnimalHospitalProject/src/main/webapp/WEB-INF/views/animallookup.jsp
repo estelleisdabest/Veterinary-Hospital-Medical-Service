@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -24,15 +23,9 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-.
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -46,6 +39,14 @@ table {
 	justify-content: center;
 }
 </style>
+<!-- <script type="text/javascript">
+window.onload = function(){
+	var animalLookupList = document.getElementById('animalLookupList');
+	
+	
+}
+
+</script> -->
 
 </head>
 
@@ -72,9 +73,11 @@ table {
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px;">
-				<a href="/patientAdd" class="btn btn-primary btn-sm"
-					style="float: right; border-radius: 50px; margin-right: 10px; color: white; width: 90px;">환자추가</a>&nbsp;
+				<a href="/patientAdd" class="btn btn-primary btn"
+					style="float: right; border-radius: 50px; margin-right: 10px; color: white;">환자추가</a>&nbsp;
 				<br /> <br />
+				<br />
+				<div id="animalLookupList">
 				<div class="white_shd full margin_bottom_30">
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
@@ -206,6 +209,7 @@ table {
 					    -->
 					</div>
 				</div>
+			</div>
 			</div>
 		</main>
 	</section>

@@ -24,14 +24,9 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 .
 
 <!-- Template Main CSS File -->
@@ -74,19 +69,8 @@ table {
 	height: 30px;
 }
 
-a:link {
-	color: black;
-	text-decoration: none;
-}
-
-a:visited {
-	color: black;
-	text-decoration: none;
-}
-
-a:hover {
-	color: black;
-	text-decoration: underline;
+.pagination {
+	justify-content: center;
 }
 </style>
 
@@ -113,7 +97,6 @@ a:hover {
 
 	<section class="inner-page">
 		<main>
-			<br />
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px">
 				<div class="white_shd full margin_bottom_30">
@@ -210,45 +193,38 @@ a:hover {
 									</tr>
 								</tbody>
 							</table>
-							<div class="pageInfo_wrap">
-								<div class="pageInfo_area">
-									<ul id="pageInfo" class="pageInfo">
-										<li class="pageInfo_btn next"><a href="">이전</a></li>
-										<!-- 		<li>1</li>
-										  		<li>2</li>
-										  		<li>3</li>
-										  		<li>4</li>
-										  		<li>5</li>
-										  		<li>6</li>
-										  		<li>7</li>
-										  		<li>8</li>
-										  		<li>9</li>
-										  		<li>10</li> -->
-										<li class="pageInfo_btn">1</li>
-										<li class="pageInfo_btn">2</li>
-										<li class="pageInfo_btn">3</li>
-										<li class="pageInfo_btn">4</li>
-										<li class="pageInfo_btn">5</li>
-										<li class="pageInfo_btn">6</li>
-										<li class="pageInfo_btn">7</li>
-										<li class="pageInfo_btn">8</li>
-										<li class="pageInfo_btn">9</li>
-										<li class="pageInfo_btn">10</li>
-										<li class="pageInfo_btn next"><a href="">다음</a></li>
-										<!-- 각 번호 페이지 버튼
-								                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-								                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-								                </c:forEach>
-									        -->
-									</ul>
-								</div>
-								<!--  다음페이지 버튼-->
-								<!-- 
-					              	<c:if test="${pageMaker.next}">
-					                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-					                </c:if> 
-					                 -->
-							</div>
+							<br/>
+							<nav aria-label="Page navigation example">
+								<ul class="pagination">
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Previous"> <span aria-hidden="true">&laquo;</span>
+									</a></li>
+									<li class="page-item"><a class="page-link" href="#">1</a></li>
+									<li class="page-item"><a class="page-link" href="#">2</a></li>
+									<li class="page-item"><a class="page-link" href="#">3</a></li>
+									<li class="page-item"><a class="page-link" href="#">4</a></li>
+									<li class="page-item"><a class="page-link" href="#">5</a></li>
+									<li class="page-item"><a class="page-link" href="#">6</a></li>
+									<li class="page-item"><a class="page-link" href="#">7</a></li>
+									<li class="page-item"><a class="page-link" href="#">8</a></li>
+									<li class="page-item"><a class="page-link" href="#">9</a></li>
+									<li class="page-item"><a class="page-link" href="#">10</a></li>
+									<li class="page-item"><a class="page-link" href="#"
+										aria-label="Next"> <span aria-hidden="true">&raquo;</span>
+									</a></li>
+								</ul>
+							</nav>
+							<!-- 각 번호 페이지 버튼
+							 <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+								 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+							 </c:forEach>
+							 -->
+							<!--  다음페이지 버튼-->
+							<!-- 
+					        <c:if test="${pageMaker.next}">
+					        	 <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+					        </c:if> 
+					        -->
 						</div>
 					</div>
 				</div>
