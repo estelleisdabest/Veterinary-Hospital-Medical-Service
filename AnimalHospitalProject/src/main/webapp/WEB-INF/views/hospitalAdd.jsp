@@ -4,44 +4,23 @@
 <html lang="ko">
 
 <head>
-<meta charset="utf-8">
+<meta charset="UTF">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>병원 정보 추가</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
-<!-- Favicons -->
-<link href="img/favicon.png" rel="icon">
-<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
-
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-<!-- Tables - SB Admin -->
-<link
-	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
-	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-	crossorigin="anonymous"></script>
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
+	crossorigin="anonymous"></script>
 
 <style type="text/css">
 .wrap {
@@ -61,11 +40,13 @@
 			<div class="container">
 				<br />
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">병원 추가</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">병원 정보 추가</h2>
 				</div>
-			</div>
-		</section>
+			</div>			
+		</section>		
 		<!-- End Breadcrumbs Section -->
+
+		<section class="inner-page">
 
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
@@ -167,10 +148,6 @@
 			</div>
 		</div>
 
-		<section class="inner-page">
-			<div class="container">
-				<p></p>
-			</div>
 		</section>
 
 	</main>
