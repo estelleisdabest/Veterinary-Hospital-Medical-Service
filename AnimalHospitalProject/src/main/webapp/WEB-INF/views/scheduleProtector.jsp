@@ -42,19 +42,18 @@
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
+function fileUpload(){
+	var fileInput = document.getElementsByClassName("form-control");
 
-var fileform=document.getElementById("file");
-/*結果出力用の要素*/
-var result=document.getElementById("result");
-/*ファイル変更のイベントハンドラ*/
-fileform.addEventListener("change", (e) => {
-  if (window.File) {
-    // 指定したファイルの情報を取得
-    var inputfile = fileform.files[0];
-    // 最後に、反映
-    result.text = inputfile.name;
-  }
-});
+	for( var i=0; i<fileInput.length; i++ ){
+		if( fileInput[i].files.length > 0 ){
+			for( var j = 0; j < fileInput[i].files.length; j++ ){
+				console.log(fileInput[i].files[j].name); // 파일명 출력
+			}
+		}
+	}
+
+}
 </script>
 <style type="text/css">
 #gridContainer {
@@ -68,14 +67,32 @@ fileform.addEventListener("change", (e) => {
 	font-size: 12px;
 }
 
-input[type=file]::file-selector-button {
-  width: 100px;
-  height: 35px;
-  background: #0066FF;
-  color: white;
-  font-size: 10.5pt;
-  border-radius: 5px;
-  cursor: pointer;  
+#app {
+    width: 280px;
+}
+
+label {
+    color: #ffffff;
+    padding:8px;
+    font-size:10.5pt;
+    margin:auto;
+    border-radius:50px;
+    background-color: #3366FF;
+    cursor: pointer;
+}
+label:hover {
+ 	background-color: #0066CC;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+#select {
+    margin: 5px 0 0 0;
+    font-size: 10.5pt;
+    text-align: right;
+    display: inline-block;
 }
 
 
@@ -170,9 +187,11 @@ input[type=file]::file-selector-button {
 								<div>
 									<input type="submit" class="btn btn-outline-primary btn-sm" value="증상올리기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center;">
 								</div>
-								<br/>
-								<div align="left">
-									<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">
+								<div align="left" id="app">
+									<label>
+										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">&nbsp;사진/동영상 추가&nbsp; 
+									</label>
+									<p id="select">파일을 선택해주세요</p>
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
