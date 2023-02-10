@@ -22,10 +22,9 @@
 
   <!-- Vendor CSS Files -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   
-  <!-- Tables - SB Admin -->
-
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 <style type="text/css">

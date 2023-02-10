@@ -16,12 +16,15 @@
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+	rel="stylesheet">
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<!-- Tables - SB Admin -->
-<!-- <link -->
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
