@@ -19,21 +19,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-
   <!-- Vendor CSS Files -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  
-  <!-- Tables - SB Admin -->
-  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
-  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
@@ -76,6 +65,10 @@
 	<br />
 		<div class="section-title">
           <h2 style="font-weight: bold; font-size: 30px;">공지사항 수정 및 삭제</h2>
+          <%-- <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
+          <%--
+          <h2 style="font-weight: bold; font-size: 30px;">공지사항</h2>
+           --%>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
@@ -98,7 +91,7 @@
         
         <div id="button">
         <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%" onclick="location='/notice'">수정</button>
-        <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;"><i class="bi bi-x-circle"></i> 삭제</button> <br />
+        <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;">삭제</button> <br />
         </div>
         
         <%-- 보호자로 로그인하여 열람만 할 시 if문 사용하여 보여줄 버튼 --%>

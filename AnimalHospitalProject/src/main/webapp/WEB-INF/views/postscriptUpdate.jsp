@@ -80,16 +80,18 @@ tr {
 	-webkit-text-fill-color: transparent;
 	/* Will override color (regardless of order) */
 	-webkit-text-stroke-width: 2.3px;
-	-webkit-text-stroke-color: #2b2a29;
+	-webkit-text-stroke-color: #DDDDDD;
 	cursor: pointer;
 }
 
 .star-rating :checked ~ label {
 	-webkit-text-fill-color: gold;
+	-webkit-text-stroke-color: #2b2a29;
 }
 
 .star-rating label:hover, .star-rating label:hover ~ label {
 	-webkit-text-fill-color: #fff58c;
+	-webkit-text-stroke-color: #2b2a29;
 }
 .mb-3 tr{
   position : relative;
@@ -142,7 +144,7 @@ tr {
 	<main id="main">
 		<!-- ======= Appointment Section ======= -->
 		<section class="inner-page" >
-			<div class="container" style="border: 1px solid black;border-radius: 30px; width: 850px;">
+			<div class="container" style="width: 850px;">
 
 				<form class="mb-3" name="myForm" id="myform" method="post">
 					<table style="background-color: white;">
@@ -175,16 +177,20 @@ tr {
 						<tr>
 							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 :</td>
 							<td colspan="4">
-								<textarea name="content" id="content" rows="10" cols="90" required="required" ></textarea>
+								<textarea name="content" id="content" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
 							</td>
 						</tr>
+					</table>
+				</form>
+				<br />
+				<form>
+					<table>
 						<tr>
-							<td  align="right">
-
-								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이 전" />
+							<td  align="left" colspan="4">
+								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전 페이지" />
 							</td>
-							<td align="right">
-								<input type="submit" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;" value="수정하기" />
+							<td align="right" colspan="4">
+								<input type="submit" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;" value="수정 하기" />
 							</td>
 						</tr>
 					</table>
