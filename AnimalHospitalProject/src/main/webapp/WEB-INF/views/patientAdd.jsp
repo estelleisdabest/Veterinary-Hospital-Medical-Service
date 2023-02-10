@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>환자 추가</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -41,11 +41,8 @@ input::-webkit-input-placeholder {
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -161,9 +158,7 @@ input::-webkit-input-placeholder {
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>
 
 
