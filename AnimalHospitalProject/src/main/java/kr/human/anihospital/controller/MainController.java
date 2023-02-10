@@ -133,7 +133,7 @@ public class MainController {
 
 	@GetMapping("/doctorInfo")
 	public String doctorInfo() {
-		return "doctorInformation";
+		return "doctorInfo";
 	}
 
 	@GetMapping("/doctorInfoEdit")
