@@ -40,19 +40,21 @@
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-
-var fileform=document.getElementById("file");
-/*結果出力用の要素*/
-var result=document.getElementById("result");
-/*ファイル変更のイベントハンドラ*/
-fileform.addEventListener("change", (e) => {
-  if (window.File) {
-    // 指定したファイルの情報を取得
-    var inputfile = fileform.files[0];
-    // 最後に、反映
-    result.text = inputfile.name;
-  }
-});
+window.onload=function(){
+  target=document.getElementById('file'); 
+	target.addEventListener('change',function(){		
+		if(target.value.length){ 
+			$('#originName').html(target.files[0].name);
+		}else{
+			$('#originName').html("");
+		}
+		
+	});
+	function test(){
+		  var obj = document.getElementById("f1");
+		  obj.value = "";
+		}
+}
 </script>
 <style type="text/css">
 #gridContainer {
@@ -163,9 +165,11 @@ input[type=file]::file-selector-button {
 								<div>
 									<input type="submit" class="btn btn-outline-primary btn-sm" value="증상올리기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center;">
 								</div>
-								<br/>
-								<div align="left">
-									<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">
+								<div align="left" id="app">
+									<label>
+										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file" onchange="fileUpload()" multiple="multiple">&nbsp;사진/동영상 추가&nbsp; 
+									</label>
+										<input type="button" id="btn1" value="test" onclick="test();"/>
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
@@ -184,12 +188,13 @@ input[type=file]::file-selector-button {
 									<td>내원 이유 : 정밀검사</td> <%-- 자동입력 필요  --%>
 								</tr>
 								<tr>
-									<td>사진 및 동영상 : </td><%-- 자동입력 필요 js or jquery  --%>
+									<td>사진 및 동영상 : <p id="originName" style="display : inline-block"></p>
+									</td>
 								</tr>
 							</table>
 							<br/>
 							<div align="right">
-								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px;">
 							</div>
 							</form>
 						</div>
