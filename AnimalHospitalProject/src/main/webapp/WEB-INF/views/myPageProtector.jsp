@@ -22,15 +22,21 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
@@ -77,20 +83,11 @@ h3 {
 .pagination {
   justify-content: center;
 }
-#myinfo{
-	padding: 10px; 
-	margin-bottom: 10px; 
-	border: 1px solid #DDDDDD; 
-	border-radius: 10px; width: 88%;	
-}
 </style>
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 	<main id="main">
 
 		<!-- ======= Breadcrumbs Section ======= -->
@@ -108,7 +105,8 @@ h3 {
 			<div class="container">
 				<div id="gridContainer">
 					<div id="mainContent">
-						<div id="myinfo">
+						<div
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%;">
 							<h3>나의 정보</h3>
 							&nbsp;<input type="button" class="btn btn-primary btn-sm"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
@@ -308,32 +306,6 @@ h3 {
 												</tr>
 											</tbody>
 										</table>
-										<!-- 페이지 수 표시하기 -->
-										
-										<!-- <div class="pageInfo_wrap">
-											<div class="pageInfo_area">
-												<ul id="pageInfo" class="pageInfo">
-													<li class="pageInfo_btn next"><a href="">이전</a></li>
-													<li class="pageInfo_btn">1</li>
-													<li class="pageInfo_btn">2</li>
-													<li class="pageInfo_btn">3</li>
-													<li class="pageInfo_btn">4</li>
-													<li class="pageInfo_btn">5</li>
-													<li class="pageInfo_btn next"><a href="">다음</a></li>
-													각 번호 페이지 버튼
-														<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-															 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-														 </c:forEach>
-													
-												</ul>
-											</div>
-											 다음페이지 버튼
-											
-											    <c:if test="${pageMaker.next}">
-											        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-											    </c:if> 
-											   
-										</div> -->
 										
 										<nav aria-label="Page navigation example">
 										  <ul class="pagination">
@@ -362,7 +334,6 @@ h3 {
 		</section>
 	</main>
 	<!-- End #main -->
-
 
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>

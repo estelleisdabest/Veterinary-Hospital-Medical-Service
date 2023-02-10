@@ -31,10 +31,8 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
   <main id="main">
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
@@ -82,9 +80,7 @@
       </div>
     </section>
   </main><!-- End #main -->
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
 </html>

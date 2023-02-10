@@ -29,19 +29,9 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: Medilab - v4.10.0
-  * Template URL: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
-
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
@@ -52,7 +42,6 @@
   </section><!-- End Hero -->
 
   <main id="main">
-
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
       <div class="container">
@@ -760,9 +749,7 @@
                 <h4>Call:</h4>
                 <p>+1 5589 55488 55s</p>
               </div>
-
             </div>
-
           </div>
 
           <div class="col-lg-8 mt-5 mt-lg-0">
@@ -789,11 +776,8 @@
               </div>
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
-
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
 

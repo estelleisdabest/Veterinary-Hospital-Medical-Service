@@ -1,13 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>환자 정보 및 이전진료내역</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -98,22 +96,16 @@ img {
 	object-fit: cover;
 	border: 3px solid #F5F5F5;
 }
-
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 및 이전진료내역</h2>
@@ -133,8 +125,7 @@ img {
 						<img src="img/dog.jpg" alt="...">
 						</h4>
 						<div class="row"></div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -146,8 +137,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-						
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -161,8 +151,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -176,8 +165,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -191,8 +179,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -206,8 +193,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -224,8 +210,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -239,8 +224,7 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-						<br />
-
+							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -254,7 +238,6 @@ img {
 							</div>
 						</div>
 						<br />
-
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -267,7 +250,6 @@ img {
 							</div>
 						</div>
 						<br />
-
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -282,7 +264,6 @@ img {
 							</div>
 						</div>
 						<br />
-
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -302,7 +283,6 @@ img {
 							</div>
 						</div>
 						<br />
-
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -382,7 +362,6 @@ img {
 										</tr>
 									</table>
 									<br />
-
 								</div>
 							</div>
 						</div>
@@ -390,14 +369,9 @@ img {
 				</div>
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
-
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

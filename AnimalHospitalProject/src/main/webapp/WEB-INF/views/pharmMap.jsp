@@ -35,11 +35,7 @@
 </head>
 
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
-
-
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
@@ -98,13 +94,9 @@
       <div class="container">
       </div>
     </section>
-
   </main><!-- End #main -->
-
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
 <script
 	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

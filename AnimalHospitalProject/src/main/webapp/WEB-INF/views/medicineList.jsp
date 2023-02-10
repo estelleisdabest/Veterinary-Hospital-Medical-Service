@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -28,14 +27,10 @@
   		justify-content: center;
 	}
 </style>
-
 </head>
-
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -161,13 +156,10 @@
 					id="medicineDelete" value="처방약 삭제" onclick="location='/medicineList'"
 					style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 			</div>			
-		</div>
-		
-		</section>		
-		
+		</div>		
+		</section>				
 	</main>
 	<!-- End #main -->
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 

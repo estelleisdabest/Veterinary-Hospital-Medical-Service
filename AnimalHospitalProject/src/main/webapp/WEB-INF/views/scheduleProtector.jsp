@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -22,21 +21,27 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 window.onload=function(){
-	target=document.getElementById('file'); 
+  target=document.getElementById('file'); 
 	target.addEventListener('change',function(){		
 		if(target.value.length){ 
 			$('#originName').html(target.files[0].name);
@@ -63,46 +68,23 @@ window.onload=function(){
 	font-size: 12px;
 }
 
-#app {
-    width: 280px;
+input[type=file]::file-selector-button {
+  width: 100px;
+  height: 35px;
+  background: #0066FF;
+  color: white;
+  font-size: 10.5pt;
+  border-radius: 5px;
+  cursor: pointer;  
 }
-
-label {
-    color: #ffffff;
-    padding:8px;
-    font-size:10.5pt;
-    margin:auto;
-    border-radius:50px;
-    background-color: #3366FF;
-    cursor: pointer;
-}
-label:hover {
- 	background-color: #0066CC;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-#select {
-    margin: 5px 0 0 0;
-    font-size: 10.5pt;
-    text-align: right;
-    display: inline-block;
-}
-
-
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container" >
@@ -220,14 +202,9 @@ input[type="file"] {
 				</div>
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
-
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

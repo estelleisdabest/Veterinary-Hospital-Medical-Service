@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -19,16 +18,12 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-	crossorigin="anonymous"></script>
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
 </head>
-
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -253,9 +248,7 @@
 					onclick="location='/medicineList'">
 			</div>
 		</div>
-
 		</section>
-
 	</main>
 	<!-- End #main -->
 

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>환자 정보 수정(Doctor)</title>
+<title>환자 정보 수정(수의사용)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -77,28 +76,21 @@ table {
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정(수의사 용)</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정</h2>
 					<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				</div>
 			</div>
-
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<section class="inner-page">
 			<div class="container">
-
 				<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
 				<div class="contact-form pt-20"></div>
 				<br />
@@ -110,7 +102,6 @@ table {
 							</video></td>
 					</tr>
 				</table>
-
 				<!-- 
 		<%-- 사진만 등록되어 있을 경우 --%>
 		<div class="contact-form pt-20"></div>
@@ -153,9 +144,7 @@ table {
 			</tr>
 		</table>
 		 -->
-
 				<br /> <br />
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -314,7 +303,5 @@ table {
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

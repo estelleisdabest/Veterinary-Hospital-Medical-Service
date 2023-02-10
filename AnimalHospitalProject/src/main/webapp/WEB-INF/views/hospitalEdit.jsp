@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="UTF">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -27,14 +25,10 @@
 	display: flex;
 }
 </style>
-
 </head>
-
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -147,12 +141,9 @@
 					onclick="location='/hosMap'">
 			</div>
 		</div>
-
 		</section>
-
 	</main>
 	<!-- End #main -->
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
@@ -180,5 +171,4 @@
 						});
 	}
 </script>
-
 </html>
