@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -24,14 +24,9 @@
 
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 .
 
 <!-- Template Main CSS File -->
@@ -71,11 +66,9 @@ table {
 	<section class="inner-page">
 		<main>
 			<div class="col-md-9" style="margin-left: 200px;">
-				<div>
-					<a href="/patientAdd" class="btn btn-primary btn-sm"
-						style="float: right; border-radius: 50px; margin-right: 10px; color: white; width: 90px;">환자추가</a>&nbsp;
-				</div>
-				<br /> <br />
+					<a href="/patientAdd" class="btn btn-primary btn"
+						style="float: right; border-radius: 50px; margin-right: 10px; color: white;">환자추가</a>&nbsp;
+				<br/> <br /> <br />
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">

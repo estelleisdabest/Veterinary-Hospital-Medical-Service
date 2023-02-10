@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>의사 정보 수정</title>
+<title>의사 정보 조회</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -25,18 +25,10 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<!-- <link -->
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-input::-webkit-input-placeholder {
-	background-image: background-size: contain;
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	text-align: left;
-	text-indent: 0;
-}
 .wrap {
 	display: flex;
 }
@@ -68,8 +60,10 @@ table {
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">내 정보</h2>
+					<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				</div>
 			</div>
+
 		</section>
 		<!-- End Breadcrumbs Section -->
 
@@ -77,17 +71,7 @@ table {
 		<br />
 		<table>
 			<tr>
-				<td ><img src="img/doctors/doctors-1.jpg" /></td>
-			</tr>
-			<tr>
-				<td style="text-align: center;">
-					<label class="btn btn-primary" for="file1" style="border-radius: 50px; width: 90px">수정</label>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="file" class="form-control" name="file" id="file1" style="display: none;" accept="image/*">
-				</td>				
+				<td><img src="img/doctors/doctors-1.jpg" /></td>
 			</tr>
 		</table>
 
@@ -152,7 +136,8 @@ table {
 			</div>
 			<div class="col-md-4 form-group mt-3">
 				<label for="license">면허취득일</label> <input type="date"
-					class="form-control" id="license" value="2008-01-01"/>
+					class="form-control" id="license" value="2008-01-01"
+					disabled="disabled" />
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -164,7 +149,8 @@ table {
 			<div class="col-md-4 form-group mt-3">
 				<label for="doctorNumber">의사 등록번호</label> <input type="text"
 					class="form-control" name="doctorNumber" id="doctorNumber"
-					value="110011" data-rule="doctorNumber" data-msg="필수입력 항목입니다.">
+					value="110011" data-rule="doctorNumber" data-msg="필수입력 항목입니다."
+					disabled="disabled">
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -176,7 +162,7 @@ table {
 			<div class="col-md-4 form-group mt-3">
 				<label for="phone">연락처</label> <input type="text"
 					class="form-control" name="phone" id="phone" value="010-1111-1111"
-					data-rule="phone" data-msg="필수입력 항목입니다." >
+					data-rule="phone" data-msg="필수입력 항목입니다." disabled="disabled">
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -190,8 +176,9 @@ table {
 			<div class="col-md-4 form-group mt-3">
 				<label for="email">이메일</label> <input type="text"
 					class="form-control" name="email" id="email"
-					value="you@example.com" data-rule="email" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
+					value="you@example.com" data-rule="email" data-msg="필수입력 항목입니다."
+					disabled="disabled">
+				<div class="validate" disabled="disabled"></div>
 			</div>
 		</div>
 
@@ -203,11 +190,7 @@ table {
 				<label for="phone">주소</label>
 				<div class="wrap">
 					<input type="text" class="form-control" readonly="readonly"
-								id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요"> &nbsp;<input
-								type="button" name="address_kakao" id="address_kakao"
-								onclick="sample4_execDaumPostcode()"
-								class="btn btn-primary btn-sm" value="주소찾기"
-								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+						id="inputKakao" placeholder="경기도 수원시 팔달구 중부대로 100" disabled="disabled"> 
 				</div>
 				<div class="validate"></div>
 			</div>
@@ -220,8 +203,8 @@ table {
 			<div class="col-md-4 form-group mt-3">
 				<label for="address">상세주소</label> <input type="text"
 					class="form-control" name="address" id="address"
-					placeholder="" data-rule="age"
-					data-msg="필수입력 항목입니다.">
+					placeholder="3층" data-rule="age"
+					data-msg="필수입력 항목입니다." disabled="disabled">
 				<div class="validate"></div>
 			</div>
 		</div>
@@ -232,14 +215,14 @@ table {
 			</div>
 			<div class="col-md-4 form-group mt-3">
 				<label for="email">학력</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder="" ></textarea>
+				<textarea rows="5" cols="60" style="width: 10; height: 10;"
+					placeholder="" disabled="disabled"></textarea>
 				<label for="email">이력</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder="" ></textarea>
+				<textarea rows="5" cols="60" style="width: 10; height: 10;"
+					placeholder="" disabled="disabled"></textarea>
 				<label for="email">인사말</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder=""></textarea>
+				<textarea rows="5" cols="60" style="width: 10; height: 10;"
+					placeholder="" disabled="disabled"></textarea>
 			</div>
 		</div>
 
@@ -250,10 +233,10 @@ table {
 				<br />
 			<div class="col-md-4 form-group" style="margin: auto;">
 				<input type="button" class="btn btn-secondary" name="move_pre_page"
-					id="move_pre_page" value="이전페이지" onclick="location='/doctorInfo'"
+					id="move_pre_page" value="이전페이지" onclick="location='/'"
 					style="border-radius: 50px; width: 110px; text-align: center; color: white;">
 				<input type="button" class="btn btn-primary" name="notice_add"
-					id="notice_add" value="수정하기" onclick="location='/doctorInfo'"
+					id="notice_add" value="수정하기" onclick="location='/doctorInfoEdit'"
 					style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 			</div>
 			</p>
@@ -270,31 +253,4 @@ table {
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	window.onload = function() {
-		document
-				.getElementById("address_kakao")
-				.addEventListener(
-						"click",
-						function() { //주소입력칸을 클릭하면
-							//카카오 지도 발생
-							var width = 500; //팝업의 너비
-							var height = 600; //팝업의 높이
-							new daum.Postcode(
-									{
-										width : width, //생성자에 크기 값을 명시적으로 지정
-										height : height,
-										oncomplete : function(data) { //선택시 입력값 세팅
-											document
-													.getElementById("inputKakao").value = data.address; // 주소 넣기
-										}
-									}).open({
-									    left: (window.screen.width / 2) - (width / 2),
-									    top: (window.screen.height / 2) - (height / 2)
-									});
-						});
-	}
-</script>
 </html>
