@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -29,28 +28,25 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-
 <style type="text/css">
 table {
 	border-collapse: collapse;
 }
-
 .pagination {
 	justify-content: center;
 }
 </style>
-
+<!-- <script type="text/javascript">
+window.onload = function(){
+	var animalLookupList = document.getElementById('animalLookupList');
+}
+</script> -->
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
-
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
-
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
@@ -65,9 +61,11 @@ table {
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px;">
-				<a href="/patientAdd" class="btn btn-primary btn-sm"
-					style="float: right; border-radius: 50px; margin-right: 10px; color: white; width: 90px;">환자추가</a>&nbsp;
+				<a href="/patientAdd" class="btn btn-primary btn"
+					style="float: right; border-radius: 50px; margin-right: 10px; color: white;">환자추가</a>&nbsp;
 				<br /> <br />
+				<br />
+				<div id="animalLookupList">
 				<div class="white_shd full margin_bottom_30">
 				<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
@@ -200,6 +198,7 @@ table {
 					    -->
 					</div>
 				</div>
+			</div>
 			</div>
 		</main>
 	</section>

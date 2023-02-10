@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Medilab Bootstrap Template - Index</title>
+  <title>약관동의 및 역할체크</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -19,41 +19,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-
   <!-- Vendor CSS Files -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <link href="vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-  
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+ 
   <!-- Tables - SB Admin -->
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-  <link href="css/styles.css" rel="stylesheet" />
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
 
-
-
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
 	<br />
 		<div class="section-title">
-          <h2>약관동의 및 역할체크</h2>
+          <h2 style="font-weight: bold; font-size: 30px;">약관동의 및 역할체크</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
@@ -63,7 +51,7 @@
         <div>
 			<span class="input_chk" style="text-align: center; display: inline-block; margin: auto; width: 430px; line-height: 50px;">
 				<input type="checkbox" id="using_check" name="using_check" class="using_check" value="3">
-				<label for="using_check">
+				<label for="using_check" style="font-size: 13pt;">
 					이용약관 동의
 				</label>
 			</span>
@@ -113,10 +101,10 @@
 			<span class="input_chk"
 				style="text-align: center; display: inline-block; margin: auto; width: 900px; line-height: 50px;">
 				<input type="checkbox" id="roll_doctor" name="roll_doctor"
-				class="check_roll" value="1"> <label for="roll_doctor">의사</label>
+				class="check_roll" value="1"> <label for="roll_doctor" style="font-size: 13pt;">의사</label>
 			</span> <span class="input_chk"> <input type="checkbox"
 				id="roll_protector" name="roll_protector" class="check_roll"
-				checked="checked" value="2"> <label for="roll_protector">보호자</label>
+				checked="checked" value="2"> <label for="roll_protector" style="font-size: 13pt;">보호자</label>
 			</span>
 		</div>
 		<div class="row">
@@ -129,12 +117,8 @@
     		</div>
       	</div>
     </section>
-
   </main><!-- End #main -->
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
-
 </html>

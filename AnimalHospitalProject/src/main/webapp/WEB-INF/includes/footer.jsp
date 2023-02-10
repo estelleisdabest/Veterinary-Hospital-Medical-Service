@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- ======= Footer ======= -->
   <footer id="footer">
 
@@ -8,60 +10,51 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h3>Medilab</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              경기도 수원시 <br>
+              팔달구 중부대로 100<br>
+              3층 <br><br>
+              <strong><b>Phone</b>&nbsp;: </strong>031) 111 - 1111<br>
+              <strong><b>Email</b>&nbsp;: </strong> animalHospital@example.com<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>의사 전용 페이지</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">메인페이지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스 소개</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/patientList">담당환자 전체 조회</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/scheduleDoctor">스케줄 관리</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지리스트</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>보호자 전용 페이지</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">메인페이지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스소개</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/animallookup">환자조회</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/scheduleProtector">예약확인</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지리스트</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
-            <form action="" method="post">
-              <input type="email" name="email"><input type="submit" value="Subscribe">
-            </form>
+            <h4>XXXXXX</h4>
+            <p>XXXXXX를 방문해주셔서 감사합니다. <br> 고객님들의 소중한 반려동물들의 건강을 책임지는 <br>서비스를 제공하겠습니다. <br>꾸준히 서비스를 늘려갈 예정이오니 <br> 많은 관심 부탁드립니다.</p>
           </div>
-
         </div>
       </div>
     </div>
 
     <div class="container d-md-flex py-4">
-
       <div class="me-md-auto text-center text-md-start">
         <div class="copyright">
           &copy; Copyright <strong><span>Medilab</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/medilab-free-medical-bootstrap-theme/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by BootstrapMade
         </div>
       </div>
       <div class="social-links text-center text-md-right pt-3 pt-md-0">
