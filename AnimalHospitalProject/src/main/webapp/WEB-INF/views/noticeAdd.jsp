@@ -2,48 +2,47 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>공지사항 추가</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>공지사항 추가</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <style type="text/css">
-  form{
-  margin-bottom : 60px;
-  margin-left : 15%;
-  margin-right: 10%;
-  width: 20%;
-  }
-  
-  input{
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  }
-  
-  textarea {
-  border-radius: 5px;
-  border: 1px solid gray;
-  resize: none
-}
-  </style>
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
+<style type="text/css">
+	form{
+	margin-bottom : 60px;
+	margin-left : 15%;
+	margin-right: 10%;
+	width: 20%;
+	}
+	
+	input{
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	}
+	
+	textarea {
+	border-radius: 5px;
+	border: 1px solid gray;
+	resize: none
+	}
+</style>
 </head>
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
