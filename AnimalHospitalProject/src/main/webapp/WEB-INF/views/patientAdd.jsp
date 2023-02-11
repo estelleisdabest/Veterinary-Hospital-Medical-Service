@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>환자 추가</title>
+<title>환자추가</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -26,13 +26,13 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-input::-webkit-input-placeholder {
-	background-image: background-size: contain;
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	text-align: left;
-	text-indent: 0;
-}
+  input::-webkit-input-placeholder {
+    background-image: background-size: contain;
+    background-position: 1px center;
+    background-repeat: no-repeat;
+    text-align: left;
+    text-indent: 0;
+  }
 </style>
 </head>
 <body>

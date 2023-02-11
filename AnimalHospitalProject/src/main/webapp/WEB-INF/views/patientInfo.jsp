@@ -99,6 +99,9 @@ img {
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+<script type="text/javascript">
+
+</script>
 </head>
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
@@ -133,7 +136,7 @@ img {
 							<div class="col-md-8 form-group">
 								<label for="protectorImpt">보호자 주의사항</label>
 								<input type="text" class="form-control" name="protectorImpt" id="protectorImpt"
-									data-rule="protectorImpt">
+									data-rule="protectorImpt" placeholder="보호자의 주의해야할 사항을 적어주세요. ex)식단급여 불규칙" required="required">
 								<div class="validate"></div>
 							</div>
 						</div>
