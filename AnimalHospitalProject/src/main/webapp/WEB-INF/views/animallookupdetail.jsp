@@ -1,5 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -7,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>Medilab Bootstrap Template - Index</title>
+<title>환자 세부 조회</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -18,10 +17,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,19 +31,13 @@
 table {
 	border-collapse: collapse;
 }
-
 .pagination {
 	justify-content: center;
 }
 </style>
-
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
-
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
@@ -61,7 +51,6 @@ table {
 		</div>
 	</section>
 	<!-- End Breadcrumbs Section -->
-
 	<section class="inner-page">
 		<main>
 			<div class="col-md-9" style="margin-left: 200px;">
@@ -148,29 +137,21 @@ table {
 								</ul>
 							</nav>
 						<!-- 각 번호 페이지 버튼
-								                <c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-								                    <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-								                </c:forEach>
-									        -->
+						<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+							<li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+						</c:forEach>
+						 -->
 						</div>
-						<!--  다음페이지 버튼-->
-						<!-- 
-					              	<c:if test="${pageMaker.next}">
-					                    <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
-					                </c:if> 
-					                 -->
+						<!--  다음페이지 버튼
+					    <c:if test="${pageMaker.next}">
+					        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
+					    </c:if> 
+					    -->
 					</div>
 				</div>
 			</div>
 		</main>
-
 	</section>
-
-
 </body>
-<!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
-
-
-
 </html>
