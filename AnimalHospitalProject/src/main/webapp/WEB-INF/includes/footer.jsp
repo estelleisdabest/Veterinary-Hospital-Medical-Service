@@ -1,12 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!-- ======= Footer ======= -->
   <footer id="footer">
+
     <div class="footer-top">
       <div class="container">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Medilab</h3>
+            <h3>마이펫닥터</h3>
             <p>
               경기도 수원시 <br>
               팔달구 중부대로 100<br>
@@ -15,32 +17,48 @@
               <strong><b>Email</b>&nbsp;: </strong> animalHospital@example.com<br>
             </p>
           </div>
+          
+          <!-- 비회원일 경우 -->
+          <!-- 
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>비회원</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">HOME</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스 소개</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>
+            </ul>
+          </div>
+           -->
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>의사 전용 페이지</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/">메인페이지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">HOME</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스 소개</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/patientList">담당환자 전체 조회</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/scheduleDoctor">스케줄 관리</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지리스트</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>보호자 전용 페이지</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="/">메인페이지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/">HOME</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스소개</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/animallookup">환자조회</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/scheduleProtector">예약확인</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지리스트</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>XXXXXX</h4>
-            <p>XXXXXX를 방문해주셔서 감사합니다. <br> 고객님들의 소중한 반려동물들의 건강을 책임지는 <br>서비스를 제공하겠습니다. <br>꾸준히 서비스를 늘려갈 예정이오니 <br> 많은 관심 부탁드립니다.</p>
+            <h4>마이펫닥터를 방문해주셔서 감사합니다. <br> 고객님들의 소중한 반려동물들의 건강을 책임지는 <br>서비스를 제공하겠습니다. <br>꾸준히 서비스를 늘려갈 예정이오니 <br> 많은 관심 부탁드립니다.</h4>
           </div>
         </div>
       </div>

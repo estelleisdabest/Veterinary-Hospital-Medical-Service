@@ -19,18 +19,20 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
-      <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
+      <h1 class="logo me-auto"><a href="index.html">MyPetDoctor</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="img/logo.png" alt="" class="img-fluid"></a>-->
-
+      
+      
+      <!-- 추후 비회원,수의사,보호자가 보는화면 따로 만들기 -->
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="/">메인페이지</a></li>
+          <li><a class="nav-link scrollto" href="/">HOME</a></li>
           <li><a class="nav-link scrollto" href="/serviceIntroduce">서비스소개</a></li>
           <li class="dropdown"><a href="#"><span>수의사 전용 페이지</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="/patientList">전체환자 조회</a></li>
-              <li><a href="/scheduleDoctor">스게줄 관리</a></li>
+              <li><a href="/scheduleDoctor">스케줄 관리</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>보호자 전용 페이지</span> <i class="bi bi-chevron-down"></i></a>
@@ -39,12 +41,14 @@
               <li><a href="/scheduleProtector">예약 확인</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="/notice">공지리스트</a></li>
+          <li><a class="nav-link scrollto" href="/notice">공지</a></li>
+          <li><a class="nav-link scrollto" href="/hosMap">병원정보</a></li>
+          <li><a class="nav-link scrollto" href="/pharmMap">약국정보</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#appointment" class="appointment-btn scrollto"><span class="d-none d-md-inline">Make an</span> Appointment</a>
+      <a href="/signin" class="signin-btn">Login</a>
 
     </div>
   </header><!-- End Header -->
