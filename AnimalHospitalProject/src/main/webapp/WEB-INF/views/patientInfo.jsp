@@ -44,50 +44,6 @@ h4 {
 	margin: auto;
 }
 
-textarea {
-	resize: none;
-	height: 150px;
-	text-align: left;
-}
-
-
-input[name="medicineAdd"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
-input[name="medicineEdit"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
-label[id="recoFeedAdd_input"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-input[name="recoFeed_excel_download"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
 img {
 	width: 200px;
 	height: 200px; 
@@ -100,7 +56,6 @@ img {
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <script type="text/javascript">
-
 </script>
 </head>
 <body>
@@ -123,23 +78,11 @@ img {
 						<h4>
 							<b>환자 정보</b> 
 							<button type="button" class="btn btn-primary bt-sm" name="patientInfoEditDoctor" onclick="location='patientInfoEditDoctor'" style="border-radius:50px;">수정</button>
+						</h4>
 						<br />
 						<br />
 						<img src="img/dog.jpg" alt="...">
-						</h4>
 						<div class="row"></div>
-							<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="protectorImpt">보호자 주의사항</label>
-								<input type="text" class="form-control" name="protectorImpt" id="protectorImpt"
-									data-rule="protectorImpt" placeholder="보호자의 주의해야할 사항을 적어주세요. ex)식단급여 불규칙" required="required">
-								<div class="validate"></div>
-							</div>
-						</div>
 							<br />
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -227,86 +170,11 @@ img {
 								<div class="validate"></div>
 							</div>
 						</div>
-							<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="visitdate">내원일</label>
-								<%-- 진료날짜를 띄움 --%>
-								<input type="date" class="form-control" id="visitDate"
-									value="2023-01-30" readonly style="background-color: #F5F5F5" />
-								<div class="validate"></div>
-							</div>
-						</div>
 						<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="nextVisitDate">다음내원 예정일</label> <input type="date"
-									class="form-control" id="nextVisitDate" value="2023-02-14"
-									readonly style="background-color: #F5F5F5" />
-								<div class="validate"></div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="symptom">증상</label>
-								<%-- 의사가 진단한 내용 띄움 --%>
-								<input type="text" class="form-control" name="symptom"
-									id="symptom" value="신장질환" data-rule="species" readonly
-									style="background-color: #F5F5F5">
-								<div class="validate"></div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="medicine">처방</label>
-								<%-- 의사가 처방한 내용 띄움 --%>
-								<div class="form-control">
-								<ul id="medicine_list" style="margin-bottom: 4px;">
-									<li>세라치오펩티다제</li>
-									<li>프로펜정</li>
-								</ul>
-								</div>
-								<input type="button" class="btn btn-primary" name="medicineEdit" onclick="location='/medicineEdit'" value="수정" />
-								<input type="button" class="btn btn-primary" name="medicineAdd" onclick="location='/medicine'" value="추가"/>
-								<div class="validate"></div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-8 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-8 form-group">
-								<label for="recoFeed">추천사료 및 영양제</label>
-								<%-- 의사가 추가한 엑셀파일 목록을 띄움 --%>
-								<div class="form-control"  style="margin-bottom: 4px;">
-								<ul id="recoFeed_list">
-									<li>신장질환 추천 사료(소형견).xlsx</li>
-									<li>소형견 추천 영양제.xlsx	</li>
-								</ul>
-								</div>
-								<input type="button" class="btn btn-primary" name="recoFeed_excel_download" id="recoFeed_excel_download" value="양식 다운받기" onclick="" />
-								<label for="recoFeedAdd" class="btn btn-primary" id="recoFeedAdd_input"  style="border-radius:50px;">추가(Excel)</label>
-								<input type="file" name="recoFeedAdd" id="recoFeedAdd" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="display: none; " />
-								<div class="validate"></div>
-							</div>
-						</div>
 					</div>
 					<div id="rightContainer">
+					<button type="button" class="btn btn-primary bt-sm" name="diagnosisAdd" onclick="location='diagnosisAdd'" style="border-radius:50px; float: right;">진료내용 작성</button>
+					<br /><br />
 						<div id="lastDiagnosis">
 							<div>
 								<div
