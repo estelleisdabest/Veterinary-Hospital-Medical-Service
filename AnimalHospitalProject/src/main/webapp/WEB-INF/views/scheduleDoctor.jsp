@@ -7,7 +7,6 @@
 <title>나의 스케줄(의사)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,26 +18,25 @@
 
 <!-- Tables - SB Admin -->
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 <style type="text/css">
-#gridContainer {
-	display: grid;
-	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 75% 25%;
-	position: static;
-}
-#do {
-	padding: 10px;
-	margin-bottom: 10px; 
-	border: 1px solid #CCCCFF; 
-	border-radius: 10px;
-	background-color: transparent;
-    box-shadow: 2px 2px 5px 0px rgba(200,200,200,1);
-}
-#today{
-	display: inline;
-}
+	#gridContainer {
+		display: grid;
+		grid-auto-rows: minmax(100px, auto);
+		grid-template-columns: 75% 25%;
+		position: static;
+	}
+	#do {
+		padding: 10px;
+		margin-bottom: 10px; 
+		border: 1px solid #CCCCFF; 
+		border-radius: 10px;
+		background-color: transparent;
+	    box-shadow: 2px 2px 5px 0px rgba(200,200,200,1);
+	}
+	#today{
+		display: inline;
+	}
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">

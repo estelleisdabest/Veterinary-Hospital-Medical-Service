@@ -4,11 +4,9 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>나의 예약 정보(보호자)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -27,96 +25,89 @@
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-HTMLElement.prototype.change=function(){
-	  const e = document.createEvent("HTMLEvents");
-	  e.initEvent('change', true, true );
-	  return this.dispatchEvent(e);
-};
-window.addEventListener('DOMContentLoaded', ()=>{
-	  const f=document.querySelector('#file');
-	  const b=document.querySelector('#btn1');
-	  f.addEventListener('change',e=>{
-	    const n=e.target.files[0]?.name||null;
-	    document.querySelector('.fileSelectArea p').textContent=n?n:"선택된 파일이 없습니다";
-	  });
-	  	b.addEventListener('click',()=>{
-	    	f.value="";
-	    	f.change();
-	  });
-});
-
-function handleOnChange1(e) {
-	  const text = e.options[e.selectedIndex].text;
-	  document.getElementById('selectedPatient').innerText
-	    = text;
-	}
-function handleOnChange2(e) {
-	  const text = e.options[e.selectedIndex].text;
-	  document.getElementById('selectedHospital').innerText
-	    = text;
-	}
-	
-function clickBtn() {
-    const ta = document.getElementById('textarea').value;
-    document.getElementById('textResult').textContent = ta;
-  }
-  
-window.onload = function () {
-	var cancel = document.getElementById('cancel');
-	cancel.addEventListener('click', function () {
-		var result = window.confirm('정말로 예약을 취소하시겠습니까?');
-		
-		if(result) {
-			alert('정상적으로 처리되었습니다.');
-			location.href='/scheduleProtector';
-		}
+	HTMLElement.prototype.change=function(){
+		  const e = document.createEvent("HTMLEvents");
+		  e.initEvent('change', true, true );
+		  return this.dispatchEvent(e);
+	};
+	window.addEventListener('DOMContentLoaded', ()=>{
+		  const f=document.querySelector('#file');
+		  const b=document.querySelector('#btn1');
+		  f.addEventListener('change',e=>{
+		    const n=e.target.files[0]?.name||null;
+		    document.querySelector('.fileSelectArea p').textContent=n?n:"선택된 파일이 없습니다";
+		  });
+		  	b.addEventListener('click',()=>{
+		    	f.value="";
+		    	f.change();
+		  });
 	});
-}
+
+	function handleOnChange1(e) {
+		  const text = e.options[e.selectedIndex].text;
+		  document.getElementById('selectedPatient').innerText
+		    = text;
+		}
+	function handleOnChange2(e) {
+		  const text = e.options[e.selectedIndex].text;
+		  document.getElementById('selectedHospital').innerText
+		    = text;
+		}
+		
+	function clickBtn() {
+	    const ta = document.getElementById('textarea').value;
+	    document.getElementById('textResult').textContent = ta;
+	  }
+  
+	window.onload = function () {
+		var cancel = document.getElementById('cancel');
+		cancel.addEventListener('click', function () {
+			var result = window.confirm('정말로 예약을 취소하시겠습니까?');
+			
+			if(result) {
+				alert('정상적으로 처리되었습니다.');
+				location.href='/scheduleProtector';
+			}
+		});
+	}
 </script>
 <style type="text/css">
-#gridContainer {
-	display: grid;
-	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 75% 25%;
-	position: static;
-}
-
-::placeholder {
-	font-size: 12px;
-}
-
-#file {
-	display: none;
-}
-
-label {
-	width: 150px;
-	color: #ffffff;
-	background-color: #136FFF;
-	cursor: pointer;
-	border-radius: 50px;
-	padding: 5px;
-	font-size: 10.5pt;
-	margin: auto;
-	text-align: center;
-}
-
-label:hover {
-	background-color: #005FFF;
-}
-
-#fileName {
-	display: inline;
-	font-size: 10pt;
-}
-
-#btn1 {
-	float: right;
-}
-
-#selectedPatient, #selectedHospital, #textResult {
-	display: inline;
-}
+	#gridContainer {
+		display: grid;
+		grid-auto-rows: minmax(100px, auto);
+		grid-template-columns: 75% 25%;
+		position: static;
+	}
+	::placeholder {
+		font-size: 12px;
+	}
+	#file {
+		display: none;
+	}
+	label {
+		width: 150px;
+		color: #ffffff;
+		background-color: #136FFF;
+		cursor: pointer;
+		border-radius: 50px;
+		padding: 5px;
+		font-size: 10.5pt;
+		margin: auto;
+		text-align: center;
+	}
+	label:hover {
+		background-color: #005FFF;
+	}
+	#fileName {
+		display: inline;
+		font-size: 10pt;
+	}
+	#btn1 {
+		float: right;
+	}
+	#selectedPatient, #selectedHospital, #textResult {
+		display: inline;
+	}
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -127,7 +118,6 @@ label:hover {
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">나의 예약 정보</h2>
@@ -135,7 +125,6 @@ label:hover {
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<section class="inner-page">
 			<div class="container">
 				<div id="gridContainer">
