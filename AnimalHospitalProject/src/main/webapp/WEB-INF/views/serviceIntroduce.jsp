@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 
@@ -22,15 +21,21 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
@@ -39,17 +44,11 @@
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">서비스 소개</h2>
@@ -66,7 +65,7 @@
 					<h4>보호자 및 반려동물 서비스 제공 내용</h4>
 
 					<div align="right">
-						<a href="#doctorPage" class="btn btn-primary" style="border-radius: 50px;">의사전용 소개 페이지에 가기</a>
+						<a href="#doctorPage" class="btn btn-primary" style="border-radius: 50px; width: 250px; margin: auto; text-align: center; color: white;">의사전용 소개 페이지에 가기</a>
 					</div>
 					<br />
 					<div
@@ -91,8 +90,8 @@
 						<p>이외에도 다양한 기능이 있습니다.</p>
 						<p>우리 가족을 위해서 시작해보세요!</p>
 						<div align="center">
-							<input type="button" class="btn btn-primary"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px;" />
+							<input type="button" class="btn btn-primary btn-sm"
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 					<a name="doctorPage"></a>
@@ -103,7 +102,7 @@
 				<div>
 					<h4>의사 시스템 제공내용</h4>
 					<div align="right">
-						<a href="#protectorPage" class="btn btn-primary" style="border-radius: 50px;">보호자 전용 소개
+						<a href="#protectorPage" class="btn btn-primary" style="border-radius: 50px; width: 280px; margin: auto; text-align: center; color: white;">보호자 전용 소개
 							페이지에 가기</a>
 					</div>
 					<br />
@@ -144,23 +143,17 @@
 						<p>주요 서비스 외에도 다양한 기능이 있습니다.</p>
 						<p>시작해보세요!</p>
 						<div align="center">
-							<input type="button" class="btn btn-primary"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px;" />
+							<input type="button" class="btn btn-primary btn-sm"
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
-
 	</main>
 	<!-- End #main -->
-
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

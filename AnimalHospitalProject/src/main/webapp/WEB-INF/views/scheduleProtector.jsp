@@ -2,7 +2,6 @@
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
@@ -22,30 +21,39 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
-
 <!-- Vendor CSS Files -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
+<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
+<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-function fileUpload(){
-	var fileInput = document.getElementsByClassName("form-control");
-
-	for( var i=0; i<fileInput.length; i++ ){
-		if( fileInput[i].files.length > 0 ){
-			for( var j = 0; j < fileInput[i].files.length; j++ ){
-				console.log(fileInput[i].files[j].name); // 파일명 출력
-			}
+window.onload=function(){
+  target=document.getElementById('file'); 
+	target.addEventListener('change',function(){		
+		if(target.value.length){ 
+			$('#originName').html(target.files[0].name);
+		}else{
+			$('#originName').html("");
 		}
-	}
-
+		
+	});
+	function test(){
+		  var obj = document.getElementById("f1");
+		  obj.value = "";
+		}
 }
 </script>
 <style type="text/css">
@@ -60,46 +68,23 @@ function fileUpload(){
 	font-size: 12px;
 }
 
-#app {
-    width: 280px;
+input[type=file]::file-selector-button {
+  width: 100px;
+  height: 35px;
+  background: #0066FF;
+  color: white;
+  font-size: 10.5pt;
+  border-radius: 5px;
+  cursor: pointer;  
 }
-
-label {
-    color: #ffffff;
-    padding:8px;
-    font-size:10.5pt;
-    margin:auto;
-    border-radius:50px;
-    background-color: #3366FF;
-    cursor: pointer;
-}
-label:hover {
- 	background-color: #0066CC;
-}
-
-input[type="file"] {
-    display: none;
-}
-
-#select {
-    margin: 5px 0 0 0;
-    font-size: 10.5pt;
-    text-align: right;
-    display: inline-block;
-}
-
-
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container" >
@@ -182,9 +167,9 @@ input[type="file"] {
 								</div>
 								<div align="left" id="app">
 									<label>
-										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file1">&nbsp;사진/동영상 추가&nbsp; 
+										<input type="file" class="form-control" accept=".jpg,.jpeg,.png,.gif,.bmp,.tif,.m4v,.mp4,.avi" name="file" id="file" onchange="fileUpload()" multiple="multiple">&nbsp;사진/동영상 추가&nbsp; 
 									</label>
-									<p id="select">파일을 선택해주세요</p>
+										<input type="button" id="btn1" value="test" onclick="test();"/>
 								</div>
 							</div>
 							<hr style="border: none; border-top: 1px dashed gray;"/>
@@ -203,12 +188,13 @@ input[type="file"] {
 									<td>내원 이유 : 정밀검사</td> <%-- 자동입력 필요  --%>
 								</tr>
 								<tr>
-									<td>사진 및 동영상 : </td><%-- 자동입력 필요 js or jquery  --%>
+									<td>사진 및 동영상 : <p id="originName" style="display : inline-block"></p>
+									</td>
 								</tr>
 							</table>
 							<br/>
 							<div align="right">
-								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+								<input type="submit" class="btn btn-primary btn-sm" value="예약하기" style="border-radius: 50px;">
 							</div>
 							</form>
 						</div>
@@ -216,14 +202,9 @@ input[type="file"] {
 				</div>
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
-
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

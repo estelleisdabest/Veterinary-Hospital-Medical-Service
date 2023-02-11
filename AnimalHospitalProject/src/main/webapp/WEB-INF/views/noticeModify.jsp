@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>공지사항 수정 및 삭제</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -46,7 +44,7 @@
   border: 1px solid gray;
   resize: none
 }
-  </style>
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 	window.onload = function () {
@@ -61,19 +59,14 @@
 		});
 	};
 </script>
-
 </head>
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
-	<br />
+		<br />
 		<div class="section-title">
           <h2 style="font-weight: bold; font-size: 30px;">공지사항 수정 및 삭제</h2>
           <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
@@ -83,7 +76,6 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
-
 	<%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 readonly --%>
     <section class="inner-page">
       <div class="container">
@@ -99,29 +91,20 @@
           내용 <br />
           <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
         </form>
-        
         <div id="button">
         <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%" onclick="location='/notice'">수정</button>
         <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;">삭제</button> <br />
         </div>
-        
         <%-- 보호자로 로그인하여 열람만 할 시 if문 사용하여 보여줄 버튼 --%>
        <%--
         <div class="before-page" style="position: relative;">
         	<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;margin: auto;text-align: center;color: white;">
         </div>
         --%>
-        
-
       </div>
     </section>
-
   </main><!-- End #main -->
-
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
-
 </html>

@@ -1,16 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-<title>환자 정보 수정(수의사)</title>
+<title>환자 정보 수정(수의사용)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -30,75 +26,67 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-input::-webkit-input-placeholder {
-	background-image: background-size: contain;
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	text-align: left;
-	text-indent: 0;
-}
+  input::-webkit-input-placeholder {
+    background-image: background-size: contain;
+    background-position: 1px center;
+    background-repeat: no-repeat;
+    text-align: left;
+    text-indent: 0;
+  }
 
-select option[value=""][disabled] {
-	display: none;
-}
+  select option[value=""][disabled] {
+    display: none;
+  }
 
-img {
-	width: 200px;
-	height: 200px;
-	display: block;
-	border-radius: 10%;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-}
+  img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 3px solid #F5F5F5;
+  }
 
-video {
-	width: 300px;
-	height: 200px;
-	margin: auto;
-	border-radius: 10%;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-}
+  video {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    border-radius: 10%;
+    object-fit: cover;
+    border: 3px solid #F5F5F5;
+  }
 
-.no_content {
-	width: 300px;
-	height: 200px;
-	margin: auto;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-	text-align: center;
-	font-size: 9pt;
-}
+  .no_content {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+    object-fit: cover;
+    border: 3px solid #F5F5F5;
+    text-align: center;
+    font-size: 9pt;
+  }
 
-table {
-	margin: auto;
-}
+  table {
+    margin: auto;
+  }
 </style>
 </head>
-
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정</h2>
 					<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				</div>
 			</div>
-
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<section class="inner-page">
 			<div class="container">
-
 				<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
 				<div class="contact-form pt-20"></div>
 				<br />
@@ -110,7 +98,6 @@ table {
 							</video></td>
 					</tr>
 				</table>
-
 				<!-- 
 		<%-- 사진만 등록되어 있을 경우 --%>
 		<div class="contact-form pt-20"></div>
@@ -153,9 +140,7 @@ table {
 			</tr>
 		</table>
 		 -->
-
 				<br /> <br />
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -168,8 +153,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -183,7 +166,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -205,7 +187,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -218,7 +199,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -231,11 +211,9 @@ table {
 							Female</label> <input type="radio" name="gender" id="Male"
 							data-rule="gender" value="Male"> <label for="Male">
 							Male</label>
-
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -248,7 +226,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -261,7 +238,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -272,7 +248,6 @@ table {
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -285,7 +260,7 @@ table {
 					</div>
 				</div>
 				<div class="row">
-					<p></p><p>
+					<p></p><p></p>
 						<br />
 					<div class="col-md-4 form-group" style="margin: auto;">
 						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지"
@@ -300,7 +275,5 @@ table {
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>

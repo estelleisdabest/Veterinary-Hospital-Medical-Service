@@ -66,7 +66,6 @@ input[name="send_certificationNumber"] {
 }
 </style>
 </head>
-
 <body>
 	<main id="main">
 		<%@ include file="/WEB-INF/includes/header.jsp"%>

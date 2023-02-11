@@ -1,11 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
   <title>공지사항 추가</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
@@ -19,7 +17,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-
   <!-- Vendor CSS Files -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -27,8 +24,6 @@
 
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
-  <link href="css/style.css" rel="stylesheet">
-  
   <style type="text/css">
   form{
   margin-bottom : 60px;
@@ -49,24 +44,20 @@
   resize: none
 }
   </style>
-
 </head>
-
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
 	<br />
 		<div class="section-title">
-          <h2 style="font-weight: bold; font-size: 30px;">공지사항 추가</h2>
+          <h2 style="font-weight: bold; font-size: 30px;">
+          <br /> 공지사항 추가</h2>
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
-
     <section class="inner-page">
       <div class="container">
         <form class="noticeForm">        
@@ -87,13 +78,8 @@
             </div>
       </div>
     </section>
-
   </main><!-- End #main -->
-
-
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
-
 </body>
-
 </html>

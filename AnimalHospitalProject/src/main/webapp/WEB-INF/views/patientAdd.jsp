@@ -1,16 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>환자추가</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -30,26 +26,21 @@
   <!-- Template Main CSS File -->
   <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-input::-webkit-input-placeholder {
-	background-image: background-size: contain;
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	text-align: left;
-	text-indent: 0;
-}
+  input::-webkit-input-placeholder {
+    background-image: background-size: contain;
+    background-position: 1px center;
+    background-repeat: no-repeat;
+    text-align: left;
+    text-indent: 0;
+  }
 </style>
 </head>
-
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">환자 추가</h2>
@@ -161,12 +152,5 @@ input::-webkit-input-placeholder {
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>
-
-
-
-
-

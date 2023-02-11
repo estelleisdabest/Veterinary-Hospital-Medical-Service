@@ -21,20 +21,17 @@
 	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-<!-- Vendor CSS Files -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
-<!-- Template Main CSS File -->
-<link href="css/style.css" rel="stylesheet">
-
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
 table {
 	border-collapse: collapse;
 }
-
 .pagination {
 	justify-content: center;
 }
@@ -42,23 +39,14 @@ table {
 <!-- <script type="text/javascript">
 window.onload = function(){
 	var animalLookupList = document.getElementById('animalLookupList');
-	
-	
 }
-
 </script> -->
-
 </head>
-
 <%@ include file="/WEB-INF/includes/header.jsp"%>
-
-
 <body class="sb-nav-fixed">
-
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
-
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
@@ -79,6 +67,7 @@ window.onload = function(){
 				<br />
 				<div id="animalLookupList">
 				<div class="white_shd full margin_bottom_30">
+				<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
 							<table class="table table-hover" style="text-align: center">
@@ -213,12 +202,7 @@ window.onload = function(){
 			</div>
 		</main>
 	</section>
-
-
 </body>
 <!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
-
-
-
 </html>
