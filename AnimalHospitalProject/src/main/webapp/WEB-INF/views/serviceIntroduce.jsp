@@ -22,20 +22,13 @@
 	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/animate.css/animate.min.css" rel="stylesheet">
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-<link href="vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-<link href="vendor/remixicon/remixicon.css" rel="stylesheet">
-<link href="vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link
 	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
 	rel="stylesheet" />
-<link href="css/styles.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
 
@@ -90,8 +83,8 @@
 						<p>이외에도 다양한 기능이 있습니다.</p>
 						<p>우리 가족을 위해서 시작해보세요!</p>
 						<div align="center">
-							<input type="button" class="btn btn-primary btn-sm"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
+							<input type="button" class="btn btn-primary"
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 180px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 					<a name="doctorPage"></a>
@@ -143,8 +136,8 @@
 						<p>주요 서비스 외에도 다양한 기능이 있습니다.</p>
 						<p>시작해보세요!</p>
 						<div align="center">
-							<input type="button" class="btn btn-primary btn-sm"
-								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 150px; margin: auto; text-align: center; color: white;" />
+							<input type="button" class="btn btn-primary"
+								onclick="location.href='/roleCheck'" value="회원가입 하러가기" style="border-radius: 50px; width: 180px; margin: auto; text-align: center; color: white;" />
 						</div>
 					</div>
 				</div>
