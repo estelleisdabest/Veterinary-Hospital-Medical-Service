@@ -2,38 +2,36 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>약국 정보 추가</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <title>약국 정보 추가</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Tables - SB Admin -->
-  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+<!-- Tables - SB Admin -->
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
-  <style type="text/css">
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
+<style type="text/css">
 	.wrap {
 		display: flex;
 	}
-	</style>
+</style>
 </head>
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
@@ -52,7 +50,6 @@
         </div>
       </div>
     </section><!-- End Breadcrumbs Section -->
-
     <section class="inner-page">
 			<div class="container">
 				<div class="row">
@@ -64,8 +61,7 @@
 							class="form-control" name="pharmacy_name" id="pharmacy_name" placeholder="약국이름을 입력해주세요">
 						<div class="validate"></div>
 					</div>
-				</div>
-				
+				</div>			
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -78,8 +74,7 @@
 						</div>
 						<div class="validate"></div>
 					</div>
-				</div>
-				
+				</div>			
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -89,8 +84,7 @@
 						<input type="text" class="form-control" name="pharmacy_address_detail" id="pharmacy_address_detail" placeholder="수정할 상세주소를 입력해주세요" data-rule="age" data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
-				</div>
-				
+				</div>			
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -101,7 +95,6 @@
 						<div class="validate"></div>
 					</div>
 				</div>
-
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -112,8 +105,7 @@
 							data-msg="필수입력 항목입니다." placeholder="위도를 입력해주세요">
 						<div class="validate"></div>
 					</div>
-				</div>
-				
+				</div>			
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -141,8 +133,7 @@
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	window.onload = function() {
 		document

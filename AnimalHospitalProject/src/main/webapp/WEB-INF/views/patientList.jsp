@@ -1,25 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>담당 환자 전체 조회</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
-
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -28,28 +23,27 @@
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
-
 <style type="text/css">
-table {
-	border-collapse: collapse;
-}
-
-.pagination {
-	justify-content: center;
-}
-input[name="searchPatient"] {
-	width: 70%;
-	height: 38px;
-	border: 1px solid #ced4da;
-	padding-left: 5px;
-	display: inline;
-}
-input[name="searchPatientBtn"] {
-	width: 30%;
-	height: 38px;
-	display: inline;
-	margin-left: -5px;
-}
+	table {
+		border-collapse: collapse;
+	}
+	
+	.pagination {
+		justify-content: center;
+	}
+	input[name="searchPatient"] {
+		width: 70%;
+		height: 38px;
+		border: 1px solid #ced4da;
+		padding-left: 5px;
+		display: inline;
+	}
+	input[name="searchPatientBtn"] {
+		width: 30%;
+		height: 38px;
+		display: inline;
+		margin-left: -5px;
+	}
 </style>
 </head>
 <%@ include file="/WEB-INF/includes/header.jsp"%>
