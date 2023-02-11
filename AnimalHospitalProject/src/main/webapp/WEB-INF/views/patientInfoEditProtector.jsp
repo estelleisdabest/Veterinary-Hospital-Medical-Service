@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>환자 정보 수정(보호자 용)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -18,63 +15,54 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-	crossorigin="anonymous"></script>
-
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 <style type="text/css">
-input::-webkit-input-placeholder {
-	background-image: background-size: contain;
-	background-position: 1px center;
-	background-repeat: no-repeat;
-	text-align: left;
-	text-indent: 0;
-}
-
-select option[value=""][disabled] {
-	display: none;
-}
-
-img {
-	width: 200px;
-	height: 200px;
-	display: block;
-	border-radius: 10%;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-}
-
-video {
-	width: 300px;
-	height: 200px;
-	margin: auto;
-	border-radius: 10%;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-}
-
-.no_content {
-	width: 300px;
-	height: 200px;
-	margin: auto;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-	text-align: center;
-	font-size: 9pt;
-}
-
-table {
-	margin: auto;
-}
+	input::-webkit-input-placeholder {
+		background-image: background-size: contain;
+		background-position: 1px center;
+		background-repeat: no-repeat;
+		text-align: left;
+		text-indent: 0;
+	}
+	select option[value=""][disabled] {
+		display: none;
+	}
+	img {
+		width: 200px;
+		height: 200px;
+		display: block;
+		border-radius: 10%;
+		object-fit: cover;
+		border: 3px solid #F5F5F5;
+	}
+	video {
+		width: 300px;
+		height: 200px;
+		margin: auto;
+		border-radius: 10%;
+		object-fit: cover;
+		border: 3px solid #F5F5F5;
+	}
+	.no_content {
+		width: 300px;
+		height: 200px;
+		margin: auto;
+		object-fit: cover;
+		border: 3px solid #F5F5F5;
+		text-align: center;
+		font-size: 9pt;
+	}
+	table {
+		margin: auto;
+	}
 </style>
 </head>
-
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 	<main id="main">
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정</h2>
@@ -83,7 +71,6 @@ table {
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<section class="inner-page">
 		<br><br>
 		<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
@@ -112,10 +99,8 @@ table {
 					<input type="file" class="form-control" name="file" id="file2" style="display: none;"  accept="video/*">
 				</td>				
 			</tr>
-		</table>
-		
+		</table>		
 		<br><br>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -128,7 +113,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -141,7 +125,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -163,7 +146,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -176,7 +158,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -192,7 +173,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -205,7 +185,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -218,7 +197,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -229,7 +207,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -242,7 +219,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -252,8 +228,7 @@ table {
 					class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요">
 				<div class="validate"></div>
 			</div>
-		</div>
-		
+		</div>	
 		<div class="row">
 			<p></p><p></p>
 			<br />
@@ -265,8 +240,7 @@ table {
 					value="확인" onclick="location='/myPageProtecto'" style="border-radius: 50px;
 					width: 110px; text-align: center; float: right; color: white;">
                </div>
-            </div>
-		
+            </div>		
 			<div class="container">		
 			</div>
 		</section>
