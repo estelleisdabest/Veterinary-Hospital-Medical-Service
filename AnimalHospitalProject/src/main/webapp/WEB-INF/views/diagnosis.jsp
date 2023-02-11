@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>진료내역</title>
+<title>Medilab Bootstrap Template - Index</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -19,11 +19,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
+
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-.
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -116,17 +116,24 @@
 		font-size: 13px;
 	} 
 	
+	
 </style>
 <script type="text/javascript">
 // 해당 일자에 후기 내용이 없을 경우 수정하기 버튼이 보이지않고 작성하기 버튼이 보여야 한다.
 // 해당 일자에 후기 내용이 있을 경우 작성하기 버튼은 보이지 않으며 수정하기 버튼을 보여야 한다.
 </script>
+
 </head>
+
 <%@ include file="/WEB-INF/includes/header.jsp"%>
+
+
 <body class="sb-nav-fixed">
+
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
+
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
@@ -136,8 +143,11 @@
 		</div>
 	</section>
 	<!-- End Breadcrumbs Section -->
+
 	<section class="inner-page">
+	
 		<main>
+		
 			<div class="container">
 				<div id="gridContainer">
 					<div id="mainContent">
@@ -173,6 +183,7 @@
 						</div>
 						<br />
 					</div>
+
 					<div id="rightContent">
 					<!-- 후기 -->
 						<div id="Postscript">
@@ -194,15 +205,18 @@
 										<!-- 내용 길 경우 자바스크립트 이용해서 자동줄바꿈 -->
 											<div id="PostscriptContent">
 												의사 선생님이 너무 친절했어요~!.....
-										</div>
+											</div>
+										
 									</td>
 								</tr>
+
 							</table>
 						</div>
 						<div align="right" >
 						<!-- <input type="button" class="btn btn-primary btn" id="saveBtn"
 									onclick="location.href='/postscriptSave'" value="작성하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/> --> 
+							
 						<input type="button" class="btn btn-primary btn" id="updateBtn"
 									onclick="location.href='/postscriptUpdate'" value="수정하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/>

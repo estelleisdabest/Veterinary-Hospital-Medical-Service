@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>환자 조회</title>
+<title>Medilab Bootstrap Template - Index</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -17,21 +17,21 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+	rel="stylesheet">
 
-<!-- Vendor CSS Files -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-<!-- Template Main CSS File -->
-<link href="css/style.css" rel="stylesheet">
-
+  <!-- Template Main CSS File -->
+  <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
 table {
 	border-collapse: collapse;
 }
-
 .pagination {
 	justify-content: center;
 }
@@ -39,14 +39,8 @@ table {
 <!-- <script type="text/javascript">
 window.onload = function(){
 	var animalLookupList = document.getElementById('animalLookupList');
-	
 }
 </script> -->
-<script type="text/javascript">
-	document.getElementById("page").onclick = function () {
-		alert("Hello World");
-		};
-</script>
 </head>
 <%@ include file="/WEB-INF/includes/header.jsp"%>
 <body class="sb-nav-fixed">
@@ -62,6 +56,7 @@ window.onload = function(){
 		</div>
 	</section>
 	<!-- End Breadcrumbs Section -->
+
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
@@ -72,6 +67,7 @@ window.onload = function(){
 				<br />
 				<div id="animalLookupList">
 				<div class="white_shd full margin_bottom_30">
+				<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
 						<div class="table-responsive-sm">
 							<table class="table table-hover" style="text-align: center">
@@ -188,13 +184,14 @@ window.onload = function(){
 									</a></li>
 								</ul>
 							</nav>
-						<!-- 각 번호 페이지 버튼
-						<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
-							<li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
-						</c:forEach>
+							<!-- 각 번호 페이지 버튼
+							<c:forEach var="num" begin="${pageMaker.startPage}" end="${pageMaker.endPage}">
+								 <li class="pageInfo_btn ${pageMaker.cri.pageNum == num ? "active":"" }"><a href="${num}">${num}</a></li>
+							 </c:forEach>
 						 -->
 						</div>
-						<!--  다음페이지 버튼
+						<!--  다음페이지 버튼-->
+						<!-- 
 					    <c:if test="${pageMaker.next}">
 					        <li class="pageInfo_btn next"><a href="${pageMaker.endPage + 1 }">Next</a></li>
 					    </c:if> 
@@ -206,5 +203,6 @@ window.onload = function(){
 		</main>
 	</section>
 </body>
+<!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
 </html>

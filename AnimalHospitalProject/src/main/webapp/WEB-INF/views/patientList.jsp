@@ -6,7 +6,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>담당 환자 전체 조회</title>
+<title>Medilab Bootstrap Template - Index</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -17,7 +17,8 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
 	rel="stylesheet">
 
 
@@ -25,6 +26,7 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+.
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -34,30 +36,54 @@ table {
 	border-collapse: collapse;
 }
 
+.pageInfo {
+	margin-left: 25%;
+	margin-right: 20%;
+	list-style: none;
+	text-align: center;
+}
+
+.pageInfo_btn {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+}
+
+.pageInfo_btn.next {
+	float: left;
+	font-size: 15px;
+	margin-left: 13px;
+	padding: 3px;
+	font-weight: 500;
+	text-align: center;
+	border: 1px solid #dee2e6;
+	width: 45px;
+	height: 30px;
+}
+
 .pagination {
 	justify-content: center;
-}
-input[name="searchPatient"] {
-	width: 70%;
-	height: 38px;
-	border: 1px solid #ced4da;
-	padding-left: 5px;
-	display: inline;
-}
-input[name="searchPatientBtn"] {
-	width: 30%;
-	height: 38px;
-	display: inline;
-	margin-left: -5px;
 }
 </style>
 
 </head>
+
 <%@ include file="/WEB-INF/includes/header.jsp"%>
+
+
 <body class="sb-nav-fixed">
+
 	<!-- ======= Breadcrumbs Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container">
+
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
@@ -67,19 +93,11 @@ input[name="searchPatientBtn"] {
 		</div>
 	</section>
 	<!-- End Breadcrumbs Section -->
+
 	<section class="inner-page">
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px">
-			<form style="float:right;"> <!-- 예시: <form th:action="@{/board/list}" method="get"> -->
-				<input type="text" name="searchPatient" class="form-control" 
-							id="searchPatient" placeholder="환자명을 입력해주세요." data-rule="text">
-							&nbsp;
-				<input type="submit" class="btn btn-primary"
-							name="searchPatientBtn" id="searchPatientBtn" value="검색"
-							style="width: 70px; text-align: center; border-radius: 50px; margin-top: -4px;">
-			</form>
-			<div><br/><br/><br/> </div>	
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
@@ -87,69 +105,91 @@ input[name="searchPatientBtn"] {
 							<table class="table table-hover" style="text-align: center">
 								<thead>
 									<tr>
-										<th style="width: 6%">보호자명</th>
-										<th style="width: 10%">환자명</th>
-										<th style="width: 6%">나이</th>
-										<th style="width: 10%">종</th>
-										<th style="width: 6%">성별</th>
-										<th style="width: 6%">몸무게</th>
-										<th style="width: 20%">특이사항</th>
+										<th style="width: 8%">진료번호</th>
+										<th style="width: 8%">환자명</th>
+										<th style="width: 50%">진료내용</th>
+										<th style="width: 15%">보호자명</th>
+										<th style="width: 8%">진료일</th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>홍길동</td>
+										<td>751</td>
 										<td>아리</td>
-										<td>3</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
+										<td style="text-align: left;">감기</td>
+										<td>한사람</td>
+										<td>2023.01.30</td>
 									</tr>
 									<tr>
-										<td>김OO</td>
+										<td>667</td>
 										<td>토리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
+										<td style="text-align: left;">감기</td>
+										<td>두사람</td>
+										<td>2023.01.10</td>
 									</tr>
 									<tr>
-										<td>김OO</td>
-										<td>모리</td>
-										<td>8</td>
-										<td>포메라니안</td>
-										<td>male</td>
-										<td>4.2</td>
-										<td>당뇨, 슬개골 탈구</td>
+										<td>666</td>
+										<td>아리</td>
+										<td style="text-align: left;">건강검진</td>
+										<td>한사람</td>
+										<td>2022.11.10</td>
 									</tr>
 									<tr>
-										<td>김OO</td>
-										<td>태리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>5</td>
-										<td>없음</td>
+										<td>466</td>
+										<td>토리</td>
+										<td style="text-align: left;">구토</td>
+										<td>두사람</td>
+										<td>2022.01.30</td>
 									</tr>
 									<tr>
-										<td>박OO</td>
-										<td>함이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>1.0</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
+										<td>335</td>
+										<td>토리</td>
+										<td style="text-align: left;">건강검진</td>
+										<td>두사람</td>
+										<td>2021.12.30</td>
 									</tr>
 									<tr>
-										<td>박OO</td>
-										<td>품이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>0.9</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
+										<td>229</td>
+										<td>겨울</td>
+										<td style="text-align: left;">건강검진</td>
+										<td>세사람</td>
+										<td>2021.09.30</td>
+									</tr>
+									<tr>
+										<td>228</td>
+										<td>아리</td>
+										<td style="text-align: left;">결막염</td>
+										<td>네사람</td>
+										<td>2021.09.30</td>
+									</tr>
+									<tr>
+										<td>227</td>
+										<td>토리</td>
+										<td style="text-align: left;">결막염</td>
+										<td>두사람</td>
+										<td>2021.09.30</td>
+									</tr>
+									<tr>
+										<td>111</td>
+										<td>아리</td>
+										<td style="text-align: left;">소화불량</td>
+										<td>한사람</td>
+										<td>2021.08.30</td>
+									</tr>
+									<tr>
+										<td>45</td>
+										<td>토리</td>
+										<td style="text-align: left;">진료내용 예시입니다</td>
+										<td>두사람</td>
+										<td>2021.07.10</td>
+									</tr>
+									<tr>
+										<td>32</td>
+										<td>토리</td>
+										<td style="text-align: left;">진료내용 예시입니다</td>
+										<td>두사람</td>
+										<td>2021.04.05</td>
+									</tr>
 								</tbody>
 							</table>
 							<br/>
@@ -189,7 +229,14 @@ input[name="searchPatientBtn"] {
 				</div>
 			</div>
 		</main>
+
 	</section>
+
+
 </body>
+<!-- Template Main JS File -->
 <%@ include file="/WEB-INF/includes/footer.jsp"%>
+
+
+
 </html>
