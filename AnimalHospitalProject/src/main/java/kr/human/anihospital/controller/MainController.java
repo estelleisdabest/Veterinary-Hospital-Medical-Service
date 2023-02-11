@@ -34,7 +34,7 @@ public class MainController {
 	public String postscriptUpdate() {
 		return "postscriptUpdate";
 	}
-	
+
 	@GetMapping("/postscript_update")
 	public String postscript_update() {
 		return "postscript_update";
@@ -53,9 +53,9 @@ public class MainController {
 	}
 
 	// 공지 사항 수정 및 삭제
-	@GetMapping("/noticeModify")
-	public String noticeModify() {
-		return "noticeModify";
+	@GetMapping("/noticeEdit")
+	public String noticeEdit() {
+		return "noticeEdit";
 	}
 
 	// 환자 정보 수정 (의사 용)
@@ -143,17 +143,17 @@ public class MainController {
 	}
 
 	// 동물 병원 위치 조회
-	@GetMapping("/hosMap")
-	public String hosMap() {
-		return "hosMap";
+	@GetMapping("/hospitalMap")
+	public String hospitalMap() {
+		return "hospitalMap";
 	}
-	
+
 	// 약국 위치 조회
-	@GetMapping("/pharmMap")
-	public String pharmMap() {
-		return "pharmMap";
+	@GetMapping("/pharmacyMap")
+	public String pharmacyMap() {
+		return "pharmacyMap";
 	}
-	
+
 	// 환자 정보 및 이전 진료 내역
 	@GetMapping("/patientInfo")
 	public String patientInfo() {
@@ -172,24 +172,12 @@ public class MainController {
 		return "doctorInfoEdit";
 	}
 
-	// 약 처방 페이지
-	@GetMapping("/medicineAdd")
-	public String medicineAdd() {
-		return "medicineAdd";
-	}
-	
-	// 처뱡약 리스트 페이지
-	@GetMapping("/medicineList")
-	public String medicineList() {
-		return "medicineList";
-	}
-	
 	// 병원 정보 추가
 	@GetMapping("/hospitalAdd")
 	public String hospitalAdd() {
 		return "hospitalAdd";
 	}
-	
+
 	// 병원 정보 수정
 	@GetMapping("/hospitalEdit")
 	public String hospitalEdit() {
@@ -197,20 +185,26 @@ public class MainController {
 	}
 
 	// 환자 정보 수정 (보호자 용)
-	@GetMapping("/patientInfoEditGuardian")
-	public String patientInfoEditGuardian() {
-		return "patientInfoEditGuardian";
+	@GetMapping("/patientInfoEditProtector")
+	public String patientInfoEditProtector() {
+		return "patientInfoEditProtector";
 	}
-	
+
 	// 약국 정보 추가
 	@GetMapping("/pharmacyInfoAdd")
 	public String pharmacyInfoAdd() {
 		return "pharmacyInfoAdd";
 	}
-	
+
 	// 약국 정보 수정
 	@GetMapping("/pharmacyInfoEdit")
 	public String pharmacyInfoEdit() {
 		return "pharmacyInfoEdit";
+	}
+	
+	// 진단서 작성
+	@GetMapping("/diagnosisAdd")
+	public String diagnosisAdd() {
+		return "diagnosisAdd";
 	}
 }
