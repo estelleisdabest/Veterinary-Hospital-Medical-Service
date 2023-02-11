@@ -1,43 +1,34 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-<title>Medilab Bootstrap Template - Index</title>
+<title>나의 정보</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
-<link
-	href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css"
-	rel="stylesheet" />
-<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
-	crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-	window.onload = function () {
+	window.onload = function() {
 		var withdrawal = document.getElementById('withdrawal');
 		withdrawal.addEventListener('click', function () {
 			var result = window.confirm('탈퇴하시면 모든 내역이 사라집니다.\r\n정말로 회원 탈퇴하시겠습니까?');
@@ -48,9 +39,7 @@
 			}
 		});
 	}
-	
 </script>
-
 <style type="text/css">
 img {
 	width: 300px;
@@ -78,11 +67,9 @@ h3 {
 }
 </style>
 </head>
-
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -93,7 +80,6 @@ h3 {
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<section class="inner-page">
 			<div class="container">
 				<div id="gridContainer">
@@ -165,7 +151,6 @@ h3 {
 							</div>
 						</div>
 					</div>
-
 					<div id="rightContent">
 						<div
 							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
@@ -298,8 +283,7 @@ h3 {
 													<td>2021.04.05</td>
 												</tr>
 											</tbody>
-										</table>
-										
+										</table>						
 										<nav aria-label="Page navigation example">
 										  <ul class="pagination">
 										    <li class="page-item">
@@ -327,10 +311,7 @@ h3 {
 		</section>
 	</main>
 	<!-- End #main -->
-
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-
 </html>
