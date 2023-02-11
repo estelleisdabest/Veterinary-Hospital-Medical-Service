@@ -1,47 +1,40 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>약국 위치 조회</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
+<!-- Favicons -->
+<link href="img/favicon.png" rel="icon">
+<link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
-  <title>Medilab Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Favicons -->
-  <link href="img/favicon.png" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Vendor CSS Files -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
-
-
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-.wrap {
-	display: flex;
-}
+	.wrap {
+		display: flex;
+	}
 </style>
 </head>
-
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
   <main id="main">
-
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
-
 	<br />
 		<div class="section-title">
 		<h2 style="font-weight: bold; font-size: 30px;">약국 위치 조회</h2>
@@ -75,7 +68,6 @@
 			</div>
 		</div>
 	</div>
-	
 	<div class="row">
 			<p></p>
 			<p>
@@ -89,7 +81,6 @@
 					style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 			</div>
 	</div>
-	
     <section class="inner-page">
       <div class="container">
       </div>
@@ -98,8 +89,7 @@
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	window.onload = function() {
 		document

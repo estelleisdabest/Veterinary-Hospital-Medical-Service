@@ -1,16 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>의사 정보 수정</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -18,9 +14,7 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -55,15 +49,11 @@ table {
 </head>
 
 <body>
-
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
-
 	<main id="main">
-
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
-
 				<br />
 				<div class="section-title">
 					<h2 style="font-weight: bold; font-size: 30px;">내 정보</h2>
@@ -71,7 +61,6 @@ table {
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
 		<div class="contact-form pt-20"></div>
 		<br />
 		<table>
@@ -89,9 +78,7 @@ table {
 				</td>				
 			</tr>
 		</table>
-
 		<br /> <br />
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -103,7 +90,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -120,7 +106,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -132,7 +117,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -144,7 +128,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -155,7 +138,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -167,7 +149,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -179,9 +160,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
-
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -193,7 +171,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -211,7 +188,6 @@ table {
 				<div class="validate"></div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -223,8 +199,7 @@ table {
 					data-msg="필수입력 항목입니다.">
 				<div class="validate"></div>
 			</div>
-		</div>
-		
+		</div>	
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -241,8 +216,6 @@ table {
 					placeholder=""></textarea>
 			</div>
 		</div>
-
-
 		<div class="row">
 			<p></p>
 			<p>
@@ -262,15 +235,12 @@ table {
 				<p></p>
 			</div>
 		</section>
-
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
-
 </body>
-<script
-	src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
 	window.onload = function() {
 		document
