@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<title>환자 정보 수정(Doctor)</title>
+<title>환자 정보 수정(수의사)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -88,7 +88,7 @@ table {
 
 				<br />
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정(수의사 용)</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">환자 정보 수정</h2>
 					<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				</div>
 			</div>
@@ -269,20 +269,6 @@ table {
 					<div class="col-md-4 form-group mt-3">
 						<label for="nextVisitDate">다음내원 예정일</label> <input type="date"
 							class="form-control" id="nextVisitDate" />
-						<div class="validate"></div>
-					</div>
-				</div>
-
-				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="symptom">증상</label>
-						<%-- 의사가 진단한 내용 띄움 --%>
-						<input type="text" class="form-control" name="symptom"
-							id="symptom" value="신장질환" data-rule="species"
-							data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
 				</div>

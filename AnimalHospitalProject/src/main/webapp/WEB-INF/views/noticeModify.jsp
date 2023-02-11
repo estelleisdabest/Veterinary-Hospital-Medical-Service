@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>공지사항</title>
+  <title>공지사항 수정 및 삭제</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -47,14 +47,25 @@
   resize: none
 }
   </style>
-  
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+	window.onload = function () {
+		var delete_btn = document.getElementById('delete_btn');
+		delete_btn.addEventListener('click', function () {
+			var result = window.confirm('정말로 삭제하시겠습니까?');
+			
+			if(result) {
+				alert('정상적으로 처리되었습니다.');
+				location.href='/notice';
+			}
+		});
+	};
+</script>
 
+</head>
 <body>
 
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
-
 
   <main id="main">
 
@@ -65,7 +76,7 @@
 	<br />
 		<div class="section-title">
           <h2 style="font-weight: bold; font-size: 30px;">공지사항 수정 및 삭제</h2>
-          <%-- <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
+          <%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 보이는 제목 --%>
           <%--
           <h2 style="font-weight: bold; font-size: 30px;">공지사항</h2>
            --%>
@@ -84,7 +95,7 @@
           작성일 <br />
           <input type="date" id="writeDate" value="2023-01-30" readonly style="background-color: #F5F5F5;" /> <br />  <%-- 열람시에는 작성일, 글을 수정한다면 수정한날짜로 변경 --%>
           제목 <br />
-          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
+          <textarea id="subject" name="content" rows="1" cols="100" maxlength="50" required="required"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
           내용 <br />
           <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
         </form>

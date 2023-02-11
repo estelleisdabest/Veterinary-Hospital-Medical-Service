@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>공지사항</title>
+  <title>공지사항 추가</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -49,15 +49,11 @@
   resize: none
 }
   </style>
-  
+
 </head>
 
 <body>
-
   <%@ include file="/WEB-INF/includes/header.jsp" %>
-
-
-
   <main id="main">
 
     <!-- ======= Breadcrumbs Section ======= -->
@@ -73,7 +69,7 @@
 
     <section class="inner-page">
       <div class="container">
-        <form>        
+        <form class="noticeForm">        
           작성자 <br />
           <input id="witer" type="text" name="witer" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
           진료병원 <br />
@@ -81,9 +77,9 @@
           작성일 <br />
           <input id="writeDate" type="date" value="2023-01-30"/> <br /> <%-- 현재날짜를 띄움 --%>
           제목 <br />
-          <textarea id="subject" name="content" rows="1" cols="70" maxlength="30" required="required"></textarea> <br />
+          <textarea id="subject" name="content" rows="1" cols="100" maxlength="50" required="required" placeholder="제목을 입력해주세요."></textarea> <br />
           내용 <br />
-          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"></textarea> <br />
+          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required" placeholder="내용을 입력해주세요."></textarea> <br />
         </form>
             <div class="col-md-4 form-group" style="margin: auto;">
                <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
