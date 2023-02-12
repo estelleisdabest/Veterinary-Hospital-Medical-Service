@@ -24,12 +24,13 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-table {
-	border-collapse: collapse;
-}
-.pagination {
-	justify-content: center;
-}
+	table {
+		border-collapse: collapse;
+	}
+	
+	.pagination {
+		justify-content: center;
+	}
 </style>
 </head>
 <%@ include file="/WEB-INF/includes/header.jsp"%>
@@ -152,6 +153,7 @@ table {
 									</tr>
 								</tbody>
 							</table>
+							<br />
 							<nav aria-label="Page navigation example">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"
