@@ -22,5 +22,5 @@ public class ProtectorVO {
 	private Date protectorJoinDate;
 	private boolean protectorRole;
 	private Date protectorUpdateDate;
-	private String protectorLeaveFlag;
+	private boolean protectorLeaveFlag;
 }
