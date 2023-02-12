@@ -180,7 +180,7 @@
 			<div class="col-md-4 form-group mt-3">
 				<label for="weight">몸무게</label>
 				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="number" min="1" class="form-control" name="weight"
+				<input type="number" min="1" class="form-control" name="weight" step="0.1"
 					id="weight" value="5" data-rule="weight" data-msg="필수입력 항목입니다.">
 				<div class="validate"></div>
 			</div>
@@ -225,7 +225,7 @@
 			</div>
 			<div class="col-md-4 form-group mt-3">
 				<label for="etc">특이사항</label> <input type="text"
-					class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요">
+					class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
 				<div class="validate"></div>
 			</div>
 		</div>	

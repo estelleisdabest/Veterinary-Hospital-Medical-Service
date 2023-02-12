@@ -36,6 +36,45 @@
 		display: inline;
 		margin: auto;
 	}
+	textarea {
+		resize: none;
+		height: 150px;
+		text-align: left;
+	}
+	input[name="medicineAdd"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-top: 4px;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	input[name="medicineEdit"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-top: 4px;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	label[id="recoFeedAdd_input"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	input[name="recoFeed_excel_download"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
 	img {
 		width: 200px;
 		height: 200px; 
@@ -156,7 +195,7 @@
 							<div class="col-md-8 form-group">
 								<label for="weight">몸무게</label>
 								<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-								<input type="number" min="1" class="form-control" name="weight"
+								<input type="number" min="1" class="form-control" name="weight" step="0.1"
 									id="weight" value="5" data-rule="weight" readonly
 									style="background-color: #F5F5F5">
 								<div class="validate"></div>

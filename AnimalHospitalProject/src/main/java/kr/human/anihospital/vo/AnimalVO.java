@@ -16,7 +16,7 @@ public class AnimalVO {
 	private String animalName;
 	private String animalType;
 	private String animalSize;
-	private int animalWeight;
+	private float animalWeight;
 	private Date animalAge;
 	private boolean animalGender;
 	private String animalImportantSymptom;

@@ -15,7 +15,6 @@
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
@@ -32,20 +31,33 @@
 		grid-auto-rows: minmax(100px, auto);
 		grid-template-columns: 2fr 1fr;
 	}
-	
 	h4 {
 		display: inline;
 		margin: auto;
 	}
-	
-	input[name="medicine_add"] {
+	textarea {
+		resize: none;
+		height: 150px;
+		text-align: left;
+	}
+	input[name="medicineAdd"] {
+		height: 38px;
 		display: inline;
 		float: right;
-		margin-top: 5px;
+		margin-top: 4px;
+		margin-right: 5px;
 		font-size: 10pt;
 		border-radius:50px;
 	}
-	
+	input[name="medicineEdit"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-top: 4px;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
 	label[id="recoFeedAdd_input"] {
 		height: 38px;
 		display: inline;
@@ -54,7 +66,6 @@
 		font-size: 10pt;
 		border-radius:50px;
 	}
-	
 	input[name="recoFeed_excel_download"] {
 		height: 38px;
 		display: inline;
@@ -63,7 +74,6 @@
 		font-size: 10pt;
 		border-radius:50px;
 	}
-	
 	img {
 		width: 200px;
 		height: 200px; 
@@ -73,6 +83,8 @@
 		border: 3px solid #F5F5F5;
 	}
 </style>
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
 <script type="text/javascript">
 
 </script>
@@ -191,7 +203,7 @@
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="weight">몸무게</label>
-								<input type="number" min="1" class="form-control" name="weight"
+								<input type="number" min="1" class="form-control" name="weight" step="0.1"
 									id="weight" value="5" data-rule="weight" readonly
 									style="background-color: #F5F5F5">
 								<div class="validate"></div>
@@ -241,10 +253,10 @@
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="medicine">처방</label>
-								<div class="form-control" >
-					        <div class="col-md-11 ">
-					           <label for="medicine_name">약품명</label> 
-					           <!-- 약품명을 선택하면 약품상세명과 복약안내가 자동으로 입력되도록 할것 -->
+								<%-- 의사가 처방한 내용 띄움 --%>
+								<div class="form-control">
+					        <div class="col-md-8 ">
+					           <label for="medicine_name">약품명</label>
 					          <input type="text" class="form-control" list="medicine_name_option" placeholder="약품명을 입력하세요." data-rule="text" required="required">
 					          <datalist id="medicine_name_option">
 					          	<option class="form-control" value="세라치오펩티다제">
@@ -273,17 +285,12 @@
 					          	<option class="form-control" value="하루 1회 / 취침 전">
 					          	<option class="form-control" value="증상 발생 시 수시">
 					          </datalist>
-							<div>
-							<!-- 입력 후 '처방약 추가'버튼을 누르면 아래 리스트에 처방약이 추가된다.-->
-								<input type="button" class="btn btn-primary" name="medicine_add" id="medicine_add" value="처방약 추가" onclick="" />
-							</div>
 					          <div class="validate"></div>
 							<br />
 								</div>
-					         <br /><br />
-					          <table style="text-align: left; font-size: 10pt;"class="form-control" >
+					          <table style="text-align: left; font-size: 10pt;" class="form-control" >
 							<thead>
-								<tr style="border-bottom: 1px solid #F5F5F5;">
+								<tr>
 									<th style="width: 30%">약품명</th>
 									<th style="width: 30%">약품상세명</th>
 									<th style="width: 40%">복약안내</th>
@@ -291,19 +298,19 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr style="border-bottom: 1px solid #F5F5F5;">
+								<tr>
 									<td style="vertical-align: middle;">세라치오펩티다제</td>
 									<td style="vertical-align: middle;">소염효소제</td>
 									<td style="text-align: left;">하루 3회 / 식후 30분</td>
 									<td><i class="bi bi-x-square"></i></td>
 								</tr>
-								<tr style="border-bottom: 1px solid #F5F5F5;">
+								<tr>
 									<td style="vertical-align: middle;">올로원스점안액</td>
 									<td style="vertical-align: middle;">Eye steriods&antiallergics</td>
 									<td style="text-align: left;">증상 발생 시 수시</td>
 									<td><i class="bi bi-x-square"></i></td>
 								</tr>
-								<tr style="border-bottom: 1px solid #F5F5F5;">
+								<tr>
 									<td style="vertical-align: middle;">옵틱플루점안액</td>
 									<td style="vertical-align: middle;">Eye steriods&antiallergics</td>
 									<td style="text-align: left;">증상 발생 시 수시</td>
@@ -311,9 +318,8 @@
 								</tr>
 							</tbody>
 					          </table>
-					          <br />
 								</div>
-							</div>
+								</div>
 						</div>
 						<br />
 						<div class="row">
