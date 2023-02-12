@@ -30,7 +30,13 @@
 	margin-right: 10%;
 	width: 20%;
 	}
-
+	
+	input{
+	margin-bottom: 10px;
+	border-radius: 5px;
+	border: 1px solid gray;
+	}
+	
 	textarea {
 	border-radius: 5px;
 	border: 1px solid gray;
@@ -53,23 +59,21 @@
     </section><!-- End Breadcrumbs Section -->
     <section class="inner-page">
       <div class="container">
-        <form class="noticeForm">  
-        <div class="col-md-4 form-group" style="margin: auto;">      
+        <form class="noticeForm">        
           작성자 <br />
-          <input id="writer" class="form-control" type="text" name="writer" value="김아무개" readonly style="width: 700px; background-color: #F5F5F5; '"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          <input id="witer" type="text" name="witer" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
           진료병원 <br />
-          <input id="animalHospital" class="form-control" type="text" name="animalHospital" value="A동물병원" readonly style="width: 700px; background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          <input id="animalHospital" type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
           작성일 <br />
-          <input id="writeDate" class="form-control" type="date" value="2023-01-30" style="width: 700px;"/> <br /> <%-- 현재날짜를 띄움 --%>
+          <input id="writeDate" type="date" value="2023-01-30"/> <br /> <%-- 현재날짜를 띄움 --%>
           제목 <br />
-          <textarea id="subject" class="form-control" name="content" rows="1" maxlength="50" required="required" placeholder="제목을 입력해주세요." style="width: 700px;"></textarea> <br />
+          <textarea id="subject" name="content" rows="1" cols="100" maxlength="50" required="required" placeholder="제목을 입력해주세요."></textarea> <br />
           내용 <br />
-          <textarea id="content" class="form-control" name="content" rows="20" maxlength="500" required="required" placeholder="내용을 입력해주세요." style="width: 700px; height: 500px;"></textarea> <br />
-        </div>
+          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required" placeholder="내용을 입력해주세요."></textarea> <br />
         </form>
             <div class="col-md-4 form-group" style="margin: auto;">
                <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
-               <input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
+               <input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/notice'" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
             </div>
       </div>
     </section>
@@ -77,40 +81,4 @@
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(function(){
-       $('#notice_add').on('click', function() {
-          var subject = $('#subject').val();
-          var content = $('#content').val();
-          if(subject==null||subject.trim().length==0){
-               $('#subject').focus();
-               $('#subject').attr('style','border-color: #dc3545; margin:auto;width:700px;');
-           	   $('#subject').val('');
-           	   $('#subject').after('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">제목을 입력해주세요</b></div>');
-           }else if(content==null||content.trim().length==0){
-        	   $('#content').focus();
-               $('#content').attr('style','border-color: #dc3545; margin:auto; width:700px; height: 500px;');
-           	   $('#content').val('');
-           	   $('#content').after('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">내용을 입력해주세요.</b></div>');
-           }else{
-        	   $('#notice_add').attr('onclick',"location='/notice'");
-           }
-       });
- });
-
-$('#subject').on('input',function(){
-	if($('#subject').val() !=''){
-		$('#subject').attr('style','width:700px;');
-		$('#warning').remove();
-	}
-})
-$('#content').on('input',function(){
-	if($('#content').val() !=''){
-		$('#content').attr('style','width:700px;');
-		$('#warning').remove();
-	}
-})
-</script>
 </html>

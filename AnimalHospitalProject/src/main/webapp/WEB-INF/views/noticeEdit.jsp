@@ -43,6 +43,7 @@
 	resize: none
 	}
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 	window.onload = function () {
 		var delete_btn = document.getElementById('delete_btn');
@@ -76,22 +77,20 @@
 	<%-- 보호자 또는 수의사로 수정이 아닌 열람만 할 시 if문 사용하여 readonly --%>
     <section class="inner-page">
       <div class="container">
-        <form>       
-         <div class="col-md-4 form-group" style="margin: auto;">  
-	          작성자 <br />
-	          <input id="username" class="form-control"  type="text" name="username" value="김아무개" readonly style="background-color: #F5F5F5; width: 700px;"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
-	          진료병원 <br />
-	          <input id="animalHospital" class="form-control"  type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5; width: 700px;"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
-	          작성일 <br />
-	          <input type="date" class="form-control"  id="writeDate" value="2023-01-30" readonly style="background-color: #F5F5F5; width: 700px;" /> <br />  <%-- 열람시에는 작성일, 글을 수정한다면 수정한날짜로 변경 --%>
-	          제목 <br />
-	          <textarea id="subject" class="form-control" name="subject" rows="1" cols="100" maxlength="50" required="required" style="width: 700px;"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
-	          내용 <br />
-	          <textarea id="content" class="form-control" name="content" rows="20" cols="100" maxlength="500" required="required" style="width: 700px;"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
-	      </div>
+        <form>        
+          작성자 <br />
+          <input id="username" type="text" name="username" value="김아무개" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          진료병원 <br />
+          <input id="animalHospital" type="text" name="animalHospital" value="A동물병원" readonly style="background-color: #F5F5F5"/> <br /> <%-- 회원가입했을 때 입력된 정보를 띄움 --%>
+          작성일 <br />
+          <input type="date" id="writeDate" value="2023-01-30" readonly style="background-color: #F5F5F5;" /> <br />  <%-- 열람시에는 작성일, 글을 수정한다면 수정한날짜로 변경 --%>
+          제목 <br />
+          <textarea id="subject" name="content" rows="1" cols="100" maxlength="50" required="required"> 01월 30일 휴무 안내</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
+          내용 <br />
+          <textarea id="content" name="content" rows="20" cols="100" maxlength="500" required="required"> 01월 30일 휴무 안내드립니다.</textarea> <br /> <%-- 작성했던 글을 불러와 열람/ 수정 및 삭제 --%>
         </form>
         <div id="button">
-        <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%">수정</button>
+        <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; margin-left: 40%" onclick="location='/notice'">수정</button>
         <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px;">삭제</button> <br />
         </div>
         <%-- 보호자로 로그인하여 열람만 할 시 if문 사용하여 보여줄 버튼 --%>
@@ -106,38 +105,4 @@
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
-<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(function(){
-       $('#modify_btn').on('click', function() {
-          var subject = $('#subject').val();
-          var content = $('#content').val();
-          if(subject==null||subject.trim().length==0){
-               $('#subject').focus();
-               $('#subject').attr('style','border-color: #dc3545; margin:auto;width:700px;');
-           	   $('#subject').val('');
-           	   $('#subject').after('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">제목을 입력해주세요</b></div>');
-           }else if(content==null||content.trim().length==0){
-        	   $('#content').focus();
-               $('#content').attr('style','border-color: #dc3545; margin:auto; width:700px; height: 500px;');
-           	   $('#content').val('');
-           	   $('#content').after('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">내용을 입력해주세요.</b></div>');
-           }else{
-        	   $('#modify_btn').attr('onclick',"location='/notice'");
-           }
-       });
-});       
-$('#subject').on('input',function(){
-	if($('#subject').val() !=''){
-		$('#subject').attr('style','width:700px;');
-		$('#warning').remove();
-	}
-})
-$('#content').on('input',function(){
-	if($('#content').val() !=''){
-		$('#content').attr('style','width:700px;');
-		$('#warning').remove();
-	}
-})
-</script>
 </html>
