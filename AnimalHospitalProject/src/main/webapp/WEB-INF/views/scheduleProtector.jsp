@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>나의 예약 정보(보호자)</title>
+<title>예약 정보(보호자)</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -19,6 +19,10 @@
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
 
 <!-- Tables - SB Admin -->
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
@@ -78,12 +82,15 @@
 		grid-template-columns: 75% 25%;
 		position: static;
 	}
+	
 	::placeholder {
 		font-size: 12px;
 	}
+	
 	#file {
 		display: none;
 	}
+	
 	label {
 		width: 150px;
 		color: #ffffff;
@@ -95,22 +102,64 @@
 		margin: auto;
 		text-align: center;
 	}
+	
 	label:hover {
 		background-color: #005FFF;
 	}
+	
 	#fileName {
 		display: inline;
 		font-size: 10pt;
 	}
+	
 	#btn1 {
 		float: right;
 	}
+	
 	#selectedPatient, #selectedHospital, #textResult {
 		display: inline;
 	}
+	
+	input[name="searchHospital"] {
+		width: 30%;
+		height: 38px;
+		border: 1px solid #ced4da;
+		margin-right:10px;
+		float: left;
+	}
+	
+	input[name="searchHospitalBtn"] {
+		height: 38px;
+		font-size: 10pt;
+		width: 90px; 
+		text-align: center; 
+		border-radius: 50px;
+		display: inline;
+	}
+	
+	select[name="selectDoctor"] {
+		width: 30%;
+		height: 38px;
+		border: 1px solid #ced4da;
+		margin-right:10px;
+		float: left;
+	}
+	
+	select option[value=""][disabled] {
+	display: none;
+	}
+	
+	input[name="selectDoctorBtn"] {
+		height: 38px;
+		font-size: 10pt;
+		width: 90px; 
+		text-align: center; 
+		border-radius: 50px;
+		display: inline;
+	}
+
 </style>
-<!-- Template Main CSS File -->
-<link href="css/style.css" rel="stylesheet">
+
 </head>
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
@@ -130,6 +179,26 @@
 				<div id="gridContainer">
 					<div id="mainContainer">
 						<p>병원을 선택한 후 날짜를 선택하면 진료 예약을 할 수 있습니다.</p>
+							<!--  ==============수정======================= -->
+							<!-- 예시: <form th:action="@{/board/list}" method="get"> -->
+							<form>
+							<input type="text" name="searchHospital" class="form-control"
+								id="searchHospital" placeholder="병원이름을 입력해주세요." data-rule="text" required="required">
+							<input type="submit" class="btn btn-primary"
+								name="searchHospitalBtn" id="searchHospitaltBtn" value="병원찾기" >
+							</form>
+							<br />
+							<form  style="display: inline;">
+							<select name="selectDoctor" id="selectDoctor" required="required">
+								<option value="" disabled selected></option>
+								<option value="김ㅇㅇ">김ㅇㅇ</option>
+								<option value="이ㅇㅇ">이ㅇㅇ</option>
+							</select>
+							<input type="submit" class="btn btn-primary" class="form-control"
+								name="selectDoctorBtn" id="selectDoctortBtn" value="의사선택" >
+							</form>
+							<br />
+						<!-- 
 						<select onchange="handleOnChange2(this)" id="selectHospital">
 							<option value="myCalendar">나의 달력</option>
 							<option value="" selected="selected">병원선택하기</option>
@@ -138,7 +207,11 @@
 							<option value="c">C동물병원</option>
 							<option value="d">D동물병원</option>
 						</select> <a onclick="location.href='/map'" class="btn btn-primary btn-sm"
-							style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">병원찾기</a>
+							style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">병원찾기</a> 
+						-->
+						
+						<!--  ==============수정======================= -->
+						
 						<br />
 						<iframe
 							src="https://calendar.google.com/calendar/embed?src=75e1efd2c444b0e1d243b7fe83e3e542f03f13b5b91f3b49d8aef1660d7b819d%40group.calendar.google.com&ctz=Asia%2FSeoul"
@@ -197,14 +270,14 @@
 									onclick="location.href='/patientAdd'" value="환자추가"
 									style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white; float: right;" />
 								<br /> <br />
-								<textarea style="width: 100%" rows="5" cols="30" id="textarea"
+								<textarea style="width: 100%" rows="5" cols="30" id="textarea" class="form-control"
 									placeholder="증상 혹은 내원 이유를 입력한 후 입력 버튼을 눌러주세요"></textarea>
 								<div class="fileSelectArea">
 									<div align="right">
 										<div>
 											<input type="button" class="btn btn-outline-primary btn-sm"
 												value="입력" id="preview" onclick="clickBtn()"
-												style="border-radius: 50px; width:75px; margin: auto;">
+												style="border-radius: 50px; width:75px; margin: auto; margin-top: 5px;">
 										</div>
 										<br/>
 										<div align="left" id="app">

@@ -18,18 +18,22 @@
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
 
 <!-- Tables - SB Admin -->
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 
+
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 
 <style type="text/css">
-.wrap {
-	display: flex;
-}
+	.wrap {
+		display: flex;
+	}
+	
 </style>
 </head>
 <body>
@@ -58,7 +62,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label> <input type="text"
-							class="form-control" name="name" id="name" readonly="readonly">
+							class="form-control" name="name" id="name" disabled="disabled">
 							<div id="uneditableName" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -69,7 +73,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="id">ID</label> <input type="text" class="form-control"
-							name="id" id="id" readonly="readonly" data-rule="id"
+							name="id" id="id" disabled="disabled" data-rule="id"
 							data-msg="필수입력 항목입니다.">
 							<div id="uneditableId" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
@@ -82,7 +86,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="password">비밀번호</label> <input type="password"
 							class="form-control" name="password" id="password"
-							placeholder="수정할 비밀번호를 입력해주세요" data-rule="species"
+							placeholder="수정할 비밀번호를 입력해주세요." data-rule="species"
 							data-msg="필수입력 항목입니다.">
 							<div id="uneditablePassword" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
@@ -94,7 +98,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="">생년월일</label> <input type="text" class="form-control"
-							name="birthday" id="birthday" readonly="readonly">
+							name="birthday" id="birthday" disabled="disabled">
 							<div id="uneditableBirthday" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -106,7 +110,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="phone">전화번호</label> <input type="text"
 							class="form-control" name="phone" id="phone"
-							placeholder="수정할 전화번호를 입력해주세요" maxlength="13" data-rule="age"
+							placeholder="수정할 전화번호를 입력해주세요." maxlength="13" data-rule="age"
 							data-msg="필수입력 항목입니다.">
 							<div id="uneditablePhone" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
@@ -120,7 +124,7 @@
 						<label for="phone">주소</label>
 						<div class="wrap">
 							<input type="text" class="form-control" readonly="readonly"
-								id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요"> &nbsp;<input
+								id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요."> &nbsp;<input
 								type="button" name="address_kakao" id="address_kakao"
 								onclick="sample4_execDaumPostcode()"
 								class="btn btn-primary btn-sm" value="주소찾기"
@@ -136,7 +140,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="address">상세주소</label> <input type="text"
 							class="form-control" name="address" id="address"
-							placeholder="수정할 상세주소를 입력해주세요" data-rule="age"
+							placeholder="수정할 상세주소를 입력해주세요." data-rule="age"
 							data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
