@@ -203,7 +203,7 @@
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="weight">몸무게</label>
-								<input type="number" min="1" class="form-control" name="weight"
+								<input type="number" min="1" class="form-control" name="weight" step="0.1"
 									id="weight" value="5" data-rule="weight" readonly
 									style="background-color: #F5F5F5">
 								<div class="validate"></div>
