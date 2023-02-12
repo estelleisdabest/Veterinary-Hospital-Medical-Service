@@ -253,7 +253,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="etc">특이사항</label> <input type="text"
 							class="form-control" name="etc" id="etc"
-							placeholder="특이사항을 입력해주세요">
+							placeholder="특이사항을 입력해주세요.">
 						<div class="validate"></div>
 					</div>
 				</div>

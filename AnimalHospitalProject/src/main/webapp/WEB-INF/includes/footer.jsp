@@ -49,8 +49,9 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">HOME</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스소개</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/myPageProtector">나의 정보</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/animallookup">환자조회</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/scheduleProtector">예약확인</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/scheduleProtector">예약 정보</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>

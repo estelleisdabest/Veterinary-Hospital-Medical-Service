@@ -37,8 +37,9 @@
           </li>
           <li class="dropdown"><a href="#"><span>보호자 전용 페이지</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
+              <li><a href="/myPageProtector">나의 정보</a></li>
               <li><a href="/animallookup">환자 조회</a></li>
-              <li><a href="/scheduleProtector">예약 확인</a></li>
+              <li><a href="/scheduleProtector">예약 정보</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/notice">공지</a></li>

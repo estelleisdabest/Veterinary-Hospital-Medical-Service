@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -14,7 +15,9 @@
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
+	rel="stylesheet">
 
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,6 +34,7 @@
 	.pagination {
 		justify-content: center;
 	}
+	
 	input[name="searchPatient"] {
 		width: 70%;
 		height: 38px;
@@ -38,6 +42,7 @@
 		padding-left: 5px;
 		display: inline;
 	}
+	
 	input[name="searchPatientBtn"] {
 		width: 30%;
 		height: 38px;
@@ -64,15 +69,19 @@
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px">
-			<form style="float:right;"> <!-- 예시: <form th:action="@{/board/list}" method="get"> -->
-				<input type="text" name="searchPatient" class="form-control" 
-							id="searchPatient" placeholder="환자명을 입력해주세요." data-rule="text">
-							&nbsp;
-				<input type="submit" class="btn btn-primary"
-							name="searchPatientBtn" id="searchPatientBtn" value="검색"
-							style="width: 70px; text-align: center; border-radius: 50px; margin-top: -4px;">
-			</form>
-			<div><br/><br/><br/> </div>	
+				<form style="float: right;">
+					<!-- 예시: <form th:action="@{/board/list}" method="get"> -->
+					<input type="text" name="searchPatient" class="form-control"
+						id="searchPatient" placeholder="환자명을 입력해주세요." data-rule="text">
+					&nbsp; <input type="submit" class="btn btn-primary"
+						name="searchPatientBtn" id="searchPatientBtn" value="검색"
+						style="width: 70px; text-align: center; border-radius: 50px; margin-top: -4px;">
+				</form>
+				<div>
+					<br />
+					<br />
+					<br />
+				</div>
 				<div class="white_shd full margin_bottom_30">
 					<div class="full graph_head"></div>
 					<div class="table_section padding_infor_info">
@@ -145,7 +154,7 @@
 										<td>3차 예방접종까지 완료, 중성화X</td>
 								</tbody>
 							</table>
-							<br/>
+							<br />
 							<nav aria-label="Page navigation example">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"

@@ -36,45 +36,6 @@
 		display: inline;
 		margin: auto;
 	}
-	textarea {
-		resize: none;
-		height: 150px;
-		text-align: left;
-	}
-	input[name="medicineAdd"] {
-		height: 38px;
-		display: inline;
-		float: right;
-		margin-top: 4px;
-		margin-right: 5px;
-		font-size: 10pt;
-		border-radius:50px;
-	}
-	input[name="medicineEdit"] {
-		height: 38px;
-		display: inline;
-		float: right;
-		margin-top: 4px;
-		margin-right: 5px;
-		font-size: 10pt;
-		border-radius:50px;
-	}
-	label[id="recoFeedAdd_input"] {
-		height: 38px;
-		display: inline;
-		float: right;
-		margin-right: 5px;
-		font-size: 10pt;
-		border-radius:50px;
-	}
-	input[name="recoFeed_excel_download"] {
-		height: 38px;
-		display: inline;
-		float: right;
-		margin-right: 5px;
-		font-size: 10pt;
-		border-radius:50px;
-	}
 	img {
 		width: 200px;
 		height: 200px; 

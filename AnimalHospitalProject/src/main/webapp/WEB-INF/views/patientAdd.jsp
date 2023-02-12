@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>환자추가</title>
+<title>환자 추가</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -24,13 +24,13 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-  input::-webkit-input-placeholder {
-    background-image: background-size: contain;
-    background-position: 1px center;
-    background-repeat: no-repeat;
-    text-align: left;
-    text-indent: 0;
-  }
+	input::-webkit-input-placeholder {
+		background-image: background-size: contain;
+	    background-position: 1px center;
+	    background-repeat: no-repeat;
+	    text-align: left;
+	    text-indent: 0;
+	}
 </style>
 </head>
 <body>
@@ -58,7 +58,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label> <input type="text"
 							class="form-control" name="name" id="name"
-							placeholder="이름을 입력해주세요" data-rule="name" data-msg="필수입력 항목입니다.">
+							placeholder="이름을 입력해주세요." data-rule="name" data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -69,7 +69,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="species">종</label> <input type="text"
 							class="form-control" name="species" id="species"
-							placeholder="종을 입력해주세요" data-rule="species"
+							placeholder="종을 입력해주세요." data-rule="species"
 							data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
@@ -80,7 +80,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="age">나이</label> <input type="number" min="1"
-							class="form-control" name="age" id="age" placeholder="나이를 입력해주세요"
+							class="form-control" name="age" id="age" placeholder="나이를 입력해주세요."
 							data-rule="age" data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
@@ -92,7 +92,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="weight">몸무게</label> <input type="number" min="1"
 							class="form-control" name="weight" id="weight"
-							placeholder="몸무게를 입력해주세요" data-rule="weight"
+							placeholder="몸무게를 입력해주세요." data-rule="weight"
 							data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
@@ -104,7 +104,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="etc">특이사항</label> <input type="text"
 							class="form-control" name="etc" id="etc"
-							placeholder="특이사항을 입력해주세요">
+							placeholder="특이사항을 입력해주세요.">
 						<div class="validate"></div>
 					</div>
 				</div>
