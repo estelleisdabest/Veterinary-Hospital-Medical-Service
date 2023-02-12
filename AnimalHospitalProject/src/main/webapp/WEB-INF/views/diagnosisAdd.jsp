@@ -15,83 +15,73 @@
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link
-	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap"
-	rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+<link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
-  <link href="css/style.css" rel="stylesheet">
+<!-- Template Main CSS File -->
+<link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-
-#gridContainer {
-	display: grid;
-	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 2fr 1fr;
-}
-
-h4 {
-	display: inline;
-	margin: auto;
-}
-
-textarea {
-	resize: none;
-	height: 150px;
-	text-align: left;
-}
-
-
-input[name="medicineAdd"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
-input[name="medicineEdit"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
-label[id="recoFeedAdd_input"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-input[name="recoFeed_excel_download"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius:50px;
-}
-
-img {
-	width: 200px;
-	height: 200px; 
-	display : block;
-	border-radius:10%;
-	object-fit: cover;
-	border: 3px solid #F5F5F5;
-}
+	#gridContainer {
+		display: grid;
+		grid-auto-rows: minmax(100px, auto);
+		grid-template-columns: 2fr 1fr;
+	}
+	h4 {
+		display: inline;
+		margin: auto;
+	}
+	textarea {
+		resize: none;
+		height: 150px;
+		text-align: left;
+	}
+	input[name="medicineAdd"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-top: 4px;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	input[name="medicineEdit"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-top: 4px;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	label[id="recoFeedAdd_input"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	input[name="recoFeed_excel_download"] {
+		height: 38px;
+		display: inline;
+		float: right;
+		margin-right: 5px;
+		font-size: 10pt;
+		border-radius:50px;
+	}
+	img {
+		width: 200px;
+		height: 200px; 
+		display : block;
+		border-radius:10%;
+		object-fit: cover;
+		border: 3px solid #F5F5F5;
+	}
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
