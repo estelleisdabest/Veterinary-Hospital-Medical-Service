@@ -21,6 +21,9 @@
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <style>
 	input[name="protector_address"] {
 		width: 70%;
@@ -117,7 +120,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="gender">성별</label><br> 
-						<select name="doctor_gender" id="doctor_gender" class="form-select">
+						<select name="protector_gender" id="protector_gender" class="form-select">
 							<option value="">성별을 선택해주세요.</option>
 							<option value="1">여자</option>
 							<option value="2">남자</option>
@@ -125,16 +128,16 @@
 						<div class="validate"></div>
 					</div>
 				</div>
-				<div class="row"
-					style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
-					<div class="col-md-2 form-group mt-3">
+				<div class="row" id="protector_yearmonthday" style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
+					<div id="protector_yearDiv" class="col-md-2 form-group mt-3">
 						<label for="text">생년월일</label> 
-						<input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도">
+						<input type="datetime" name="protector_year" class="form-control datepicker" id="protector_year" placeholder="년도">
 						<div class="validate"></div>
 					</div>
-					<div class="col-md-2 form-group mt-3">
-						<label for="text"></label> <select name="doctor_month"
-							id="doctor_month" class="form-select">
+					&nbsp;
+					<div id="protector_monthDiv" class="col-md-2 form-group mt-3">
+						<label for="text"></label> 
+						<select name="protector_month" id="protector_month" class="form-select">
 							<option value="">월</option>
 							<option value="01">1</option>
 							<option value="02">2</option>
@@ -151,9 +154,10 @@
 						</select>
 						<div class="validate"></div>
 					</div>
-					<div class="col-md-2 mt-3">
+					&nbsp;
+					<div id="protector_dayDiv" class="col-md-2 mt-3">
 						<label for="text"></label> 
-						<input type="datetime" class="form-control datepicker" name="doctor_date" id="doctor_date" placeholder="일">
+						<input type="datetime" class="form-control datepicker" name="protector_day" id="protector_day" placeholder="일">
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -206,8 +210,8 @@
 					</div>
 					<div class="row">
 			            <div class="col-md-4 form-group" style="margin: auto;">
-						      <a href="/roleCheck" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius:50px;width: 110px;text-align: center;color: white;">이전페이지</a>
-						      <a href="/" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">회원가입</a>
+						      <input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/roleCheck'" style="border-radius:50px;width: 110px;text-align: center;color: white;">
+						      <input type="button" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" value="회원가입" style="border-radius:50px;width: 110px;text-align: center;float: right;color: white;">
 			              <div class="validate"></div>
 			            </div>
 					</div>
@@ -220,27 +224,158 @@
 	<!-- End #main -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	window.onload = function() {
-		document.getElementById("searching_address")
-				.addEventListener("click", function() { //주소입력칸을 클릭하면
-							//카카오 지도 발생
-							var width = 500; //팝업의 너비
-							var height = 600; //팝업의 높이
-							new daum.Postcode(
-									{
-										width : width, //생성자에 크기 값을 명시적으로 지정
-										height : height,
-										oncomplete : function(data) { //선택시 입력값 세팅
-											document
-													.getElementById("protector_address").value = data.address; // 주소 넣기
-										}
-									}).open({
-									    left: (window.screen.width / 2) - (width / 2),
-									    top: (window.screen.height / 2) - (height / 2)
-									});
-						});
+<script type="text/javascript">
+$(function(){
+       $('#join_membership_protector').on('click', function() {
+          var email = $('#email').val();
+          var password = $('#password').val();
+          var password_reconfirm = $('#password_reconfirm').val();
+          var protector_name = $('#protector_name').val();
+          var protector_gender = $('#protector_gender').val();
+          var protector_yearmonthday = $('#protector_yearmonthday').val();
+          var protector_year = $('#protector_year').val();
+          var protector_month = $('#protector_month').val();
+          var protector_date = $('#protector_date').val();
+          var protector_address = $('#protector_address').val();
+          var protector_phoneNumber = $('#protector_phoneNumber').val();
+          var confirm_certificationNumber = $('#confirm_certificationNumber').val();
+          var confirm_emailUser = $('#confirm_emailUser').val();
+          if(email.length==0||email.trim().length==0||email.includes(' ')){
+               $('#email').focus();
+               $('#email').attr('style','border-color: #dc3545;');
+           	   $('#email').val('');
+           	   $('#email').after('<div id="warning"><b style="color: red;">올바른 아이디를 입력해주세요.</b></div>');
+          }else if(password==null||password.trim().length==0){
+               $('#password').focus();
+               $('#password').attr('style','border-color: #dc3545;');
+           	   $('#password').val('');
+           	   $('#password').after('<div id="warning"><b style="color: red;">올바른 비밀번호를 입력해주세요.</b></div>');
+           }else if(password_reconfirm==null||password_reconfirm.trim().length==0){
+        	   $('#password_reconfirm').focus();
+               $('#password_reconfirm').attr('style','border-color: #dc3545;');
+           	   $('#password_reconfirm').val('');
+           	   $('#password_reconfirm').after('<div id="warning"><b style="color: red;">올바른 비밀번호를 입력해주세요.</b></div>');
+           }else if(protector_name==null||protector_name.trim().length==0){
+        	   $('#protector_name').focus();
+               $('#protector_name').attr('style','border-color: #dc3545;');
+           	   $('#protector_name').val('');
+           	   $('#protector_name').after('<div id="warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
+           }else if(protector_gender==null||protector_gender.trim().length==0){
+        	   $('#protector_gender').focus();
+               $('#protector_gender').attr('style','border-color: #dc3545;');
+           	   $('#protector_gender').val('');
+           	   $('#protector_gender').after('<div id="warning"><b style="color: red;">성별을 선택해주세요.</b></div>');
+           }else if((protector_year==null||protector_year.trim().length==0)||(protector_month==null||protector_month.trim().length==0)||(protector_day==null||protector_day.trim().length==0)){
+        	   $('#protector_year').focus();
+               $('#protector_yearmonthday').attr('style','border-color: #dc3545; margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;');
+           	   $('#protector_year').val('');
+           	   $('#protector_month').val('');
+           	   $('#protector_day').val('');
+           	   $('#protector_yearmonthday').after('<div id="warning"><b style="color: red; margin-left: 34%;">생년월일을 설정해주세요.</b></div>');
+           }else if(protector_address==null||protector_address.trim().length==0){
+        	   $('#protector_address').focus();
+               $('#protector_address').attr('style','border-color: #dc3545;');
+           	   $('#protector_address').val('');
+           	   $('#protector_address').after('<div id="warning"><b style="color: red;">주소를 입력해주세요.</b></div>');
+           }else if(protector_phoneNumber==null||protector_phoneNumber.trim().length==0){
+        	   $('#protector_phoneNumber').focus();
+               $('#protector_phoneNumber').attr('style','border-color: #dc3545;');
+           	   $('#protector_phoneNumber').val('');
+           	   $('#protector_phoneNumber').after('<div id="warning"><b style="color: red;">전화번호를 입력해주세요.</b></div>');
+           }else if(confirm_certificationNumber==null||confirm_certificationNumber.trim().length==0){
+        	   $('#confirm_certificationNumber').focus();
+               $('#confirm_certificationNumber').attr('style','border-color: #dc3545;');
+           	   $('#confirm_certificationNumber').val('');
+           	   $('#confirm_certificationNumber').after('<div id="warning"><b style="color: red;">인증번호를 입력해주세요.</b></div>');
+           }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0){
+        	   $('#confirm_emailUser').focus();
+               $('#confirm_emailUser').attr('style','border-color: #dc3545;');
+           	   $('#confirm_emailUser').val('');
+           	   $('#confirm_emailUser').after('<div id="warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
+           }else{
+        	   $('#join_membership_protector').attr('onclick',"location='/'");
+           }
+       });
+ });
+$('#email').on('input',function(){
+	if($('#email').val() !=''){
+		$('#email').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
 	}
+})
+$('#password').on('input',function(){
+	if($('#password').val() !=''){
+		$('#password').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#password_reconfirm').on('input',function(){
+	if($('#password_reconfirm').val() !=''){
+		$('#password_reconfirm').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#protector_name').on('input',function(){
+	if($('#protector_name').val() !=''){
+		$('#protector_name').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#protector_gender').on('input',function(){
+	if($('#protector_gender').val() !=''){
+		$('#protector_genderX').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#protector_year').on('input',function(){
+	if($('#protector_year').val() !=''){
+		$('#protector_year').attr('style','border-color:#ced4da;');		
+		$('#protector_month').attr('style','border-color:#ced4da;');		
+		$('#protector_day').attr('style','border-color:#ced4da;');		
+		$('#warning').remove();
+	}
+})
+$('#protector_month').on('input',function(){
+	if($('#protector_month').val() !=''){
+		$('#protector_year').attr('style','border-color:#ced4da;');		
+		$('#protector_month').attr('style','border-color:#ced4da;');		
+		$('#protector_day').attr('style','border-color:#ced4da;');		
+		$('#warning').remove();
+	}
+})
+$('#protector_day').on('input',function(){
+	if($('#protector_day').val() !=''){
+		$('#protector_year').attr('style','border-color:#ced4da;');		
+		$('#protector_month').attr('style','border-color:#ced4da;');		
+		$('#protector_day').attr('style','border-color:#ced4da;');		
+		$('#warning').remove();
+	}
+})
+$('#protector_address').on('input',function(){
+	var searchingAddress = $('#searching_address').val();
+		$('#searching_address').attr('value', searchingAddress);
+	if($('#searching_address').val() !=null){
+		$('#warning').remove();
+	}
+})
+$('#protector_phoneNumber').on('input',function(){
+	if($('#protector_phoneNumber').val() !=''){
+		$('#protector_phoneNumber').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#confirm_certificationNumber').on('input',function(){
+	if($('#confirm_certificationNumber').val() !=''){
+		$('#confirm_certificationNumber').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#confirm_emailUser').on('input',function(){
+	if($('#confirm_emailUser').val() !=''){
+		$('#confirm_emailUser').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
 </script>
+<script src="js/jsp/protectorMemberJoin.js"></script>
 </html>

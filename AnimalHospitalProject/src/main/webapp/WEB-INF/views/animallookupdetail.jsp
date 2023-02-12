@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
 <title>환자 세부 조회</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
-
 <!-- Favicons -->
 <link href="img/favicon.png" rel="icon">
 <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
@@ -26,14 +23,13 @@
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
-
 <style type="text/css">
-table {
-	border-collapse: collapse;
-}
-.pagination {
-	justify-content: center;
-}
+	table {
+		border-collapse: collapse;
+	}
+	.pagination {
+		justify-content: center;
+	}
 </style>
 </head>
 <%@ include file="/WEB-INF/includes/header.jsp"%>

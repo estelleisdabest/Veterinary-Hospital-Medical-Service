@@ -27,44 +27,29 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script type="text/javascript">
-	window.onload = function() {
-		var withdrawal = document.getElementById('withdrawal');
-		withdrawal.addEventListener('click', function () {
-			var result = window.confirm('탈퇴하시면 모든 내역이 사라집니다.\r\n정말로 회원 탈퇴하시겠습니까?');
-			
-			if(result) {
-				alert('정상적으로 처리되었습니다.');
-				location.href='/';
-			}
-		});
-	}
-</script>
+<script src="js/jsp/myPageProtector.js"></script>
 <style type="text/css">
-img {
-	width: 300px;
-	height: 150px;
-	object-fit: cover;
-	object-position: 50% 50%;
-}
-
-#gridContainer {
-	display: grid;
-	grid-auto-rows: minmax(100px, auto);
-	grid-template-columns: 55% 45%;
-	position: static;
-}
-
-tr, td {
-	text-align: left;
-}
-
-h3 {
-	display: inline;
-}
-.pagination {
-  justify-content: center;
-}
+	img {
+		width: 300px;
+		height: 150px;
+		object-fit: cover;
+		object-position: 50% 50%;
+	}
+	#gridContainer {
+		display: grid;
+		grid-auto-rows: minmax(100px, auto);
+		grid-template-columns: 55% 45%;
+		position: static;
+	}
+	tr, td {
+		text-align: left;
+	}
+	h3 {
+		display: inline;
+	}
+	.pagination {
+	  justify-content: center;
+	}
 </style>
 </head>
 <body>
