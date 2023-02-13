@@ -39,8 +39,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="/patientList">담당환자 전체 조회</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/scheduleDoctor">스케줄 관리</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/hospitalMap">병원정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pharmacyMap">약국정보</a></li>
             </ul>
           </div>
 
@@ -53,8 +53,8 @@
               <li><i class="bx bx-chevron-right"></i> <a href="/animallookup">환자조회</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/scheduleProtector">예약 정보</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/hosMap">병원정보</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="/pharmMap">약국정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/hospitalMap">병원정보</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/pharmacyMap">약국정보</a></li>
             </ul>
           </div>
 

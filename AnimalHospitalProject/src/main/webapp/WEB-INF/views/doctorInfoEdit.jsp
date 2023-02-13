@@ -217,7 +217,7 @@ table {
 					class="form-control" name="address" id="address" placeholder=""
 					data-rule="age" data-msg="필수입력 항목입니다.">
 				<div class="validate"></div>
-			</div>
+		</div>
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
@@ -232,7 +232,7 @@ table {
 				<label for="email">인사말</label>
 				<textarea rows="5" cols="55" style="width: 10; height: 10;"
 					placeholder="" id="textBox3"></textarea>
-			</div>
+			<div class="validate"></div>
 		</div>
 		<div class="row">
 			<p></p>
@@ -309,7 +309,7 @@ $(function(){
                $('#license').attr('style','border-color: #dc3545;');
            	   $('#license').val('');
            	   $('#license').after('<div id="Notice"><b style="color: red;">면허취득일을 입력해주세요.</b></div>');
-           }else if(doctorNumber==null||doctorNumber.trim().length==0){
+           }else if(doctorNumber==null||doctorNumber.trim().length==0||doctorNumber.includes(' ')){
         	   $('#doctorNumber').focus();
                $('#doctorNumber').attr('style','border-color: #dc3545;');
            	   $('#doctorNumber').val('');
@@ -319,7 +319,7 @@ $(function(){
                $('#phone').attr('style','border-color: #dc3545;');
            	   $('#phone').val('');
            	   $('#phone').after('<div id="Notice"><b style="color: red;">핸드폰번호를 입력해주세요.</b></div>');
-           }else if(email==null||email.trim().length==0){
+           }else if(email==null||email.trim().length==0||email.includes(' ')){
         	   $('#email').focus();
                $('#email').attr('style','border-color: #dc3545;');
            	   $('#email').val('');
@@ -356,31 +356,31 @@ $(function(){
  });
 $('#password').on('input',function(){
 	if($('#password').val() !=''){
-		$('#password').attr('style','');
+		$('#password').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#license').on('input',function(){
 	if($('#license').val() !=''){
-		$('#license').attr('style','');
+		$('#license').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#doctorNumber').on('input',function(){
 	if($('#doctorNumber').val() !=''){
-		$('#doctorNumber').attr('style','');
+		$('#doctorNumber').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#phone').on('input',function(){
 	if($('#phone').val() !=''){
-		$('#phone').attr('style','');
+		$('#phone').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#email').on('input',function(){
 	if($('#email').val() !=''){
-		$('#email').attr('style','');
+		$('#email').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
@@ -388,31 +388,31 @@ $('#inputKakao').on('input',function(){
 	var inputKakao = $('#inputKakao').val();
 		$('#inputKakao').attr('value',inputKakao);
 	if($('#inputKakao').val() !=null){
-		$('#inputKakao').attr('style','');
+		$('#inputKakao').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#address').on('input',function(){
 	if($('#address').val() !=''){
-		$('#address').attr('style','');
+		$('#address').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#textBox1').on('input',function(){
 	if($('#textBox1').val() !=''){
-		$('#textBox1').attr('style','');
+		$('#textBox1').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#textBox2').on('input',function(){
 	if($('#textBox2').val() !=''){
-		$('#textBox2').attr('style','');
+		$('#textBox2').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })
 $('#textBox3').on('input',function(){
 	if($('#textBox3').val() !=''){
-		$('#textBox3').attr('style','');
+		$('#textBox3').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
 	}
 })

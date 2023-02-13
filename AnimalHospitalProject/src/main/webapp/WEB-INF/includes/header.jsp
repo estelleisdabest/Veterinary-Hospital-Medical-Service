@@ -43,8 +43,8 @@
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="/notice">공지</a></li>
-          <li><a class="nav-link scrollto" href="/hosMap">병원정보</a></li>
-          <li><a class="nav-link scrollto" href="/pharmMap">약국정보</a></li>
+          <li><a class="nav-link scrollto" href="/hospitalMap">병원정보</a></li>
+          <li><a class="nav-link scrollto" href="/pharmacyMap">약국정보</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
