@@ -118,13 +118,13 @@
 				<div class="col-md-4 form-group" style="margin: auto;">
 					<input type="button" class="btn btn-secondary" name="move_pre_page"
 						id="move_pre_page" value="이전페이지"
-						onclick="location='/hosMap'"
+						onclick="location='/hospitalMap'"
 						style="border-radius: 50px; width: 130px; margin: auto; text-align: center; color: white;">
 					<input type="button" class="btn btn-primary"
 						name="join_membership_protector" id="join_membership_protector"
 						value="병원정보 수정" style="border-radius: 50px; width: 130px; margin: auto;
 						text-align: center; float: right; color: white;"
-						onclick="location='/hosMap'">
+						onclick="location='/hospitalMap'">
 				</div>
 			</div>
 		</section>

@@ -122,8 +122,8 @@
 					<p></p>
 					<p>
 					<div class="col-md-4 form-group" style="margin: auto;">
-						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/hosMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
-						<input type="button" class="btn btn-primary" name="hospital_info_add" id="hospital_info_add" value="추가하기" onclick="location='/hosMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/pharmacyMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
+						<input type="button" class="btn btn-primary" name="hospital_info_add" id="hospital_info_add" value="추가하기" onclick="location='/pharmacyMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 					</div>
 				</div>
 			</div>
