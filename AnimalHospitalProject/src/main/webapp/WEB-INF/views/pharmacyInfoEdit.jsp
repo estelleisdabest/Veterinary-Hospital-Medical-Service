@@ -59,7 +59,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">약국 이름</label> <input type="text"
 							class="form-control" name="pharmacy_name" id="pharmacy_name" placeholder="약국 이름을 입력해주세요">
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage1"></div>
 					</div>
 				</div>			
 				<div class="row">
@@ -72,7 +72,7 @@
 							<input type="text" class="form-control" readonly="readonly" id="input_pharmacy_address" placeholder="주소찾기 버튼을 눌러주세요"> &nbsp;
 							<input type="button" name="pharmacy_address" id="pharmacy_address" onclick="sample4_execDaumPostcode()" class="btn btn-primary btn" value="주소찾기" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 						</div>
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage2"></div>
 					</div>
 				</div>			
 				<div class="row">
@@ -82,7 +82,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="address">약국 상세주소</label> 
 						<input type="text" class="form-control" name="pharmacy_address_detail" id="pharmacy_address_detail" placeholder="수정할 상세주소를 입력해주세요" data-rule="age" data-msg="필수입력 항목입니다.">
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage3"></div>
 					</div>
 				</div>			
 				<div class="row">
@@ -92,7 +92,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="phone">약국 전화번호</label> 
 						<input type="text" class="form-control" name="pharmacy_phone" id="pharmacy_phone" placeholder="수정할 전화번호를 입력해주세요" data-rule="int" data-msg="필수입력 항목입니다.">
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage4"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -103,7 +103,7 @@
 						<label for="id">위도</label> <input type="text" class="form-control"
 							name="pharmacy_location_latitude" id="pharmacy_location_latitude" data-rule="text"
 							data-msg="필수입력 항목입니다." placeholder="위도를 입력해주세요">
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage5"></div>
 					</div>
 				</div>			
 				<div class="row">
@@ -114,7 +114,7 @@
 						<label for="id">경도</label> <input type="text" class="form-control"
 							name="pharmacy_location_longitude" id="pharmacy_location_longitude" data-rule="text"
 							data-msg="필수입력 항목입니다." placeholder="경도를 입력해주세요">
-						<div class="validate"></div>
+						<div class="validate" id="warningMessage6"></div>
 					</div>
 				</div>
 				<br>
@@ -122,8 +122,8 @@
 					<p></p>
 					<p>
 					<div class="col-md-4 form-group" style="margin: auto;">
-						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/pharmacyMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
-						<input type="button" class="btn btn-primary" name="hospital_info_edit" id="hospital_info_edit" value="수정하기" onclick="location='/pharmacyMap'" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
+						<input type="button" class="btn btn-primary" name="hospital_info_edit" id="hospital_info_edit" value="수정하기" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 					</div>
 				</div>
 			</div>
@@ -134,29 +134,6 @@
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	window.onload = function() {
-		document
-				.getElementById("pharmacy_address")
-				.addEventListener(
-						"click",
-						function() { //주소입력칸을 클릭하면
-							//카카오 지도 발생
-							var width = 500; //팝업의 너비
-							var height = 600; //팝업의 높이
-							new daum.Postcode(
-									{
-										width : width, //생성자에 크기 값을 명시적으로 지정
-										height : height,
-										oncomplete : function(data) { //선택시 입력값 세팅
-											document
-													.getElementById("input_pharmacy_address").value = data.address; // 주소 넣기
-										}
-									}).open({
-									    left: (window.screen.width / 2) - (width / 2),
-									    top: (window.screen.height / 2) - (height / 2)
-									});
-						});
-	}
-</script>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="js/jsp/pharmacyInfoEdit.js"></script>
 </html>
