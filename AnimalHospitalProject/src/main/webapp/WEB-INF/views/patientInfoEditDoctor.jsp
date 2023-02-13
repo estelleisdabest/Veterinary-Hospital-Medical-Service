@@ -176,12 +176,7 @@
 							<option value="소형">소형</option>
 							<option value="중형">중형</option>
 							<option value="대형">대형</option>
-							<option value="기타">기타</option>
 						</select>
-						<%-- 상단의 select box에서 '기타'을 선택하면 나타날 인풋박스 --%>
-						<input type="text" class="form-control" id="sizeDirect"
-							name="size" id="size" placeholder="직접입력" data-rule="size"
-							data-msg="필수입력 항목입니다." />
 						<div class="validate"></div>
 					</div>
 				</div>
