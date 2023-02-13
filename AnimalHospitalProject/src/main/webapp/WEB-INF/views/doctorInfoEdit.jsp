@@ -47,6 +47,11 @@ img {
 table {
 	margin: auto;
 }
+textarea {
+    width: 100%;
+    height: 6.25em;
+    resize: none;
+  }
 </style>
 </head>
 
@@ -198,7 +203,7 @@ table {
 				<label for="phone">주소</label>
 				<div class="wrap">
 					<input type="text" class="form-control" readonly="readonly" 
-						id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요"> &nbsp;
+						id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요" oninput="myFunction()"> &nbsp;
 					<input
 						type="button" name="address_kakao" id="address_kakao"
 						onclick="sample4_execDaumPostcode()"
@@ -218,21 +223,20 @@ table {
 					data-rule="age" data-msg="필수입력 항목입니다.">
 				<div class="validate"></div>
 		</div>
+		</div>
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for="email">학력</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder="" id="textBox1"></textarea>
-				<label for="email">이력</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder="" id="textBox2"></textarea>
-				<label for="email">인사말</label>
-				<textarea rows="5" cols="55" style="width: 10; height: 10;"
-					placeholder="" id="textBox3"></textarea>
+				<label for="email">학력</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox1" style="border-color : #ced4da;"></textarea> <br />
+				<label for="email">이력</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox2" style="border-color : #ced4da;"></textarea> <br />
+				<label for="email">인사말</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox3" style="border-color : #ced4da;"></textarea> <br />
 			<div class="validate"></div>
+		</div>
 		</div>
 		<div class="row">
 			<p></p>
@@ -246,7 +250,6 @@ table {
 					id="doctorEditOk" value="수정하기"
 					style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 			</div>
-			</p>
 		</div>
 		<section class="inner-page">
 			<div class="container">
@@ -276,6 +279,9 @@ table {
 										oncomplete : function(data) { //선택시 입력값 세팅
 											document
 													.getElementById("inputKakao").value = data.address; // 주소 넣기
+													$('#inputKakao').attr('style','border-color : #ced4da;');
+													$('#Notice').remove();
+													
 										}
 									}).open({
 									    left: (window.screen.width / 2) - (width / 2),
@@ -385,8 +391,6 @@ $('#email').on('input',function(){
 	}
 })
 $('#inputKakao').on('input',function(){
-	var inputKakao = $('#inputKakao').val();
-		$('#inputKakao').attr('value',inputKakao);
 	if($('#inputKakao').val() !=null){
 		$('#inputKakao').attr('style','border-color : #ced4da;');
 		$('#Notice').remove();
