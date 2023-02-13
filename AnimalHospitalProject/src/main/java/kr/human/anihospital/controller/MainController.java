@@ -35,11 +35,6 @@ public class MainController {
 		return "postscriptUpdate";
 	}
 
-	@GetMapping("/postscript_update")
-	public String postscript_update() {
-		return "postscript_update";
-	}
-
 	// 공지 사항
 	@GetMapping("/notice")
 	public String notice() {
