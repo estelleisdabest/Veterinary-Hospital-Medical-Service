@@ -72,10 +72,10 @@
 						<div
 							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%;">
 							<h3>나의 정보</h3>
-							&nbsp;<input type="button" class="btn btn-primary btn-sm"
+							&nbsp;<input type="button" class="btn btn-primary"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
 								style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
-							<input type="button" class="btn btn-primary btn-sm" id="withdrawal" onclick="clickEvent()"
+							<input type="button" class="btn btn-primary" id="withdrawal" onclick="clickEvent()"
 								value="회원탈퇴" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 							<table>
 								<tr>
@@ -94,7 +94,7 @@
 						</div>
 						<br />
 						<h3>환자 정보</h3>
-						&nbsp;<input type="button" class="btn btn-primary btn-sm"
+						&nbsp;<input type="button" class="btn btn-primary"
 							onclick="location.href='/patientAdd'" value="환자추가" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 						<p />
 						<div class="card mb-3" style="max-width: 540px;">
@@ -110,7 +110,7 @@
 											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
 										</p>
 										<div align="right">
-											<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
 										</div>
 									</div>
 								</div>
@@ -129,7 +129,7 @@
 											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
 										</p>
 										<div align="right">
-											<input type="button" class="btn btn-primary btn-sm" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
 										</div>
 									</div>
 								</div>
@@ -154,9 +154,9 @@
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm"
+								<input type="button" class="btn btn-primary"
 									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;"/> <input
-									type="button" class="btn btn-primary btn-sm"
+									type="button" class="btn btn-primary"
 									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 							</div>
 							<table>
@@ -171,9 +171,9 @@
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm"
+								<input type="button" class="btn btn-primary"
 									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary btn-sm"
+									type="button" class="btn btn-primary"
 									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 							</div>
 							<table>
@@ -188,9 +188,9 @@
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm"
+								<input type="button" class="btn btn-primary"
 									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary btn-sm"
+									type="button" class="btn btn-primary"
 									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 							</div>
 							<table>
@@ -205,9 +205,9 @@
 								</tr>
 							</table>
 							<div align="right">
-								<input type="button" class="btn btn-primary btn-sm"
+								<input type="button" class="btn btn-primary"
 									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary btn-sm"
+									type="button" class="btn btn-primary"
 									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 							</div>
 						</div>
