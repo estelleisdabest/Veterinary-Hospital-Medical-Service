@@ -124,7 +124,7 @@
 						name="join_membership_protector" id="join_membership_protector"
 						value="병원정보 수정" style="border-radius: 50px; width: 130px; margin: auto;
 						text-align: center; float: right; color: white;"
-						onclick="location='/hosMap'">
+						onclick="location='/hospitalMap'">
 				</div>
 			</div>
 		</section>
