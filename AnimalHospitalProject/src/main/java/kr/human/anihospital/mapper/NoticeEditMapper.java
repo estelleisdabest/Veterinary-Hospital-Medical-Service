@@ -1,5 +1,5 @@
 package kr.human.anihospital.mapper;
 
-public class NoticeEditMapper {
+public interface NoticeEditMapper {
 
 }

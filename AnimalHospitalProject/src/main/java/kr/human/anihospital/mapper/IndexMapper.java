@@ -1,5 +1,5 @@
 package kr.human.anihospital.mapper;
 
-public class IndexMapper {
+public interface IndexMapper {
 
 }
