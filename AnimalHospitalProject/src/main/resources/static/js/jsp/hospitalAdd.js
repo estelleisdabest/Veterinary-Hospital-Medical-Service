@@ -16,8 +16,8 @@ window.onload = function() {
 						height: height,
 						oncomplete: function(data) { //선택시 입력값 세팅
 							document
-								.getElementById("address").value = data.address; // 주소 넣기
-							$('#address').attr('style', 'border-color : #ced4da;');
+								.getElementById("animalHospitalAddress").value = data.address; // 주소 넣기
+							$('#animalHospitalAddress').attr('style', 'border-color : #ced4da;');
 							$('#addrWarn').remove();
 						}
 					}).open({
