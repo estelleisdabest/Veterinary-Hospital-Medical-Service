@@ -38,6 +38,11 @@ img {
 table {
 	margin: auto;
 }
+textarea {
+    width: 100%;
+    height: 6.25em;
+    resize: none;
+ }
 </style>
 </head>
 <body>
@@ -69,10 +74,11 @@ table {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for=id>ID</label> <input type="text" class="form-control"
-					name="id" id="id" value="Jake" data-rule="id" disabled="disabled"
-					data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
+				<label for=email>ID</label>
+				<input type="text" class="form-control" name="email" id="email"
+					value="you@example.com" data-rule="email" disabled="disabled"
+					data-msg="이메일은 필수입력 항목입니다.">
+				<div class="validate" id="email_val"></div>
 			</div>
 		</div>
 		<div class="row">
@@ -84,9 +90,9 @@ table {
 				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
 				<input type="radio" name="gender" id="Female" data-rule="gender"
 					value="Female" checked> <label for="Female"
-					disabled="disabled"> Female</label> <input type="radio"
+					disabled="disabled"> 여자</label> <input type="radio"
 					name="gender" id="Male" data-rule="gender" value="Male"
-					disabled="disabled"> <label for="Male"> Male</label>
+					disabled="disabled"> <label for="Male"> 남자</label>
 
 				<div class="validate"></div>
 			</div>
@@ -152,19 +158,7 @@ table {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for="email">이메일</label> <input type="text"
-					class="form-control" name="email" id="email"
-					value="you@example.com" data-rule="email" data-msg="필수입력 항목입니다."
-					disabled="disabled">
-				<div class="validate" disabled="disabled"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="phone">주소</label>
+				<label for="inputKakao">주소</label>
 				<div class="wrap">
 					<input type="text" class="form-control" readonly="readonly"
 						id="inputKakao" placeholder="경기도 수원시 팔달구 중부대로 100" disabled="disabled"> 
@@ -189,16 +183,14 @@ table {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for="email">학력</label>
-				<textarea rows="5" cols="60" style="width: 10; height: 10;"
-					placeholder="" disabled="disabled"></textarea>
-				<label for="email">이력</label>
-				<textarea rows="5" cols="60" style="width: 10; height: 10;"
-					placeholder="" disabled="disabled"></textarea>
-				<label for="email">인사말</label>
-				<textarea rows="5" cols="60" style="width: 10; height: 10;"
-					placeholder="" disabled="disabled"></textarea>
-			</div>
+				<label for="textBox1">학력</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox1" style="border-color : #ced4da;"></textarea> <br />
+				<label for="textBox2">이력</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox2" style="border-color : #ced4da;"></textarea> <br />
+				<label for="textBox3">인사말</label> <br />
+				<textarea rows="5" cols="55" placeholder="" id="textBox3" style="border-color : #ced4da;"></textarea> <br />
+			<div class="validate"></div>
+		</div>
 		</div>
 		<div class="row">
 			<p></p>
@@ -206,13 +198,12 @@ table {
 				<br />
 			<div class="col-md-4 form-group" style="margin: auto;">
 				<input type="button" class="btn btn-secondary" name="move_pre_page"
-					id="move_pre_page" value="이전페이지" onclick="location='/'"
+					id="move_pre_page" value="이전페이지" onclick="history.go(-1)"
 					style="border-radius: 50px; width: 110px; text-align: center; color: white;">
 				<input type="button" class="btn btn-primary" name="notice_add"
 					id="notice_add" value="수정하기" onclick="location='/doctorInfoEdit'"
 					style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 			</div>
-			</p>
 		</div>
 		<section class="inner-page">
 			<div class="container">

@@ -8,7 +8,7 @@ import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.DefaultTransactionDefinition;
 
-import kr.human.anihospital.dao.TestMapper;
+import kr.human.anihospital.mapper.TestMapper;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -33,7 +33,7 @@ public class TestService {
 		try {
 			totSize = testMapper.selectTotalCount();
 			log.info(jdbcTemplate.queryForObject("select now()", String.class));
-			totSize = jdbcTemplate.queryForObject("select count(seq_medicine) totSize from medicine", Integer.class);
+			// totSize = jdbcTemplate.queryForObject("select count(seq_medicine) totSize from medicine", Integer.class);
 			log.info(totSize + "개");
 		}catch(Exception ex) {
 			ex.printStackTrace();

@@ -51,9 +51,9 @@
 		font-size: 2.25rem;
 		line-height: 3rem;
 		justify-content: space-around;
-		padding: 0 0.2em;
+		padding: 0 0.9em;
 		text-align: left;
-		width: 7em;
+		width: 9em;
 		left: -100px;
 	}
 	.star-rating input {
@@ -96,16 +96,39 @@
 <script type="text/javascript">
 	$(function() {
 		// 폼 전송시 폼내용 검증
-		$("#insertForm").submit(function() {
+		$("#postscriptSave").on('click',function() {
 			var value = $("#content").val();
+			var star = $("#stars").val();
 			if (value == null || value.trim().length == 0) {
-				alert('내용을 넣으세요.');
 				$("#content").val("");
 				$("#content").focus();
+				$('#content').attr('style','border-color: #dc3545; margin:auto; width:auto; height: auto;');
+				$('#content').after('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
 				return false;
+			}else if ($(':radio[name="rating"]:checked').length < 1) {
+				$("#stars").val("");
+				$("#stars").focus();
+				$('#stars').attr('style','border-color: #dc3545; margin:auto; width:9em; height: auto;padding: 0 0.9em;');
+				$('#content').after('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
+				return false;
+			}else{
+				$('#postscriptSave').attr('onclick',"location='myPageProtector'");
 			}
+			
 		});
 	});
+	$('#content').on('input',function(){
+		if($('#content').val() !=''){
+			$('#content').attr('style','width:300px;');
+			$('#warning').remove();
+		}
+	})
+	$('#stars').on('input',function(){
+		if($('#stars').val() !=''){
+			$('#stars').attr('style','width:9em;','padding: 0 0.9em;');
+			$('#warning').remove();
+		}
+	})
 </script>
 </head>
 <body>
@@ -124,12 +147,11 @@
 		<!-- ======= Appointment Section ======= -->
 		<section class="inner-page" >
 			<div class="container" style="width: 850px;">
-
 				<form class="mb-3" name="myForm" id="myform" method="post">
 					<table style="background-color: white;">
 						<tr >
 							<td style="font-size: 18pt;font-weight: bold;">별점 :</td>
-							<td class="star-rating space-x-4 mx-auto">
+							<td class="star-rating space-x-4 mx-auto" id="stars" >
 								<input type="radio" id="5-stars" name="rating" value="5" /> 
 								<label	for="5-stars" class="star pr-4">★</label> 
 								<input type="radio"	id="4-stars" name="rating" value="4" /> 
@@ -169,7 +191,7 @@
 								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
 							<td align="right" colspan="4">
-								<input type="submit" class="btn btn-primary" name="join_membership_protector" id="join_membership_protector" style="border-radius: 50px;" value="작성하기" />
+								<input type="button" class="btn btn-primary" name="postscriptSave" id="postscriptSave" style="border-radius: 50px;" value="작성하기" />
 							</td>
 						</tr>
 					</table>
