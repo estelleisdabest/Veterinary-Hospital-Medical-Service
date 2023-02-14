@@ -103,18 +103,21 @@
 				$("#content").val("");
 				$("#content").focus();
 				$('#content').attr('style','border-color: #dc3545; margin:auto; width:auto; height: auto;');
-				$('#content').after('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
+				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
 				return false;
 			}else if ($(':radio[name="rating"]:checked').length < 1) {
 				$("#stars").val("");
 				$("#stars").focus();
 				$('#stars').attr('style','border-color: #dc3545; margin:auto; width:9em; height: auto;padding: 0 0.9em;');
-				$('#content').after('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
+				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
 				return false;
 			}else{
-				$('#postscriptSave').attr('onclick',"location='myPageProtector'");
+				var result = window.confirm('작성한 내용대로 저장하시겠습니까?');
+				if(result) {
+	   				alert('정상적으로 처리되었습니다.');
+	   				location.href='/myPageProtector';
+	  			}
 			}
-			
 		});
 	});
 	$('#content').on('input',function(){
@@ -162,6 +165,7 @@
 								<label for="2-stars" class="star">★</label> 
 								<input type="radio" id="1-star" name="rating" value="1" /> 
 								<label for="1-star"	class="star">★</label>
+								<div class="validate" id="stars_val"></div>
 							</td>
 						</tr>
 					</table>
@@ -179,6 +183,7 @@
 							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 : &nbsp;</td>
 							<td colspan="4">
 								<textarea name="content" id="content" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
+								<div class="validate" id="content_val"></div>
 							</td>
 						</tr>
 					</table>
