@@ -53,7 +53,7 @@
 							<div>
 								<%-- 보호자로 로그인했을때는 이 버튼이 보이지 않는다. --%>
 								<input type="button" name="notice_add_btn" id="notice_add_btn"
-									value="추가" class="btn btn-primary"
+									value="등록" class="btn btn-primary"
 									onclick="location='noticeAdd'"
 									style="border-radius:50px;width: 90px;text-align: center;color: white; float: right;" />
 							</div>
