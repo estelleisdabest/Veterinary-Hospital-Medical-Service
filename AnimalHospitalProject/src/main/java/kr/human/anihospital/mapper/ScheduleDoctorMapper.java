@@ -1,5 +1,5 @@
 package kr.human.anihospital.mapper;
 
-public class ScheduleDoctorMapper {
+public interface ScheduleDoctorMapper {
 
 }

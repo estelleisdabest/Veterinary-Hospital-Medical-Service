@@ -1,5 +1,5 @@
 package kr.human.anihospital.mapper;
 
-public class EditMyPageProtectorMapper {
+public interface EditMyPageProtectorMapper {
 
 }

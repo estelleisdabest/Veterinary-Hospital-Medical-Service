@@ -1,5 +1,5 @@
 package kr.human.anihospital.mapper;
 
-public class PatientListMapper {
+public interface PatientListMapper {
 
 }
