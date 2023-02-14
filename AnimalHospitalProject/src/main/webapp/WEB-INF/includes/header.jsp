@@ -31,6 +31,7 @@
           <li><a class="nav-link scrollto" href="/serviceIntroduce">서비스소개</a></li>
           <li class="dropdown"><a href="#"><span>수의사 전용 페이지</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
+              <li><a href="/doctorInfo">나의 정보</a></li>
               <li><a href="/patientList">전체환자 조회</a></li>
               <li><a href="/scheduleDoctor">스케줄 관리</a></li>
             </ul>

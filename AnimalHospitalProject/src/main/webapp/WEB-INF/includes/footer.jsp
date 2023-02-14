@@ -36,6 +36,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="/">HOME</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/serviceIntroduce">서비스 소개</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="/doctorInfo">나의 정보</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/patientList">담당환자 전체 조회</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/scheduleDoctor">스케줄 관리</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="/notice">공지</a></li>
