@@ -147,7 +147,7 @@
 							<input type="email" class="form-control" name="email" id="email" placeholder="이메일을 입력해주세요." data-rule="email" data-msg="이메일은 필수입력 항목입니다.">
 					         &nbsp;&nbsp;
 					        <input type="button" class="btn btn-primary" id="send_certificationEmail" name="send_certificationEmail" value="이메일 인증" style="width: 140px; text-align: center; border-radius: 50px;">
-					         <div class="validate" id="doctor_email_val"></div>
+					         <div class="validate" id="email_val"></div>
 					        </div>
 				        </div>
 					<div class="row">
@@ -208,7 +208,7 @@
 						style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
 						<div class="col-md-2 form-group mt-3">
 							<label for="text">생년월일</label> 
-							<input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도">
+							<input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도" maxlength="4">
 							<div class="validate" id="doctor_year_val"></div>
 						</div>
 						<div class="col-md-2 form-group mt-3">
@@ -232,7 +232,7 @@
 						</div>
 						<div class="col-md-2 mt-3">
 							<label for="text"></label> 
-							<input type="datetime" class="form-control datepicker" name="doctor_date" id="doctor_date" placeholder="일">
+							<input type="datetime" class="form-control datepicker" name="doctor_date" id="doctor_date" placeholder="일" maxlength="2">
 							<div class="validate" id="doctor_date_val"></div>
 						</div>
 					</div>
@@ -240,7 +240,7 @@
 						style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
 						<div class="col-md-2 form-group mt-3">
 							<label for="text">면허취득일</label> 
-							<input type="datetime" name="doctor_license_year" class="form-control datepicker" id="doctor_license_year" placeholder="년도">
+							<input type="datetime" name="doctor_license_year" class="form-control datepicker" id="doctor_license_year" placeholder="년도" maxlength="4">
 							<div class="validate" id="doctor_license_year_val"></div>
 						</div>
 						<div class="col-md-2 form-group mt-3">
@@ -264,7 +264,7 @@
 						</div>
 						<div class="col-md-2 mt-3">
 							<label for="text"></label> 
-							<input type="datetime" class="form-control datepicker" name="doctor_license_date" id="doctor_license_date" placeholder="일">
+							<input type="datetime" class="form-control datepicker" name="doctor_license_date" id="doctor_license_date" placeholder="일" maxlength="2">
 							<div class="validate" id="doctor_license_date_val"></div>
 						</div>
 					</div>
@@ -361,104 +361,142 @@
 $(function(){
        $('#join_membership_doctor').on('click', function() {
           var email = $('#email').val();
+          var emailRegEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
           var confirm_emailUser = $('#confirm_emailUser').val();
           var password = $('#password').val();
+          var passwordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
           var passwordCheck = $('#passwordCheck').val();
           var doctor_id = $('#doctor_id').val();
+          var doctorIdRegEx = /^[가-힣]{2,5}$/;
           var doctor_gender = $('#doctor_gender').val();
           var doctor_year = $('#doctor_year').val();
-          var doctorYearRegEx = /^[0-9]{4}$/;
+          var YearRegEx = /^(19[0-9][0-9]|20\d{2})/;
           var doctor_month = $('#doctor_month').val();
           var doctor_date = $('#doctor_date').val();
-          var doctorDateRegEx = /^[0-9]{1,2}$/;
+          var DateRegEx = /^0[1-9]|[1-2][0-9]|3[0-1]$/;
           var doctor_license_year = $('#doctor_license_year').val();
-          var doctorLicenseYearRegEx = /^[0-9]{4}$/;
           var doctor_license_month = $('#doctor_license_month').val();
           var doctor_license_date = $('#doctor_license_date').val();
-          var doctorLicenseDateRegEx = /^[0-9]{1,2}$/;
           var doctor_license_seq = $('#doctor_license_seq').val();
           var doctorLicenseSeqRegEx = /^[0-9]{4,6}$/;
           var doctor_address = $('#doctor_address').val();
           var doctor_phoneNumber = $('#doctor_phoneNumber').val();
+          var doctorPhoneNumberRegEx = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
           var confirm_certificationNumber = $('#confirm_certificationNumber').val();
           if(email.length==0||email.trim().length==0||email.includes(' ')){
                $('#email').focus();
                $('#email').attr('style','border-color: #dc3545;');
            	   $('#email').val('');
-           	   $('#email_val').html('<div id="email_warning"><b style="color: red;">올바른 이메일을 입력해주세요.</b></div>');
+           	   $('#email_val').html('<div id="email_warning"><b style="color: red; font-size:8pt;">올바른 이메일을 입력해주세요.</b></div>');
+           }else if(!emailRegEx.test(email)){
+        	   $('#email').focus();
+               $('#email').attr('style','border-color: #dc3545;');
+           	   $('#email').val('');
+           	   $('#email_val').html('<div id="email_warning"><b style="color: red; font-size:8pt;">올바른 이메일을 입력해주세요.</b></div>');
           }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0){
         	  $('#confirm_emailUser').focus();
               $('#confirm_emailUser').attr('style','border-color: #dc3545;');
           	  $('#confirm_emailUser').val('');
-          	  $('#confirm_emailUser').after('<div id="warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
+          	  $('#confirm_emailUser').after('<div id="warning"><b style="color: red; font-size:8pt;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
           }else if(password.length==0||password.trim().length==0||password.includes(' ')){
                $('#password').focus();
                $('#password').attr('style','border-color: #dc3545;');
            	   $('#password').val('');
-           	   $('#password_val').html('<div id="password_warning"><b style="color: red;">비밀번호를 입력해주세요.</b></div>');
-           }else if(passwordCheck!=password){
+           	   $('#password_val').html('<div id="password_warning"><b style="color: red; font-size:8pt;">비밀번호를 입력해주세요.</b></div>');
+          }else if(!passwordRegEx.test(password)){
+       		   $('#password').focus();
+               $('#password').attr('style','border-color: #dc3545;');
+               $('#password').val('');
+          	   $('#password_val').html('<div id="password_warning"><b style="color: red; font-size:8pt;">비밀번호는 8자 이상이어야 하며, 숫자/대문자/소문자/특수문자를 모두 포함해야 합니다.</b></div>');
+          }else if(passwordCheck!=password){
         	   $('#passwordCheck').focus();
                $('#passwordCheck').attr('style','border-color: #dc3545;');
            	   $('#passwordCheck').val('');
-           	   $('#passwordCheck_val').html('<div id="passwordCheck_warning"><b style="color: red;">같은 비밀번호를 입력해주세요.</b></div>');
+           	   $('#passwordCheck_val').html('<div id="passwordCheck_warning"><b style="color: red; font-size:8pt;">같은 비밀번호를 입력해주세요.</b></div>');
            }else if(doctor_id==null||doctor_id.trim().length==0||doctor_id.includes(' ')){
         	   $('#doctor_id').focus();
                $('#doctor_id').attr('style','border-color: #dc3545;');
            	   $('#doctor_id').val('');
-           	   $('#doctor_id_val').html('<div id="doctor_id_warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
+           	   $('#doctor_id_val').html('<div id="doctor_id_warning"><b style="color: red; font-size:8pt;">이름을 입력해주세요.</b></div>');
+           }else if(!doctorIdRegEx.test(doctor_id)){
+        	   $('#doctor_id').focus();
+               $('#doctor_id').attr('style','border-color: #dc3545;');
+           	   $('#doctor_id').val('');
+           	   $('#doctor_id_val').html('<div id="doctor_id_warning"><b style="color: red; font-size:8pt;">이름은 한글로 2글자 이상 5글자 이하로 입력할 수 있습니다.</b></div>');
            }else if(doctor_gender==''){
         	   $('#doctor_gender').focus();
                $('#doctor_gender').attr('style','border-color: #dc3545;');
            	   $('#doctor_gender').val('');
-           	   $('#doctor_gender_val').html('<div id="doctor_gender_warning"><b style="color: red;">성별을 선택해주세요.</b></div>');
-           }else if(!doctorYearRegEx.test(doctor_year)){
+           	   $('#doctor_gender_val').html('<div id="doctor_gender_warning"><b style="color: red; font-size:8pt;">성별을 선택해주세요.</b></div>');
+           }else if(!YearRegEx.test(doctor_year)){
         	   $('#doctor_year').focus();
                $('#doctor_year').attr('style','border-color: #dc3545;');
            	   $('#doctor_year').val('');
-           	   $('#doctor_year_val').html('<div id="doctor_year_warning"><b style="color: red; font-size:6pt;">년도를 입력해주세요.</b></div>');
+           	   $('#doctor_year_val').html('<div id="doctor_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
            }else if(doctor_month==''){
         	   $('#doctor_month').focus();
                $('#doctor_month').attr('style','border-color: #dc3545;');
-           	   $('#doctor_month_val').html('<div id="doctor_month_warning"><b style="color: red; font-size:6pt;">월을 입력해주세요.</b></div>');
-           }else if(!doctorDateRegEx.test(doctor_date)){
+           	   $('#doctor_month_val').html('<div id="doctor_month_warning"><b style="color: red; font-size:8pt;">월을 입력해주세요.</b></div>');
+           }else if(!DateRegEx.test(doctor_date)){
         	   $('#doctor_date').focus();
                $('#doctor_date').attr('style','border-color: #dc3545;');
-           	   $('#doctor_date_val').html('<div id="doctor_date_warning"><b style="color: red; font-size:6pt;">날짜를 입력해주세요.</b></div>');
+           	   $('#doctor_date').val('');
+           	   $('#doctor_date_val').html('<div id="doctor_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
            }else if(doctor_license_year==''||doctor_license_year.trim().length==0||doctor_license_year.includes(' ')){
         	   $('#doctor_license_year').focus();
                $('#doctor_license_year').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_year').val('');
-           	   $('#doctor_license_year_val').html('<div id="doctor_license_year_warning"><b style="color: red; font-size:6pt;">년도를 입력해주세요.</b></div>');
+           	   $('#doctor_license_year_val').html('<div id="doctor_license_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+           }else if(!YearRegEx.test(doctor_license_year)){
+        	   $('#doctor_license_year').focus();
+               $('#doctor_license_year').attr('style','border-color: #dc3545;');
+           	   $('#doctor_license_year').val('');
+           	   $('#doctor_license_year_val').html('<div id="doctor_license_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
            }else if(doctor_license_month==''){
         	   $('#doctor_license_month').focus();
                $('#doctor_license_month').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_month').val('');
-           	   $('#doctor_license_month_val').html('<div id="doctor_license_month_warning"><b style="color: red; font-size:6pt;">월을 입력해주세요.</b></div>');
+           	   $('#doctor_license_month_val').html('<div id="doctor_license_month_warning"><b style="color: red; font-size:8pt;">월을 입력해주세요.</b></div>');
            }else if(doctor_license_date==''||doctor_license_date.trim().length==0||doctor_license_date.includes(' ')){
         	   $('#doctor_license_date').focus();
                $('#doctor_license_date').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_date').val('');
-           	   $('#doctor_license_date_val').html('<div id="doctor_license_date_warning"><b style="color: red; font-size:6pt;">날짜를 입력해주세요.</b></div>');
+           	   $('#doctor_license_date_val').html('<div id="doctor_license_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+           }else if(!DateRegEx.test(doctor_license_date)){
+        	   $('#doctor_license_date').focus();
+               $('#doctor_license_date').attr('style','border-color: #dc3545;');
+           	   $('#doctor_license_date').val('');
+           	   $('#doctor_license_date_val').html('<div id="doctor_license_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+           }else if(doctor_license_seq==''||doctor_license_seq.trim().length==0||doctor_license_seq.includes(' ')){
+        	   $('#doctor_license_seq').focus();
+               $('#doctor_license_seq').attr('style','border-color: #dc3545;');
+           	   $('#doctor_license_seq').val('');
+           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
            }else if(!doctorLicenseSeqRegEx.test(doctor_license_seq)){
         	   $('#doctor_license_seq').focus();
                $('#doctor_license_seq').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_seq').val('');
-           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red;">올바른 등록번호를 입력해주세요.</b></div>');
+           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">올바른 등록번호를 입력해주세요.</b></div>');
            }else if(doctor_address==null||doctor_address.trim().length==0){
         	   $('#doctor_address').focus();
                $('#doctor_address').attr('style','border-color: #dc3545;');
            	   $('#doctor_address').val('');
-           	   $('#doctor_address_val').html('<div id="doctor_address_warning"><b style="color: red;">주소를 입력해주세요.</b></div>');
+           	   $('#doctor_address_val').html('<div id="doctor_address_warning"><b style="color: red; font-size:8pt;">주소를 입력해주세요.</b></div>');
            }else if(doctor_phoneNumber==null||doctor_phoneNumber.trim().length==0||doctor_phoneNumber.includes(' ')){
         	   $('#doctor_phoneNumber').focus();
                $('#doctor_phoneNumber').attr('style','border-color: #dc3545;');
            	   $('#doctor_phoneNumber').val('');
-           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red;">올바른 핸드폰 번호를 입력해주세요.</b></div>');
+           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 핸드폰 번호를 입력해주세요.</b></div>');
+           }else if(!doctorPhoneNumberRegEx.test(doctor_phoneNumber)){
+        	   $('#doctor_phoneNumber').focus();
+               $('#doctor_phoneNumber').attr('style','border-color: #dc3545;');
+           	   $('#doctor_phoneNumber').val('');
+           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 핸드폰 번호를 입력해주세요.</b></div>');
            }else if(confirm_certificationNumber==null||confirm_certificationNumber.trim().length==0||confirm_certificationNumber.includes(' ')){
         	   $('#confirm_certificationNumber').focus();
                $('#confirm_certificationNumber').attr('style','border-color: #dc3545;');
            	   $('#confirm_certificationNumber').val('');
-           	   $('#confirm_certificationNumber_val').html('<div id="confirm_certificationNumber_warning"><b style="color: red;">올바른 인증번호를 입력해주세요.</b></div>');
+           	   $('#confirm_certificationNumber_val').html('<div id="confirm_certificationNumber_warning"><b style="color: red; font-size:8pt;">올바른 인증번호를 입력해주세요.</b></div>');
            }else{
         		var result = window.confirm('작성한 내용대로 가입하시겠습니까?');
       			if(result) {
