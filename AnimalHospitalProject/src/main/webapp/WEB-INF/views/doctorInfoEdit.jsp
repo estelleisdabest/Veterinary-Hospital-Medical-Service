@@ -22,8 +22,9 @@
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 <link href="vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-
+<script type="text/javascript" src="js/jsp/doctorInfoEdit.js"></script>
 <!-- Template Main CSS File -->
+<script type="text/javascript" src="js/jsp/doctorInfoEdit.js"></script>
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
 input::-webkit-input-placeholder {
@@ -98,11 +99,11 @@ textarea {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for=id>ID</label>
-				<input type="text" class="form-control" name="id" id="id"
-					value="Jake" data-rule="id" disabled="disabled"
-					data-msg="필수입력 항목입니다.">
-				<div class="validate" id="id_val"></div>
+				<label for=email>ID</label>
+				<input type="text" class="form-control" name="email" id="email"
+					value="you@example.com" data-rule="email" disabled="disabled"
+					data-msg="이메일은 필수입력 항목입니다.">
+				<div class="validate" id="email_val"></div>
 			</div>
 		</div>
 		<div class="row">
@@ -198,13 +199,6 @@ textarea {
 			<div class="col-md-4 form-group mt-3">
 				<div class="validate"></div>
 			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="email">이메일</label>
-				<input type="text" class="form-control" name="email" id="email"
-					value="you@example.com" data-rule="email"
-					data-msg="이메일은 필수입력 항목입니다.">
-				<div class="validate" id="email_val"></div>
-			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-4 form-group mt-3">
@@ -283,33 +277,6 @@ textarea {
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script>
-	window.onload = function() {
-		document
-				.getElementById("address_kakao")
-				.addEventListener(
-						"click",
-						function() { //주소입력칸을 클릭하면
-							//카카오 지도 발생
-							var width = 500; //팝업의 너비
-							var height = 600; //팝업의 높이
-							new daum.Postcode(
-									{
-										width : width, //생성자에 크기 값을 명시적으로 지정
-										height : height,
-										oncomplete : function(data) { //선택시 입력값 세팅
-											document
-													.getElementById("inputKakao").value = data.address; // 주소 넣기
-													$('#inputKakao').attr('style','border-color : #ced4da;');
-													$('#kakao_warning').remove();
-										}
-									}).open({
-									    left: (window.screen.width / 2) - (width / 2),
-									    top: (window.screen.height / 2) - (height / 2)
-									});
-						});
-	}
-</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -320,8 +287,6 @@ $(function(){
           var doctorNumberRegEx = /^[0-9]{4,6}$/;
           var phone = $('#phone').val();
           var phoneRegEx = /^\d{3}-\d{3,4}-\d{4}$/;
-          var email = $('#email').val();
-          var emailRegEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
           var inputKakao = $('#inputKakao').val();
           var address = $('#address').val();
           if(password.length==0||password.trim().length==0||password.includes(' ')){
@@ -341,10 +306,6 @@ $(function(){
         	   $('#phone').focus();
                $('#phone').attr('style','border-color: #dc3545;');
            	   $('#phone_val').html('<div id="phone_warning"><b style="color: red;">핸드폰번호를 입력해주세요.</b></div>');
-           }else if(!emailRegEx.test(email)){
-        	   $('#email').focus();
-               $('#email').attr('style','border-color: #dc3545;');
-           	   $('#email_val').html('<div id="email_warning"><b style="color: red;">올바른 이메일을 입력해주세요.</b></div>');
            }else if(inputKakao==null||inputKakao.trim().length==0){
         	   $('#inputKakao').focus();
                $('#inputKakao').attr('style','border-color: #dc3545;');
@@ -385,12 +346,6 @@ $('#phone').on('input',function(){
 	if($('#phone').val() !=''){
 		$('#phone').attr('style','border-color : #ced4da;');
 		$('#phone_warning').remove();
-	}
-})
-$('#email').on('input',function(){
-	if($('#email').val() !=''){
-		$('#email').attr('style','border-color : #ced4da;');
-		$('#email_warning').remove();
 	}
 })
 $('#address').on('input',function(){

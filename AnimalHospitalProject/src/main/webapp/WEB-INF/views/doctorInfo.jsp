@@ -74,10 +74,11 @@ textarea {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for=id>ID</label> <input type="text" class="form-control"
-					name="id" id="id" value="Jake" data-rule="id" disabled="disabled"
-					data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
+				<label for=email>ID</label>
+				<input type="text" class="form-control" name="email" id="email"
+					value="you@example.com" data-rule="email" disabled="disabled"
+					data-msg="이메일은 필수입력 항목입니다.">
+				<div class="validate" id="email_val"></div>
 			</div>
 		</div>
 		<div class="row">
@@ -157,18 +158,6 @@ textarea {
 				<div class="validate"></div>
 			</div>
 			<div class="col-md-4 form-group mt-3">
-				<label for="email">이메일</label> <input type="text"
-					class="form-control" name="email" id="email"
-					value="you@example.com" data-rule="email" data-msg="필수입력 항목입니다."
-					disabled="disabled">
-				<div class="validate" ></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
 				<label for="inputKakao">주소</label>
 				<div class="wrap">
 					<input type="text" class="form-control" readonly="readonly"
@@ -209,7 +198,7 @@ textarea {
 				<br />
 			<div class="col-md-4 form-group" style="margin: auto;">
 				<input type="button" class="btn btn-secondary" name="move_pre_page"
-					id="move_pre_page" value="이전페이지" onclick="location='/'"
+					id="move_pre_page" value="이전페이지" onclick="history.go(-1)"
 					style="border-radius: 50px; width: 110px; text-align: center; color: white;">
 				<input type="button" class="btn btn-primary" name="notice_add"
 					id="notice_add" value="수정하기" onclick="location='/doctorInfoEdit'"
