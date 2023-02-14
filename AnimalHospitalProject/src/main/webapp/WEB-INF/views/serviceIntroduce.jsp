@@ -50,10 +50,10 @@
 					</div>
 					<br />
 					<div
-						style="padding: 10px; margin-bottom: 10px; border: 1px solid #CCCCFF; border-radius: 10px; text-align: center; font-size: 15pt;">
+						style="padding: 10px; margin-bottom: 10px; border: 1px solid #ced4da; border-radius: 10px; text-align: center; font-size: 15pt;">
 						<br />
 						<p style="text-align: center; font-size: 15pt;">
-							<b>저희는 보호자들에게 최적화된 서비스를 제공합니다.</b>
+							<b>마이펫닥터는 보호자들에게 최적화된 서비스를 제공합니다.</b>
 						</p>
 						<br /> <img alt="..." src="img/catdog.jpg"
 							style="display: block; margin: auto; width: 70%; height: 70%;">
@@ -88,10 +88,10 @@
 					</div>
 					<br />
 					<div
-						style="padding: 10px; margin-bottom: 10px; border: 1px solid #CCCCFF; border-radius: 10px; text-align: center; font-size: 15pt;">
+						style="padding: 10px; margin-bottom: 10px; border: 1px solid #ced4da; border-radius: 10px; text-align: center; font-size: 15pt;">
 						<br />
 						<p style="text-align: center; font-size: 15pt;">
-							<b>저희는 환자와 병원을 연결시켜주는 역할을 합니다.</b>
+							<b>마이펫닥터는 환자와 병원을 연결시켜주는 역할을 합니다.</b>
 						</p>
 						<br /> <img alt="..." src="img/dog2.jpg"
 							style="display: block; margin: auto; width: 70%; height: 70%">
@@ -114,12 +114,6 @@
 						<br /> <br />
 						<p>보호자가 올린 사진이나 동영상 열람할 수 있으며 예전 진료 내역도 간편하게 확인 가능합니다.</p>
 						<br />
-						<p></p>
-						<br />
-						<p>3. 처방전 조정</p>
-						<p>처방전을 추가하거나 약 조정을 간편하게 할 수 있습니다.</p>
-						<img src="img/medicine.jpg"
-							style="display: block; margin: auto; width: 70%; height: 70%">
 						<br />
 						<p>주요 서비스 외에도 다양한 기능이 있습니다.</p>
 						<p>시작해보세요!</p>
