@@ -38,7 +38,7 @@
 	#gridContainer {
 		display: grid;
 		grid-auto-rows: minmax(100px, auto);
-		grid-template-columns: 55% 45%;
+		grid-template-columns: 53% 45%;
 		position: static;
 	}
 	tr, td {
@@ -49,6 +49,10 @@
 	}
 	.pagination {
 	  justify-content: center;
+	}
+	.card mb-3{
+	
+	
 	}
 </style>
 </head>
@@ -70,13 +74,14 @@
 				<div id="gridContainer">
 					<div id="mainContent">
 						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%;">
+							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 88%; ">
 							<h3>나의 정보</h3>
 							&nbsp;<input type="button" class="btn btn-primary"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
 								style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
-							<input type="button" class="btn btn-primary" id="withdrawal" onclick="clickEvent()"
-								value="회원탈퇴" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+							<form action="">
+								<input type="button" class="btn btn-primary" id="withdrawal" onclick="clickEvent()" value="회원탈퇴" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+							</form>
 							<table>
 								<tr>
 									<td>아이디 : dudungmam</td>
@@ -94,11 +99,10 @@
 						</div>
 						<br />
 						<h3>환자 정보</h3>
-						&nbsp;<input type="button" class="btn btn-primary"
-							onclick="location.href='/patientAdd'" value="환자추가" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
+						&nbsp;<input type="button" class="btn btn-primary" onclick="location.href='/patientAdd'" value="환자등록" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 						<p />
-						<div class="card mb-3" style="max-width: 540px;">
-							<div class="row g-0">
+						<div class="card mb-3" style="width: 88%;">
+							<div class="row g-1">
 								<div class="col-md-4">
 									<img src="img/dog.jpg" class="img-fluid rounded-start"
 										alt="..." style="width: 100%; height: 100%;">
@@ -110,14 +114,32 @@
 											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
 										</p>
 										<div align="right">
-											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="card mb-3" style="max-width: 540px;">
-							<div class="row g-0">
+						<div class="card mb-3" style="width: 88%;">
+							<div class="row g-1">
+								<div class="col-md-4">
+									<img src="img/dog3.png" class="img-fluid rounded-start"alt="...">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="animalName" style="text-align: center;">나비</h5>
+										<p class="card-text">
+											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
+										</p>
+										<div align="right">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3" style="width: 88%;">
+							<div class="row g-1">
 								<div class="col-md-4">
 									<img src="img/cat.jpg" class="img-fluid rounded-start"
 										alt="..." style="width: 100%; height: 100%;">
@@ -129,7 +151,26 @@
 											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
 										</p>
 										<div align="right">
-											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditGuardian'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="card mb-3" style="width: 88%;">
+							<div class="row g-1">
+								<div class="col-md-4">
+									<img src="img/dog2.jpg" class="img-fluid rounded-start"
+										alt="..." style="width: 100%; height: 100%;">
+								</div>
+								<div class="col-md-8">
+									<div class="card-body">
+										<h5 class="animalName" style="text-align: center;">나비</h5>
+										<p class="card-text">
+											나이 : 2살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
+										</p>
+										<div align="right">
+											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
 										</div>
 									</div>
 								</div>
@@ -147,7 +188,7 @@
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>진료 일 : 2023년 1월 30일</td>
+									<td>진료일 : 2023년 1월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 구토</td>
@@ -155,16 +196,14 @@
 							</table>
 							<div align="right">
 								<input type="button" class="btn btn-primary"
-									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;"/> <input
-									type="button" class="btn btn-primary"
-									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
+									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;"/> 
 							</div>
 							<table>
 								<tr>
 									<td>진료병원 : A동물병원</td>
 								</tr>
 								<tr>
-									<td>질료 일 : 2022년 12월 2일</td>
+									<td>진료일 : 2022년 12월 2일</td>
 								</tr>
 								<tr>
 									<td>증상 : 감기</td>
@@ -172,16 +211,13 @@
 							</table>
 							<div align="right">
 								<input type="button" class="btn btn-primary"
-									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary"
-									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
-							</div>
+									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> 							</div>
 							<table>
 								<tr>
 									<td>진료병원 : B동물병원</td>
 								</tr>
 								<tr>
-									<td>진료 일 : 2022년 10월 6일</td>
+									<td>진료일 : 2022년 10월 6일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
@@ -189,16 +225,14 @@
 							</table>
 							<div align="right">
 								<input type="button" class="btn btn-primary"
-									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary"
-									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
+									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> 
 							</div>
 							<table>
 								<tr>
 									<td>진료병원 : B동물병원</td>
 								</tr>
 								<tr>
-									<td>진료 일 : 2021년 10월 30일</td>
+									<td>진료일 : 2021년 10월 30일</td>
 								</tr>
 								<tr>
 									<td>증상 : 건강검진</td>
@@ -206,9 +240,7 @@
 							</table>
 							<div align="right">
 								<input type="button" class="btn btn-primary"
-									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> <input
-									type="button" class="btn btn-primary"
-									onclick="location.href='/postscriptSave'" value="후기작성" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
+									onclick="location.href='/diagnosis'" value="상세보기" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" /> 
 							</div>
 						</div>
 						<p>

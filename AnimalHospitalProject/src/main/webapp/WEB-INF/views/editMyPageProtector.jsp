@@ -170,12 +170,11 @@
 						<div class="col-md-4 form-group" style="margin: auto;">
 							<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/myPageProtector'"
 								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
-							<input type="button" class="btn btn-primary" name="updateMyInfo"
+							<input type="submit" class="btn btn-primary" name="updateMyInfo"
 								id="updateMyInfo" value="수정하기"
 								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 						</div>
 					</div>
-
 				</form>
 			</div>
 		</section>
