@@ -24,6 +24,7 @@
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
 	<main id="main">
+	<form method="post" action="hospitalEdit" id="hospitalEditSubmit">
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -40,8 +41,8 @@
 					<div class="validate"></div>
 				</div>
 				<div class="col-md-4 form-group mt-3">
-					<label for="hospitalName">병원 이름</label>
-					<input type="text" class="form-control" name="hospitalName" id="hospitalName" data-rule="hospitalName" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
+					<label for="animalanimalHospitalName">병원 이름</label>
+					<input type="text" class="form-control" name="animalHospitalName" id="animalHospitalName" data-rule="animalanimalHospitalName" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
 					<div class="validate" id="nameWarnDiv"></div>
 				</div>
 			</div>
@@ -52,7 +53,7 @@
 				<div class="col-md-4 form-group mt-3">
 					<label for="address">주소</label>
 					<div class="wrap">
-						<input type="text" class="form-control" readonly="readonly" name="address" id="address" placeholder="주소찾기 버튼을 눌러주세요." data-rule="address" data-msg="필수입력 항목입니다."
+						<input type="text" class="form-control" name="animalHospitalAddress" id="animalHospitalAddress" placeholder="주소찾기 버튼을 눌러주세요." data-rule="address" data-msg="필수입력 항목입니다."
 							onFocus="this.style.backgroundImage='url(none)';">
 						&nbsp;
 						<input type="button" name="address_kakao" id="address_kakao" onclick="sample4_execDaumPostcode()" class="btn btn-primary btn-sm" value="주소찾기"
@@ -67,7 +68,7 @@
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="addressDetail">상세주소</label>
-					<input type="text" class="form-control" name="addressDetail" id="addressDetail" placeholder="나머지 상세주소를 입력해 주세요." data-rule="addressDetail" data-msg="필수입력 항목입니다."
+					<input type="text" class="form-control" name="animalHospitalAddressDetail" id="animalHospitalAddressDetail" placeholder="나머지 상세주소를 입력해 주세요." data-rule="addressDetail" data-msg="필수입력 항목입니다."
 						onFocus="this.style.backgroundImage='url(none)';">
 					<div class="validate" id="addrDetailWarnDiv"></div>
 				</div>
@@ -78,7 +79,7 @@
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="phone">전화번호</label>
-					<input type="text" class="form-control" name="phone" id="phone" placeholder="대표 전화번호를 '-'를 써서 입력해 주세요." data-rule="phone" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
+					<input type="text" class="form-control" name="animalHospitalPhoneNo" id="animalHospitalPhoneNo" placeholder="대표 전화번호를 '-'를 써서 입력해 주세요." data-rule="phone" data-msg="필수입력 항목입니다." onFocus="this.style.backgroundImage='url(none)';">
 					<div class="validate" id="telNoWarnDiv"></div>
 				</div>
 			</div>
@@ -87,8 +88,8 @@
 					<div class="validate"></div>
 				</div>
 				<div class="col-md-4 form-group mt-3">
-					<label for="hospital_location_latitude">위도</label>
-					<input type="text" class="form-control" name="hospital_location_latitude" id="hospital_location_latitude" data-rule="hospital_location_latitude" data-msg="필수입력 항목입니다."
+					<label for="hospitalLocationLatitude">위도</label>
+					<input type="text" class="form-control" name="hospitalLocationLatitude" id="hospitalLocationLatitude" data-rule="hospital_location_latitude" data-msg="필수입력 항목입니다."
 						placeholder="위도는 소수 9~10번째 자리까지 입력해주세요." onFocus="this.style.backgroundImage='url(none)';">
 					<div class="validate" id="latWarnDiv"></div>
 				</div>
@@ -98,8 +99,8 @@
 					<div class="validate"></div>
 				</div>
 				<div class="col-md-4 form-group mt-3">
-					<label for="hospital_location_longitude">경도</label>
-					<input type="text" class="form-control" name="hospital_location_longitude" id="hospital_location_longitude" data-rule="hospital_location_longitude" data-msg="필수입력 항목입니다."
+					<label for="hospitalLocationLongitude">경도</label>
+					<input type="text" class="form-control" name="hospitalLocationLongitude" id="hospitalLocationLongitude" data-rule="hospitalLocationLatitude" data-msg="필수입력 항목입니다."
 						placeholder="경도는 소수 9~10번째 자리까지 입력해주세요." onFocus="this.style.backgroundImage='url(none)';">
 					<div class="validate" id="longWarnDiv"></div>
 				</div>
@@ -115,6 +116,7 @@
 				</div>
 			</div>
 		</section>
+		</form>
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
@@ -125,79 +127,79 @@
 <script type="text/javascript">
 	$(function() {
 		$('#hospitalEdit').on('click', function() {
-			var hospitalName = $('#hospitalName').val();
-			var address = $('#address').val();
-			var addressDetail = $('#addressDetail').val();
-			var phone = $('#phone').val();
-			var hospital_location_latitude = $('#hospital_location_latitude').val();
-			var hospital_location_longitude = $('#hospital_location_longitude').val();
+			var animalanimalHospitalName = $('#animalHospitalName').val();
+			var address = $('#animalHospitalAddress').val();
+			var addressDetail = $('#animalHospitalAddressDetail').val();
+			var phone = $('#animalHospitalPhoneNo').val();
+			var hospitalLocationLatitude = $('#hospitalLocationLatitude').val();
+			var hospitalLocationLongitude = $('#hospitalLocationLongitude').val();
 			var locationRegEx = /^\d{2,3}\.\d{9,10}$/;
 			var phoneRegEx = /^01[0-9]\-\d{3,4}\-\d{4}$/;
-			if (hospitalName.length == 0 || hospitalName.trim().length == 0 || hospitalName.includes(' ')) {
-				$('#hospitalName').focus();
-				$('#hospitalName').attr('style', 'border-color: #dc3545;');
-				$('#hospitalName').val('');
+			if (animalanimalHospitalName.length == 0 || animalanimalHospitalName.trim().length == 0 || animalanimalHospitalName.includes(' ')) {
+				$('#animalHospitalName').focus();
+				$('#animalHospitalName').attr('style', 'border-color: #dc3545;');
+				$('#animalHospitalName').val('');
 				$('#nameWarnDiv').html('<div id="nameWarn"><b style="color: red;">올바른 병원 이름을 입력해주세요.</b></div>');
 			} else if (address == null || address.trim().length == 0) {
-				$('#address').focus();
-				$('#address').attr('style', 'border-color: #dc3545;');
-				$('#address').val('');
+				$('#animalHospitalAddress').focus();
+				$('#animalHospitalAddress').attr('style', 'border-color: #dc3545;');
+				$('#animalHospitalAddress').val('');
 				$('#addrWarnDiv').html('<div id="addrWarn"><b style="color: red;">주소를 입력해주세요.</b></div>');
 			} else if (addressDetail == null || addressDetail.trim().length == 0) {
-				$('#addressDetail').focus();
-				$('#addressDetail').attr('style', 'border-color: #dc3545;');
-				$('#addressDetail').val('');
+				$('#animalHospitalAddressDetail').focus();
+				$('#animalHospitalAddressDetail').attr('style', 'border-color: #dc3545;');
+				$('#animalHospitalAddressDetail').val('');
 				$('#addrDetailWarnDiv').html('<div id="addrDetailWarn"><b style="color: red;">유효한 상세주소를 입력해주세요.</b></div>');
 			} else if (phone == null || phone.trim().length == 0 || !phoneRegEx.test(phone)) {
-				$('#phone').focus();
-				$('#phone').attr('style', 'border-color: #dc3545;');
+				$('#animalHospitalPhoneNo').focus();
+				$('#animalHospitalPhoneNo').attr('style', 'border-color: #dc3545;');
 				$('#telNoWarnDiv').html('<div id="telNoWarn"><b style="color: red;">전화번호를 입력해주세요.</b></div>');
-			} else if (!locationRegEx.test(hospital_location_latitude)) {
-				$('#hospital_location_latitude').focus();
-				$('#hospital_location_latitude').attr('style', 'border-color: #dc3545;');
+			} else if (!locationRegEx.test(hospitalLocationLatitude)) {
+				$('#hospitalLocationLatitude').focus();
+				$('#hospitalLocationLatitude').attr('style', 'border-color: #dc3545;');
 				$('#latWarnDiv').html('<div id="latWarn"><b style="color: red;">유효한 위도를 입력해주세요.</b></div>');
-			} else if (!locationRegEx.test(hospital_location_longitude)) {
-				$('#hospital_location_longitude').focus();
-				$('#hospital_location_longitude').attr('style', 'border-color: #dc3545;');
+			} else if (!locationRegEx.test(hospitalLocationLongitude)) {
+				$('#hospitalLocationLongitude').focus();
+				$('#hospitalLocationLongitude').attr('style', 'border-color: #dc3545;');
 				$('#longWarnDiv').html('<div id="longWarn"><b style="color: red;">유효한 경도를 입력해주세요.</b></div>');
 			} else {
 				var result = window.confirm('작성한 내용으로 수정하시겠습니까?');
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
-					location.href = '/hospitalMap';
+					$("#hospitalEditSubmit").submit();
 				} else if (!result) {
 					alert('취소되었습니다.');
 				}
 			}
 		});
 	});
-	$('#hospitalName').on('input', function() {
-		if ($('#hospitalName').val() != '') {
-			$('#hospitalName').attr('style', 'border-color : #ced4da;');
+	$('#animalHospitalName').on('input', function() {
+		if ($('#animalHospitalName').val() != '') {
+			$('#animalHospitalName').attr('style', 'border-color : #ced4da;');
 			$('#nameWarn').remove();
 		}
 	})
-	$('#addressDetail').on('input', function() {
-		if ($('#addressDetail').val() != '') {
-			$('#addressDetail').attr('style', 'border-color : #ced4da;');
+	$('#animalHospitalAddressDetail').on('input', function() {
+		if ($('#animalHospitalAddressDetail').val() != '') {
+			$('#animalHospitalAddressDetail').attr('style', 'border-color : #ced4da;');
 			$('#addrDetailWarn').remove();
 		}
 	})
-	$('#phone').on('input', function() {
-		if ($('#phone').val() != '') {
-			$('#phone').attr('style', 'border-color : #ced4da;');
+	$('#animalHospitalPhoneNo').on('input', function() {
+		if ($('#animalHospitalPhoneNo').val() != '') {
+			$('#animalHospitalPhoneNo').attr('style', 'border-color : #ced4da;');
 			$('#telNoWarn').remove();
 		}
 	})
-	$('#hospital_location_latitude').on('input', function() {
-		if ($('#hospital_location_latitude').val() != '') {
-			$('#hospital_location_latitude').attr('style', 'border-color : #ced4da;');
+	$('#hospitalLocationLatitude').on('input', function() {
+		if ($('#hospitalLocationLatitude').val() != '') {
+			$('#hospitalLocationLatitude').attr('style', 'border-color : #ced4da;');
 			$('#latWarn').remove();
 		}
 	})
-	$('#hospital_location_longitude').on('input', function() {
-		if ($('#hospital_location_longitude').val() != '') {
-			$('#hospital_location_longitude').attr('style', 'border-color : #ced4da;');
+	$('#hospitalLocationLongitude').on('input', function() {
+		if ($('#hospitalLocationLongitude').val() != '') {
+			$('#hospitalLocationLongitude').attr('style', 'border-color : #ced4da;');
 			$('#longWarn').remove();
 		}
 	})
