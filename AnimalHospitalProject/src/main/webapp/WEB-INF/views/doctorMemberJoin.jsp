@@ -45,8 +45,23 @@
 		padding-left: 5px;
 		display: inline;
 	}
+
+	input[name="email"] {
+		width: 65%;
+		height: 38px;
+		border: 1px solid #ced4da;
+		padding-left: 5px;
+		display: inline;
+	}
 	
 	input[name="send_certificationNumber"] {
+		width: 30%;
+		height: 38px;
+		display: inline;
+		margin-left: -5px;
+	}
+
+	input[name="send_certificationEmail"] {
 		width: 30%;
 		height: 38px;
 		display: inline;
@@ -123,14 +138,26 @@
 		<!-- End Breadcrumbs Section -->
 		<section class="inner-page">
 			<div class="container">
+			        <div class="row">
+				        <div class="col-md-4 form-group mt-3">
+				          <div class="validate"></div>
+				        </div>
+				        <div class="col-md-6 form-group mt-3">
+				           <label for="email">아이디</label> <br>
+							<input type="email" class="form-control" name="email" id="email" placeholder="이메일을 입력해주세요." data-rule="email" data-msg="이메일은 필수입력 항목입니다.">
+					         &nbsp;&nbsp;
+					        <input type="button" class="btn btn-primary" id="send_certificationEmail" name="send_certificationEmail" value="이메일 인증" style="width: 140px; text-align: center; border-radius: 50px;">
+					         <div class="validate" id="doctor_email_val"></div>
+					        </div>
+				        </div>
 					<div class="row">
 						<div class="col-md-4 form-group mt-3">
 							<div class="validate"></div>
 						</div>
 						<div class="col-md-4 form-group mt-3">
-							<label for="email">아이디</label> 
-							<input type="email" class="form-control" name="email" id="email" placeholder="이메일을 입력해주세요." data-rule="email" data-msg="이메일은 필수입력 항목입니다.">
-							<div class="validate" id="email_val"></div>
+							<label for="email">이메일 본인확인</label> 
+							<input type="text" class="form-control" name="confirm_emailUser" id="confirm_emailUser" placeholder="본인확인 번호를 입력해주세요." data-rule="text" required="required">
+							<div class="validate"></div>
 						</div>
 					</div>
 					<div class="row">
@@ -149,7 +176,7 @@
 						</div>
 						<div class="col-md-4 form-group mt-3">
 							<label for="email">비밀번호 재확인</label> 
-							<input type="password" class="form-control" name="passwordCheck" id="passwordCheck" placeholder="비밀번호를 다시 입력해주세요." data-rule="passwordCheck" data-msg="비밀번호 재확인은 필수입력 항목입니다." style="background-image: url(img/baseline_lock_black_18.png); background-position: right center; background-size: contain; background-repeat: no-repeat; text-align: left; text-indent: 0;">
+							<input type="password" class="form-control" name="passwordCheck" id="passwordCheck" placeholder="비밀번호를 재입력해주세요." data-rule="passwordCheck" data-msg="비밀번호 재확인은 필수입력 항목입니다." style="background-image: url(img/baseline_lock_black_18.png); background-position: right center; background-size: contain; background-repeat: no-repeat; text-align: left; text-indent: 0;">
 							<div class="validate" id="passwordCheck_val"></div>
 						</div>
 					</div>
@@ -334,6 +361,7 @@
 $(function(){
        $('#join_membership_doctor').on('click', function() {
           var email = $('#email').val();
+          var confirm_emailUser = $('#confirm_emailUser').val();
           var password = $('#password').val();
           var passwordCheck = $('#passwordCheck').val();
           var doctor_id = $('#doctor_id').val();
@@ -358,6 +386,11 @@ $(function(){
                $('#email').attr('style','border-color: #dc3545;');
            	   $('#email').val('');
            	   $('#email_val').html('<div id="email_warning"><b style="color: red;">올바른 이메일을 입력해주세요.</b></div>');
+          }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0){
+        	  $('#confirm_emailUser').focus();
+              $('#confirm_emailUser').attr('style','border-color: #dc3545;');
+          	  $('#confirm_emailUser').val('');
+          	  $('#confirm_emailUser').after('<div id="warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
           }else if(password.length==0||password.trim().length==0||password.includes(' ')){
                $('#password').focus();
                $('#password').attr('style','border-color: #dc3545;');
@@ -439,6 +472,12 @@ $('#email').on('input',function(){
 	if($('#email').val() !=''){
 		$('#email').attr('style','border-color : #ced4da;');
 		$('#email_warning').remove();
+	}
+})
+$('#confirm_emailUser').on('input',function(){
+	if($('#confirm_emailUser').val() !=''){
+		$('#confirm_emailUser').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
 	}
 })
 $('#password').on('input',function(){

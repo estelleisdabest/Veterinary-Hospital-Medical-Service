@@ -45,11 +45,24 @@
 		padding-left: 5px;
 		display: inline;
 	}
+	input[name="email"] {
+		width: 65%;
+		height: 38px;
+		border: 1px solid #ced4da;
+		padding-left: 5px;
+		display: inline;
+	}
 	input[name="send_certificationNumber"] {
 		width: 30%;
 		height: 38px;
 		display: inline;
 		margin-left: -5px;
+	}
+	input[name="send_certificationEmail"] {
+	width: 30%;
+	height: 38px;
+	display: inline;
+	margin-left: -5px;
 	}
 	.btn btn-secondary {
 		text-align: center;
@@ -78,9 +91,21 @@
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
 					</div>
+					<div class="col-md-6 form-group mt-3">
+						<label for="email">아이디</label> <br />
+						<input type="email" class="form-control" name="email" id="email" placeholder="이메일을 입력해주세요." data-rule="email" data-msg="아이디는 필수입력 항목입니다.">
+					         &nbsp;&nbsp;
+					        <input type="button" class="btn btn-primary" id="send_certificationEmail" name="send_certificationEmail" value="이메일 인증" style="width: 140px; text-align: center; border-radius: 50px;">
+					         <div class="validate" id="doctor_email_val"></div>
+					        </div>
+				        </div>
+					<div class="row">
 					<div class="col-md-4 form-group mt-3">
-						<label for="email">아이디</label> 
-						<input type="email" class="form-control" name="email" id="email" placeholder="아이디를 입력해주세요." data-rule="email" data-msg="아이디는 필수입력 항목입니다.">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="email">이메일 본인확인</label> 
+						<input type="text" class="form-control" name="confirm_emailUser" id="confirm_emailUser" placeholder="본인확인 번호를 입력해주세요." data-rule="text" required="required">
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -193,16 +218,6 @@
 						<div class="validate"></div>
 					</div>
 				</div>
-				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="email">이메일 본인확인</label> 
-						<input type="text" class="form-control" name="confirm_emailUser" id="confirm_emailUser" placeholder="본인확인 번호를 입력해주세요." data-rule="text" required="required">
-						<div class="validate"></div>
-					</div>
-				</div>
 				<br>
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
@@ -228,6 +243,7 @@
 $(function(){
        $('#join_membership_protector').on('click', function() {
           var email = $('#email').val();
+          var confirm_emailUser = $('#confirm_emailUser').val();
           var password = $('#password').val();
           var password_reconfirm = $('#password_reconfirm').val();
           var protector_name = $('#protector_name').val();
@@ -239,12 +255,16 @@ $(function(){
           var protector_address = $('#protector_address').val();
           var protector_phoneNumber = $('#protector_phoneNumber').val();
           var confirm_certificationNumber = $('#confirm_certificationNumber').val();
-          var confirm_emailUser = $('#confirm_emailUser').val();
           if(email.length==0||email.trim().length==0||email.includes(' ')){
                $('#email').focus();
                $('#email').attr('style','border-color: #dc3545;');
            	   $('#email').val('');
            	   $('#email').after('<div id="warning"><b style="color: red;">올바른 아이디를 입력해주세요.</b></div>');
+          }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0){
+        	   $('#confirm_emailUser').focus();
+               $('#confirm_emailUser').attr('style','border-color: #dc3545;');
+           	   $('#confirm_emailUser').val('');
+           	   $('#confirm_emailUser').after('<div id="warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
           }else if(password==null||password.trim().length==0){
                $('#password').focus();
                $('#password').attr('style','border-color: #dc3545;');
@@ -287,11 +307,6 @@ $(function(){
                $('#confirm_certificationNumber').attr('style','border-color: #dc3545;');
            	   $('#confirm_certificationNumber').val('');
            	   $('#confirm_certificationNumber').after('<div id="warning"><b style="color: red;">인증번호를 입력해주세요.</b></div>');
-           }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0){
-        	   $('#confirm_emailUser').focus();
-               $('#confirm_emailUser').attr('style','border-color: #dc3545;');
-           	   $('#confirm_emailUser').val('');
-           	   $('#confirm_emailUser').after('<div id="warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
            }else{
         	   $('#join_membership_protector').attr('onclick',"location='/'");
            }
@@ -300,6 +315,12 @@ $(function(){
 $('#email').on('input',function(){
 	if($('#email').val() !=''){
 		$('#email').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#confirm_emailUser').on('input',function(){
+	if($('#confirm_emailUser').val() !=''){
+		$('#confirm_emailUser').attr('style','border-color:#ced4da;');
 		$('#warning').remove();
 	}
 })
@@ -367,12 +388,6 @@ $('#protector_phoneNumber').on('input',function(){
 $('#confirm_certificationNumber').on('input',function(){
 	if($('#confirm_certificationNumber').val() !=''){
 		$('#confirm_certificationNumber').attr('style','border-color:#ced4da;');
-		$('#warning').remove();
-	}
-})
-$('#confirm_emailUser').on('input',function(){
-	if($('#confirm_emailUser').val() !=''){
-		$('#confirm_emailUser').attr('style','border-color:#ced4da;');
 		$('#warning').remove();
 	}
 })
