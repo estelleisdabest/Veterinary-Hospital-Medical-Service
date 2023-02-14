@@ -68,7 +68,10 @@
 	.checked {
   		text-decoration: line-through;
 	}
-	
+	#deleteToDo{
+		border-radius: 50px;
+		float: right;
+	}
 </style>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
@@ -105,7 +108,6 @@
 									등록하기
 								</button>
 								<!-- Modal -->
-								<form action="">
 								<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
 								  <div class="modal-dialog">
 								    <div class="modal-content">
@@ -113,6 +115,7 @@
 								        <h1 class="modal-title fs-5" id="staticBackdropLabel">오늘의 할 일</h1>
 								        <button type="button" class="btn-close" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 								      </div>
+									<form action="">
 								      <div class="modal-body">
 								      	<div>
 									      	시간<input type="time" class="form-control" name="toDoTime" id="toDoTime">
@@ -135,10 +138,10 @@
 								        <button type="button" class="btn btn-secondary" style="border-radius: 50px;" data-bs-dismiss="modal">취소하기</button>
 								        <button type="button" class="btn btn-primary" id="insertToDo" style="border-radius: 50px;">등록하기</button>
 								      </div>
+									</form>
 								    </div>
 								  </div>
 								</div>
-								</form>
 								<br/>
 								<hr/>
 								<div class="form-check" id="toDoCheck">
@@ -156,7 +159,9 @@
 										        <h1 class="modal-title fs-5" id="exampleModalLabel">수정하기</h1>
 										        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 									      </div>
+										  <form action="">
 										  <div class="modal-body">
+										  
 									      	<div>
 										      	시간<input type="time" class="form-control" name="updateTime" id="updateTime">
 									      	</div>
@@ -178,12 +183,16 @@
 									        <button type="button" class="btn btn-secondary" style="border-radius: 50px;" data-bs-dismiss="modal">취소하기</button>
 									        <button type="button" class="btn btn-primary" id="updateToDo" style="border-radius: 50px;">수정하기</button>
 									      </div>
+									      </form>
 									    </div>
 									  </div>
 									</div>
 								</div>
 								<%-- <p style="text-align: center; font-size: 10.5pt;">등록된 내용이 없습니다</p>--%>
 							</div>
+							<form action="">
+								<input type="submit" class="btn btn-primary" id="deleteToDo" value="삭제하기">
+							</form>
 						</div>
 					</div>
 				</div>
@@ -290,13 +299,21 @@ $('#updateContent').on('input',function(){
 		$('#warning3').remove();
 	}
 });
-$('#flexCheckDefault').on('click',function(){
+$("#flexCheckDefault").on('click',function(){
 	if($(this).is(':checked')){
 		$('#toDoToday').attr('style','text-decoration: line-through;');
 	}else{
 		$('#toDoToday').attr('style','text-decoration: none;');
 	}
 });
+$("#deleteToDo").on('click',function(){
+	var result = window.confirm('선택한 항목을 모두 삭제하시겠습니까?');
+	if(result) {
+     	alert('정상적으로 삭제되었습니다.');
+		location.href='/scheduleDoctor';
+	}
+});
+
 
 </script>
 </html>
