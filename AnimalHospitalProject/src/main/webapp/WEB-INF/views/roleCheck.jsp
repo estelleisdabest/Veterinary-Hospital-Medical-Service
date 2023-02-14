@@ -25,6 +25,7 @@
 <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
+<script type="text/javascript" src="js/jsp/roleCheck.js"></script>
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 </head>
@@ -92,15 +93,20 @@
 		</div>
       </div>
       <div>
-			<span class="input_chk"
-				style="text-align: center; display: inline-block; margin: auto; width: 900px; line-height: 50px;">
-				<input type="checkbox" id="roll_doctor" name="roll_doctor"
-				class="check_roll" value="1"> <label for="roll_doctor" style="font-size: 13pt;">의사</label>
-			</span> <span class="input_chk"> <input type="checkbox"
-				id="roll_protector" name="roll_protector" class="check_roll"
-				checked="checked" value="2"> <label for="roll_protector" style="font-size: 13pt;">보호자</label>
+			<span class="input_chk" style="text-align: center; display: inline-block; margin: auto; width: 900px; line-height: 50px;">
+				<input type="checkbox" id="roll_doctor" name="checkRole"
+				class="check_roll" value="1" onclick="clickOnlyOne(this)"> 
+				<label for="roll_doctor" style="font-size: 13pt;">의사</label>
+			</span> 
+			<span class="input_chk"> 
+				<input type="checkbox" id="roll_protector" name="checkRole" class="check_roll"
+				checked="checked" value="2" onclick="clickOnlyOne(this)"> 
+				<label for="roll_protector" style="font-size: 13pt;">보호자</label>
 			</span>
 		</div>
+			<span class="1" style="text-align: center; display: inline-block; margin-left: 25% ; width: 100%; line-height: 50px;">
+				<div id="using_check_val"></div>
+			</span>
 		<div class="row">
        		<div class="col-md-2 form-group">
           		<div class="validate"></div>
@@ -115,4 +121,29 @@
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	$('#join_membership').on('click', function() {
+	    if($("#using_check").is(":checked")== false){
+	     	 $('#using_check_val').html('<div id="using_check_warning"><b style="color: red;">이용약관에 동의해주세요.</b></div>');
+	    }else{
+	    	var check = $("input[name='checkRole']:checked").val();
+	  		var result = window.confirm('선택한 내용으로 회원가입하시겠습니까?');
+				if(result) {
+					if(check==1){
+						location.href='/doctorMemberJoin';
+					}else{
+						location.href='/protectorMemberJoin';
+					}
+				}
+	   }
+	}); 
+});
+$('#using_check').on('input',function(){
+	if($('#using_check').val() !=''){
+		$('#using_check_warning').remove();
+	}
+})
+</script>
 </html>
