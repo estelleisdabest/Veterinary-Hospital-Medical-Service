@@ -207,4 +207,10 @@ public class MainController {
 	public String diagnosisAdd() {
 		return "diagnosisAdd";
 	}
+
+	// 진단서 상세
+	@GetMapping("/noticeDetail")
+	public String noticeDetail() {
+		return "noticeDetail";
+	}
 }
