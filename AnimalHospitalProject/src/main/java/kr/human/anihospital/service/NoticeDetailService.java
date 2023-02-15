@@ -1,5 +1,5 @@
 package kr.human.anihospital.service;
 
-public class NoticeDetailService {
-
+public interface NoticeDetailService {
+	void deleteNoticeInfo(int seq_notice) throws Exception;
 }

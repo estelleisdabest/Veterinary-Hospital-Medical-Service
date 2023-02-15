@@ -24,7 +24,7 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-	form{
+	#noticeForm{
 	margin-bottom : 60px;
 	margin-left : 15%;
 	margin-right: 10%;
@@ -43,23 +43,12 @@
 	resize: none
 	}
 </style>
-<script type="text/javascript">
-	window.onload = function () {
-		var delete_btn = document.getElementById('delete_btn');
-		delete_btn.addEventListener('click', function () {
-			var result = window.confirm('정말로 삭제하시겠습니까?');
-			
-			if(result) {
-				alert('정상적으로 처리되었습니다.');
-				location.href='/notice';
-			}
-		});
-	};
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 </head>
 <body>
   <%@ include file="/WEB-INF/includes/header.jsp" %>
   <main id="main">
+	<form method="post" action="noticeDetail" id="noticeDetailSubmit">
     <!-- ======= Breadcrumbs Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
@@ -71,9 +60,10 @@
     </section><!-- End Breadcrumbs Section -->
     <section class="inner-page">
       <div class="container">
-        <form>       
+        <div id="noticeForm">       
          <div class="col-md-4 form-group" style="margin: auto;">  
 	          작성자 <br />
+	          <input type="hidden" name="seq_notice" value="43">
 	          <input id="username" class="form-control"  type="text" name="username" value="김아무개" disabled="disabled" style="width: 700px;"/> <br />
 	          진료병원 <br />
 	          <input id="animalHospital" class="form-control"  type="text" name="animalHospital" value="A동물병원" disabled="disabled" style="width: 700px;"/> <br />
@@ -84,20 +74,33 @@
 	          내용 <br />
 	          <textarea id="content" class="form-control" name="content" rows="20" cols="100" maxlength="500" disabled="disabled" style="width: 700px;"> 01월 30일 휴무 안내드립니다.</textarea> <br />
 	      </div>
-        </form>
+		</div>
         <div>
         <%-- 보호자로 로그인했을 때는 이전페이지 버튼만 보인다. --%>
         <div style="position: relative;">
         <button type="button" id="move_pre_page" name="move_pre_page" class="btn btn-secondary" style="border-radius:50px;width: 110px; float:left; margin-left: 22%;" onclick="history.go(-1)">이전페이지</button>
         <button type="submit" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm" style="border-radius:50px;width: 110px; display:inline; margin-left: 180px;" onclick="location='/noticeEdit'">수정</button>
-        <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px;width: 110px; display:inline; float: right; margin-right: 15%;">삭제</button> <br />
+        <button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm" style="border-radius:50px; width: 110px; display:inline; float: right; margin-right: 15%;">삭제</button> <br />
         </div>
         </div>
       </div>
     </section>
+	</form>
   </main><!-- End #main -->
   <!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp" %>
 </body>
-
+<script type="text/javascript">
+$(function() {
+	$('#delete_btn').on('click', function(){
+		var result = window.confirm('정말로 삭제하시겠습니까?');
+		if (result) {
+			alert('정상적으로 삭제되었습니다.');
+			$("#noticeDetailSubmit").submit();
+		} else if (!result) {
+			alert('취소 되었습니다.');
+		}
+	});
+});
+</script>
 </html>
