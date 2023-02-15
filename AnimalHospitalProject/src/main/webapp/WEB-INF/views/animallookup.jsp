@@ -52,7 +52,7 @@
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px;">
 				<a href="/patientAdd" class="btn btn-primary btn"
-					style="float: right; border-radius: 50px; margin-right: 10px; color: white;">환자추가</a>&nbsp;
+					style="float: right; border-radius: 50px; margin-right: 10px; color: white;">환자등록</a>&nbsp;
 				<br /> <br />
 				<br />
 				<div id="animalLookupList">
