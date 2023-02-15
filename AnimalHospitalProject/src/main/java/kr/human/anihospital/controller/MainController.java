@@ -95,17 +95,19 @@ public class MainController {
 		return "protectorMemberJoin";
 	}
 
-	// 내 정보 수정 (보호자 용)
-	@GetMapping("/editMyPageProtector")
-	public String editMyPageProtector() {
-		return "editMyPageProtector";
-	}
+	/*
+	 * // 내 정보 수정 (보호자 용)
+	 * 
+	 * @GetMapping("/editMyPageProtector") public String editMyPageProtector() {
+	 * return "editMyPageProtector"; }
+	 */
 
-	// 내 정보
-	@GetMapping("/myPageProtector")
-	public String myPageProtector() {
-		return "myPageProtector";
-	}
+	/*
+	 * // 내 정보
+	 * 
+	 * @GetMapping("/myPageProtector") public String myPageProtector() { return
+	 * "myPageProtector"; }
+	 */
 
 	// 서비스 소개
 	@GetMapping("/serviceIntroduce")

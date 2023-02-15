@@ -202,6 +202,16 @@
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
 					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="address2">상세주소</label>
+						<input type="text" class="form-control" name="address2" id="address2" placeholder="상세주소를 입력해주세요.">
+						<div class="validate" id="ad2Message"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
 					<div class="col-md-6 form-group mt-3">
 						<label for="phonenum">핸드폰번호</label><br> 
 						<input type="text" class="form-control" name="protector_phoneNumber" id="protector_phoneNumber" placeholder="전화번호를 입력해주세요." data-rule="text"> 
@@ -260,6 +270,7 @@ $(function(){
        var protector_date = $('#protector_date').val();
        var dateRegEx = /^0[1-9]|[1-2][0-9]|3[0-1]$/;
        var protector_address = $('#protector_address').val();
+       var address2 = $('#address2').val();
        var protector_phoneNumber = $('#protector_phoneNumber').val();
        var phoneNumberRegEx = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
        var confirm_certificationNumber = $('#confirm_certificationNumber').val();
@@ -331,7 +342,12 @@ $(function(){
             $('#protector_address').attr('style','border-color: #dc3545;');
         	$('#protector_address').val('');
         	$('#protector_address_val').html('<div id="protector_address_warning"><b style="color: red; font-size:8pt;">주소를 입력해주세요.</b></div>');
-        }else if(protector_phoneNumber==null||protector_phoneNumber.trim().length==0){
+        }else if(address2==null||address2.trim().length==0){
+			$('#address2').attr('style','border-color: #dc3545;');
+			$('#address2').val('');
+			$('#ad2Message').html('<div id="warning5"><b style="color: red;">수정할 상세주소를 입력해주세요.</b></div>');
+			$('#address2').focus();
+		}else if(protector_phoneNumber==null||protector_phoneNumber.trim().length==0){
      	    $('#protector_phoneNumber').focus();
             $('#protector_phoneNumber').attr('style','border-color: #dc3545;');
         	$('#protector_phoneNumber').val('');
@@ -403,6 +419,12 @@ $('#protector_date').on('input',function(){
 		$('#protector_date_warning').remove();
 	}
 })
+$('#address2').on('input',function(){
+		if($('#address2').val() !=null){
+			$('#address2').attr('style','border-color : #ced4da;');
+			$('#warning5').remove();
+		}
+});
 $('#protector_phoneNumber').on('input',function(){
 	if($('#protector_phoneNumber').val() !=''){
 		$('#protector_phoneNumber').attr('style','border-color:#ced4da;');
