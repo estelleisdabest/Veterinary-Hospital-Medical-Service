@@ -92,47 +92,9 @@
 	  left : 60px;
 	  font-size : 20pt;
 	}
+
 </style>
-<script type="text/javascript">
-	$(function() {
-		// 폼 전송시 폼내용 검증
-		$("#postscriptSave").on('click',function() {
-			var value = $("#content").val();
-			var star = $("#stars").val();
-			if (value == null || value.trim().length == 0) {
-				$("#content").val("");
-				$("#content").focus();
-				$('#content').attr('style','border-color: #dc3545; margin:auto; width:auto; height: auto;');
-				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
-				return false;
-			}else if ($(':radio[name="rating"]:checked').length < 1) {
-				$("#stars").val("");
-				$("#stars").focus();
-				$('#stars').attr('style','border-color: #dc3545; margin:auto; width:9em; height: auto;padding: 0 0.9em;');
-				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
-				return false;
-			}else{
-				var result = window.confirm('작성한 내용대로 저장하시겠습니까?');
-				if(result) {
-	   				alert('정상적으로 처리되었습니다.');
-	   				location.href='/myPageProtector';
-	  			}
-			}
-		});
-	});
-	$('#content').on('input',function(){
-		if($('#content').val() !=''){
-			$('#content').attr('style','width:300px;');
-			$('#warning').remove();
-		}
-	})
-	$('#stars').on('input',function(){
-		if($('#stars').val() !=''){
-			$('#stars').attr('style','width:9em;','padding: 0 0.9em;');
-			$('#warning').remove();
-		}
-	})
-</script>
+
 </head>
 <body>
 	<%@ include file="/WEB-INF/includes/header.jsp"%>
@@ -147,30 +109,31 @@
 	</section>
 	<!-- End Hero -->
 	<main id="main">
+		<form method="post" action="diagnosis" id="diagnosisSubmit">
 		<!-- ======= Appointment Section ======= -->
 		<section class="inner-page" >
 			<div class="container" style="width: 850px;">
-				<form class="mb-3" name="myForm" id="myform" method="post">
+				<div class="mb-3">
 					<table style="background-color: white;">
 						<tr >
 							<td style="font-size: 18pt;font-weight: bold;">별점 :</td>
-							<td class="star-rating space-x-4 mx-auto" id="stars" >
-								<input type="radio" id="5-stars" name="rating" value="5" /> 
+							<td class="star-rating space-x-4 mx-auto" id="postscriptSatisfaction" >
+								<input type="radio" id="5-stars" name="postscriptSatisfactionrating" value="5" /> 
 								<label	for="5-stars" class="star pr-4">★</label> 
-								<input type="radio"	id="4-stars" name="rating" value="4" /> 
+								<input type="radio"	id="4-stars" name="postscriptSatisfactionrating" value="4" /> 
 								<label for="4-stars" class="star">★</label> 
-								<input type="radio" id="3-stars" name="rating" value="3" /> 
+								<input type="radio" id="3-stars" name="postscriptSatisfactionrating" value="3" /> 
 								<label for="3-stars" class="star">★</label>
-								<input type="radio" id="2-stars" name="rating" value="2" /> 
+								<input type="radio" id="2-stars" name="postscriptSatisfactionrating" value="2" /> 
 								<label for="2-stars" class="star">★</label> 
-								<input type="radio" id="1-star" name="rating" value="1" /> 
+								<input type="radio" id="1-star" name="postscriptSatisfactionrating" value="1" /> 
 								<label for="1-star"	class="star">★</label>
 								<div class="validate" id="stars_val"></div>
 							</td>
 						</tr>
 					</table>
-				</form>
-				<form action="insertOk.jsp" method="post" id="insertForm">
+				</div>
+				<div id="postscriptContentTitle">
 					<table style="background-color: white;">
 						<tr>
 							<td class="title" colspan="4">
@@ -182,30 +145,70 @@
 						<tr>
 							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 : &nbsp;</td>
 							<td colspan="4">
-								<textarea name="content" id="content" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
+								<textarea name="postscriptContent" id="postscriptContent" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
 								<div class="validate" id="content_val"></div>
 							</td>
 						</tr>
 					</table>
-				</form>
+				</div>
 				<br />
-				<form>
 					<table>
 						<tr>
 							<td  align="left" colspan="4">
 								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
 							<td align="right" colspan="4">
-								<input type="button" class="btn btn-primary" name="postscriptSave" id="postscriptSave" style="border-radius: 50px;" value="작성하기" />
+								<input type="button" class="btn btn-primary" name="diagnosis" id="diagnosis" style="border-radius: 50px;" value="작성하기" />
 							</td>
 						</tr>
 					</table>
-				</form>
 			</div>
 		</section>
 		<!-- End Appointment Section -->
+		</form>
 	</main>
 	<!-- End #main -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
+<script type="text/javascript">
+	$(function() {
+		$("#diagnosis").on('click',function() {
+			var value = $("#postscriptContent").val();
+			// alert($('input:radio[name="postscriptSatisfactionrating"]:checked').length);
+			if (value == null || value.trim().length == 0) {
+				$("#postscriptContent").focus();
+				$('#postscriptContent').attr('style','border-color: #dc3545;');
+				$("#postscriptContent").val("");
+				$('#content_val').html('<div id="warning"><b style="color: red;">내용 및 별점을 확인해주세요.</b></div>');
+				return false;
+			}else if ($('input:radio[name="postscriptSatisfactionrating"]:checked').length < 1) {
+				$("#postscriptSatisfaction").focus();
+				$('#postscriptSatisfaction').attr('style','border-color: #dc3545;');
+				$("#postscriptSatisfaction").val("");
+				$('#content_val').html('<div id="warning" ><b style="color: red;">별점을 확인해주세요.</b></div>');
+				return false;
+			}else{
+				var result = window.confirm('작성한 내용으로 등록하시겠습니까?');
+				if (result) {
+					alert('정상적으로 처리되었습니다.');
+					$("#diagnosisSubmit").submit();
+				} else if (!result) {
+					alert('취소되었습니다.');
+				}
+			}
+		});
+	});
+	$('#postscriptContent').on('input',function(){
+		if($('#postscriptContent').val() !=''){
+			$('#postscriptContent').attr('style','border-color:#ced4da;');
+			$('#warning').remove();
+		}
+	})
+	$('#postscriptSatisfaction').on('input',function(){
+		if($('#postscriptSatisfaction').val() !=''){
+			$('#postscriptSatisfaction').attr('style','border-color:#ced4da;');
+			$('#warning').remove();
+		}
+	})
+</script>
 </html>
