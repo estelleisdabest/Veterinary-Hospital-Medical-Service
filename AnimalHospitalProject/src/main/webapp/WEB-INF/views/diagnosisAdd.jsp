@@ -438,7 +438,8 @@ img {
 </body>
 <script>
 	// 내원일 에 오늘 날짜 넣기
-	document.getElementById('visitDate').value = new Date().toISOString().substring(0, 10);
+	const TIME_ZONE = 3240 * 10000;
+	document.getElementById('visitDate').value = new Date(+new Date() + TIME_ZONE).toISOString().substring(0, 10);
 	
 	$(function () {
 		$('#diagnosis_add').on('click', function () {
