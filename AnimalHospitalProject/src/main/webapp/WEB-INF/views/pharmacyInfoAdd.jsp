@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>약국 정보 추가</title>
+<title>약국 정보 등록</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -41,7 +41,7 @@
 			<div class="container">
 				<br />
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">약국 정보 추가</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">약국 정보 등록</h2>
 					<br />
 					<p>
 						약국 정보 표시 화면에 표시할 약국 정보를 등록하는 화면입니다.<br> <b style="color: red;">위도, 경도</b> 값을 정확히 입력해주세요.
@@ -125,7 +125,7 @@
 						<div class="col-md-4 form-group" style="margin: auto;">
 							<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/pharmacyMap'"
 								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
-							<input type="button" class="btn btn-primary" name="hospital_info_add" id="hospital_info_add" value="추가하기"
+							<input type="button" class="btn btn-primary" name="hospital_info_add" id="hospital_info_add" value="등록하기"
 								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
 						</div>
 					</div>

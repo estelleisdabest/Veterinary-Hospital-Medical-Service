@@ -3,7 +3,7 @@
 * Page Name : pharmacyInfoAdd.js
 * Author: Kim Hyun-ho
 */
-/* 약국 정보 추가 */
+/* 약국 정보 등록 */
 window.onload = function() {
 	document
 		.getElementById("pharmacy_address")
@@ -69,7 +69,7 @@ $(function() {
 			$('#warningMessage6').html('<div id="warning6"><b style="color: red;">정확한 위도를 입력해주세요</b></div>');
 			$('#pharmacy_location_longitude').focus();
 		} else {
-			var result = window.confirm('입력하신 내용대로 약국을 추가 하시겠습니까?');
+			var result = window.confirm('입력하신 내용대로 약국을 등록 하시겠습니까?');
 			if (result) {
 				$('#pharmacyAddSubmit').submit();
 				alert('정상적으로 처리되었습니다.');
