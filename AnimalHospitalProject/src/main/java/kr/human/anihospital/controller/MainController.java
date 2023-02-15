@@ -133,18 +133,6 @@ public class MainController {
 		return "patientAdd";
 	}
 
-	// 담당 환자 전체 조회
-	@GetMapping("/patientList")
-	public String patientList() {
-		return "patientList";
-	}
-
-	// 동물 병원 위치 조회
-	@GetMapping("/hospitalMap")
-	public String hospitalMap() {
-		return "hospitalMap";
-	}
-
 	// 약국 위치 조회
 	@GetMapping("/pharmacyMap")
 	public String pharmacyMap() {
@@ -169,34 +157,10 @@ public class MainController {
 		return "doctorInfoEdit";
 	}
 
-	// 병원 정보 추가
-	@GetMapping("/hospitalAdd")
-	public String hospitalAdd() {
-		return "hospitalAdd";
-	}
-
-	// 병원 정보 수정
-	@GetMapping("/hospitalEdit")
-	public String hospitalEdit() {
-		return "hospitalEdit";
-	}
-
 	// 환자 정보 수정 (보호자 용)
 	@GetMapping("/patientInfoEditProtector")
 	public String patientInfoEditProtector() {
 		return "patientInfoEditProtector";
-	}
-
-	// 약국 정보 추가
-	@GetMapping("/pharmacyInfoAdd")
-	public String pharmacyInfoAdd() {
-		return "pharmacyInfoAdd";
-	}
-
-	// 약국 정보 수정
-	@GetMapping("/pharmacyInfoEdit")
-	public String pharmacyInfoEdit() {
-		return "pharmacyInfoEdit";
 	}
 	
 	// 진단서 작성

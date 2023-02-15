@@ -13,9 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 public class HospitalAddServiceImpl implements HospitalAddService {
 	@Autowired
 	HospitalAddMapper hospitalAddMapper;
-	
-	@Autowired
-	PlatformTransactionManager manager;
 
 	@Override
 	public void insertAnimalHospitalInfo(AnimalHospitalVO animalHospitalVO) throws Exception {
