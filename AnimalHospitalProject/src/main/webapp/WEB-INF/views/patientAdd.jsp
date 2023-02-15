@@ -33,7 +33,7 @@
 		text-indent: 0;
 	}
 	input[name="ageDate"] {
-		width: 70%;
+		width: 60%;
 		height: 38px;
 		border: 1px solid #ced4da;
 		padding-left: 5px;
@@ -98,7 +98,7 @@
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-		<form method="post">
+		<form method="post" action="patientAdd" id="patientAddSubmit">
 		<section class="inner-page">
 			<div class="container">
 				<div class="contact-form pt-20"></div>
@@ -145,7 +145,7 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4">
-						<label for="name">이름</label> <input type="text" class="form-control" name="name" id="name" placeholder="이름을 입력해주세요." data-rule="name">
+						<label for="animalName">이름</label> <input type="text" class="form-control" name="animalName" id="animalName" placeholder="이름을 입력해주세요." >
 						<div class="validate" id="val01"></div>
 					</div>
 				</div>
@@ -154,8 +154,8 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="species">종</label> 
-						<input type="text" class="form-control" name="species" id="species" placeholder="종을 입력해주세요." data-rule="species">
+						<label for="animalType">종</label> 
+						<input type="text" class="form-control" name="animalType" id="animalType" placeholder="종을 입력해주세요." >
 						<div class="validate" id="val02"></div>
 					</div>
 				</div>
@@ -164,9 +164,9 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="size">크기</label>
+						<label for="animalSize">크기</label>
 						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-						<select class="form-control" id="sizeBox" name="sizeBox">
+						<select class="form-control" id="animalSizeBox" name="animalSizeBox">
 							<option value="small">소형</option>
 							<option value="medium">중형</option>
 							<option value="large">대형</option>
@@ -185,11 +185,13 @@
 						<input type="button" name="ageCheckBtn" id="ageCheckBtn"
 							class="btn btn-primary btn-sm" value="나이확인"
 							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+						<div class="AnimalAge">
 						<div id="ageYearBox" >
-							<input type="number" class="form-control" id="ageYear" name="ageYear" readonly="readonly" style="width:70%; display: inline;">&nbsp;살
+							<input type="number" class="form-control" id="ageYear" name="ageYear" readonly="readonly" style="width:60%; display: inline;">&nbsp;살
 						</div>
 						<div id="ageMonthBox">
-							<input type="number" class="form-control" id="ageMonth" name="ageMonth" readonly="readonly" style="width:70%; display: inline;">&nbsp;개월
+							<input type="number" class="form-control" id="ageMonth" name="ageMonth" readonly="readonly" style="width:60%; display: inline;">&nbsp;개월
+						</div>
 						</div>
 						<div class="validate"></div>
 					</div>
@@ -199,10 +201,10 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="age">성별</label> <br /> 
-						<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" checked onClick="return false;"> 
+						<label for="gender">성별</label> <br /> 
+						<input type="radio" name="Animalgender" id="Female" data-rule="gender" value="Female" checked onClick="return false;"> 
 						<label for="Female">Female</label> 
-						<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly onClick="return false;">
+						<input type="radio" name="Animalgender" id="Male" data-rule="gender" value="Male" readonly onClick="return false;">
 						<label for="Male"> Male</label>
 						<div class="validate"></div>
 					</div>
@@ -212,7 +214,7 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="weight">몸무게</label> <input type="number" min="0" class="form-control" name="weight" id="weight" step="0.1" placeholder="몸무게를 입력해주세요." data-rule="weight">
+						<label for="animalWeight">몸무게</label> <input type="number" min="0" class="form-control" name="animalWeight" id="animalWeight" step="0.1" placeholder="몸무게를 입력해주세요." data-rule="weight">
 						<div class="validate" id="val03"></div>
 					</div>
 				</div>
@@ -221,7 +223,7 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="etc">특이사항</label> <input type="text" class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
+						<label for="animalImportantSymptom">특이사항</label> <input type="text" class="form-control" name="animalImportantSymptom" id="animalImportantSymptom" placeholder="특이사항을 입력해주세요.">
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -271,38 +273,38 @@ $("#videoFile").on('change', function(){
 $(function() {
 	$('#patient_add').on('click',
 					function() {
-						var name = $('#name').val();
-						var species = $('#species').val();
+						var animalName = $('#animalName').val();
+						var animalType = $('#animalType').val();
 						var age = $('#age').val();
-						var gender = $('#gender').val();
-						var weight = $('#weight').val();
+						var Animalgender = $('#Animalgender').val();
+						var animalWeight = $('#animalWeight').val();
 						var weightReg = /^\d{1,3}\.\d{0,1}$/;
 						var etc = $('#etc').val();
 
-						if (name.length == 0 || name.trim().length == 0
-								|| name.includes(' ')) {
-							$('#name').focus();
-							$('#name').attr('style',
+						if (animalName.length == 0 || animalName.trim().length == 0
+								|| animalName.includes(' ')) {
+							$('#animalName').focus();
+							$('#animalName').attr('style',
 									'border-color: #dc3545;');
-							$('#name').val('');
+							$('#animalName').val('');
 							$('#val01')
 									.html(
 											'<div id="warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
-						} else if (species == null
-								|| species.trim().length == 0
-								|| species.includes(' ')) {
-							$('#species').focus();
-							$('#species').attr('style',
+						} else if (animalType == null
+								|| animalType.trim().length == 0
+								|| animalType.includes(' ')) {
+							$('#animalType').focus();
+							$('#animalType').attr('style',
 									'border-color: #dc3545;');
-							$('#species').val('');
+							$('#animalType').val('');
 							$('#val02')
 									.html(
 											'<div id="warning"><b style="color: red;">종을 입력해주세요.</b></div>');
-						} else if (weight == null|| weight.trim().length == 0|| weight.includes(' ')||!weightReg.test(weight)) {
-							$('#weight').focus();
-							$('#weight').attr('style',
+						} else if (animalWeight == null|| animalWeight.trim().length == 0|| animalWeight.includes(' ')||!weightReg.test(weight)) {
+							$('#animalWeight').focus();
+							$('#animalWeight').attr('style',
 									'border-color: #dc3545;');
-							$('#weight').val('');
+							$('#animalWeight').val('');
 							$('#val03')
 									.html(
 											'<div id="warning"><b style="color: red;">몸무게를 입력해주세요. <br/>숫자, 소수점 첫째짜리까지 기입 가능합니다.</b></div>');
@@ -317,15 +319,15 @@ $(function() {
 						}
 					})
 });
-$('#name').on('input', function() {
-	if ($('#name').val() != '') {
-		$('#name').attr('style', 'border-color:#ced4da');
+$('#animalName').on('input', function() {
+	if ($('#animalName').val() != '') {
+		$('#animalName').attr('style', 'border-color:#ced4da');
 		$('#warning').remove();
 	}
 })
-$('#species').on('input', function() {
-	if ($('#species').val() != 'border-color:#ced4da') {
-		$('#species').attr('style', '');
+$('#animalType').on('input', function() {
+	if ($('#animalType').val() != 'border-color:#ced4da') {
+		$('#animalType').attr('style', '');
 		$('#warning').remove();
 	}
 })
@@ -335,9 +337,9 @@ $('#age').on('input', function() {
 		$('#warning').remove();
 	}
 })
-$('#weight').on('input', function() {
-	if ($('#weight').val() != '') {
-		$('#weight').attr('style', 'border-color:#ced4da');
+$('#animalWeight').on('input', function() {
+	if ($('#animalWeight').val() != '') {
+		$('#animalWeight').attr('style', 'border-color:#ced4da');
 		$('#warning').remove();
 	}
 })
