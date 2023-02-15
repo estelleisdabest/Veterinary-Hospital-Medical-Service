@@ -123,13 +123,13 @@
 								      	<div id="timeMessage"></div>
 								      	<br/>
 								      	<div>
-											제목<input type="text" class="form-control" name="toDoSubject" id="toDoSubject" maxlength="50">
+											제목<input type="text" class="form-control" name="toDoSubject" id="toDoSubject" maxlength="25">
 								      	</div>
 								      	<div id="subjectMessage"></div>
 								      	<br/>
 								      	<div>
 								      		<label>내용
-									      		<textarea rows="4px" cols="100%" class="form-control" id="toDoContent" maxlength="100"></textarea>
+									      		<textarea rows="4px" cols="100%" class="form-control" id="toDoContent" maxlength="50"></textarea>
 								      		</label>
 								      	</div>
 								      	<div id="contentMessage"></div>
@@ -168,13 +168,13 @@
 									      	<div id="timeMessage2"></div>
 									      	<br/>
 									      	<div>
-												제목<input type="text" class="form-control" name="updateSubject" id="updateSubject" maxlength="50">
+												제목<input type="text" class="form-control" name="updateSubject" id="updateSubject" maxlength="25">
 										     </div>
 										     <div id="subjectMessage2"></div>
 										   		<br/>
 										      <div>
 										      	<label>내용
-											      	<textarea rows="4px" cols="100%" class="form-control" id="updateContent" maxlength="100"></textarea>										      		
+											      	<textarea rows="4px" cols="100%" class="form-control" id="updateContent" maxlength="50"></textarea>										      		
 											     </label>
 									      	</div>
 									      	<div id="contentMessage2"></div>

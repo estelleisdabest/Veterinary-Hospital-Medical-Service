@@ -1,5 +1,7 @@
 package kr.human.anihospital.service;
 
-public class NoticeAddService {
+import kr.human.anihospital.vo.NoticeVO;
 
+public interface NoticeAddService {
+	void insertNoticeInfo (NoticeVO noticeVO) throws Exception;
 }
