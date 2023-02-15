@@ -2,8 +2,8 @@ package kr.human.anihospital.service;
 
 import java.util.List;
 
-import kr.human.anihospital.vo.AnimalVO;
+import kr.human.anihospital.vo.PatientListVO;
 
 public interface PatientListService {
-	List<String> selectPatientList(List<String> aniList) throws Exception;
+	List<PatientListVO> selectPatientList() throws Exception;
 }
