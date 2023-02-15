@@ -69,10 +69,13 @@ $(function () {
 			$('#warningMessage6').html('<div id="warning6"><b style="color: red;">정확한 위도를 입력해주세요</b></div>');
 			$('#pharmacy_location_longitude').focus();
 		} else {
-			var result = window.confirm('입력하신 내용대로 약국 정보를 변경 하시겠습니까?');
+			var result = window.confirm('입력하신 내용대로 약국 정보를 수정하시겠습니까?');
 			if (result) {
+				$('#pharmacyEditSubmit').submit();
 				alert('정상적으로 처리되었습니다.');
-   				location.href='/pharmacyMap';
+			} else if (!result) {
+				alert('취소되었습니다.');
+				return false;
 			}
 		}
 	});
