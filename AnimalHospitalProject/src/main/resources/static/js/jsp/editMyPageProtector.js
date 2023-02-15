@@ -35,6 +35,7 @@ $(function(){
 		var address1 = $('#address1').val();
 		var address2 = $('#address2').val();
 		var pw = $('#pw').val();
+		//var pwRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
 		var phoneNum = $('#phoneNum').val();
 		var cNum = $('#cNum').val();
 		if(pw==null||pw.trim().length==0){

@@ -79,21 +79,20 @@
 							&nbsp;<input type="button" class="btn btn-primary"
 								onclick="location.href='/editMyPageProtector'" value="정보수정"
 								style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
-							<form action="">
 								<input type="button" class="btn btn-primary" id="withdrawal" onclick="clickEvent()" value="회원탈퇴" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 							</form>
 							<table>
 								<tr>
-									<td>아이디 : dudungmam</td>
+									<td>아이디 : ${protectInfo.protectorId}</td>
 								</tr>
 								<tr>
-									<td>이름 : 김은지</td>
+									<td>이름 : ${protectInfo.protectorName}</td>
 								</tr>
 								<tr>
-									<td>전화번호 : 010-****-****</td>
+									<td>전화번호 : ${protectInfo.protectorPhoneNo}</td>
 								</tr>
 								<tr>
-									<td>주소 : 경기도 수원시 인계동....</td>
+									<td>주소 : ${protectInfo.protectorAddress}</td>
 								</tr>
 							</table>
 						</div>

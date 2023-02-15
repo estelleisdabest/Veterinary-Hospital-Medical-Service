@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -62,7 +63,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label>
-						<input type="text" class="form-control" name="name" id="name" disabled="disabled">
+						<input type="text" class="form-control" name="name" id="name" disabled="disabled" value="${protectInfo.protectorName}"> 
 						<div id="uneditableName" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -73,7 +74,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="id">ID</label>
-						<input type="text" class="form-control" name="id" id="id" disabled="disabled">
+						<input type="text" class="form-control" name="id" id="id" disabled="disabled" value="${protectInfo.protectorId}">
 						<div id="uneditableId" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -85,7 +86,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="password">비밀번호</label>
 						<div class="wrap">
-							<input type="password" class="form-control" name="password" id="pw" placeholder="수정할 비밀번호를 입력해주세요.">
+							<input type="password" class="form-control" name="password" id="pw" placeholder="8자-20자 숫자/영문대소문자/특수문자 포함">
 							<input type="hidden">
 							<div id="uneditablePassword" style="font-size: 9pt; color: red;"></div>
 						</div>
@@ -98,7 +99,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="birth">생년월일</label>
-						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled">
+						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled" value="${protectInfo.protectorAge}">
 						<div id="uneditableBirthday" style="font-size: 9pt; color: red;"></div>
 					</div>
 					<div class="validate"></div>
@@ -176,5 +177,5 @@
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 </html>

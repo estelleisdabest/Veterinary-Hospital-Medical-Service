@@ -7,18 +7,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import kr.human.anihospital.service.MyPageProtectorService;
 import kr.human.anihospital.vo.ProtectorVO;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
+@Slf4j
 public class MyPageProtectorController {
 
 	@Autowired
 	MyPageProtectorService myPageProtectorService;
 	
-	// 보호자 정보 조회용 테스트 화면
-	@GetMapping(value = "/RestMyPageProtector")
-	public String SelectProtector(Model model) {
+	@GetMapping(value = "/myPageProtector")
+	public String myPageProtector(Model model) {
 		ProtectorVO vo = myPageProtectorService.selectProtector(1);
 		model.addAttribute("protectInfo", vo);
-		return "myPageProtectorEx";
+		return "myPageProtector";
+	}
+	
+	@GetMapping(value = "/editMyPageProtector")
+	public String editMyPageProtector(Model model) {
+		ProtectorVO vo = myPageProtectorService.selectProtector(1);
+		log.info("받은값 {}" ,vo);
+		model.addAttribute("protectInfo", vo);
+		return "editMyPageProtector";
 	}
 }

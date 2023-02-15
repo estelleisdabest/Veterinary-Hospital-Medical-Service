@@ -291,6 +291,16 @@
 				        </div>
 			        </div>
 			        <div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="address2">상세주소</label>
+						<input type="text" class="form-control" name="address2" id="address2" placeholder="상세주소를 입력해주세요.">
+						<div class="validate" id="ad2Message"></div>
+					</div>
+					</div>
+			        <div class="row">
 				        <div class="col-md-4 form-group mt-3">
 				          <div class="validate"></div>
 				        </div>
@@ -380,6 +390,7 @@ $(function(){
           var doctor_license_seq = $('#doctor_license_seq').val();
           var doctorLicenseSeqRegEx = /^[0-9]{4,6}$/;
           var doctor_address = $('#doctor_address').val();
+          var address2 = $('#address2').val();
           var doctor_phoneNumber = $('#doctor_phoneNumber').val();
           var doctorPhoneNumberRegEx = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
           var confirm_certificationNumber = $('#confirm_certificationNumber').val();
@@ -487,7 +498,12 @@ $(function(){
                $('#doctor_address').attr('style','border-color: #dc3545;');
            	   $('#doctor_address').val('');
            	   $('#doctor_address_val').html('<div id="doctor_address_warning"><b style="color: red; font-size:8pt;">주소를 입력해주세요.</b></div>');
-           }else if(doctor_phoneNumber==null||doctor_phoneNumber.trim().length==0||doctor_phoneNumber.includes(' ')){
+           }else if(address2==null||address2.trim().length==0){
+				$('#address2').attr('style','border-color: #dc3545;');
+				$('#address2').val('');
+				$('#ad2Message').html('<div id="warning5"><b style="color: red;">수정할 상세주소를 입력해주세요.</b></div>');
+				$('#address2').focus();
+			}else if(doctor_phoneNumber==null||doctor_phoneNumber.trim().length==0||doctor_phoneNumber.includes(' ')){
         	   $('#doctor_phoneNumber').focus();
                $('#doctor_phoneNumber').attr('style','border-color: #dc3545;');
            	   $('#doctor_phoneNumber').val('');
@@ -589,6 +605,12 @@ $('#doctor_license_seq').on('input',function(){
 		$('#doctor_license_seq_warning').remove();
 	}
 })
+$('#address2').on('input',function(){
+		if($('#address2').val() !=null){
+			$('#address2').attr('style','border-color : #ced4da;');
+			$('#warning5').remove();
+		}
+});
 $('#doctor_phoneNumber').on('input',function(){
 	if($('#doctor_phoneNumber').val() !=''){
 		$('#doctor_phoneNumber').attr('style','border-color : #ced4da;');
