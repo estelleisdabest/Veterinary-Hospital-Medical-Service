@@ -24,49 +24,56 @@
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
 <style type="text/css">
-  input::-webkit-input-placeholder {
-    background-image: background-size: contain;
-    background-position: 1px center;
-    background-repeat: no-repeat;
-    text-align: left;
-    text-indent: 0;
-  }
-
-  select option[value=""][disabled] {
-    display: none;
-  }
-
-  img {
-    width: 200px;
-    height: 200px;
-    display: block;
-    border-radius: 10%;
-    object-fit: cover;
-    border: 3px solid #F5F5F5;
-  }
-
-  video {
-    width: 300px;
-    height: 200px;
-    margin: auto;
-    border-radius: 10%;
-    object-fit: cover;
-    border: 3px solid #F5F5F5;
-  }
-
-  .no_content {
-    width: 300px;
-    height: 200px;
-    margin: auto;
-    object-fit: cover;
-    border: 3px solid #F5F5F5;
-    text-align: center;
-    font-size: 9pt;
-  }
-
-  table {
-    margin: auto;
-  }
+input[name="ageDate"] {
+	width: 70%;
+	height: 38px;
+	border: 1px solid #ced4da;
+	padding-left: 5px;
+	display: inline;
+}
+input[name="ageCheckBtn"] {
+	width: 30%;
+	height: 38px;
+	display: inline;
+	margin-left: -5px;
+}
+img {
+	width: 300px;
+	height: 200px;
+	display: block;
+	border-radius: 10%;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+}
+video {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	border-radius: 10%;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+}
+.no_content_img {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+	text-align: center;
+	font-size: 9pt;
+}
+.no_content_video {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+	text-align: center;
+	font-size: 9pt;
+}
+table {
+  	margin: auto;
+}
 </style>
 </head>
 <body>
@@ -85,60 +92,18 @@
 		<!-- End Breadcrumbs Section -->
 		<section class="inner-page">
 			<div class="container">
-				<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
 				<div class="contact-form pt-20"></div>
-				<br />
 				<table>
 					<tr>
-						<td><img src="img/dog.jpg" /></td>
-						<td><video controls="controls">
-								<source src="videos/dog.mp4" type="video/mp4">
-							</video></td>
+						<td id="imgTd">
+							<img id="img" src="img/dog.jpg" onerror="this.src='img/noImgVideo.png'" alt=""/>
+						</td>
+						<td id="videoTd">
+							<video id="video" src="videos/dog.mp4" controls="controls"></video>
+						</td>
 					</tr>
 				</table>
-				<!-- 
-		<%-- 사진만 등록되어 있을 경우 --%>
-		<div class="contact-form pt-20"></div>
-		<br />
-		<table>
-			<tr>
-				<td><img src="img/dog.jpg" /></td>
-				<td class="no_content" id="no_content">
-					<i class="bi bi-x-circle"></i> 등록된 동영상이 없습니다.
-				</td>
-			</tr>
-		</table>
-		
-		<%-- 동영상만 등록되어 있을 경우--%>
-		<div class="contact-form pt-20"></div>
-		<br />
-		<table>
-			<tr>
-				<td class="no_content" id="no_content">
-					<i class="bi bi-x-circle"></i> 등록된 사진이 없습니다.
-				</td>
-				<td><video controls="controls">
-						<source src="videos/dog.mp4" type="video/mp4">
-					</video>
-				</td>
-			</tr>
-		</table>
-		
-		<%-- 사진과 동영상 둘다 등록되어 있지 않을 경우 --%>
-		<div class="contact-form pt-20"></div>
-		<br />
-		<table>
-			<tr>
-				<td class="no_content" id="no_content">
-					<i class="bi bi-x-circle"></i> 등록된 사진이 없습니다.
-				</td>
-				<td class="no_content" id="no_content">
-					<i class="bi bi-x-circle"></i> 등록된 동영상이 없습니다.
-				</td>
-			</tr>
-		</table>
-		 -->
-				<br /> <br />
+				<br /> 
 				<div class="row">
 					<div class="col-md-4 form-group mt-3">
 						<div class="validate"></div>
@@ -146,7 +111,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label>
 						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-						<input type="text" class="form-control" name="name" id="name"
+						<input type="text" class="form-control" name="name" id="name" readonly="readonly"
 							value="두둥" data-rule="name" data-msg="필수입력 항목입니다.">
 						<div class="validate"></div>
 					</div>
@@ -161,7 +126,7 @@
 						<input type="text" class="form-control" name="species"
 							id="species" value="말티즈" data-rule="species"
 							data-msg="필수입력 항목입니다.">
-						<div class="validate"></div>
+						<div class="validate" id="val01"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -186,9 +151,17 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="age">나이</label>
-						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-						<input type="number" min="1" class="form-control" name="age"
-							id="age" value="3" data-rule="age" data-msg="필수입력 항목입니다.">
+						<br/>
+						<input type="date" class="form-control" name="ageDate" id="ageDate" readonly="readonly" value="2021-02-03">
+						<input type="button" name="ageCheckBtn" id="ageCheckBtn"
+							class="btn btn-primary btn-sm" value="나이확인"
+							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;" >
+						<div id="ageYearBox" >
+							<input type="number" class="form-control" id="ageYear" name="ageYear" readonly="readonly" style="width:70%; display: inline;">&nbsp;살
+						</div>
+						<div id="ageMonthBox">
+							<input type="number" class="form-control" id="ageMonth" name="ageMonth" readonly="readonly" style="width:70%; display: inline;">&nbsp;개월
+						</div>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -197,13 +170,11 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="age">성별</label> <br />
-						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-						<input type="radio" name="gender" id="Female" data-rule="gender"
-							value="Female" checked> <label for="Female">
-							Female</label> <input type="radio" name="gender" id="Male"
-							data-rule="gender" value="Male"> <label for="Male">
-							Male</label>
+						<label for="age">성별</label> <br /> 
+						<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" checked onClick="return false;"> 
+						<label for="Female">Female</label> 
+						<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly onClick="return false;">
+						<label for="Male"> Male</label>
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -212,11 +183,8 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="weight">몸무게</label>
-						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-						<input type="number" min="1" class="form-control" name="weight" step="0.1"
-							id="weight" value="5" data-rule="weight" data-msg="필수입력 항목입니다.">
-						<div class="validate"></div>
+						<label for="weight">몸무게</label> <input type="number" min="0" class="form-control" name="weight" id="weight" step="0.1" value="1.2" placeholder="몸무게를 입력해주세요." data-rule="weight">
+						<div class="validate" id="val02"></div>
 					</div>
 				</div>
 				<div class="row">
@@ -224,31 +192,7 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="visitdate">내원일</label>
-						<%-- 진료날짜를 띄움 --%>
-						<input type="date" class="form-control" id="visitDate"
-							value="2023-01-30" />
-						<div class="validate"></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="nextVisitDate">다음내원 예정일</label> <input type="date"
-							class="form-control" id="nextVisitDate" />
-						<div class="validate"></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="etc">특이사항</label> <input type="text"
-							class="form-control" name="etc" id="etc"
-							placeholder="특이사항을 입력해주세요">
+						<label for="etc">특이사항</label> <input type="text" class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
 						<div class="validate"></div>
 					</div>
 				</div>
@@ -257,8 +201,8 @@
 						<br />
 					<div class="col-md-4 form-group" style="margin: auto;">
 						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지"
-							onclick="location='/patientInfo'" style="border-radius: 50px; width: 110px; text-align: center; color: white;">
-						<input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/patientInfo'"
+							onclick="history.go(-1)" style="border-radius: 50px; width: 110px; text-align: center; color: white;">
+						<input type="button" class="btn btn-primary" name="patientEdit" id="patientEdit" value="수정"
 							style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 					</div>
 				</div>
@@ -269,4 +213,91 @@
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+// 환자 추가 버튼 이벤트
+$(function() {
+	$('#patientEdit').on('click', function() {
+						var name = $('#name').val();
+						var species = $('#species').val();
+						var age = $('#age').val();
+						var gender = $('#gender').val();
+						var weight = $('#weight').val();
+						var weightReg = /^\d{1,3}\.\d{0,1}$/;
+						var etc = $('#etc').val();
+
+						if (species == null
+								|| species.trim().length == 0
+								|| species.includes(' ')) {
+							$('#species').focus();
+							$('#species').attr('style',
+									'border-color: #dc3545;');
+							$('#species').val('');
+							$('#val01')
+									.html(
+											'<div id="warning"><b style="color: red;">종을 입력해주세요.</b></div>');
+						} else if (weight == null|| weight.trim().length == 0|| weight.includes(' ')||!weightReg.test(weight)) {
+							$('#weight').focus();
+							$('#weight').attr('style',
+									'border-color: #dc3545;');
+							$('#weight').val('');
+							$('#val02')
+									.html(
+											'<div id="warning"><b style="color: red;">몸무게를 입력해주세요. <br/>숫자, 소수점 첫째짜리까지 기입 가능합니다.</b></div>');
+						} else {
+							var result = window
+									.confirm('작성한 내용으로 수정하시겠습니까?');
+
+							if (result) {
+								alert('수정되었습니다.');
+								location.href = '/patientInfo';
+							}
+						}
+					})
+});
+$('#name').on('input', function() {
+	if ($('#name').val() != '') {
+		$('#name').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+$('#species').on('input', function() {
+	if ($('#species').val() != 'border-color:#ced4da') {
+		$('#species').attr('style', '');
+		$('#warning').remove();
+	}
+})
+$('#age').on('input', function() {
+	if ($('#age').val() != '') {
+		$('#age').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+$('#weight').on('input', function() {
+	if ($('#weight').val() != '') {
+		$('#weight').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+
+// 나이확인 버튼 클릭시 이벤트
+$("#ageYearBox").hide();
+$("#ageMonthBox").hide();
+$("#ageCheckBtn").click(function() {
+	const now = new Date();
+	const today_age = new Date($('#ageDate').val());
+	const ageTime = now.getTime() - today_age.getTime();
+	const ageMonth = Math.round(ageTime / (30 * 24 * 60 * 60 * 1000));
+	const ageYear = Math.round(ageTime / (12 * 30 * 24 * 60 * 60 * 1000));
+
+	if (ageYear > 0) {
+		$("#ageYearBox").show();
+		$("#ageYear").val(ageYear);
+	} else {
+		$("#ageMonthBox").show();
+		$("#ageMonth").val(ageMonth);
+	}
+});
+</script>
 </html>

@@ -107,19 +107,18 @@
 				<br/>
 				<table>
 					<tr>
-					<td class="no_content_img" id="no_content_img">
-						<i class="bi bi-x-circle"></i> 등록된 사진이 없습니다.
-					</td>
-					<td id="imgTd">
-						<img id="img" src="" onerror="this.onerror=null; this.src='img/errorFile.png'" alt="dfdfdf"/>
-					</td>
-					<td class="no_content_video" id="no_content_video">
-						<i class="bi bi-x-circle"></i> 등록된 동영상이 없습니다.
-					</td>
-					<td id="videoTd">
-						<video id="video" src="" controls="controls" onerror="this.onerror=null; this.src='img/errorFile.png'"></video>
-					</td>
-						
+						<td class="no_content_img" id="no_content_img">
+							<i class="bi bi-x-circle"></i> 등록된 파일이 없습니다.
+						</td>
+						<td id="imgTd">
+							<img id="img" src="" onerror="this.onerror=null; this.src='img/errorFile.png'" alt="dfdfdf"/>
+						</td>
+						<td class="no_content_video" id="no_content_video">
+							<i class="bi bi-x-circle"></i> 등록된 파일이 없습니다.
+						</td>
+						<td id="videoTd">
+							<video id="video" src="" controls="controls" onerror="this.onerror=null; this.src='img/errorFile.png'"></video>
+						</td>
 					</tr>
 					<tr>
 						<td style="text-align: center;">
@@ -267,7 +266,8 @@ $("#videoFile").on('change', function(){
 	file = this.files[0];
 	$('#video').attr('src', URL.createObjectURL(file));
 	
-});// 환자 추가 버튼 이벤트
+});
+// 환자 추가 버튼 이벤트
 $(function() {
 	$('#patient_add').on('click',
 					function() {

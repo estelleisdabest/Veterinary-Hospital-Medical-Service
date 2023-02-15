@@ -17,44 +17,56 @@
 
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"></script>
 <style type="text/css">
-	input::-webkit-input-placeholder {
-		background-image: background-size: contain;
-		background-position: 1px center;
-		background-repeat: no-repeat;
-		text-align: left;
-		text-indent: 0;
-	}
-	select option[value=""][disabled] {
-		display: none;
-	}
-	img {
-		width: 200px;
-		height: 200px;
-		display: block;
-		border-radius: 10%;
-		object-fit: cover;
-		border: 3px solid #F5F5F5;
-	}
-	video {
-		width: 300px;
-		height: 200px;
-		margin: auto;
-		border-radius: 10%;
-		object-fit: cover;
-		border: 3px solid #F5F5F5;
-	}
-	.no_content {
-		width: 300px;
-		height: 200px;
-		margin: auto;
-		object-fit: cover;
-		border: 3px solid #F5F5F5;
-		text-align: center;
-		font-size: 9pt;
-	}
-	table {
-		margin: auto;
-	}
+input[name="ageDate"] {
+	width: 70%;
+	height: 38px;
+	border: 1px solid #ced4da;
+	padding-left: 5px;
+	display: inline;
+}
+input[name="ageCheckBtn"] {
+	width: 30%;
+	height: 38px;
+	display: inline;
+	margin-left: -5px;
+}
+img {
+	width: 300px;
+	height: 200px;
+	display: block;
+	border-radius: 10%;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+}
+video {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	border-radius: 10%;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+}
+.no_content_img {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+	text-align: center;
+	font-size: 9pt;
+}
+.no_content_video {
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	object-fit: cover;
+	border: 3px solid #F5F5F5;
+	text-align: center;
+	font-size: 9pt;
+}
+table {
+  	margin: auto;
+}
 </style>
 </head>
 <body>
@@ -72,171 +84,139 @@
 		</section>
 		<!-- End Breadcrumbs Section -->
 		<section class="inner-page">
-		<br><br>
-		<%-- 사진 및 동영상 모두 등록되어 있을 경우--%>
-		<div class="contact-form pt-20"></div>
-		<br />
-		<table>
-			<tr>
-				<td ><img src="img/dog.jpg" /></td>
-				<td><video controls="controls">
-						<source src="videos/dog.mp4" type="video/mp4">
-					</video></td>
-			</tr>
-			<tr>
-				<td style="text-align: center;">
-					<label class="btn btn-primary" for="file1" style="border-radius: 50px; width: 90px">수정</label>
-				</td>
-				<td style="text-align: center;">
-					<label class="btn btn-primary" for="file2" style="border-radius: 50px; width: 90px">수정</label>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<input type="file" class="form-control" name="file" id="file1" style="display: none;" accept="image/*">
-				</td>
-				<td>
-					<input type="file" class="form-control" name="file" id="file2" style="display: none;"  accept="video/*">
-				</td>				
-			</tr>
-		</table>		
-		<br><br>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="name">이름</label>
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="text" class="form-control" name="name" id="name"
-					value="두둥" data-rule="name" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="species">종</label>
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="text" class="form-control" name="species" id="species"
-					value="말티즈" data-rule="species" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="size">크기</label>
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<select class="form-control" id="size" name="size">
-					<option value="" disabled selected>소형</option>
-					<option value="소형">소형</option>
-					<option value="중형">중형</option>
-					<option value="대형">대형</option>
-				</select>
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="age">나이</label>
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="number" min="1" class="form-control" name="age"
-					id="age" value="3" data-rule="age" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="age">성별</label> <br />
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="radio" name="gender" id="Female" data-rule="gender"
-					value="Female" checked> <label for="Female"> Female</label>
-				<input type="radio" name="gender" id="Male" data-rule="gender"
-					value="Male"> <label for="Male"> Male</label>
-
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="weight">몸무게</label>
-				<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
-				<input type="number" min="1" class="form-control" name="weight" step="0.1"
-					id="weight" value="5" data-rule="weight" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="visitdate">내원일</label>
-				<%-- 진료날짜를 띄움 --%>
-				<input type="date" class="form-control" id="visitDate"
-					value="2023-01-30" />
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="nextVisitDate">다음내원 예정일</label> <input type="date"
-					class="form-control" id="nextVisitDate" />
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="symptom">증상</label>
-				<%-- 의사가 진단한 내용 띄움 --%>
-				<input type="text" class="form-control" name="symptom" id="symptom"
-					value="신장질환" data-rule="species" data-msg="필수입력 항목입니다.">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="etc">특이사항</label> <input type="text"
-					class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
-				<div class="validate"></div>
-			</div>
-		</div>	
-		<div class="row">
-			<p></p><p></p>
-			<br />
-			<div class="col-md-4 form-group" style="margin: auto;">
-				<input type="button" class="btn btn-secondary" name="move_pre_page"
-					id="move_pre_page" value="이전페이지" onclick="location='/myPageProtecto'"
-					style="border-radius: 50px; width: 110px; text-align: center; color: white;">
-				<input type="button" class="btn btn-primary" name="notice_add" id="notice_add"
-					value="확인" onclick="location='/myPageProtecto'" style="border-radius: 50px;
-					width: 110px; text-align: center; float: right; color: white;">
-               </div>
-            </div>		
-			<div class="container">		
+			<div class="container">
+				<div class="contact-form pt-20"></div>
+				<table>
+					<tr>
+						<td id="imgTd">
+							<img id="img" src="img/dog.jpg" onerror="this.src='img/noImgVideo.png'" alt=""/>
+						</td>
+						<td id="videoTd">
+							<video id="video" controls="controls" onerror="this.src='img/noImgVideo.png'">
+								<source src="videos/dog.mp4" type="video/mp4"  > 
+							</video>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: center;">
+							<br/><label class="btn btn-primary" for="imgFile" style="border-radius: 50px; width: 98px">사진등록</label>
+						</td>
+						<td style="text-align: center;">
+							<br/><label class="btn btn-primary" for="videoFile" style="border-radius: 50px; width: 110px">동영상등록</label>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="file" class="form-control" name="file" id="imgFile" style="display: none;" accept="image/*" >
+						</td>
+						<td>
+							<input type="file" class="form-control" name="file" id="videoFile" style="display: none;"  accept="video/*">
+						</td>				
+					</tr>
+				</table>
+				<br /> 
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="name">이름</label>
+						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
+						<input type="text" class="form-control" name="name" id="name"
+							value="두둥" data-rule="name" data-msg="필수입력 항목입니다.">
+						<div class="validate" id="val01"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="species">종</label>
+						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
+						<input type="text" class="form-control" name="species"
+							id="species" value="말티즈" data-rule="species"
+							data-msg="필수입력 항목입니다.">
+						<div class="validate" id="val02"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="size">크기</label>
+						<%-- 환자정보 추가했을 때 입력된 정보를 띄움 --%>
+						<select class="form-control" id="size" name="size">
+							<option value="" disabled selected>소형</option>
+							<option value="소형">소형</option>
+							<option value="중형">중형</option>
+							<option value="대형">대형</option>
+						</select>
+						<div class="validate"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="age">나이</label>
+						<br/>
+						<input type="date" class="form-control" name="ageDate" id="ageDate" readonly="readonly" value="2021-02-03">
+						<input type="button" name="ageCheckBtn" id="ageCheckBtn"
+							class="btn btn-primary btn-sm" value="나이확인"
+							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;" >
+						<div id="ageYearBox" >
+							<input type="number" class="form-control" id="ageYear" name="ageYear" readonly="readonly" style="width:70%; display: inline;">&nbsp;살
+						</div>
+						<div id="ageMonthBox">
+							<input type="number" class="form-control" id="ageMonth" name="ageMonth" readonly="readonly" style="width:70%; display: inline;">&nbsp;개월
+						</div>
+						<div class="validate"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="age">성별</label> <br /> 
+						<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" checked onClick="return false;"> 
+						<label for="Female">Female</label> 
+						<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly onClick="return false;">
+						<label for="Male"> Male</label>
+						<div class="validate"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="weight">몸무게</label> <input type="number" min="0" class="form-control" name="weight" id="weight" step="0.1" value="1.2" placeholder="몸무게를 입력해주세요." data-rule="weight">
+						<div class="validate" id="val03"></div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 form-group mt-3">
+						<div class="validate"></div>
+					</div>
+					<div class="col-md-4 form-group mt-3">
+						<label for="etc">특이사항</label> <input type="text" class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
+						<div class="validate"></div>
+					</div>
+				</div>
+				<div class="row">
+					<p></p><p></p>
+						<br />
+					<div class="col-md-4 form-group" style="margin: auto;">
+						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지"
+							onclick="history.go(-1)" style="border-radius: 50px; width: 110px; text-align: center; color: white;">
+						<input type="button" class="btn btn-primary" name="patientEdit" id="patientEdit" value="수정"
+							style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
@@ -244,4 +224,117 @@
 	<!-- Template Main JS File -->
 	<%@ include file="/WEB-INF/includes/footer.jsp"%>
 </body>
+<script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+<script type="text/javascript">
+//사진 미리보기
+$("#imgFile").on("change", function(event) {
+	$("#imgTd").show();
+    var imgfile = event.target.files[0];
+    var reader = new FileReader(); 
+    reader.onload = function(e) {
+        $("#img").attr("src", e.target.result);
+    }
+    reader.readAsDataURL(imgfile);
+});
+// 동영상 미리보기
+$("#videoFile").on('change', function(){
+	$("#videoTd").show();
+	file = this.files[0];
+	$('#video').attr('src', URL.createObjectURL(file));
+	
+});
+// 환자 추가 버튼 이벤트
+$(function() {
+	$('#patientEdit').on('click', function() {
+						var name = $('#name').val();
+						var species = $('#species').val();
+						var age = $('#age').val();
+						var gender = $('#gender').val();
+						var weight = $('#weight').val();
+						var weightReg = /^\d{1,3}\.\d{0,1}$/;
+						var etc = $('#etc').val();
+
+						if (name.length == 0 || name.trim().length == 0
+								|| name.includes(' ')) {
+							$('#name').focus();
+							$('#name').attr('style',
+									'border-color: #dc3545;');
+							$('#name').val('');
+							$('#val01')
+									.html(
+											'<div id="warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
+						} else if (species == null
+								|| species.trim().length == 0
+								|| species.includes(' ')) {
+							$('#species').focus();
+							$('#species').attr('style',
+									'border-color: #dc3545;');
+							$('#species').val('');
+							$('#val02')
+									.html(
+											'<div id="warning"><b style="color: red;">종을 입력해주세요.</b></div>');
+						} else if (weight == null|| weight.trim().length == 0|| weight.includes(' ')||!weightReg.test(weight)) {
+							$('#weight').focus();
+							$('#weight').attr('style',
+									'border-color: #dc3545;');
+							$('#weight').val('');
+							$('#val03')
+									.html(
+											'<div id="warning"><b style="color: red;">몸무게를 입력해주세요. <br/>숫자, 소수점 첫째짜리까지 기입 가능합니다.</b></div>');
+						} else {
+							var result = window
+									.confirm('작성한 내용으로 수정하시겠습니까?');
+
+							if (result) {
+								alert('수정되었습니다.');
+								location.href = '/patientInfo';
+							}
+						}
+					})
+});
+$('#name').on('input', function() {
+	if ($('#name').val() != '') {
+		$('#name').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+$('#species').on('input', function() {
+	if ($('#species').val() != 'border-color:#ced4da') {
+		$('#species').attr('style', '');
+		$('#warning').remove();
+	}
+})
+$('#age').on('input', function() {
+	if ($('#age').val() != '') {
+		$('#age').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+$('#weight').on('input', function() {
+	if ($('#weight').val() != '') {
+		$('#weight').attr('style', 'border-color:#ced4da');
+		$('#warning').remove();
+	}
+})
+
+// 나이확인 버튼 클릭시 이벤트
+$("#ageYearBox").hide();
+$("#ageMonthBox").hide();
+$("#ageCheckBtn").click(function() {
+	const now = new Date();
+	const today_age = new Date($('#ageDate').val());
+	const ageTime = now.getTime() - today_age.getTime();
+	const ageMonth = Math.round(ageTime / (30 * 24 * 60 * 60 * 1000));
+	const ageYear = Math.round(ageTime / (12 * 30 * 24 * 60 * 60 * 1000));
+
+	if (ageYear > 0) {
+		$("#ageYearBox").show();
+		$("#ageYear").val(ageYear);
+	} else {
+		$("#ageMonthBox").show();
+		$("#ageMonth").val(ageMonth);
+	}
+});
+</script>
 </html>
