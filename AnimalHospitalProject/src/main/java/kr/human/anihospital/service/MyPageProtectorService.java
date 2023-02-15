@@ -1,7 +1,5 @@
 package kr.human.anihospital.service;
 
-import java.text.SimpleDateFormat;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,9 +16,6 @@ public class MyPageProtectorService {
 		ProtectorVO vo = null;
 		try {
 			vo = myPageProtectorMapper.selectProtector(seqProtector);
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			String date = sdf.format(vo.getProtectorAge());
-			vo.setProtectorAge(sdf.parse(date));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
