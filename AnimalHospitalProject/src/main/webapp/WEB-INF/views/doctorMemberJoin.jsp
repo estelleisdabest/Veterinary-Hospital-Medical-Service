@@ -208,7 +208,7 @@
 						style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
 						<div class="col-md-2 form-group mt-3">
 							<label for="text">생년월일</label> 
-							<input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도" maxlength="4">
+							<input type="datetime" name="doctor_year" class="form-control datepicker" id="doctor_year" placeholder="년도(4자)" maxlength="4">
 							<div class="validate" id="doctor_year_val"></div>
 						</div>
 						<div class="col-md-2 form-group mt-3">
@@ -240,7 +240,7 @@
 						style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
 						<div class="col-md-2 form-group mt-3">
 							<label for="text">면허취득일</label> 
-							<input type="datetime" name="doctor_license_year" class="form-control datepicker" id="doctor_license_year" placeholder="년도" maxlength="4">
+							<input type="datetime" name="doctor_license_year" class="form-control datepicker" id="doctor_license_year" placeholder="년도(4자)" maxlength="4">
 							<div class="validate" id="doctor_license_year_val"></div>
 						</div>
 						<div class="col-md-2 form-group mt-3">
@@ -370,10 +370,10 @@ $(function(){
           var doctorIdRegEx = /^[가-힣]{2,5}$/;
           var doctor_gender = $('#doctor_gender').val();
           var doctor_year = $('#doctor_year').val();
-          var YearRegEx = /^(19[0-9][0-9]|20\d{2})/;
+          var yearRegEx = /^(19[0-9][0-9]|20\d{2})/;
           var doctor_month = $('#doctor_month').val();
           var doctor_date = $('#doctor_date').val();
-          var DateRegEx = /^0[1-9]|[1-2][0-9]|3[0-1]$/;
+          var dateRegEx = /^0[1-9]|[1-2][0-9]|3[0-1]$/;
           var doctor_license_year = $('#doctor_license_year').val();
           var doctor_license_month = $('#doctor_license_month').val();
           var doctor_license_date = $('#doctor_license_date').val();
@@ -428,20 +428,25 @@ $(function(){
                $('#doctor_gender').attr('style','border-color: #dc3545;');
            	   $('#doctor_gender').val('');
            	   $('#doctor_gender_val').html('<div id="doctor_gender_warning"><b style="color: red; font-size:8pt;">성별을 선택해주세요.</b></div>');
-           }else if(!YearRegEx.test(doctor_year)){
+           }else if(doctor_year==null||doctor_year.trim().length==0||doctor_year.includes(' ')){
+        	   $('#doctor_year').focus();
+               $('#doctor_year').attr('style','border-color: #dc3545;');
+               $('#doctor_year').val('');
+           	   $('#doctor_year_val').html('<div id="doctor_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+           }else if(!yearRegEx.test(doctor_year)){
         	   $('#doctor_year').focus();
                $('#doctor_year').attr('style','border-color: #dc3545;');
            	   $('#doctor_year').val('');
-           	   $('#doctor_year_val').html('<div id="doctor_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+           	   $('#doctor_year_val').html('<div id="doctor_year_warning"><b style="color: red; font-size:8pt;">올바른 년도를 입력해주세요.</b></div>');
            }else if(doctor_month==''){
         	   $('#doctor_month').focus();
                $('#doctor_month').attr('style','border-color: #dc3545;');
            	   $('#doctor_month_val').html('<div id="doctor_month_warning"><b style="color: red; font-size:8pt;">월을 입력해주세요.</b></div>');
-           }else if(!DateRegEx.test(doctor_date)){
+           }else if(!dateRegEx.test(doctor_date)){
         	   $('#doctor_date').focus();
                $('#doctor_date').attr('style','border-color: #dc3545;');
            	   $('#doctor_date').val('');
-           	   $('#doctor_date_val').html('<div id="doctor_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+           	   $('#doctor_date_val').html('<div id="doctor_date_warning"><b style="color: red; font-size:8pt;">올바른 날짜를 입력해주세요.</b></div>');
            }else if(doctor_license_year==''||doctor_license_year.trim().length==0||doctor_license_year.includes(' ')){
         	   $('#doctor_license_year').focus();
                $('#doctor_license_year').attr('style','border-color: #dc3545;');
@@ -451,7 +456,7 @@ $(function(){
         	   $('#doctor_license_year').focus();
                $('#doctor_license_year').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_year').val('');
-           	   $('#doctor_license_year_val').html('<div id="doctor_license_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+           	   $('#doctor_license_year_val').html('<div id="doctor_license_year_warning"><b style="color: red; font-size:8pt;">올바른 년도를 입력해주세요.</b></div>');
            }else if(doctor_license_month==''){
         	   $('#doctor_license_month').focus();
                $('#doctor_license_month').attr('style','border-color: #dc3545;');
@@ -466,17 +471,17 @@ $(function(){
         	   $('#doctor_license_date').focus();
                $('#doctor_license_date').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_date').val('');
-           	   $('#doctor_license_date_val').html('<div id="doctor_license_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+           	   $('#doctor_license_date_val').html('<div id="doctor_license_date_warning"><b style="color: red; font-size:8pt;">올바른 날짜를 입력해주세요.</b></div>');
            }else if(doctor_license_seq==''||doctor_license_seq.trim().length==0||doctor_license_seq.includes(' ')){
         	   $('#doctor_license_seq').focus();
                $('#doctor_license_seq').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_seq').val('');
-           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">의사 등록번호를 입력해주세요.</b></div>');
            }else if(!doctorLicenseSeqRegEx.test(doctor_license_seq)){
         	   $('#doctor_license_seq').focus();
                $('#doctor_license_seq').attr('style','border-color: #dc3545;');
            	   $('#doctor_license_seq').val('');
-           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">올바른 등록번호를 입력해주세요.</b></div>');
+           	   $('#doctor_license_seq_val').html('<div id="doctor_license_seq_warning"><b style="color: red; font-size:8pt;">올바른 의사 등록번호를 입력해주세요.</b></div>');
            }else if(doctor_address==null||doctor_address.trim().length==0){
         	   $('#doctor_address').focus();
                $('#doctor_address').attr('style','border-color: #dc3545;');
@@ -486,12 +491,12 @@ $(function(){
         	   $('#doctor_phoneNumber').focus();
                $('#doctor_phoneNumber').attr('style','border-color: #dc3545;');
            	   $('#doctor_phoneNumber').val('');
-           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 핸드폰 번호를 입력해주세요.</b></div>');
+           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">전화번호를 입력해주세요.</b></div>');
            }else if(!doctorPhoneNumberRegEx.test(doctor_phoneNumber)){
         	   $('#doctor_phoneNumber').focus();
                $('#doctor_phoneNumber').attr('style','border-color: #dc3545;');
            	   $('#doctor_phoneNumber').val('');
-           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 핸드폰 번호를 입력해주세요.</b></div>');
+           	   $('#doctor_phoneNumber_val').html('<div id="doctor_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 전화번호를 입력해주세요.</b></div>');
            }else if(confirm_certificationNumber==null||confirm_certificationNumber.trim().length==0||confirm_certificationNumber.includes(' ')){
         	   $('#confirm_certificationNumber').focus();
                $('#confirm_certificationNumber').attr('style','border-color: #dc3545;');

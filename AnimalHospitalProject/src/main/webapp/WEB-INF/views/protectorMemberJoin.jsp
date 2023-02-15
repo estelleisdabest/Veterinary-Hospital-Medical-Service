@@ -156,7 +156,7 @@
 				<div class="row" id="protector_yearmonthday" style="margin: auto; width: 800px; height: 100px; display: flex; justify-content: center;">
 					<div id="protector_yearDiv" class="col-md-2 form-group mt-3">
 						<label for="text">생년월일</label> 
-						<input type="datetime" name="protector_year" class="form-control datepicker" id="protector_year" placeholder="년도">
+						<input type="datetime" name="protector_year" class="form-control datepicker" id="protector_year" placeholder="년도(4자)" maxlength="4">
 						<div class="validate" id="protector_year_val"></div>
 					</div>
 					&nbsp;
@@ -182,7 +182,7 @@
 					&nbsp;
 					<div id="protector_dayDiv" class="col-md-2 mt-3">
 						<label for="text"></label> 
-						<input type="datetime" class="form-control datepicker" name="protector_date" id="protector_date" placeholder="일">
+						<input type="datetime" class="form-control datepicker" name="protector_date" id="protector_date" placeholder="일" maxlength="2">
 						<div class="validate" id="protector_date_val"></div>
 					</div>
 				</div>
@@ -245,78 +245,107 @@
 $(function(){
     $('#join_membership_protector').on('click', function() {
        var email = $('#email').val();
+       var emailRegEx = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/;
        var confirm_emailUser = $('#confirm_emailUser').val();
        var password = $('#password').val();
+       var passwordRegEx = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,20}$/;
        var password_reconfirm = $('#password_reconfirm').val();
        var protector_name = $('#protector_name').val();
+       var nameRegEx = /^[가-힣]{2,5}$/;
        var protector_gender = $('#protector_gender').val();
-       var protectorYearRegEx = /^[0-9]{4}$/;
        var protector_yearmonthday = $('#protector_yearmonthday').val();
+       var yearRegEx = /^(19[0-9][0-9]|20\d{2})/;
        var protector_year = $('#protector_year').val();
        var protector_month = $('#protector_month').val();
        var protector_date = $('#protector_date').val();
-       var protectorDateRegEx = /^[0-9]{1,2}$/;
+       var dateRegEx = /^0[1-9]|[1-2][0-9]|3[0-1]$/;
        var protector_address = $('#protector_address').val();
        var protector_phoneNumber = $('#protector_phoneNumber').val();
+       var phoneNumberRegEx = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
        var confirm_certificationNumber = $('#confirm_certificationNumber').val();
        if(email.length==0||email.trim().length==0||email.includes(' ')){
             $('#email').focus();
             $('#email').attr('style','border-color: #dc3545;');
-        	   $('#email').val('');
-        	   $('#email_val').html('<div id="email_warning"><b style="color: red;">올바른 아이디를 입력해주세요.</b></div>');
-        }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0||confirm_emailUser.includes(' ')){
-     	   $('#confirm_emailUser').focus();
+        	$('#email').val('');
+        	$('#email_val').html('<div id="email_warning"><b style="color: red; font-size:8pt;">올바른 이메일을 입력해주세요.</b></div>');
+       }else if(!emailRegEx.test(email)){
+    	    $('#email').focus();
+            $('#email').attr('style','border-color: #dc3545;');
+       	    $('#email').val('');
+       	    $('#email_val').html('<div id="email_warning"><b style="color: red; font-size:8pt;">올바른 이메일을 입력해주세요.</b></div>'); 
+       }else if(confirm_emailUser==null||confirm_emailUser.trim().length==0||confirm_emailUser.includes(' ')){
+     	    $('#confirm_emailUser').focus();
             $('#confirm_emailUser').attr('style','border-color: #dc3545;');
-        	   $('#confirm_emailUser').val('');
-        	   $('#confirm_emailUser_val').html('<div id="confirm_emailUser_warning"><b style="color: red;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
+       	    $('#confirm_emailUser').val('');
+       		$('#confirm_emailUser_val').html('<div id="confirm_emailUser_warning"><b style="color: red; font-size:8pt;">이메일에 전송된 본인확인 번호를 입력해주세요.</b></div>');
        }else if(password.length==0||password.trim().length==0||password.includes(' ')){
             $('#password').focus();
             $('#password').attr('style','border-color: #dc3545;');
-        	   $('#password').val('');
-        	   $('#password_val').html('<div id="password_warning"><b style="color: red;">올바른 비밀번호를 입력해주세요.</b></div>');
-        }else if(password_reconfirm==null||password_reconfirm.trim().length==0||password_reconfirm!=password){
-     	   $('#password_reconfirm').focus();
+        	$('#password').val('');
+        	$('#password_val').html('<div id="password_warning"><b style="color: red;">비밀번호를 입력해주세요.</b></div>');
+       }else if(!passwordRegEx.test(password)){
+   		    $('#password').focus();
+            $('#password').attr('style','border-color: #dc3545;');
+            $('#password').val('');
+      	    $('#password_val').html('<div id="password_warning"><b style="color: red; font-size:8pt;">비밀번호는 8자 이상이어야 하며, 숫자/대문자/소문자/특수문자를 모두 포함해야 합니다.</b></div>'); 
+       }else if(password_reconfirm!=password){
+     	    $('#password_reconfirm').focus();
             $('#password_reconfirm').attr('style','border-color: #dc3545;');
-        	   $('#password_reconfirm').val('');
-        	   $('#password_reconfirm_val').html('<div id="password_reconfirm_warning"><b style="color: red;">올바른 비밀번호를 입력해주세요.</b></div>');
+        	$('#password_reconfirm').val('');
+        	$('#password_reconfirm_val').html('<div id="password_reconfirm_warning"><b style="color: red; font-size:8pt;">같은 비밀번호를 입력해주세요.</b></div>');
         }else if(protector_name==null||protector_name.trim().length==0||protector_name.includes(' ')){
-     	   $('#protector_name').focus();
+     	   	$('#protector_name').focus();
             $('#protector_name').attr('style','border-color: #dc3545;');
-        	   $('#protector_name').val('');
-        	   $('#protector_name_val').html('<div id="protector_name_warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
+        	$('#protector_name').val('');
+        	$('#protector_name_val').html('<div id="protector_name_warning"><b style="color: red; font-size:8pt;">이름을 입력해주세요.</b></div>');
+        }else if(!nameRegEx.test(protector_name)){
+     	    $('#protector_name').focus();
+            $('#protector_name').attr('style','border-color: #dc3545;');
+        	$('#protector_name').val('');
+        	$('#protector_name_val').html('<div id="protector_name_warning"><b style="color: red; font-size:8pt;">이름은 한글로 2글자 이상 5글자 이하로 입력할 수 있습니다.</b></div>');
         }else if(protector_gender==''){
-     	   $('#protector_gender').focus();
+     	    $('#protector_gender').focus();
             $('#protector_gender').attr('style','border-color: #dc3545;');
-        	   $('#protector_gender').val('');
-        	   $('#protector_gender_val').html('<div id="protector_gender_warning"><b style="color: red;">성별을 선택해주세요.</b></div>');
-        }else if(!protectorYearRegEx.test(protector_year)){
-     	   $('#protector_year').focus();
+        	$('#protector_gender').val('');
+        	$('#protector_gender_val').html('<div id="protector_gender_warning"><b style="color: red; font-size:8pt;">성별을 선택해주세요.</b></div>');
+        }else if(protector_year==null||protector_year.trim().length==0||protector_year.includes(' ')){
+     	    $('#protector_year').focus();
             $('#protector_year').attr('style','border-color: #dc3545;');
-        	   $('#protector_year').val('');
-        	   $('#protector_year_val').html('<div id="protector_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+            $('#protector_year').val('');
+        	$('#protector_year_val').html('<div id="protector_year_warning"><b style="color: red; font-size:8pt;">년도를 입력해주세요.</b></div>');
+        }else if(!yearRegEx.test(protector_year)){
+     	    $('#protector_year').focus();
+            $('#protector_year').attr('style','border-color: #dc3545;');
+        	$('#protector_year').val('');
+        	$('#protector_year_val').html('<div id="protector_year_warning"><b style="color: red; font-size:8pt;">올바른 년도를 입력해주세요.</b></div>');
         }else if(protector_month==''){
-     	   $('#protector_month').focus();
+     	    $('#protector_month').focus();
             $('#protector_month').attr('style','border-color: #dc3545;');
-        	   $('#protector_month_val').html('<div id="protector_month_warning"><b style="color: red; font-size:8pt;">월을 입력해주세요.</b></div>');
-        }else if(!protectorDateRegEx.test(protector_date)){
-     	   $('#protector_date').focus();
+        	$('#protector_month_val').html('<div id="protector_month_warning"><b style="color: red; font-size:8pt;">월을 입력해주세요.</b></div>');
+        }else if(!dateRegEx.test(protector_date)){
+     	    $('#protector_date').focus();
             $('#protector_date').attr('style','border-color: #dc3545;');
-        	   $('#protector_date_val').html('<div id="protector_date_warning"><b style="color: red; font-size:8pt;">날짜를 입력해주세요.</b></div>');
+        	$('#protector_date_val').html('<div id="protector_date_warning"><b style="color: red; font-size:8pt;">올바른 날짜를 입력해주세요.</b></div>');
         }else if(protector_address==null||protector_address.trim().length==0){
-     	   $('#protector_address').focus();
+     	    $('#protector_address').focus();
             $('#protector_address').attr('style','border-color: #dc3545;');
-        	   $('#protector_address').val('');
-        	   $('#protector_address_val').html('<div id="protector_address_warning"><b style="color: red;">주소를 입력해주세요.</b></div>');
+        	$('#protector_address').val('');
+        	$('#protector_address_val').html('<div id="protector_address_warning"><b style="color: red; font-size:8pt;">주소를 입력해주세요.</b></div>');
         }else if(protector_phoneNumber==null||protector_phoneNumber.trim().length==0){
-     	   $('#protector_phoneNumber').focus();
+     	    $('#protector_phoneNumber').focus();
             $('#protector_phoneNumber').attr('style','border-color: #dc3545;');
-        	   $('#protector_phoneNumber').val('');
-        	   $('#protector_phoneNumber_val').html('<div id="protector_phoneNumber_warning"><b style="color: red;">전화번호를 입력해주세요.</b></div>');
+        	$('#protector_phoneNumber').val('');
+        	$('#protector_phoneNumber_val').html('<div id="protector_phoneNumber_warning"><b style="color: red; font-size:8pt;">전화번호를 입력해주세요.</b></div>');
+        }else if(!phoneNumberRegEx.test(protector_phoneNumber)){
+     	    $('#protector_phoneNumber').focus();
+            $('#protector_phoneNumber').attr('style','border-color: #dc3545;');
+        	$('#protector_phoneNumber').val('');
+        	$('#protector_phoneNumber_val').html('<div id="protector_phoneNumber_warning"><b style="color: red; font-size:8pt;">올바른 전화번호를 입력해주세요.</b></div>');
         }else if(confirm_certificationNumber==null||confirm_certificationNumber.trim().length==0||confirm_certificationNumber.includes(' ')){
-     	   $('#confirm_certificationNumber').focus();
+     	    $('#confirm_certificationNumber').focus();
             $('#confirm_certificationNumber').attr('style','border-color: #dc3545;');
-        	   $('#confirm_certificationNumber').val('');
-        	   $('#confirm_certificationNumber_val').html('<div id="confirm_certificationNumber_warning"><b style="color: red;">인증번호를 입력해주세요.</b></div>');
+        	$('#confirm_certificationNumber').val('');
+        	$('#confirm_certificationNumber_val').html('<div id="confirm_certificationNumber_warning"><b style="color: red; font-size:8pt;">올바른 인증번호를 입력해주세요.</b></div>');
         }else{
      		var result = window.confirm('작성한 내용대로 가입하시겠습니까?');
    			if(result) {
@@ -374,7 +403,6 @@ $('#protector_date').on('input',function(){
 		$('#protector_date_warning').remove();
 	}
 })
-
 $('#protector_phoneNumber').on('input',function(){
 	if($('#protector_phoneNumber').val() !=''){
 		$('#protector_phoneNumber').attr('style','border-color:#ced4da;');
