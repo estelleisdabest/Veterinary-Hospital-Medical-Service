@@ -1,4 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -66,14 +69,14 @@
 		<main>
 			<!-- table section -->
 			<div class="col-md-9" style="margin-left: 200px">
-				<form style="float: right;">
+				<div style="float: right;">
 					<!-- 예시: <form th:action="@{/board/list}" method="get"> -->
 					<input type="text" name="searchPatient" class="form-control"
 						id="searchPatient" placeholder="환자명을 입력해주세요." data-rule="text">
 					&nbsp; <input type="submit" class="btn btn-primary"
 						name="searchPatientBtn" id="searchPatientBtn" value="검색"
 						style="width: 70px; text-align: center; border-radius: 50px; margin-top: -4px;">
-				</form>
+				</div>
 				<div>
 					<br />
 					<br />
@@ -96,59 +99,18 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>홍길동</td>
-										<td>아리</td>
-										<td>3</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
-									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>토리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
-									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>모리</td>
-										<td>8</td>
-										<td>포메라니안</td>
-										<td>male</td>
-										<td>4.2</td>
-										<td>당뇨, 슬개골 탈구</td>
-									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>태리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>5</td>
-										<td>없음</td>
-									</tr>
-									<tr>
-										<td>박OO</td>
-										<td>함이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>1.0</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
-									</tr>
-									<tr>
-										<td>박OO</td>
-										<td>품이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>0.9</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
+								<tr>
+								<c:forEach var="item" items="${aniList}">
+									<td>${aniList.protectorName}</td>
+									<td>${aniList.animalName}</td> 
+									<td>${aniList.animalAge}</td>  
+									<td>${aniList.fianimalTyperst}</td>
+									<td>${aniList.animalGender}</td>
+									<td>${aniList.animalWeight}</td>
+									<td>${aniList.animalImportantSymptom}</td>
+								</c:forEach>
+								</tr>
+									
 								</tbody>
 							</table>
 							<br />
