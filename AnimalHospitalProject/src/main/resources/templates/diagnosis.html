@@ -206,15 +206,22 @@
 						<div class="card mb-3" style="width: 350px;">
 							<div class="row g-0">
 								<div class="col-md-4" >
-									<img src="img/dog-unsolicited.jpg" class="img-fluid rounded-start"
+									<img src="img/dog-unsolicited.jpg" class="img-fluid rounded-start" id="animalPicture"
 										alt="..." style="width: 100%; height: 100%;">
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
-										<h5 class="animalName" style="text-align: center;">두둥</h5>
+										<h5 class="animalName" style="text-align: center;" >[[${diagnosisAnimal.animalName}]]</h5>
 								<hr />
 										<p class="card-text">
-											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
+											나이 : [[${diagnosisAnimal.animalAge}]] 살
+											<br /> 
+											종 : [[${diagnosisAnimal.animalType}]]
+											<br /> 
+											사이즈 : [[${diagnosisAnimal.animalSize}]]
+											<br /> 
+											몸무게 : [[${diagnosisAnimal.animalWeight}]] kg
+											<br />
 										</p>
 									</div>
 								</div>

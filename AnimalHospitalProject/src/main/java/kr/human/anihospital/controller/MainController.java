@@ -71,12 +71,12 @@ public class MainController {
 		return "animallookupdetail";
 	}
 
-	// 진료 내역
-	@GetMapping("/diagnosis")
-	public String diagnosis() {
-		return "diagnosis";
-	}
-
+	/*
+	 * // 진료 내역
+	 * 
+	 * @GetMapping("/diagnosis") public String diagnosis() { 
+	 * return "diagnosis"; }
+	 */
 	// 약관동의 및 역할 체크
 	@GetMapping("/roleCheck")
 	public String roleCheck() {
