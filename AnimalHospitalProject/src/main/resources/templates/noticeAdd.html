@@ -40,7 +40,6 @@ textarea {
 <body>
 	<div th:replace="~{fragment/header :: #header}"></div>
 	<main id="main">
-		<form method="post" action="noticeAdd" id="noticeAddSubmit">
 			<!-- ======= Breadcrumbs Section ======= -->
 			<section class="breadcrumbs">
 				<div class="container">
@@ -82,7 +81,6 @@ textarea {
 					</div>
 				</div>
 			</section>
-		</form>
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
@@ -90,57 +88,63 @@ textarea {
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script type="text/javascript">
-	$(function() {
-		$('#notice_add')
-				.on(
-						'click',
-						function() {
-							var subject = $('#noticeSubject').val();
-							var content = $('#noticeContent').val();
-							if (subject == null || subject.trim().length == 0) {
-								$('#noticeSubject')
-										.attr('style',
-												'border-color: #dc3545; margin:auto;width:700px;');
-								$('#noticeSubject').val('');
-								$('#noticeSubject')
-										.html(
-												'<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">제목을 입력해주세요</b></div>');
-								$('#noticeSubject').focus();
-							} else if (content == null
-									|| content.trim().length == 0) {
-								$('#noticeContent')
-										.attr('style',
-												'border-color: #dc3545; margin:auto; width:700px; height: 500px;');
-								$('#noticeContent').val('');
-								$('#noticeContent')
-										.html(
-												'<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">내용을 입력해주세요.</b></div>');
-								$('#noticeContent').focus();
-							} else {
-								var result = window
-										.confirm('작성한 내용을 추가하시겠습니까?');
-								if (result) {
-									alert('정상적으로 처리되었습니다.');
-									$("#noticeAddSubmit").submit();
-								} else if (!result) {
-									alert('취소되었습니다.');
-									return false;
-								}
-							}
-						});
-	});
+$(function(){
+       $('#notice_add').on('click', function() {
+          var subject = $('#noticeSubject').val();
+          var content = $('#noticeContent').val();
+          if(subject==null||subject.trim().length==0){
+               $('#noticeSubject').attr('style','border-color: #dc3545; margin:auto;width:700px;');
+           	   $('#noticeSubject').val('');
+           	   $('#noticeSubject').html('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">제목을 입력해주세요</b></div>');
+               $('#noticeSubject').focus();
+           }else if(content==null||content.trim().length==0){
+               $('#noticeContent').attr('style','border-color: #dc3545; margin:auto; width:700px; height: 500px;');
+           	   $('#noticeContent').val('');
+           	   $('#noticeContent').html('<div id="warning" style=" width:700px;"><b style="color: red; width:700px;">내용을 입력해주세요.</b></div>');
+        	   $('#noticeContent').focus();
+           }else{
+				var result = window.confirm('작성한 내용을 추가하시겠습니까?');
+				if (result) {
+					alert('정상적으로 처리되었습니다.');
+					var noticeAddDate = $("#writeDate").val();
+					var noticeAddSubject = $("#noticeSubject").val();
+					var noticeAddContent = $("#noticeContent").val();
+					$.ajax({
+						url: "/noticeAddOk",
+						dataType: "text",
+						type: "post",
+						contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+						data: {
+							noticeAddDate : noticeAddDate,
+							noticeAddSubject : noticeAddSubject,
+							noticeAddContent: noticeAddContent
+						},
+						success: function(data) {
+							location.href='/notice';
+						},
+						error: function(data) {
+							alert("Error");
+						}
+					});				
+				} else if (!result) {
+					alert('취소되었습니다.');
+					return false;
+				}
+           }
+       });
+ });
 
-	$('#noticeSubject').on('input', function() {
-		if ($('#noticeSubject').val() != '') {
-			$('#noticeSubject').attr('style', 'width:700px;');
-			$('#warning').remove();
-		}
-	})
-	$('#noticeContent').on('input', function() {
-		if ($('#noticeContent').val() != '') {
-			$('#noticeContent').attr('style', 'width:700px;');
-			$('#warning').remove();
-		}
-	})
+$('#noticeSubject').on('input',function(){
+	if($('#noticeSubject').val() !=''){
+		$('#noticeSubject').attr('style','width:700px;');
+		$('#warning').remove();
+	}
+})
+$('#noticeContent').on('input',function(){
+	if($('#noticeContent').val() !=''){
+		$('#noticeContent').attr('style','width:700px;');
+		$('#warning').remove();
+	}
+})
 </script>
 </html>
