@@ -70,12 +70,12 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td style="text-align: left;">휴무안내</td>
-										<td>A병원</td>
-										<td>김아무개</td>
-										<td>2023.01.30</td>
+									<tr th:each="noticeList : ${noticeList}">
+										<td th:text="${noticeList.seqNotice}"></td>
+										<td th:text="${noticeList.noticeSubject}"></td>
+										<td th:text="${noticeList.animalHospitalName}"></td>
+										<td th:text="${noticeList.doctorName}"></td>
+										<td th:text="${noticeList.noticeWriteDate}"></td>
 									</tr>
 								</tbody>
 							</table>
