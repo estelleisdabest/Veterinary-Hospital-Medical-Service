@@ -31,7 +31,7 @@
 		text-align: left;
 		text-indent: 0;
 	}
-	input[name="ageDate"] {
+	input[name="animalAge"] {
 		width: 60%;
 		height: 38px;
 		border: 1px solid #ced4da;
@@ -165,7 +165,7 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="animalSize">크기</label>
 						<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-						<select class="form-control" id="animalSizeBox" name="animalSizeBox">
+						<select class="form-control" id="animalSize" name="animalSize">
 							<option value="small">소형</option>
 							<option value="medium">중형</option>
 							<option value="large">대형</option>
@@ -180,17 +180,15 @@
 					<div class="col-md-4 form-group mt-3">
 						<label for="age">나이</label>
 						<br/>
-						<input type="date" class="form-control" name="ageDate" id="ageDate">
+						<input type="date" class="form-control" name="animalAge" id="animalAge">
 						<input type="button" name="ageCheckBtn" id="ageCheckBtn"
 							class="btn btn-primary btn-sm" value="나이확인"
 							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
-						<div class="AnimalAge">
 						<div id="ageYearBox" >
 							<input type="number" class="form-control" id="ageYear" name="ageYear" readonly="readonly" style="width:60%; display: inline;">&nbsp;살
 						</div>
 						<div id="ageMonthBox">
 							<input type="number" class="form-control" id="ageMonth" name="ageMonth" readonly="readonly" style="width:60%; display: inline;">&nbsp;개월
-						</div>
 						</div>
 						<div class="validate"></div>
 					</div>
@@ -201,9 +199,9 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="gender">성별</label> <br /> 
-						<input type="radio" name="Animalgender" id="Female" data-rule="gender" value="Female" checked onClick="return false;"> 
+						<input type="radio" name="animalGender" id="Female" data-rule="gender" value="Female" checked > 
 						<label for="Female">Female</label> 
-						<input type="radio" name="Animalgender" id="Male" data-rule="gender" value="Male" readonly onClick="return false;">
+						<input type="radio" name="animalGender" id="Male" data-rule="gender" value="Male" >
 						<label for="Male"> Male</label>
 						<div class="validate"></div>
 					</div>
@@ -232,7 +230,7 @@
 						<br />
 					<div class="col-md-4 form-group" style="margin: auto;">
 						<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="history.go(-1)" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; color: white;">
-						<input type="button" class="btn btn-primary" name="patient_add" id="patient_add" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;" value="환자추가">
+						<input type="button" class="btn btn-primary" name="patient_add" id="patient_add" style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;" value="환자등록">
 					</div>
 				</div>
 			</div>
@@ -268,14 +266,14 @@ $("#videoFile").on('change', function(){
 	$('#video').attr('src', URL.createObjectURL(file));
 	
 });
-// 환자 추가 버튼 이벤트
+// 환자 등록 버튼 이벤트
 $(function() {
 	$('#patient_add').on('click',
 					function() {
 						var animalName = $('#animalName').val();
 						var animalType = $('#animalType').val();
-						var age = $('#age').val();
-						var Animalgender = $('#Animalgender').val();
+						var animalAge = $('#animalAge').val();
+						var animalGender = $('#animalGender').val();
 						var animalWeight = $('#animalWeight').val();
 						var weightReg = /^\d{1,3}\.\d{0,1}$/;
 						var etc = $('#etc').val();
@@ -312,8 +310,11 @@ $(function() {
 									.confirm('작성한 내용을 추가하시겠습니까?');
 
 							if (result) {
-								alert('추가되었습니다.');
-								location.href = '/myPageProtector';
+								alert('정상적으로 처리되었습니다.');
+								$("#patientAddSubmit").submit();
+							} else if (!result) {
+								alert('취소되었습니다.');
+								return false;
 							}
 						}
 					})
@@ -330,9 +331,9 @@ $('#animalType').on('input', function() {
 		$('#warning').remove();
 	}
 })
-$('#age').on('input', function() {
-	if ($('#age').val() != '') {
-		$('#age').attr('style', 'border-color:#ced4da');
+$('#animalAge').on('input', function() {
+	if ($('#animalAge').val() != '') {
+		$('#animalAge').attr('style', 'border-color:#ced4da');
 		$('#warning').remove();
 	}
 })
@@ -352,14 +353,14 @@ $(function() {
 	today = today.toISOString().slice(0, 10);
 	bir = document.getElementById("ageDate");
 	bir.value = today;
-	document.getElementById("ageDate").setAttribute("max", today);
+	document.getElementById("animalAge").setAttribute("max", today);
 
 });
 
 // 나이확인 버튼 클릭시 이벤트
 $("#ageCheckBtn").click(function() {
 	const now = new Date();
-	const today_age = new Date($('#ageDate').val());
+	const today_age = new Date($('#animalAge').val());
 	const ageTime = now.getTime() - today_age.getTime();
 	const ageMonth = Math.round(ageTime / (30 * 24 * 60 * 60 * 1000));
 	const ageYear = Math.round(ageTime / (12 * 30 * 24 * 60 * 60 * 1000));
