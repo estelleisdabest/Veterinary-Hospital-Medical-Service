@@ -172,18 +172,6 @@ public class MainController {
 //		return "patientInfo";
 //	}
 
-	// 내 정보
-	@GetMapping("/doctorInfo")
-	public String doctorInfo() {
-		return "doctorInfo";
-	}
-
-	// 내 정보 수정 (의사 용)
-	@GetMapping("/doctorInfoEdit")
-	public String doctorInfoEdit() {
-		return "doctorInfoEdit";
-	}
-
 	// 환자 정보 수정 (보호자 용)
 	@GetMapping("/patientInfoEditProtector")
 	public String patientInfoEditProtector() {
