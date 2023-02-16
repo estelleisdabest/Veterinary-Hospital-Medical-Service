@@ -12,7 +12,7 @@
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" >
+<link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
 <!-- Vendor CSS Files -->
 <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -86,158 +86,161 @@ textarea {
 			</tr>
 		</table>
 		<br /> <br />
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for=email>ID</label>
-				<input type="text" class="form-control" name="email" id="email" value="you@example.com" data-rule="email" disabled="disabled" data-msg="이메일은 필수입력 항목입니다.">
-				<div class="validate" id="email_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for=password>비밀번호</label>
-				<input type="password" class="form-control" name="password" id="password" value="" data-rule="password" data-msg="비밀번호는 필수입력 항목입니다.">
-
-				<div class="validate" id="password_val"></div>
-			</div>
-		</div>
-
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="age">성별</label>
-				<br />
-				<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" readonly="readonly">
-				<label for="Female"> 여자</label>
-				<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly="readonly">
-				<label for="Male"> 남자</label>
-
-				<div class="validate" id="gender_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="name">이름</label>
-				<input type="text" class="form-control" name="name" id="name" value="Jake" data-rule="name" data-msg="필수입력 항목입니다." disabled="disabled">
-				<div class="validate" id="name_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="birth">생년월일</label>
-				<input type="date" class="form-control" name="birth" id="birth" value="1980-11-01" disabled="disabled" />
-				<div class="validate" id="birth_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="license">면허취득일</label>
-				<input type="date" class="form-control" name="license" id="license" value="2008-01-01" data-rule="license" data-msg="면허 취득일은 필수입력 항목입니다." disabled="disabled" />
-				<div class="validate" id="license_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="doctorNumber">의사 등록번호</label>
-				<input type="text" class="form-control" name="doctorNumber" id="doctorNumber" value="110011" data-rule="doctorNumber" data-msg="의사 등록번호는 필수입력 항목입니다." disabled="disabled">
-				<div class="validate" id="doctorNumber_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="phone">연락처</label>
-				<input type="text" class="form-control" name="phone" id="phone" value="" data-rule="phone" placeholder="'-'을 넣어서 입력해주세요" data-msg="연락처는 필수입력 항목입니다.">
-				<div class="validate" id="phone_val"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
-			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="inputKakao">주소</label>
-				<div class="wrap">
-					<input type="text" class="form-control" readonly="readonly" name="inputKakao" id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요" oninput="myFunction()">
-					&nbsp;
-					<input type="button" name="address_kakao" id="address_kakao" class="btn btn-primary btn-sm" value="주소찾기"
-						style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+		<form action="doctorInfoEditOk" method="post" id="submit">
+			<input type="hidden" name="seqDoctor" th:value="${map.seqDoctor}">
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
 				</div>
-				<div class="validate" id="kakao_val"></div>
+				<div class="col-md-4 form-group mt-3">
+					<label for=email>ID</label>
+					<input type="text" class="form-control" name="email" id="email" th:value="${map.email}" data-rule="email" disabled="disabled" data-msg="이메일은 필수입력 항목입니다.">
+					<div class="validate" id="email_val"></div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for=password>비밀번호</label>
+					<input type="password" class="form-control" name="password" id="password" value="" data-rule="password" data-msg="비밀번호는 필수입력 항목입니다.">
+
+					<div class="validate" id="password_val"></div>
+				</div>
 			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="address">상세주소</label>
-				<input type="text" class="form-control" name="address" id="address" placeholder="" data-rule="age" data-msg="필수입력 항목입니다.">
-				<div class="validate" id="address_val"></div>
+
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="age">성별</label>
+					<br />
+					<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" readonly="readonly" onclick="return false;" th:checked="${map.gender}=='Female' ? 'true':'false'">
+					<label for="Female"> 여자</label>
+					<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly="readonly" onclick="return false;" th:checked="${map.gender}=='Female' ? 'false':'true'">
+					<label for="Male"> 남자</label>
+
+					<div class="validate" id="gender_val"></div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-4 form-group mt-3">
-				<div class="validate"></div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="name">이름</label>
+					<input type="text" class="form-control" name="name" id="name" th:value="${map.name}" data-rule="name" data-msg="필수입력 항목입니다." disabled="disabled">
+					<div class="validate" id="name_val"></div>
+				</div>
 			</div>
-			<div class="col-md-4 form-group mt-3">
-				<label for="education">학력</label>
-				<br />
-				<textarea rows="5" cols="55" placeholder="" name="educationRecord" id="educationRecord" style="border-color: #ced4da;"></textarea>
-				<br />
-				<label for="record">이력</label>
-				<br />
-				<textarea rows="5" cols="55" placeholder="" name="careerRecord" id="careerRecord" style="border-color: #ced4da;"></textarea>
-				<br />
-				<label for="greetings">인사말</label>
-				<br />
-				<textarea rows="5" cols="55" placeholder="" name="greetings" id="greetings" style="border-color: #ced4da;"></textarea>
-				<br />
-				<div class="validate"></div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="birth">생년월일</label>
+					<input type="date" class="form-control" name="birth" id="birth" th:value="${map.birth}" disabled="disabled" />
+					<div class="validate" id="birth_val"></div>
+				</div>
 			</div>
-		</div>
-		<div class="row">
-			<p></p>
-			<p>
-				<br />
-			<div class="col-md-4 form-group" style="margin: auto;">
-				<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/doctorInfo'"
-					style="border-radius: 50px; width: 110px; text-align: center; color: white;">
-				<input type="button" class="btn btn-primary" name="doctorEditOk" id="doctorEditOk" value="수정하기" style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="license">면허취득일</label>
+					<input type="date" class="form-control" name="license" id="license" th:value="${map.license}" data-rule="license" data-msg="면허 취득일은 필수입력 항목입니다." disabled="disabled" />
+					<div class="validate" id="license_val"></div>
+				</div>
 			</div>
-		</div>
-		<section class="inner-page">
-			<div class="container">
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="doctorNumber">의사 등록번호</label>
+					<input type="text" class="form-control" name="doctorNumber" id="doctorNumber" th:value="${map.doctorNumber}" disabled="disabled">
+					<div class="validate" id="doctorNumber_val"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="phone">연락처</label>
+					<input type="text" class="form-control" name="phone" id="phone" th:value="${map.phone}" data-rule="phone" placeholder="'-'을 넣어서 입력해주세요">
+					<div class="validate" id="phone_val"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="inputKakao">주소</label>
+					<div class="wrap">
+						<input type="text" class="form-control" readonly="readonly" name="inputKakao" id="inputKakao" placeholder="주소찾기 버튼을 눌러주세요" oninput="myFunction()" th:value="${map.inputKakao}">
+						&nbsp;
+						<input type="button" name="address_kakao" id="address_kakao" class="btn btn-primary btn-sm" value="주소찾기"
+							style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
+					</div>
+					<div class="validate" id="kakao_val"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="address">상세주소</label>
+					<input type="text" class="form-control" name="address" id="address" th:value="${map.address}">
+					<div class="validate" id="address_val"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 form-group mt-3">
+					<div class="validate"></div>
+				</div>
+				<div class="col-md-4 form-group mt-3">
+					<label for="education">학력</label>
+					<br />
+					<textarea rows="5" cols="55" placeholder="" name="educationRecord" id="educationRecord" style="border-color: #ced4da;">[[${map.educationRecord}]]</textarea>
+					<br />
+					<label for="record">이력</label>
+					<br />
+					<textarea rows="5" cols="55" placeholder="" name="careerRecord" id="careerRecord" style="border-color: #ced4da;">[[${map.careerRecord}]]</textarea>
+					<br />
+					<label for="greetings">인사말</label>
+					<br />
+					<textarea rows="5" cols="55" placeholder="" name="greetings" id="greetings" style="border-color: #ced4da;">[[${map.greetings}]]</textarea>
+					<br />
+					<div class="validate"></div>
+				</div>
+			</div>
+			<div class="row">
 				<p></p>
+				<p>
+					<br />
+				<div class="col-md-4 form-group" style="margin: auto;">
+					<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/doctorInfo'"
+						style="border-radius: 50px; width: 110px; text-align: center; color: white;">
+					<input type="button" class="btn btn-primary" name="doctorEditOk" id="doctorEditOk" value="수정하기" style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
+				</div>
 			</div>
-		</section>
+			<section class="inner-page">
+				<div class="container">
+					<p></p>
+				</div>
+			</section>
+		</form>
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
@@ -286,7 +289,10 @@ textarea {
 				var result = window.confirm('작성한 내용을 수정하시겠습니까?');
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
-					location.href = '/doctorInfo';
+					$('#submit').submit();
+				} else {
+					alert('취소되었습니다.');
+					return false;
 				}
 			}
 		});
