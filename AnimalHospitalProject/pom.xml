@@ -18,6 +18,10 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
 		<!-- 화면 표시 -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
