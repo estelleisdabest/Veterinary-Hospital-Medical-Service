@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import kr.human.anihospital.service.MyPageProtectorService;
 import kr.human.anihospital.vo.ProtectorVO;
@@ -23,7 +24,7 @@ public class MyPageProtectorController {
 		return "myPageProtector";
 	}
 	
-	@GetMapping(value = "/editMyPageProtector")
+	@PostMapping(value = "/editMyPageProtector")
 	public String editMyPageProtector(Model model) {
 		ProtectorVO vo = myPageProtectorService.selectProtector(1);
 		log.info("받은값 {}" ,vo);
