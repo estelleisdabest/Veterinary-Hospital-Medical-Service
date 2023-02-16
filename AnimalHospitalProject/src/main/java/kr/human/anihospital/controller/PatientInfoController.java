@@ -1,5 +1,29 @@
 package kr.human.anihospital.controller;
 
-public class PatientInfoController {
+import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import kr.human.anihospital.service.PatientInfoService;
+import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
+import lombok.extern.slf4j.Slf4j;
+
+@Controller
+@Slf4j
+public class PatientInfoController {
+	
+	@Autowired
+	PatientInfoService patientInfoService;
+	
+	@GetMapping(value = "/patientInfo")
+	public String selectPatientInfoDiagnosis(Model model) throws Exception {
+		List<patientInfoDiagnosisListVO> pidliat = null;
+		pidliat = patientInfoService.selectPatientInfoDiagnosis();
+		model.addAttribute("pidliat", pidliat);
+		log.info("selectPatientInfoDiagnosis메서드 호출 : {}",  pidliat);
+		return "patientInfo";
+	}
 }
