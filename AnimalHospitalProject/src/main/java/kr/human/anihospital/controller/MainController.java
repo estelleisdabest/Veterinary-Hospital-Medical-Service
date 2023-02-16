@@ -132,6 +132,17 @@ public class MainController {
 	public String patientAdd() {
 		return "patientAdd";
 	}
+
+	@GetMapping("/hospitalMap")
+	public String hospitalMap() {
+		return "hospitalMap";
+	}
+
+	@GetMapping("/hospitalAdd")
+	public String hospitalAdd() {
+		return "hospitalAdd";
+	}
+
 	@GetMapping("/hospitalEdit")
 	public String hospitalEdit() {
 		return "hospitalEdit";
@@ -142,11 +153,13 @@ public class MainController {
 	public String pharmacyMap() {
 		return "pharmacyMap";
 	}
+
 	// 약국 위치 추가
 	@GetMapping("/pharmacyInfoAdd")
 	public String pharmacyInfoAdd() {
 		return "pharmacyInfoAdd";
 	}
+
 	// 약국 위치 수정
 	@GetMapping("/pharmacyInfoEdit")
 	public String pharmacyInfoEdit() {
@@ -176,7 +189,7 @@ public class MainController {
 	public String patientInfoEditProtector() {
 		return "patientInfoEditProtector";
 	}
-	
+
 	// 진단서 작성
 	@GetMapping("/diagnosisAdd")
 	public String diagnosisAdd() {
