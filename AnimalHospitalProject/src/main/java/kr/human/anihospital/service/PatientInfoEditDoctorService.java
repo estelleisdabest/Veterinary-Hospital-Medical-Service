@@ -1,5 +1,7 @@
 package kr.human.anihospital.service;
 
-public class PatientInfoEditDoctorService {
+import kr.human.anihospital.vo.AnimalVO;
 
+public interface PatientInfoEditDoctorService {
+	void updateAnimalDoctor(AnimalVO animalVO) throws Exception;
 }
