@@ -167,10 +167,10 @@ public class MainController {
 	}
 
 	// 환자 정보 및 이전 진료 내역
-	@GetMapping("/patientInfo")
-	public String patientInfo() {
-		return "patientInfo";
-	}
+//	@GetMapping("/patientInfo")
+//	public String patientInfo() {
+//		return "patientInfo";
+//	}
 
 	// 내 정보
 	@GetMapping("/doctorInfo")

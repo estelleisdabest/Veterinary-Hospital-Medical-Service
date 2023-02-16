@@ -212,54 +212,15 @@
 									<h5>
 										<b>이전 진료 내역</b>
 									</h5>
-									<table>
+									<table th:each="pidliat : ${pidliat}">
 										<tr>
-											<td>진료병원 : A동물병원</td>
+											<td th:text="${pidliat.animalHospitalName}"></td>
 										</tr>
 										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
+											<td th:text="${pidliat.diagnosisDate}"></td>
 										</tr>
 										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
+											<td th:text="${pidliat.diagnosisSymptom}"></td>
 										</tr>
 									</table>
 									<br />

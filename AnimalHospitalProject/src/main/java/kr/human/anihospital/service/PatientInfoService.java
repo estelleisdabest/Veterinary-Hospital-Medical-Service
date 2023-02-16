@@ -1,5 +1,9 @@
 package kr.human.anihospital.service;
 
-public class PatientInfoService {
+import java.util.List;
 
+import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
+
+public interface PatientInfoService {
+	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
 }
