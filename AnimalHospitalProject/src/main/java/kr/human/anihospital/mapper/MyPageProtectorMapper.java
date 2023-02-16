@@ -1,6 +1,7 @@
 package kr.human.anihospital.mapper;
 
 import java.sql.SQLException;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -10,4 +11,6 @@ import kr.human.anihospital.vo.ProtectorVO;
 public interface MyPageProtectorMapper {
 	
 	ProtectorVO selectProtector(int seqProtector) throws SQLException;
+	
+	void updateProtector(Map<String, Object> map) throws SQLException;
 }

@@ -24,8 +24,8 @@ public class ProtectorVO {
 	private boolean protectorRole;
 	private Date protectorUpdateDate;
 	private boolean protectorLeaveFlag;
-
-	public String getProtectorAge() {
+	
+	public String getProtectorAge () {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		return sdf.format(protectorAge);
 	}

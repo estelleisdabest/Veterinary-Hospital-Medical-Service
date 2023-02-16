@@ -61,7 +61,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="name">이름</label>
-						<input type="text" class="form-control" name="name" id="name" disabled="disabled" value="${protectInfo.protectorName}"> 
+						<input type="text" class="form-control" name="name" id="name" disabled="disabled" th:value="${protectInfo.protectorName}"> 
 						<div id="uneditableName" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -72,7 +72,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="id">ID</label>
-						<input type="text" class="form-control" name="id" id="id" disabled="disabled" value="${protectInfo.protectorId}">
+						<input type="text" class="form-control" name="id" id="id" disabled="disabled" th:value="${protectInfo.protectorId}">
 						<div id="uneditableId" style="font-size: 9pt; color: red;"></div>
 						<div class="validate"></div>
 					</div>
@@ -97,7 +97,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="birth">생년월일</label>
-						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled" value="${protectInfo.protectorAge}">
+						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled" th:value="${protectInfo.protectorAge}">
 						<div id="uneditableBirthday" style="font-size: 9pt; color: red;"></div>
 					</div>
 					<div class="validate"></div>
