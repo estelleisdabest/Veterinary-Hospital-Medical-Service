@@ -184,9 +184,9 @@ public class MainController {
 		return "diagnosisAdd";
 	}
 
-	// 진단서 상세
-	@GetMapping("/noticeDetail")
-	public String noticeDetail() {
-		return "noticeDetail";
-	}
+//	// 진단서 상세
+//	@GetMapping("/noticeDetail")
+//	public String noticeDetail() {
+//		return "noticeDetail";
+//	}
 }
