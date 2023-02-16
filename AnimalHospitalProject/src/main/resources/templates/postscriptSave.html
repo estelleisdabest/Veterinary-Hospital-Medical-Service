@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>후기 작성</title>
+<title>후기 등록</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -106,44 +106,63 @@ tr {
 }
 </style>
 <script type="text/javascript">
-	$(function() {
-		// 폼 전송시 폼내용 검증
-		$("#postscriptSave").on('click', function() {
-			var value = $("#content").val();
-			var star = $("#stars").val();
-			if (value == null || value.trim().length == 0) {
-				$("#content").val("");
-				$("#content").focus();
-				$('#content').attr('style', 'border-color: #dc3545; margin:auto; width:auto; height: auto;');
-				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
-				return false;
-			} else if ($(':radio[name="rating"]:checked').length < 1) {
-				$("#stars").val("");
-				$("#stars").focus();
-				$('#stars').attr('style', 'border-color: #dc3545; margin:auto; width:9em; height: auto;padding: 0 0.9em;');
-				$('#content_val').html('<div id="warning" style=" width:300px;"><b style="color: red; width:300px;">내용 및 별점을 확인해주세요.</b></div>');
-				return false;
-			} else {
-				var result = window.confirm('작성한 내용대로 저장하시겠습니까?');
-				if (result) {
-					alert('정상적으로 처리되었습니다.');
-					location.href = '/myPageProtector';
-				}
+$(function() {
+	// 폼 전송시 폼내용 검증
+	$("#diagnosis").on('click',function() {
+		var value = $("#postscriptContent").val();
+		if (value == null || value.trim().length == 0) {
+			$("#postscriptContent").focus();
+			$('#postscriptContent').attr('style','border-color: #dc3545;');
+			$("#postscriptContent").val("");
+			$('#content_val').html('<div id="warning"><b style="color: red;">내용 및 별점을 확인해주세요.</b></div>');
+			return false;
+		}else if ($(':radio[name="postscriptSatisfactionrating"]:checked').length < 1) {
+			$("#postscriptSatisfaction").focus();
+			$('#postscriptSatisfaction').attr('style','border-color: #dc3545;');
+			$("#postscriptSatisfaction").val("");
+			$('#content_val').html('<div id="warning"><b style="color: red;">내용 및 별점을 확인해주세요.</b></div>');
+			return false;
+		}else{
+			var result = window.confirm('작성한 내용으로 등록하시겠습니까?');
+			if (result) {
+				alert('정상적으로 처리되었습니다.');
+				var postscriptContent1 = $("#postscriptContent").val();
+				var postscriptSatisfaction1 = $("input[name='postscriptSatisfactionrating']").val();
+				//alert(postscriptSatisfaction1);
+				$.ajax({
+					url : "/diagnosis",
+					type : "post",
+					dataType : "text",
+					contentType : "application/x-www-form-urlencoded; charset=UTF-8",
+					data : {
+						postscriptContent : postscriptContent1,
+						postscriptSatisfaction : postscriptSatisfaction1
+					},
+					success : function(data){
+						window.location.replace("/diagnosis");
+					},
+					error : function(){
+						alert("Error");
+					}
+				});
+			} else if (!result) {
+				alert('취소되었습니다.');
 			}
-		});
+		}
 	});
-	$('#content').on('input', function() {
-		if ($('#content').val() != '') {
-			$('#content').attr('style', 'width:300px;');
-			$('#warning').remove();
-		}
-	})
-	$('#stars').on('input', function() {
-		if ($('#stars').val() != '') {
-			$('#stars').attr('style', 'width:9em;', 'padding: 0 0.9em;');
-			$('#warning').remove();
-		}
-	})
+});
+$('#postscriptContent').on('input',function(){
+	if($('#postscriptContent').val() !=''){
+		$('#postscriptContent').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
+$('#postscriptSatisfaction').on('input',function(){
+	if($('#postscriptSatisfaction').val() !=''){
+		$('#postscriptSatisfaction').attr('style','border-color:#ced4da;');
+		$('#warning').remove();
+	}
+})
 </script>
 </head>
 <body>
@@ -151,49 +170,68 @@ tr {
 	<!-- ======= Hero Section ======= -->
 	<section class="breadcrumbs">
 		<div class="container"></div>
-		<br /> <br />
+		<br/>
+		<br/>
 		<div class="section-title">
-			<h2 style="font-weight: bold; font-size: 30px;">후기 작성</h2>
+			<h2 style="font-weight: bold; font-size: 30px;">후기 등록</h2>
 		</div>
 	</section>
 	<!-- End Hero -->
 	<main id="main">
 		<!-- ======= Appointment Section ======= -->
-		<section class="inner-page">
+		<section class="inner-page" >
 			<div class="container" style="width: 850px;">
-				<form class="mb-3" name="myForm" id="myform" method="post">
+				<div class="mb-3">
 					<table style="background-color: white;">
-						<tr>
-							<td style="font-size: 18pt; font-weight: bold;">별점 :</td>
-							<td class="star-rating space-x-4 mx-auto" id="stars"><input type="radio" id="5-stars" name="rating" value="5" /> <label for="5-stars" class="star pr-4">★</label> <input type="radio"
-									id="4-stars" name="rating" value="4" /> <label for="4-stars" class="star">★</label> <input type="radio" id="3-stars" name="rating" value="3" /> <label for="3-stars" class="star">★</label> <input
-									type="radio" id="2-stars" name="rating" value="2" /> <label for="2-stars" class="star">★</label> <input type="radio" id="1-star" name="rating" value="1" /> <label for="1-star" class="star">★</label>
-								<div class="validate" id="stars_val"></div></td>
+						<tr >
+							<td style="font-size: 18pt;font-weight: bold;">별점 : </td>
+							<td class="star-rating space-x-4 mx-auto" id="postscriptSatisfaction">
+								<input type="radio" id="5-stars" name="postscriptSatisfactionrating" value="5" /> 
+								<label	for="5-stars" class="star pr-4">★</label> 
+								<input type="radio"	id="4-stars" name="postscriptSatisfactionrating" value="4" /> 
+								<label for="4-stars" class="star">★</label> 
+								<input type="radio" id="3-stars" name="postscriptSatisfactionrating" value="3" /> 
+								<label for="3-stars" class="star">★</label>
+								<input type="radio" id="2-stars" name="postscriptSatisfactionrating" value="2" /> 
+								<label for="2-stars" class="star">★</label> 
+								<input type="radio" id="1-star" name="postscriptSatisfactionrating" value="1" /> 
+								<label for="1-star"	class="star">★</label>
+								<div class="validate" id="stars_val"></div>
+							</td>
 						</tr>
 					</table>
-				</form>
-				<form action="insertOk.jsp" method="post" id="insertForm">
+				</div>
+				<div id="postscriptContentTitle">
 					<table style="background-color: white;">
 						<tr>
-							<td class="title" colspan="4"><input type="hidden" name="c" value="1" /> <input type="hidden" name="p" value="10" /> <input type="hidden" name="b" value="10" /></td>
+							<td class="title" colspan="4">
+								<input type="hidden" name="c" value="1" /> 
+								<input type="hidden" name="p" value="10" /> 
+								<input type="hidden" name="b" value="10" />
+							</td>
 						</tr>
 						<tr>
-							<td align="left" valign="top" style="font-size: 18pt; font-weight: bold;">내용 : &nbsp;</td>
-							<td colspan="4"><textarea name="content" id="content" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
-								<div class="validate" id="content_val"></div></td>
+							<td align="left" valign="top" style="font-size: 18pt;font-weight: bold;">내용 : &nbsp;</td>
+							<td colspan="4">
+								<textarea name="postscriptContent" id="postscriptContent" rows="10" cols="90" required="required" style="border-color: #DDDDDD"></textarea>
+								<div class="validate" id="content_val"></div>
+							</td>
 						</tr>
 					</table>
-				</form>
+				</div>
 				<br />
-				<form>
+				<div>
 					<table>
 						<tr>
-							<td align="left" colspan="4"><input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;" value="이전페이지" />
+							<td  align="left" colspan="4">
+								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
-							<td align="right" colspan="4"><input type="button" class="btn btn-primary" name="postscriptSave" id="postscriptSave" style="border-radius: 50px;" value="작성하기" /></td>
+							<td align="right" colspan="4">
+								<input type="button" class="btn btn-primary" name="diagnosis" id="diagnosis" style="border-radius: 50px;" value="등록하기" />
+							</td>
 						</tr>
 					</table>
-				</form>
+				</div>
 			</div>
 		</section>
 		<!-- End Appointment Section -->

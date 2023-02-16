@@ -17,6 +17,6 @@ public class PostscriptVO {
 	private int seqAnimal;
 	private Date postscriptReportingDate;
 	private String postscriptContent;
-	private int postscriptSatisfaction;
+	private int postscriptSatisfactionrating;
 	private Date postscriptUpdateDate;
 }
