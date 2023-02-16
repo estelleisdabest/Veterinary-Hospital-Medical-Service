@@ -1,5 +1,9 @@
 package kr.human.anihospital.service;
 
-public class AnimallookupService {
+import java.util.List;
 
+import kr.human.anihospital.vo.AnimallookupVO;
+
+public interface AnimallookupService {
+	List<AnimallookupVO> selectAnimallookup() throws Exception;
 }

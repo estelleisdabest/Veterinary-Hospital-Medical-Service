@@ -60,10 +60,10 @@ public class MainController {
 	}
 
 	// 환자 조회 페이지
-	@GetMapping("/animallookup")
-	public String animallookup() {
-		return "animallookup";
-	}
+//	@GetMapping("/animallookup")
+//	public String animallookup() {
+//		return "animallookup";
+//	}
 
 	// 환자 조회 (한 환자의 진료 이력 리스트)
 	@GetMapping("/animallookupdetail")
