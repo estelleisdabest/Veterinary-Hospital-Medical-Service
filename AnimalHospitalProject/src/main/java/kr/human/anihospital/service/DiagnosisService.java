@@ -1,5 +1,7 @@
 package kr.human.anihospital.service;
 
-public class DiagnosisService {
+import kr.human.anihospital.vo.DiagnosisAnimalVO;
 
+public interface DiagnosisService {
+	DiagnosisAnimalVO selectDiagnosisAnimalInfo(int seqDiagnosis) throws Exception;
 }
