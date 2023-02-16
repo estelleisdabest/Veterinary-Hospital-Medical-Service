@@ -132,11 +132,25 @@ public class MainController {
 	public String patientAdd() {
 		return "patientAdd";
 	}
+	@GetMapping("/hospitalEdit")
+	public String hospitalEdit() {
+		return "hospitalEdit";
+	}
 
 	// 약국 위치 조회
 	@GetMapping("/pharmacyMap")
 	public String pharmacyMap() {
 		return "pharmacyMap";
+	}
+	// 약국 위치 추가
+	@GetMapping("/pharmacyInfoAdd")
+	public String pharmacyInfoAdd() {
+		return "pharmacyInfoAdd";
+	}
+	// 약국 위치 수정
+	@GetMapping("/pharmacyInfoEdit")
+	public String pharmacyInfoEdit() {
+		return "pharmacyInfoEdit";
 	}
 
 	// 환자 정보 및 이전 진료 내역
