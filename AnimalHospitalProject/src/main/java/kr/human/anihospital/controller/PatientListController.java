@@ -26,7 +26,6 @@ public class PatientListController {
 		patientList = patientListService.selectPatientList();
 		// 모델에 등록
 		model.addAttribute("patientList", patientList);
-		model.addAttribute("hello", "hello");
 		log.info("selectPatientList메서드 호출 : {}",  patientList);
 		// 뷰로 간다.
 		return "patientList";

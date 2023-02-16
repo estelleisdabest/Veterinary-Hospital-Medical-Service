@@ -91,59 +91,15 @@ input[name="searchPatientBtn"] {
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>홍길동</td>
-										<td>아리</td>
-										<td>3</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
+									<tr th:each="patientList : ${patientList}">
+										<td th:text="${patientList.protectorName}"></td>
+										<td th:text="${patientList.animalName}"></td>
+										<td th:text="${patientList.animalAge}"></td>
+										<td th:text="${patientList.animalType}"></td>
+										<td th:text="${patientList.animalGender}"></td>
+										<td th:text="${patientList.animalWeight}"></td>
+										<td th:text="${patientList.animalImportantSymptom}"></td>
 									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>토리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>3.8</td>
-										<td>없음</td>
-									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>모리</td>
-										<td>8</td>
-										<td>포메라니안</td>
-										<td>male</td>
-										<td>4.2</td>
-										<td>당뇨, 슬개골 탈구</td>
-									</tr>
-									<tr>
-										<td>김OO</td>
-										<td>태리</td>
-										<td>4</td>
-										<td>포메라니안</td>
-										<td>female</td>
-										<td>5</td>
-										<td>없음</td>
-									</tr>
-									<tr>
-										<td>박OO</td>
-										<td>함이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>1.0</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
-									</tr>
-									<tr>
-										<td>박OO</td>
-										<td>품이</td>
-										<td>0</td>
-										<td>웰시코기</td>
-										<td>female</td>
-										<td>0.9</td>
-										<td>3차 예방접종까지 완료, 중성화X</td>
 								</tbody>
 							</table>
 							<br />
