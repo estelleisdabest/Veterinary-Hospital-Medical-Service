@@ -14,4 +14,12 @@
 		from Protector
 		where seq_protector = #{seqProtector}
 	</select>
+	<update id="updateProtector" parameterType="map">
+		UPDATE Protector 
+		SET 
+		protector_password = #{protectorPassword},
+		protector_phoneNo = #{protectorPhoneNo},
+		protector_address = #{protectorAddress}
+		WHERE seq_protector = #{seqProtector}
+	</update>
 </mapper>
