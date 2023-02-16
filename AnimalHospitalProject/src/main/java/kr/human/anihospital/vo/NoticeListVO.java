@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class NoticeListVO {
 	private int seqNotice;
 	private String noticeSubject;
+	private String noticeContent;
 	private String animalHospitalName;
 	private String doctorName;
 	private Date noticeWriteDate;
