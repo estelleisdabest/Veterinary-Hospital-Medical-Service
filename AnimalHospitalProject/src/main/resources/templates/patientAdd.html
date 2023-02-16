@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>환자 추가</title>
+<title>환자 등록</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 
@@ -92,7 +92,7 @@
 		<section class="breadcrumbs">
 			<div class="container">
 				<div class="section-title">
-					<h2 style="font-weight: bold; font-size: 30px;">환자 추가</h2>
+					<h2 style="font-weight: bold; font-size: 30px;">환자 등록</h2>
 				</div>
 			</div>
 		</section>
@@ -166,9 +166,9 @@
 						<label for="animalSize">크기</label>
 						<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
 						<select class="form-control" id="animalSize" name="animalSize">
-							<option value="small">소형</option>
-							<option value="medium">중형</option>
-							<option value="large">대형</option>
+							<option value="소형">소형</option>
+							<option value="중형">중형</option>
+							<option value="중형">대형</option>
 						</select>
 						<div class="validate"></div>
 					</div>
@@ -199,9 +199,9 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="gender">성별</label> <br /> 
-						<input type="radio" name="animalGender" id="Female" data-rule="gender" value="Female" checked > 
+						<input type="radio" name="animalGender" id="animalGender" value="true" checked > 
 						<label for="Female">Female</label> 
-						<input type="radio" name="animalGender" id="Male" data-rule="gender" value="Male" >
+						<input type="radio" name="animalGender" id="animalGender" value="false" >
 						<label for="Male"> Male</label>
 						<div class="validate"></div>
 					</div>
@@ -211,7 +211,7 @@
 						<div class="validate"></div>
 					</div>
 					<div class="col-md-4 form-group mt-3">
-						<label for="animalWeight">몸무게</label> <input type="number" min="0" class="form-control" name="animalWeight" id="animalWeight" step="0.1" placeholder="몸무게를 입력해주세요." data-rule="weight">
+						<label for="animalWeight">몸무게</label> <input type="number" min="0" class="form-control" name="animalWeight" id="animalWeight" step="0.1" placeholder="몸무게를 입력해주세요." >
 						<div class="validate" id="val03"></div>
 					</div>
 				</div>
@@ -351,10 +351,9 @@ $(function() {
 	// 생년월일 기본값 현재날짜로 설정, 현재날짜 이후는 선택 불가능하게 함
 	today = new Date();
 	today = today.toISOString().slice(0, 10);
-	bir = document.getElementById("ageDate");
+	bir = document.getElementById("animalAge");
 	bir.value = today;
 	document.getElementById("animalAge").setAttribute("max", today);
-
 });
 
 // 나이확인 버튼 클릭시 이벤트
