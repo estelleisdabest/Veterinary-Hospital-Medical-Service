@@ -108,7 +108,7 @@ tr {
 <script type="text/javascript">
 $(function() {
 	// 폼 전송시 폼내용 검증
-	$("#diagnosis").on('click',function() {
+	$("#postscriptSave").on('click',function() {
 		var value = $("#postscriptContent").val();
 		if (value == null || value.trim().length == 0) {
 			$("#postscriptContent").focus();
@@ -120,17 +120,17 @@ $(function() {
 			$("#postscriptSatisfaction").focus();
 			$('#postscriptSatisfaction').attr('style','border-color: #dc3545;');
 			$("#postscriptSatisfaction").val("");
-			$('#content_val').html('<div id="warning"><b style="color: red;">내용 및 별점을 확인해주세요.</b></div>');
+			$('#content_val').html('<div id="warning"><b stylse="color: red;">내용 및 별점을 확인해주세요.</b></div>');
 			return false;
 		}else{
 			var result = window.confirm('작성한 내용으로 등록하시겠습니까?');
 			if (result) {
 				alert('정상적으로 처리되었습니다.');
 				var postscriptContent1 = $("#postscriptContent").val();
-				var postscriptSatisfaction1 = $("input[name='postscriptSatisfactionrating']").val();
+				var postscriptSatisfaction1 = $("input:radio[name='postscriptSatisfactionrating']:checked").val();
 				//alert(postscriptSatisfaction1);
 				$.ajax({
-					url : "/diagnosis",
+					url : "/postscriptSave",
 					type : "post",
 					dataType : "text",
 					contentType : "application/x-www-form-urlencoded; charset=UTF-8",
@@ -183,7 +183,7 @@ $('#postscriptSatisfaction').on('input',function(){
 			<div class="container" style="width: 850px;">
 				<div class="mb-3">
 					<table style="background-color: white;">
-						<tr >
+						<tr>
 							<td style="font-size: 18pt;font-weight: bold;">별점 : </td>
 							<td class="star-rating space-x-4 mx-auto" id="postscriptSatisfaction">
 								<input type="radio" id="5-stars" name="postscriptSatisfactionrating" value="5" /> 
@@ -227,7 +227,7 @@ $('#postscriptSatisfaction').on('input',function(){
 								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
 							<td align="right" colspan="4">
-								<input type="button" class="btn btn-primary" name="diagnosis" id="diagnosis" style="border-radius: 50px;" value="등록하기" />
+								<input type="button" class="btn btn-primary" name="postscriptSave" id="postscriptSave" style="border-radius: 50px;" value="등록하기" />
 							</td>
 						</tr>
 					</table>

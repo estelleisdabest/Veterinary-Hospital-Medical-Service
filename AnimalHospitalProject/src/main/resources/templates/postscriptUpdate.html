@@ -108,7 +108,7 @@ tr {
 <script type="text/javascript">
 $(function() {
 	// 폼 전송시 폼내용 검증
-	$("#diagnosis").on('click',function() {
+	$("#postscriptUpdate").on('click',function() {
 		var value = $("#postscriptContent").val();
 		if (value == null || value.trim().length == 0) {
 			$("#postscriptContent").focus();
@@ -128,9 +128,9 @@ $(function() {
 				alert('정상적으로 처리되었습니다.');
 				//var seqPostscript1 = $("#seqPostscript").val();
 				var postscriptContent1 = $("#postscriptContent").val();
-				var postscriptSatisfaction1 = $("input[name='postscriptSatisfactionrating']").val();
+				var postscriptSatisfaction1 = $("input:radio[name='postscriptSatisfactionrating']:checked").val();
 				$.ajax({
-					url : "/diagnosis",
+					url : "/postscriptUpdate",
 					type : "post",
 					dataType : "text",
 					contentType : "application/x-www-form-urlencoded; charset=UTF-8",
@@ -230,7 +230,7 @@ $('#postscriptSatisfaction').on('input',function(){
 								<input type="button" onclick="history.go(-1)" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" style="border-radius: 50px;"  value="이전페이지" />
 							</td>
 							<td align="right" colspan="4">
-								<input type="button" class="btn btn-primary" name="diagnosis" id="diagnosis" style="border-radius: 50px;" value="수정하기" />
+								<input type="button" class="btn btn-primary" name="postscriptUpdate" id="postscriptUpdate" style="border-radius: 50px;" value="수정하기" />
 							</td>
 						</tr>
 					</table>
