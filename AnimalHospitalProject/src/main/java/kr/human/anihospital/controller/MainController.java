@@ -36,10 +36,10 @@ public class MainController {
 	}
 
 	// 공지 사항
-	@GetMapping("/notice")
-	public String notice() {
-		return "notice";
-	}
+	//	@GetMapping("/notice")
+	//	public String notice() {
+	//		return "notice";
+	//	}
 
 	// 공지 사항 추가
 	@GetMapping("/noticeAdd")
