@@ -19,8 +19,8 @@ public class PostscriptUpdateController {
 	@Autowired
 	PostscriptUpdateService postscriptUpdateService;
 	
-	@PostMapping("/diagnosis")
-	public String updatePostscript(@RequestParam Map<String, String> postscriptMap,Model model) throws Exception{
+	@PostMapping("/postscriptUpdate")
+	public String updatePostscript(@RequestParam Map<String, String> postscriptMap, Model model) throws Exception{
 		log.info("받은 값 : {}", postscriptMap);
 		PostscriptVO postscriptVO = new PostscriptVO();
 		//postscriptVO.setSeqPostscript(Integer.parseInt(postscriptMap.get("seqPostscript")));
@@ -28,6 +28,6 @@ public class PostscriptUpdateController {
 		postscriptVO.setPostscriptContent(postscriptMap.get("postscriptContent"));
 		postscriptVO.setPostscriptSatisfactionrating(Integer.parseInt(postscriptMap.get("postscriptSatisfaction")));
 		postscriptUpdateService.updatePostscriptInfo(postscriptVO);
-		return "성공";
+		return "diagnosis";
 	}
 }
