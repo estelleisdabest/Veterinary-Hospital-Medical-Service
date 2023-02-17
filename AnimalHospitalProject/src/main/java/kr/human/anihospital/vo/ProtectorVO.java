@@ -1,6 +1,5 @@
 package kr.human.anihospital.vo;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import lombok.AllArgsConstructor;
@@ -25,8 +24,4 @@ public class ProtectorVO {
 	private Date protectorUpdateDate;
 	private boolean protectorLeaveFlag;
 	
-	public String getProtectorAge () {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(protectorAge);
-	}
 }
