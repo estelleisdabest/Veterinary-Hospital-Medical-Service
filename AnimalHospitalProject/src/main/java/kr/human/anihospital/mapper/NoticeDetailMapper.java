@@ -6,6 +6,6 @@ import kr.human.anihospital.vo.NoticeListVO;
 
 @Mapper
 public interface NoticeDetailMapper {
-   void deleteNotice(int seq_notice) throws Exception;
+   void deleteNotice(int seqNotice) throws Exception;
    NoticeListVO selectNotice(int seqNotice) throws Exception;
 }
