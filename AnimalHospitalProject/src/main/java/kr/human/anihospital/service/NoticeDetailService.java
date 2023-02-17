@@ -14,10 +14,10 @@ public class NoticeDetailService {
 	@Autowired
 	NoticeDetailMapper noticeDetailMapper;
 	
-	public void deleteNotice(int seq_notice) {
+	public void deleteNotice(int seqNotice) {
 		try {
-			log.info("서비스 받은 값 : {}", seq_notice);
-			noticeDetailMapper.deleteNotice(seq_notice);
+			log.info("서비스 받은 값 : {}", seqNotice);
+			noticeDetailMapper.deleteNotice(seqNotice);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -56,7 +56,7 @@
 				<div id="noticeForm">
 					<div class="col-md-4 form-group" style="margin: auto;">
 						작성자 <br />
-						<input type="hidden" name="seqNotice" id="seqNotice" value="59">
+						<input type="hidden" name="seqNotice" id="seqNotice" value="#seqNotice">
 						<div id="username" class="form-control" name="username" style="width: 700px;">
 							[[${noticeList.doctorName}]]					
 						</div>
@@ -109,7 +109,7 @@
 			if (result) {
 				alert('정상적으로 삭제되었습니다.');
 				
-				var seq_noticeNum = $('#seq_notice').val();
+				var seqNoticeNum = $('#seqNotice').val();
 				
 				$.ajax({
 					url:"noticeDetail",
@@ -117,7 +117,7 @@
 					type: "post",
 					contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 					data: {
-						seq_notice : seq_noticeNum
+						seqNotice : seqNoticeNum
 					},
 					success: function (data) {
 						location.href='notice';

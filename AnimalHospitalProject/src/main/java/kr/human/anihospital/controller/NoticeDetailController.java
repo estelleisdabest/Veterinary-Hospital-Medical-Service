@@ -21,16 +21,16 @@ public class NoticeDetailController {
 	NoticeDetailService noticeDetailService;
 	
 	@PostMapping("/noticeDetail")
-	public String deleteNotice(@RequestParam int seq_notice) throws Exception {
-		log.info("받은 값 : {}", seq_notice);
-		noticeDetailService.deleteNotice(seq_notice);
+	public String deleteNotice(@RequestParam int seqNotice) throws Exception {
+		log.info("받은 값 : {}", seqNotice);
+		noticeDetailService.deleteNotice(seqNotice);
 		return "notice";
 	}
 	
 	@GetMapping(value = "/noticeDetail")
 	public String selectNotice(Model model) throws Exception{
 		NoticeListVO noticeListVO = null;
-		noticeListVO = noticeDetailService.selectNotice(1);
+		noticeListVO = noticeDetailService.selectNotice(54);
 		model.addAttribute("noticeList",noticeListVO);
 		log.info("서비스에서 돌아온 값 : {}", noticeListVO);
 		return "noticeDetail";
