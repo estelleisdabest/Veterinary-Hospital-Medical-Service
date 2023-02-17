@@ -1,5 +1,15 @@
 package kr.human.anihospital.mapper;
 
-public interface DiagnosisAddMapper {
+import java.util.List;
 
+import org.apache.ibatis.annotations.Mapper;
+
+import kr.human.anihospital.vo.DiagnosisAnimalVO;
+import kr.human.anihospital.vo.PatientInfoVO;
+import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
+
+@Mapper
+public interface DiagnosisAddMapper {
+	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
+	PatientInfoVO selectPatientInfo() throws Exception;
 }

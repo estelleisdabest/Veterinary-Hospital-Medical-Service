@@ -144,8 +144,9 @@ img {
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="name">이름</label>
-								<input type="text" class="form-control" name="patientName" id="patientName" value="두둥"
-									data-rule="patientName" readonly style="background-color: #F5F5F5">
+								<div class="form-control" name="name" id="name" style="width: 700px;">
+									[[${patientInfoVO.animalName}]]
+								</div>
 								<div class="validate" id="warningMessage1"></div>
 							</div>
 						</div>
@@ -156,8 +157,9 @@ img {
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="species">종</label>
-								<input type="text" class="form-control" name="species" id="species"
-									value="말티즈" data-rule="species" readonly style="background-color: #F5F5F5">
+								<div class="form-control" name="species" id="species" style="width: 700px;">
+									[[${patientInfoVO.animalType}]]
+								</div>
 								<div class="validate" id="warningMessage2"></div>
 							</div>
 						</div>
@@ -168,8 +170,9 @@ img {
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="size">크기</label>
-								<input type="text" class="form-control" name="size" id="size" value="소형"
-									data-rule="size" readonly style="background-color: #F5F5F5">
+								<div class="form-control" name="size" id="size" style="width: 700px;">
+									[[${patientInfoVO.animalSize}]]형
+								</div>
 								<div class="validate" id="warningMessage3"></div>
 							</div>
 						</div>
@@ -179,9 +182,10 @@ img {
 								<div class="validate"></div>
 							</div>
 							<div class="col-md-10 form-group">
-								<label for="age">나이</label> <input type="number" min="1"
-									class="form-control" name="age" id="age" value="3"
-									data-rule="age" readonly style="background-color: #F5F5F5">
+								<label for="age">나이</label> 
+								<div min="1" class="form-control" name="age" id="age" style="width: 700px;">
+									[[${patientInfoVO.animalAge}]]살
+								</div>
 								<div class="validate" id="warningMessage4"></div>
 							</div>
 						</div>
@@ -191,14 +195,11 @@ img {
 								<div class="validate"></div>
 							</div>
 							<div class="col-md-10 form-group">
-								<label for="age">성별</label> <br />
-								<input type="radio" name="gender" id="Female" data-rule="gender" value="Female"
-									checked onClick="return false;">
-								<label for="Female">Female</label>
-								<input type="radio" name="gender" id="Male" data-rule="gender" value="Male" readonly
-									onClick="return false;"> <label for="Male">
-									Male</label>
-								<div class="validate"></div>
+								<label for="gender">성별</label> 
+								<div min="1" class="form-control" name="gender" id="gender" style="width: 700px;">
+									[[${patientInfoVO.animalGender}]]
+								</div>
+								<div class="validate" id="warningMessage4"></div>
 							</div>
 						</div>
 						<br />
@@ -207,9 +208,10 @@ img {
 								<div class="validate"></div>
 							</div>
 							<div class="col-md-10 form-group">
-								<label for="weight">몸무게</label> <input type="number" min="1"
-									class="form-control" name="weight" step="0.1" id="weight"
-									value="5" data-rule="weight" readonly style="background-color: #F5F5F5">
+								<label for="weight">몸무게</label> 
+								<div class="form-control" name="weight" id="weight" style="width: 700px;">
+									[[${patientInfoVO.animalWeight}]]kg
+								</div>
 								<div class="validate" id="warningMessage5"></div>
 							</div>
 						</div>
@@ -220,7 +222,7 @@ img {
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="visitdate">내원일</label>
-								<%-- 현재날짜를 띄움 --%>
+								<!--현재날짜를 띄움-->
 								<input type="date" class="form-control" id="visitDate" />
 								<div class="validate" id="warningMessage6"></div>
 							</div>
@@ -250,7 +252,6 @@ img {
 							</div>
 						</div>
 						<br />
-
 						<div class="row">
 							<div class="col-md-10 form-group">
 								<div class="validate"></div>
@@ -357,7 +358,7 @@ img {
 							</div>
 						</div>
 					</div>
-
+					
 					<div id="rightContainer">
 						<div id="lastDiagnosis">
 							<div>
@@ -366,54 +367,15 @@ img {
 									<h5>
 										<b>이전 진료 내역</b>
 									</h5>
-									<table>
+									<table th:each="pidliat : ${pidliat}">
 										<tr>
-											<td>진료병원 : A동물병원</td>
+											<td th:text="${pidliat.animalHospitalName}"></td>
 										</tr>
 										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
+											<td th:text="${pidliat.diagnosisDate}"></td>
 										</tr>
 										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
-										</tr>
-									</table>
-
-									<br />
-									<table>
-										<tr>
-											<td>진료병원 : A동물병원</td>
-										</tr>
-										<tr>
-											<td>질료 일 : 2023년 1월 30일</td>
-										</tr>
-										<tr>
-											<td>증상 : 건강검진</td>
+											<td th:text="${pidliat.diagnosisSymptom}"></td>
 										</tr>
 									</table>
 									<br />
@@ -443,40 +405,10 @@ img {
 	
 	$(function () {
 		$('#diagnosis_add').on('click', function () {
-			var patientName = $('#patientName').val();
-			var species = $('#species').val();
-			var size = $('#size').val();
-			var age = $('#age').val();
-			var weight = $('#weight').val();
 			var visitDate = $('#visitDate').val();
 			var symptom = $('#symptom').val();
 			
-			if (patientName == null || patientName.trim().length == 0) {
-				$('#patientName').attr('style', 'border-color: #dc3545;');
-				$('#patientName').val('');
-				$('#warningMessage1').html('<div id="warning1"><b style="color: red;">환자 이름을 입력해주세요</b></div>');
-				$('#patientName').focus();
-			} else if (species == null || species.trim().length == 0) {
-				$('#species').attr('style', 'border-color: #dc3545;');
-				$('#species').val('');
-				$('#warningMessage2').html('<div id="warning2"><b style="color: red;">환자의 품종을 입력해주세요</b></div>');
-				$('#species').focus();
-			} else if (size == null || size.trim().length == 0) {
-				$('#size').attr('style', 'border-color: #dc3545;');
-				$('#size').val('');
-				$('#warningMessage3').html('<div id="warning3"><b style="color: red;">환자의 크기를 입력해주세요</b></div>');
-				$('#size').focus();
-			} else if (age == null || age.trim().length == 0) {
-				$('#age').attr('style', 'border-color: #dc3545;');
-				$('#age').val('');
-				$('#warningMessage4').html('<div id="warning4"><b style="color: red;">환자의 나이를 입력해주세요</b></div>');
-				$('#age').focus();
-			} else if (weight == null || weight.trim().length == 0) {
-				$('#weight').attr('style', 'border-color: #dc3545;');
-				$('#weight').val('');
-				$('#warningMessage5').html('<div id="warning5"><b style="color: red;">환자의 몸무게를 입력해주세요</b></div>');
-				$('#weight').focus();
-			} else if (visitDate == null || visitDate.trim().length == 0) {
+			if(visitDate == null || visitDate.trim().length == 0) {
 				$('#visitDate').attr('style', 'border-color: #dc3545;');
 				$('#visitDate').val('');
 				$('#warningMessage6').html('<div id="warning6"><b style="color: red;">진료 일자를 입력해주세요</b></div>');
@@ -496,36 +428,6 @@ img {
 		});
 	});
 
-	$('#patientName').on('input', function() {
-		if ($('#patientName').val() != '') {
-			$('#patientName').attr('style', 'border-color : #ced4da;');
-			$('#warning1').remove();
-		}
-	});
-	$('#species').on('input', function() {
-		if ($('#species').val() != '') {
-			$('#species').attr('style', 'border-color : #ced4da;');
-			$('#warning2').remove();
-		}
-	});
-	$('#size').on('input', function() {
-		if ($('#size').val() != '') {
-			$('#size').attr('style', 'border-color : #ced4da;');
-			$('#warning3').remove();
-		}
-	});
-	$('#age').on('input', function() {
-		if ($('#age').val() != '') {
-			$('#age').attr('style', 'border-color : #ced4da;');
-			$('#warning4').remove();
-		}
-	});
-	$('#weight').on('input', function() {
-		if ($('#weight').val() != '') {
-			$('#weight').attr('style', 'border-color : #ced4da;');
-			$('#warning5').remove();
-		}
-	});
 	$('#visitDate').on('input', function() {
 		if ($('#visitDate').val() != '') {
 			$('#visitDate').attr('style', 'border-color : #ced4da;');
