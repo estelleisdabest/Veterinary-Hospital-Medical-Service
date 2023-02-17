@@ -4,9 +4,11 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import kr.human.anihospital.vo.PatientInfoVO;
 import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 
 @Mapper
 public interface PatientInfoMapper {
 	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
+	PatientInfoVO selectPatientInfo() throws Exception;
 }
