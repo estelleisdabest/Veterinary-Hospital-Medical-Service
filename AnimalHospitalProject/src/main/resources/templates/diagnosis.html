@@ -139,30 +139,30 @@
 							<h4 style="margin:10px; margin-top:10px; font-weight: bold">상세 진료내역</h4>
 							<p/>
 							<div class="diagnosis">
-							 	<h6>진료번호 : 226<!-- {$diagnosisVO.seqDiagnosis } --> </h6>
-							 	<h6>진료일 : 2022.09.30<!-- {$diagnosisVO.diagnosisDate } --> </h6> 
-							 	<h6>진료병원 : 사랑별동물병원<!-- {$animalHospital.animalHospitalName } --> </h6> 
-							 	<h6>의사번호 : 2<!-- {$diagnosisVO.seqDoctor } --> </h6> 
-							 	<h6>의사명 : 김OO<!-- {$diagnosisVO.doctorName } --> </h6> 
-							 	<h6>환자명 : 토리<!-- {$diagnosisVO.animalName } --> </h6> 
+							 	<h6>진료번호 : [[${diadetailImMedicineList[0].seqDiagnosis}]]</h6>
+							 	<h6>진료일 : [[${diadetailImMedicineList[0].diagnosisDate}]]</h6> 
+							 	<h6>진료병원 : [[${diadetailImMedicineList[0].animalHospitalName}]]</h6> 
+							 	<h6>의사번호 : [[${diadetailImMedicineList[0].seqDoctor}]]</h6> 
+							 	<h6>의사명 : [[${diadetailImMedicineList[0].doctorName}]]</h6> 
+							 	<h6>환자명 : [[${diadetailImMedicineList[0].animalName}]]</h6> 
 						 	<hr />
 						 		<h5> 진료내용</h5>
-						 		&nbsp;&nbsp;건강검진 <!-- {$diagnosisVO.diagnosisSymptom } --> 
+						 		&nbsp;&nbsp;[[${diadetailImMedicineList[0].diagnosisSymptom}]] <!-- ${diagnosis.diagnosisSymptom } --> 
 						 	</div>
 						 	<hr />
 						 	<div id="MedicineList" style="margin-top: 10px;">처방목록</div> 
 						 	<input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"
 						 		style="border-radius: 50px; margin-right: 10px; color: white; margin-top: -8px;"/>
-							 	<h6 style="margin-left: 10px; font-size: 16px;">약품명<!-- {$ medicineVO.medicineName} --></h6>
+							 	<h6 style="margin-left: 10px; font-size: 16px;">약품명</h6>
 							 	<ul id="MedicineListUl">
 							 		<!-- <dd id="Medicine_detail"></dd> -->
-							 		<li id="Medicine_detail">제조회사: <!-- {$ medicineVO.medicineManufactureCompany} --></li>
-							 		<li id="Medicine_detail">제조날짜: <!-- {$ medicineVO.medicineManufactureDate} --></li>
-							 		<li id="Medicine_detail">약품상세명: <!-- {$ medicineVO.medicineDetailName} --></li>
-							 		<li id="Medicine_detail">복약안내: <!-- {$ medicineVO.medicinemedicationGuide} --></li>
-							 		<li id="Medicine_detail">부작용: <!-- {$ medicineVO.medicineSideEffect} --></li>
+							 		<li id="Medicine_detail">제조회사: [[${diadetailImMedicineList[0].medicineName}]]</li>
+							 		<li id="Medicine_detail">제조날짜: [[${diadetailImMedicineList[0].medicineManufactureDate}]]</li>
+							 		<li id="Medicine_detail">약품상세명: [[${diadetailImMedicineList[0].medicineDetailName}]]</li>
+							 		<li id="Medicine_detail">복약안내: [[${diadetailImMedicineList[0].medicineMedicationGuide}]]</li>
+							 		<li id="Medicine_detail">부작용: [[${diadetailImMedicineList[0].medicineSideEffect}]]</li>
 							 	</ul>
-							 	<!-- {$diagnosisVO.seqDiagnosis } --> 
+							 	
 							 	<!-- div로 hidden 줘서 수정하지 않았을 경우 뜨지 않게 한다. 암튼 hidden 이용해야함 -->
 						</div>
 						<br />
