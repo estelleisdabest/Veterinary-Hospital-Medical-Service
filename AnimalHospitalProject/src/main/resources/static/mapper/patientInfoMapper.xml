@@ -12,4 +12,16 @@
 			WHERE dia.seq_doctor = 1 AND dia.seq_animal = 1
 			ORDER BY dia.diagnosis_date DESC
 	</select>
+	
+	<select id="selectPatientInfo" resultType="PatientInfoVO">
+		    SELECT 
+				animal_name AS animalName,
+				animal_type AS animalType,
+				animal_size AS animalSize,
+				DATE_FORMAT(NOW(), '%y') - DATE_FORMAT(animal_age, '%y') AS animalAge,
+				(case when animal_gender = 0 then 'Male' else 'Female' END) AS animalGender,
+				animal_weight AS animalWeight
+			FROM animal
+			WHERE seq_animal = 1
+	</select>
 </mapper>

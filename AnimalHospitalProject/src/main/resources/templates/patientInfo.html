@@ -121,9 +121,9 @@
 							<div class="col-md-8 form-group">
 								<label for="name">이름</label>
 								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-								<input type="text" class="form-control" name="name" id="name"
-									value="두둥" data-rule="name" readonly
-									style="background-color: #F5F5F5">
+								<div class="form-control" name="name" id="name" style="width: 700px;">
+									[[${patientInfoVO.animalName}]]
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -135,9 +135,9 @@
 							<div class="col-md-8 form-group">
 								<label for="species">종</label>
 								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-								<input type="text" class="form-control" name="species"
-									id="species" value="말티즈" data-rule="species" readonly
-									style="background-color: #F5F5F5">
+								<div class="form-control" name="species" id="species" style="width: 700px;">
+									[[${patientInfoVO.animalType}]]
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -149,9 +149,9 @@
 							<div class="col-md-8 form-group">
 								<label for="size">크기</label>
 								<!-- 환자정보 추가 및 수정했을 때 입력된 정보를 띄움 -->
-								<input type="text" class="form-control" name="size" id="size"
-									value="소형" data-rule="size" readonly
-									style="background-color: #F5F5F5">
+								<div class="form-control" name="size" id="size" style="width: 700px;">
+									[[${patientInfoVO.animalSize}]]형
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -163,9 +163,9 @@
 							<div class="col-md-8 form-group">
 								<label for="age">나이</label>
 								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-								<input type="number" min="1" class="form-control" name="age"
-									id="age" value="3" data-rule="age" readonly
-									style="background-color: #F5F5F5">
+								<div min="1" class="form-control" name="age" id="age" style="width: 700px;">
+									[[${patientInfoVO.animalAge}]]살
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -176,13 +176,9 @@
 							</div>
 							<div class="col-md-8 form-group">
 								<label for="age">성별</label> <br />
-								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-								<input type="radio" name="gender" id="Female" data-rule="gender"
-									value="Female" checked onClick="return false;"> <label
-									for="Female"> Female</label> <input type="radio" name="gender"
-									id="Male" data-rule="gender" value="Male" readonly
-									onClick="return false;"> <label for="Male">
-									Male</label>
+								<div min="1" class="form-control" name="gender" id="gender" style="width: 700px;">
+									[[${patientInfoVO.animalGender}]]
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
@@ -194,9 +190,9 @@
 							<div class="col-md-8 form-group">
 								<label for="weight">몸무게</label>
 								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-								<input type="number" min="1" class="form-control" name="weight" step="0.1"
-									id="weight" value="5" data-rule="weight" readonly
-									style="background-color: #F5F5F5">
+								<div class="form-control" name="weight" id="weight" style="width: 700px;">
+									[[${patientInfoVO.animalWeight}]]
+								</div>
 								<div class="validate"></div>
 							</div>
 						</div>
