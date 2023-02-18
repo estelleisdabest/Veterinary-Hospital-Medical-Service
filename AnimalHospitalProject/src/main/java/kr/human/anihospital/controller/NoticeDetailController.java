@@ -1,5 +1,7 @@
 package kr.human.anihospital.controller;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -28,9 +30,10 @@ public class NoticeDetailController {
 	}
 	
 	@GetMapping(value = "/noticeDetail")
-	public String selectNotice(Model model) throws Exception{
+	public String selectNotice(@RequestParam Map<String, String> noticeDetailMap, Model model) throws Exception{
 		NoticeListVO noticeListVO = null;
-		noticeListVO = noticeDetailService.selectNotice(54);
+		int seqNotice = Integer.parseInt(noticeDetailMap.get("seqNotice"));
+		noticeListVO = noticeDetailService.selectNotice(seqNotice);
 		model.addAttribute("noticeList",noticeListVO);
 		log.info("서비스에서 돌아온 값 : {}", noticeListVO);
 		return "noticeDetail";
