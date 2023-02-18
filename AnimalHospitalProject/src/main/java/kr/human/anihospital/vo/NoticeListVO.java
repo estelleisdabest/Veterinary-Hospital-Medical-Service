@@ -1,7 +1,5 @@
 package kr.human.anihospital.vo;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +13,5 @@ public class NoticeListVO {
 	private String noticeContent;
 	private String animalHospitalName;
 	private String doctorName;
-	private Date noticeWriteDate;
+	private String noticeUpdateDate;
 }
