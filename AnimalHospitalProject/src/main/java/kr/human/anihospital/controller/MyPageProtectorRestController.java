@@ -18,12 +18,10 @@ public class MyPageProtectorRestController {
 	@Autowired
 	MyPageProtectorService myPageProtectorService;
 	
-	// 나중에 seq 처리 해줘야함
-	// Ajax로 보호자 정보 처리를 하는 컨트롤러
+	// Ajax로 보호자 정보 처리를 하는 컨트롤러(seq처리 O)
 	@PostMapping("/editMyPageProtectorOk")
 	public String editMyPageProtectorOk(@RequestParam Map<String, Object> map, Model model) {
 		log.info("수정값 : {}", map);
-		map.put("seqProtector", 1);
 		myPageProtectorService.updateProtector(map);
 		return "성공";
 	}

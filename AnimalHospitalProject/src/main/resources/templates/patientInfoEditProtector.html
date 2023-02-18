@@ -80,6 +80,10 @@ table {
 			<!-- 사진 및 동영상 모두 등록되어 있을 경우-->
 			<div class="contact-form pt-20"></div>
 			<br />
+			
+			<form action="patientInfoEditProtectorOk" method="post" id="patientInfoEditProtectorOk">
+			<input type="hidden" name="seqAnimal" th:value="${animalVO.seqAnimal}">
+			<input type="hidden" name="seqProtector" th:value="${animalVO.seqProtector}">
 			<table>
 				<tr>
 					<td><img src="img/dog.jpg" /></td>
@@ -92,8 +96,8 @@ table {
 					<td style="text-align: center;"><label class="btn btn-primary" for="file2" style="border-radius: 50px; width: 90px">수정</label></td>
 				</tr>
 				<tr>
-					<td><input type="file" class="form-control" name="file" id="file1" style="display: none;" accept="image/*"></td>
-					<td><input type="file" class="form-control" name="file" id="file2" style="display: none;" accept="video/*"></td>
+					<td><input type="file" class="form-control" name="animalPicture" id="file1" style="display: none;" accept="image/*" th:value="${animalVO.animalPicture}"></td>
+					<td><input type="file" class="form-control" name="animalVideo" id="file2" style="display: none;" accept="video/*" th:value="${animalVO.animalVideo}"></td>
 				</tr>
 			</table>
 			<br> <br>
@@ -103,9 +107,8 @@ table {
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="name">이름</label>
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<input type="text" class="form-control" name="name" id="name" value="두둥" data-rule="name" data-msg="필수입력 항목입니다.">
-					<div class="validate"></div>
+					<input type="text" class="form-control" name="animalName" id="name" th:value="${animalVO.animalName}" data-rule="name" data-msg="필수입력 항목입니다.">
+					<div class="validate" id="name_val"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -114,9 +117,8 @@ table {
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="species">종</label>
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<input type="text" class="form-control" name="species" id="species" value="말티즈" data-rule="species" data-msg="필수입력 항목입니다.">
-					<div class="validate"></div>
+					<input type="text" class="form-control" name="animalType" id="species" th:value="${animalVO.animalType}" data-rule="species" data-msg="필수입력 항목입니다.">
+					<div class="validate" id="species_val"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -125,14 +127,13 @@ table {
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="size">크기</label>
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<select class="form-control" id="size" name="size">
-						<option value="" disabled selected>소형</option>
-						<option value="소형">소형</option>
-						<option value="중형">중형</option>
-						<option value="대형">대형</option>
+					<select class="form-control" id="size" name="animalSize" >
+						<option th:value="${animalVO.animalSize}" hidden="">[[${animalVO.animalSize}]]</option>
+						<option id="size" value="소형">소형</option>
+						<option id="size" value="중형">중형</option>
+						<option id="size" value="대형">대형</option>
 					</select>
-					<div class="validate"></div>
+					<div class="validate" id="size_val"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -141,9 +142,9 @@ table {
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="age">나이</label>
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<input type="number" min="1" class="form-control" name="age" id="age" value="3" data-rule="age" data-msg="필수입력 항목입니다.">
-					<div class="validate"></div>
+					<!-- 수정할때 입력하는 나이는 날짜로 입력해야 DB에 넣을 수 있음 -->
+					<input type="date" class="form-control" name="animalAge" th:value="${#calendars.format(animalVO.animalAge,'yyyy-MM-dd')}" id="age" data-rule="age" data-msg="필수입력 항목입니다.">
+					<div class="validate" id="animalAge_val"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -151,15 +152,14 @@ table {
 					<div class="validate"></div>
 				</div>
 				<div class="col-md-4 form-group mt-3">
+				<!-- 성별은 수정할 수 없으므로 환자 정보 조회 쿼리에서 가져와야함 -->
 					<label for="age">성별</label>
 					<br />
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<input type="radio" name="gender" id="Female" data-rule="gender" value="Female" checked>
-					<label for="Female"> Female</label>
-					<input type="radio" name="gender" id="Male" data-rule="gender" value="Male">
-					<label for="Male"> Male</label>
-
-					<div class="validate"></div>
+					<input type="radio" name="gender" id="gender" data-rule="gender" value="Female" onclick="return(false);" th:checked="${animalVO.animalGender} ? 'true' : 'false'">
+					<label for="Female"> 여자</label>
+					<input type="radio" name="gender" id="gender" data-rule="gender" value="Male" onclick="return(false);" th:checked="${animalVO.animalGender} ? 'false' : 'true'">
+					<label for="Male"> 남자</label>
+					<div class="validate" id="gender_val"></div>
 				</div>
 			</div>
 			<div class="row">
@@ -168,43 +168,11 @@ table {
 				</div>
 				<div class="col-md-4 form-group mt-3">
 					<label for="weight">몸무게</label>
-					<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
-					<input type="number" min="1" class="form-control" name="weight" step="0.1" id="weight" value="5" data-rule="weight" data-msg="필수입력 항목입니다.">
-					<div class="validate"></div>
+					<input type="number" min="1" class="form-control" name="animalWeight" step="0.1" id="weight" th:value="${animalVO.animalWeight}" data-rule="weight" data-msg="필수입력 항목입니다.">
+					<div class="validate" id="weight_val"></div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-4 form-group mt-3">
-					<div class="validate"></div>
-				</div>
-				<div class="col-md-4 form-group mt-3">
-					<label for="visitdate">내원일</label>
-					<!-- 진료날짜를 띄움 -->
-					<input type="date" class="form-control" id="visitDate" value="2023-01-30" />
-					<div class="validate"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 form-group mt-3">
-					<div class="validate"></div>
-				</div>
-				<div class="col-md-4 form-group mt-3">
-					<label for="nextVisitDate">다음내원 예정일</label>
-					<input type="date" class="form-control" id="nextVisitDate" />
-					<div class="validate"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-4 form-group mt-3">
-					<div class="validate"></div>
-				</div>
-				<div class="col-md-4 form-group mt-3">
-					<label for="symptom">증상</label>
-					<!-- 의사가 진단한 내용 띄움 -->
-					<input type="text" class="form-control" name="symptom" id="symptom" value="신장질환" data-rule="species" data-msg="필수입력 항목입니다.">
-					<div class="validate"></div>
-				</div>
-			</div>
+			<!-- animal 테이블에 특이사항 컬럼 없어서 일단 빼놨음
 			<div class="row">
 				<div class="col-md-4 form-group mt-3">
 					<div class="validate"></div>
@@ -214,23 +182,104 @@ table {
 					<input type="text" class="form-control" name="etc" id="etc" placeholder="특이사항을 입력해주세요.">
 					<div class="validate"></div>
 				</div>
-			</div>
+			</div> 
+			-->
 			<div class="row">
 				<p></p>
 				<p></p>
 				<br />
 				<div class="col-md-4 form-group" style="margin: auto;">
-					<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/myPageProtecto'"
+					<input type="button" class="btn btn-secondary" name="move_pre_page" id="move_pre_page" value="이전페이지" onclick="location='/myPageProtector'"
 						style="border-radius: 50px; width: 110px; text-align: center; color: white;">
-					<input type="button" class="btn btn-primary" name="notice_add" id="notice_add" value="확인" onclick="location='/myPageProtecto'"
+					<input type="button" class="btn btn-primary" name="patient_edit_ok" id=patient_edit_ok value="확인" 
 						style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">
 				</div>
 			</div>
 			<div class="container"></div>
+			</form>
 		</section>
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<div th:replace="~{fragment/footer :: #footer}"></div>
 </body>
+<script type="text/javascript">
+function changeFn(){
+	var size  = document.getElementById("size");
+	var value = (size.options[size.selectedIndex].value);
+	alert(value);
+	value.submit();
+};
+</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#patient_edit_ok').on('click', function() {
+			var name = $('#name').val();
+			var species = $('#species').val();
+			var size = $('#size').val();
+			var age = $('#age').val();
+			var weight = $('#weight').val();
+			if (name.length == 0 || name.trim().length == 0 || name.includes(' ')) {
+				$('#name').focus();
+				$('#name').attr('style', 'border-color: #dc3545;');
+				$('#name').val('');
+				$('#name_val').html('<div id="name_warning"><b style="color: red;">이름을 입력해주세요.</b></div>');
+			} else if (species == null || species.trim().length == 0 || species.includes(' ')) {
+				$('#species').focus();
+				$('#species').attr('style', 'border-color: #dc3545;');
+				$('#species_val').html('<div id="species_warning"><b style="color: red;">종을 입력해주세요.</b></div>');
+			} else if (size = null) {
+				$('#size').focus();
+				$('#size').attr('style', 'border-color: #dc3545;');
+				$('#size_val').html('<div id="size_warning"><b style="color: red;">크기를 입력해주세요.</b></div>');
+			} else if (age == '') {
+				$('#age').focus();
+				$('#age').attr('style', 'border-color: #dc3545;');
+				$('#animalAge_val').html('<div id="age_warning"><b style="color: red;">나이를 입력해주세요.</b></div>');
+			} else if (weight == null || weight.trim().length == 0) {
+				$('#weight').focus();
+				$('#weight').attr('style', 'border-color: #dc3545;');
+				$('#weight').val('');
+				$('#weight_val').html('<div id="weight_warning"><b style="color: red;">몸무게를 입력해주세요.</b></div>');
+			} else {
+				var result = window.confirm('작성한 내용을 수정하시겠습니까?');
+				if (result) {
+					alert('정상적으로 처리되었습니다.');
+					$('#patientInfoEditProtectorOk').submit();
+				}
+			}
+		});
+	});
+	$('#name').on('input', function() {
+		if ($('#name').val() != '') {
+			$('#name').attr('style', 'border-color : #ced4da;');
+			$('#name_warning').remove();
+		}
+	})
+	$('#species').on('input', function() {
+		if ($('#species').val() != '') {
+			$('#species').attr('style', 'border-color : #ced4da;');
+			$('#species_warning').remove();
+		}
+	})
+	$('#size').on('input', function() {
+		if ($('#size').val() != '') {
+			$('#size').attr('style', 'border-color : #ced4da;');
+			$('#size_warning').remove();
+		}
+	})
+	$('#age').on('input', function() {
+		if ($('#age').val() != '') {
+			$('#age').attr('style', 'border-color : #ced4da;');
+			$('#age_warning').remove();
+		}
+	})
+	$('#weight').on('input', function() {
+		if ($('#weight').val() != '') {
+			$('#weight').attr('style', 'border-color : #ced4da;');
+			$('#weight_warning').remove();
+		}
+	})
+</script>
 </html>

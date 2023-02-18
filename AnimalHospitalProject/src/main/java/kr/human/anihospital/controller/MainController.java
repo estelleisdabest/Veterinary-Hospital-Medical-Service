@@ -173,10 +173,10 @@ public class MainController {
 //	}
 
 	// 환자 정보 수정 (보호자 용)
-	@GetMapping("/patientInfoEditProtector")
-	public String patientInfoEditProtector() {
-		return "patientInfoEditProtector";
-	}
+//	@GetMapping("/patientInfoEditProtector")
+//	public String patientInfoEditProtector() {
+//		return "patientInfoEditProtector";
+//	}
 
 	// 진단서 작성
 	@GetMapping("/diagnosisAdd")
