@@ -20,7 +20,7 @@
 				d.seq_diagnosis = #{seqDiagnosis}
 	</select>
 	
-	<select id="selectDiagnosisDetailInMedicine" resultType="DiagnosisDetailInMedicineVO">
+	<select id="selectDiagnosisDetailInMedicine" resultType="DiagnosisDetailInMedicineVO" parameterType="int">
 			SELECT 
 				dia.seq_diagnosis AS seqDiagnosis,
 				date_format(dia.diagnosis_date, '%Y-%m-%d') AS diagnosisDate,
@@ -29,6 +29,7 @@
 				d.doctor_name AS doctorName,
 				a.animal_name AS animalName,
 				dia.diagnosis_symptom AS diagnosisSymptom,
+				m.medicine_manufacture_company AS medicineManufactureCompany,
 				m.medicine_name AS medicineName,
 				date_format(m.medicine_manufacture_date, '%Y-%m-%d') AS medicineManufactureDate,
 				m.medicine_detail_name AS medicineDetailName,
@@ -40,6 +41,6 @@
 								 JOIN animal AS a ON dia.seq_animal = a.seq_animal
 								 JOIN animalhospital AS ah ON dia.seq_animal_hospital = ah.seq_animal_hospital
 			WHERE
-				dia.seq_diagnosis = 101
+				dia.seq_diagnosis =  #{seqDiagnosis}
 	</select>
 </mapper>

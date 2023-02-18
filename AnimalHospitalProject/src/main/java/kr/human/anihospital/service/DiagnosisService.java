@@ -9,5 +9,5 @@ import kr.human.anihospital.vo.MedicineVO;
 
 public interface DiagnosisService {
 	DiagnosisAnimalVO selectDiagnosisAnimalInfo(int seqDiagnosis) throws Exception;
-	List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine() throws Exception;
+	List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine(int seqDiagnosis) throws Exception;
 }

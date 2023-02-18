@@ -24,13 +24,13 @@ public class DiagnosisController {
 	DiagnosisService diagnosisService;
 	
 	@GetMapping(value="/diagnosis")
-	public String diagnosis(@RequestParam(required = false, defaultValue = "91") int seq, Model model) throws Exception {
-		log.info("selectDiagnosisAnimalInfo 컨트롤러 받은값 : {}", seq);
-		DiagnosisAnimalVO diagnosisAnimalVO = diagnosisService.selectDiagnosisAnimalInfo(seq);
+	public String diagnosis(@RequestParam(required = false, defaultValue = "130") int seqDiagnosis, Model model) throws Exception {
+		log.info("selectDiagnosisAnimalInfo 컨트롤러 받은값 : {}", seqDiagnosis);
+		DiagnosisAnimalVO diagnosisAnimalVO = diagnosisService.selectDiagnosisAnimalInfo(seqDiagnosis);
 		model.addAttribute("diagnosisAnimal", diagnosisAnimalVO);
 		log.info("selectDiagnosisAnimalInfo 컨트롤러 : {}", diagnosisAnimalVO);
 		
-		List<DiagnosisDetailInMedicineVO> diadetailImMedicineList = diagnosisService.selectDiagnosisDetailInMedicine();
+		List<DiagnosisDetailInMedicineVO> diadetailImMedicineList = diagnosisService.selectDiagnosisDetailInMedicine(seqDiagnosis);
 		model.addAttribute("diadetailImMedicineList", diadetailImMedicineList);
 		log.info("selectDiagnosisDetailInMedicine 컨트롤러 : {}", diadetailImMedicineList);
 	
