@@ -14,6 +14,7 @@ import kr.human.anihospital.vo.DiagnosisAnimalVO;
 import kr.human.anihospital.vo.DiagnosisDetailInMedicineVO;
 import kr.human.anihospital.vo.DiagnosisVO;
 import kr.human.anihospital.vo.MedicineVO;
+import kr.human.anihospital.vo.postscriptOneDiagnosisVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -34,6 +35,9 @@ public class DiagnosisController {
 		model.addAttribute("diadetailImMedicineList", diadetailImMedicineList);
 		log.info("selectDiagnosisDetailInMedicine 컨트롤러 : {}", diadetailImMedicineList);
 	
+		postscriptOneDiagnosisVO postOneDiagnosisVO = diagnosisService.selectPostscriptOneDiagnosis();
+		model.addAttribute("postOneDiagnosisVO", postOneDiagnosisVO);
+		log.info("selectPostscriptOneDiagnosis 컨트롤러 : {}", postOneDiagnosisVO);
 		return "diagnosis";
 	}
 }

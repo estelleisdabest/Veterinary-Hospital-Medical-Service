@@ -108,7 +108,7 @@
     
 	#MedicineListUl li{
 		font-size: 13px;
-	} 
+	}
 	
 </style>
 <script type="text/javascript">
@@ -174,31 +174,36 @@
 								<hr />
 							<table>
 								<tr>
-									<td>작성일 : 2023년 01월 31일</td>
+									<td>작성일 : [[${postOneDiagnosisVO.postscriptUpdateDate}]]</td>
 								</tr>
 								<tr>
-									<td>진료병원 : A동물병원</td>
+									<td>진료병원 : [[${postOneDiagnosisVO.animalHospitalName}]]</td>
 								</tr>
 								<tr>
-									<td id="PostscriptBold">별점 : ★★★★★</td>
+									<td id="PostscriptBold">별점 : [[${postOneDiagnosisVO.postscriptSatisfaction}]]</td>
 								</tr>
 								<tr>
 									<td>
 										<div id="PostscriptBold">내용</div>
 										<!-- 내용 길 경우 자바스크립트 이용해서 자동줄바꿈 -->
 											<div id="PostscriptContent">
-												의사 선생님이 너무 친절했어요~!.....
+												[[${postOneDiagnosisVO.postscriptContent}]]
 										</div>
 									</td>
 								</tr>
 							</table>
 						</div>
-						<div align="right" >
-						<!-- <input type="button" class="btn btn-primary btn" id="saveBtn"
-									onclick="location.href='/postscriptSave'" value="작성하기" 
-										style="border-radius: 50px; margin-right: 10px; color: white;"/> --> 
+						<div align="right"  id="postscriptUpdateAndDelete" th:if="${postOneDiagnosisVO.postscriptSatisfaction != null}">
 						<input type="button" class="btn btn-primary btn" id="updateBtn"
 									onclick="location.href='/postscriptUpdate'" value="수정하기" 
+										style="border-radius: 50px; margin-right: 10px; color: white;"/>
+						<input type="button" class="btn btn-danger btn" id="deleteBtn"
+									onclick="location.href=''" value="삭제하기" 
+										style="border-radius: 50px; margin-right: 10px; color: white;"/>
+						</div>
+						<div align="right" id="postscriptSave" th:if="${postOneDiagnosisVO.postscriptSatisfaction == null}">
+						<input type="button" class="btn btn-primary btn" id="saveBtn"
+									onclick="location.href='/postscriptSave'" value="작성하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/>
 						</div>
 						<p/>

@@ -43,4 +43,17 @@
 			WHERE
 				dia.seq_diagnosis =  #{seqDiagnosis}
 	</select>
+	
+	<select id="selectPostscriptOneDiagnosis" resultType="postscriptOneDiagnosisVO">
+			select 
+				date_format(p.postscript_update_date, '%Y-%m-%d') as postscriptUpdateDate,
+				a.animal_hospital_name as animalHospitalName, 
+				p.postscript_satisfaction as postscriptSatisfaction,
+				p.postscript_content as postscriptContent  
+			from 
+				diagnosis as d inner JOIN postscript AS p on p.seq_diagnosis = d.seq_diagnosis  
+							inner join animalhospital as a on d.seq_animal_hospital = a.seq_animal_hospital
+			where
+				d.seq_diagnosis = 92
+	</select>
 </mapper>

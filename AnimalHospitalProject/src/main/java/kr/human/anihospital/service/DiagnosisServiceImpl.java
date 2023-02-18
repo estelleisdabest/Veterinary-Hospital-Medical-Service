@@ -8,8 +8,7 @@ import org.springframework.stereotype.Service;
 import kr.human.anihospital.mapper.DiagnosisMapper;
 import kr.human.anihospital.vo.DiagnosisAnimalVO;
 import kr.human.anihospital.vo.DiagnosisDetailInMedicineVO;
-import kr.human.anihospital.vo.DiagnosisVO;
-import kr.human.anihospital.vo.MedicineVO;
+import kr.human.anihospital.vo.postscriptOneDiagnosisVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Service("DiagnosisService")
@@ -43,5 +42,18 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 		}
 		log.info("selectDiagnosisDetailInMedicine 서비스 : {}", diadetailImMedicineList);
 		return diadetailImMedicineList;
+	}
+	
+	// diagnosis(진료기록)화면의 진료후기 가져오기
+	@Override
+	public postscriptOneDiagnosisVO selectPostscriptOneDiagnosis() {
+		postscriptOneDiagnosisVO postOneDiagnosisVO = null;
+		try {
+			postOneDiagnosisVO = diagnosisMapper.selectPostscriptOneDiagnosis();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		log.info("selectPostscriptOneDiagnosis 서비스 : {}", postOneDiagnosisVO);
+		return postOneDiagnosisVO;
 	}
 }
