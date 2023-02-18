@@ -160,11 +160,7 @@ public class MainController {
 		return "pharmacyInfoAdd";
 	}
 
-	// 약국 위치 수정
-	@GetMapping("/pharmacyInfoEdit")
-	public String pharmacyInfoEdit() {
-		return "pharmacyInfoEdit";
-	}
+	
 
 	// 환자 정보 및 이전 진료 내역
 //	@GetMapping("/patientInfo")

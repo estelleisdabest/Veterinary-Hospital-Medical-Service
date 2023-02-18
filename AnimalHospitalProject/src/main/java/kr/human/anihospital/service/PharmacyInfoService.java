@@ -17,6 +17,16 @@ public class PharmacyInfoService {
 	@Autowired
 	PharmacyInfoMapper pharmacyInfoMapper;
 
+	public PharmacyLocationVO selectPharmacy(int seq) {
+		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
+		try {
+			pharmacyLocationVO = pharmacyInfoMapper.selectPharmacy(seq);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return pharmacyLocationVO;
+	}
+
 	// 약국을 신규 등록하는 Service.
 	public void insertPharmacy(Map<String, String> map) {
 		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
@@ -33,7 +43,7 @@ public class PharmacyInfoService {
 		}
 	}
 
-	// 약국을 수정하는 Service. 
+	// 약국을 수정하는 Service.
 	// 매개변수 seq를 필요로 하는 것은 추후 수정할 필요가 있습니다.
 	public void updatePharmacy(Map<String, String> map, int seq) {
 		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
