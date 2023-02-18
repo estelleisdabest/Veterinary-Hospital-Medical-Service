@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.human.anihospital.service.DiagnosisService;
 import kr.human.anihospital.vo.DiagnosisAnimalVO;
 import kr.human.anihospital.vo.DiagnosisDetailInMedicineVO;
-import kr.human.anihospital.vo.DiagnosisVO;
-import kr.human.anihospital.vo.MedicineVO;
 import kr.human.anihospital.vo.postscriptOneDiagnosisVO;
 import lombok.extern.slf4j.Slf4j;
 

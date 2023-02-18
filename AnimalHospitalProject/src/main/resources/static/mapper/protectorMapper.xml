@@ -14,6 +14,7 @@
 		from Protector
 		where seq_protector = #{seqProtector}
 	</select>
+	
 	<update id="updateProtector" parameterType="map">
 		UPDATE Protector 
 		SET 
@@ -22,4 +23,23 @@
 		protector_address = #{protectorAddress}
 		WHERE seq_protector = #{seqProtector}
 	</update>
+	
+	<select id="selectPatientDiagnosisList" resultType="PatientDiagnosisListVO">
+		    SELECT
+		    	dia.seq_diagnosis AS seqDiagnosis,
+		    	a.animal_name AS animalName,
+				date_format(dia.diagnosis_date, '%Y.%m.%d') AS diagnosisDate,
+				dia.diagnosis_symptom AS diagnosisSymptom,
+				ah.animal_hospital_name AS animalHospitalName
+			FROM
+				diagnosis AS dia 
+					JOIN animal AS a ON dia.seq_animal = a.seq_animal
+					JOIN protector AS p ON dia.seq_protector = p.seq_protector
+					JOIN animalhospital AS ah ON dia.seq_animal_hospital = ah.seq_animal_hospital
+			WHERE 
+				dia.seq_protector = #{seq_protector}
+			ORDER BY 
+				dia.diagnosis_date DESC
+	</select>
+
 </mapper>
