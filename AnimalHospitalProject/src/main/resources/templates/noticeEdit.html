@@ -60,16 +60,27 @@
 	<div class="container">
 		<div id="editform">       
 			<div class="col-md-4 form-group" style="margin: auto;">작성자 <br />
-				<input id="username" class="form-control"  type="text" name="username" value="김아무개" disabled="disabled" style="width: 700px;"/> <br /> <!-- 회원가입했을 때 입력된 정보를 띄움 -->
+				<input type="hidden" name="seqNotice" id="seqNotice" th:value="${noticeOneDatailList[0].seqNotice}">
+				<div id="username" class="form-control" name="username" style="width: 700px;">
+					[[${noticeOneDatailList[0].doctorName}]]
+				</div> <br />
 					진료병원 <br />
-				<input id="animalHospital" class="form-control"  type="text" name="animalHospital" value="A동물병원" disabled="disabled" style="width: 700px;"/> <br /> <!-- 회원가입했을 때 입력된 정보를 띄움 -->
+				<div id="animalHospital" class="form-control" name="animalHospital" style="width: 700px;">
+					[[${noticeOneDatailList[0].animalHospitalName}]]
+				</div> <br />
 					작성일 <br />
-				<input type="date" class="form-control"  id="writeDate" value="2023-01-30" disabled="disabled" style="width: 700px;" /> <br />  <!-- 수정한날짜로 띄운 후 변경 -->
+				<div type="date" class="form-control"  id="writeDate" value="2023-01-30" style="width: 700px;" >
+					[[${noticeOneDatailList[0].noticeUpdateDate}]]
+				</div> <br />
 					제목 <br />
-				<textarea id="noticeSubject" class="form-control" name="noticeSubject" rows="1" cols="100" maxlength="50" required="required" style="width: 700px;"> 01월 30일 휴무 안내</textarea> <!-- 작성했던 글을 불러와 열람/ 수정 및 삭제 -->
+				<textarea id="noticeSubject" class="form-control" name="noticeSubject" rows="1" cols="100" maxlength="50" required="required" style="width: 700px;"> 
+					[[${noticeOneDatailList[0].noticeSubject}]]
+				</textarea>
 				<div id="warningMessage1"></div>
 				<br />내용<br />
-				<textarea id="noticeContent" class="form-control" name="noticeContent" rows="20" cols="100" maxlength="500" required="required" style="width: 700px;"> 01월 30일 휴무 안내드립니다.</textarea> <!-- 작성했던 글을 불러와 열람/ 수정 및 삭제 -->
+				<textarea id="noticeContent" class="form-control" name="noticeContent" rows="20" cols="100" maxlength="500" required="required" style="width: 700px;"> 
+					[[${noticeOneDatailList[0].noticeContent}]]
+				</textarea>
 				<div id="warningMessage2"></div>
 				<br />
 			</div>
