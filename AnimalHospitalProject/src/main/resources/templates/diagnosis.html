@@ -169,6 +169,7 @@
 					</div>
 					<div id="rightContent">
 					<!-- 후기 -->
+						<div id="postscriptUpdateAndDelete" th:if="${postOneDiagnosisVO.postscriptSatisfaction != null}">
 						<div id="Postscript">
 							<h5 style="margin-top: 10px;">후기</h5>
 								<hr />
@@ -180,7 +181,15 @@
 									<td>진료병원 : [[${postOneDiagnosisVO.animalHospitalName}]]</td>
 								</tr>
 								<tr>
-									<td id="PostscriptBold">별점 : [[${postOneDiagnosisVO.postscriptSatisfaction}]]</td>
+									<td id="PostscriptBold" >별점 : 
+										<span th:switch="${postOneDiagnosisVO.postscriptSatisfaction}">
+											<span th:case="'1'">★</span>
+											<span th:case="'2'">★★</span>
+											<span th:case="'3'">★★★</span>
+											<span th:case="'4'">★★★★</span>
+											<span th:case="'5'">★★★★★</span>
+										</span>
+									</td>
 								</tr>
 								<tr>
 									<td>
@@ -193,7 +202,7 @@
 								</tr>
 							</table>
 						</div>
-						<div align="right"  id="postscriptUpdateAndDelete" th:if="${postOneDiagnosisVO.postscriptSatisfaction != null}">
+						<div align="right">
 						<input type="button" class="btn btn-primary btn" id="updateBtn"
 									onclick="location.href='/postscriptUpdate'" value="수정하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/>
@@ -201,10 +210,22 @@
 									onclick="location.href=''" value="삭제하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/>
 						</div>
-						<div align="right" id="postscriptSave" th:if="${postOneDiagnosisVO.postscriptSatisfaction == null}">
+						</div>
+						<div id="postscriptSave" th:if="${postOneDiagnosisVO.postscriptSatisfaction == null}">
+						<div id="Postscript">
+							<h5 style="margin-top: 10px;">후기</h5>
+								<hr />
+							<table>
+								<tr>
+									<td>등록된 후기가 없습니다.</td>
+								</tr>
+							</table>
+						</div>
+						<div align="right">
 						<input type="button" class="btn btn-primary btn" id="saveBtn"
 									onclick="location.href='/postscriptSave'" value="작성하기" 
 										style="border-radius: 50px; margin-right: 10px; color: white;"/>
+						</div>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
