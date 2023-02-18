@@ -7,7 +7,7 @@
 			n.seq_notice AS seqNotice,
 			d.doctor_name AS doctorName, 
 			a.animal_hospital_name AS animalHospitalName, 
-			date_format(n.notice_write_date, '%Y-%m-%d') AS noticeWriteDate,
+			date_format(n.notice_update_date, '%Y-%m-%d') AS noticeUpdateDate,
 			n.notice_subject AS noticeSubject,
 			n.notice_content AS noticeContent
 		FROM
