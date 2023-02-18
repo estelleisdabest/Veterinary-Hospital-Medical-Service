@@ -47,12 +47,6 @@ public class MainController {
 		return "noticeAdd";
 	}
 
-	// 공지 사항 수정 및 삭제
-	@GetMapping("/noticeEdit")
-	public String noticeEdit() {
-		return "noticeEdit";
-	}
-
 	// 환자 정보 수정 (의사 용)
 	@GetMapping("/patientInfoEditDoctor")
 	public String patientInfoEditDoctor() {

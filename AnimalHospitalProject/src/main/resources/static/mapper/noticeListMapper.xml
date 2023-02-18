@@ -11,7 +11,7 @@
 		 		date_format(n.notice_update_date, '%Y-%m-%d') AS noticeUpdateDate
 		 	from
 		 		notice AS n
-		 		join animalhospital AS a ON n.seq_doctor = a.seq_doctor
+		 		join animalhospital AS a ON n.seq_animal_hospital = a.seq_animal_hospital
 		 		join doctor AS d on n.seq_doctor = d.seq_doctor
 			group by
 				n.seq_notice

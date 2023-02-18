@@ -86,8 +86,7 @@
 							class="btn btn-secondary"
 							style="border-radius: 50px; width: 110px; float: left; margin-left: 22%;"
 							onclick="history.go(-1)">이전페이지</button>
-						<button type="submit" id="modify_btn" name="modify_btn"
-							class="btn btn-primary bt-sm"
+						<button type="button" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm"
 							style="border-radius: 50px; width: 110px; display: inline; margin-left: 180px;"
 							th:onclick="|location.href='@{/noticeEdit(seqNotice=${noticeList.seqNotice})}'|">수정</button>
 						<button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm"

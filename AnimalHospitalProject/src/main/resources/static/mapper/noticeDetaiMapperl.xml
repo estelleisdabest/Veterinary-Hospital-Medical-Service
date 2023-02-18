@@ -12,7 +12,7 @@
 			n.notice_content AS noticeContent
 		FROM
 			notice AS n 
-			JOIN animalhospital AS a ON n.seq_doctor = a.seq_doctor
+			JOIN animalhospital AS a ON n.seq_animal_hospital = a.seq_animal_hospital
 			JOIN doctor AS d ON n.seq_doctor =d.seq_doctor
 		WHERE n.seq_notice = #{seq_notice}
 		GROUP BY n.seq_notice
