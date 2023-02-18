@@ -7,6 +7,7 @@
 /* 네이버 지도 : 약국 */
 
 $(function() {
+
 	var position = new naver.maps.LatLng(37.276983, 127.027534);
 
 	var map = new naver.maps.Map('mapPharmacy', {
@@ -42,7 +43,12 @@ $(function() {
 					'   <p style="font-size:11pt">' + data[i].animalPharmacyAddress + '<br />',
 					'' + data[i].animalPharmacyPhoneNo + '<br />',
 					'</p>',
-					'</div>'
+					'</div>',
+					'<form action="pharmacyInfoEdit">',
+					'<input type="hidden" name="seq" value="' + data[i].seqPharmacyLocation + '" />',
+					'<input type="submit" class="btn btn-primary" name="notice_add" id="notice_add" value="수정하기" ',
+					'style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">',
+					'</form>'
 				].join('');
 				var infoWindow = new naver.maps.InfoWindow({
 					content: contentString,
@@ -111,3 +117,4 @@ $(function() {
 		} // 에러시
 	});
 })
+

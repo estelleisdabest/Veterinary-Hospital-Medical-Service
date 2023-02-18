@@ -48,7 +48,7 @@
 		(animal_pharmacy_name,animal_pharmacy_address,animal_pharmacy_phoneNo,seq_pharmacy_location,pharmacy_location_latitude,pharmacy_location_longitude)
 		values (#{animalPharmacyName},#{animalPharmacyAddress},#{animalPharmacyPhoneNo},#{seqPharmacyLocation},#{pharmacyLocationLatitude},#{pharmacyLocationLongitude})
 	</insert>
-	<insert id="updatePharmacy"
+	<update id="updatePharmacy"
 		parameterType="kr.human.anihospital.vo.PharmacyLocationVO">
 		update
 		PharmacyLocation
@@ -60,6 +60,6 @@
 		pharmacy_location_longitude=#{pharmacyLocationLongitude}
 		where
 		seq_pharmacy_location=#{seqPharmacyLocation}
-	</insert>
+	</update>
 </mapper>
 
