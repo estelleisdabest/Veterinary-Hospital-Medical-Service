@@ -67,6 +67,7 @@ $(function(){
 			var result = window.confirm('작성한 내용을 수정하시겠습니까?');
 			if(result) {
 		     	alert('정상적으로 수정되었습니다.');
+		     	var seqProtector = $("input[name='seqProtector']").val();
 		     	var protectorPassword = $("input[name='password']").val();
 				var protectorPhoneNo = $("input[name='phone']").val();
 				var protectorAddress = $("input[name='address1']").val()+ " " + $("input[name='address2']").val();
@@ -75,6 +76,7 @@ $(function(){
 					dataType: "text",
 					type: "post",
 					data: {
+						seqProtector : seqProtector,
 						protectorPassword : protectorPassword,
 						protectorPhoneNo : protectorPhoneNo,
 						protectorAddress: protectorAddress

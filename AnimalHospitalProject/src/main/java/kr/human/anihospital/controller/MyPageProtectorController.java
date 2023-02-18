@@ -16,7 +16,7 @@ public class MyPageProtectorController {
 	@Autowired
 	MyPageProtectorService myPageProtectorService;
 	
-	// 나중에 seq 처리 해줘야함
+	// 나중에 seq 처리 해줘야함(보호자 로그인 정보)
 	@GetMapping(value = "/myPageProtector")
 	public String myPageProtector(Model model) {
 		ProtectorVO vo = myPageProtectorService.selectProtector(1);
@@ -24,6 +24,7 @@ public class MyPageProtectorController {
 		return "myPageProtector";
 	}
 	// 보호자 정보 수정할때 수정되지 않는 값을 보여줌
+	// 나중에 seq 처리 해줘야함(보호자 로그인 정보)
 	@GetMapping(value = "/editMyPageProtector")
 	public String editMyPageProtector(Model model) {
 		ProtectorVO vo = myPageProtectorService.selectProtector(1);
