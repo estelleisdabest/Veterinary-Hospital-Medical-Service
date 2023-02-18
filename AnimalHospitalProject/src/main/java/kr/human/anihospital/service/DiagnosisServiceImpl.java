@@ -33,10 +33,10 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 
 	// diagnosis(진료기록)화면의 상세 진료 내역 및 처방목록 가져오기
 	@Override
-	public List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine() {
+	public List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine(int seqDiagnosis) {
 		List<DiagnosisDetailInMedicineVO> diadetailImMedicineList = null;
 		try {
-			diadetailImMedicineList = diagnosisMapper.selectDiagnosisDetailInMedicine();
+			diadetailImMedicineList = diagnosisMapper.selectDiagnosisDetailInMedicine(seqDiagnosis);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

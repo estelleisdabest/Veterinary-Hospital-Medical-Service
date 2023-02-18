@@ -18,6 +18,7 @@ public class DiagnosisDetailInMedicineVO {
 	private String animalName;
 	private String diagnosisSymptom;
 	private String medicineName;
+	private String medicineManufactureCompany;
 	private String medicineManufactureDate;
 	private String medicineDetailName;
 	private String medicineMedicationGuide;

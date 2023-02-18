@@ -10,6 +10,6 @@ import kr.human.anihospital.vo.postscriptOneDiagnosisVO;
 
 public interface DiagnosisService {
 	DiagnosisAnimalVO selectDiagnosisAnimalInfo(int seqDiagnosis) throws Exception;
-	List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine() throws Exception;
+	List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine(int seqDiagnosis) throws Exception;
 	postscriptOneDiagnosisVO selectPostscriptOneDiagnosis() throws Exception;
 }

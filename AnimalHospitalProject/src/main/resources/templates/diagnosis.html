@@ -153,10 +153,10 @@
 						 	<div id="MedicineList" style="margin-top: 10px;">처방목록</div> 
 						 	<input type="button" name="DownloadPDF" value="PDF다운" class="btn btn-primary bt-sm"
 						 		style="border-radius: 50px; margin-right: 10px; color: white; margin-top: -8px;"/>
-							 	<h6 style="margin-left: 10px; font-size: 16px;">약품명</h6>
+							 	<h6 style="margin-left: 10px; font-size: 16px;">[[${diadetailImMedicineList[0].medicineName}]]</h6>
 							 	<ul id="MedicineListUl">
 							 		<!-- <dd id="Medicine_detail"></dd> -->
-							 		<li id="Medicine_detail">제조회사: [[${diadetailImMedicineList[0].medicineName}]]</li>
+							 		<li id="Medicine_detail">제조회사: [[${diadetailImMedicineList[0].medicineManufactureCompany}]]</li>
 							 		<li id="Medicine_detail">제조날짜: [[${diadetailImMedicineList[0].medicineManufactureDate}]]</li>
 							 		<li id="Medicine_detail">약품상세명: [[${diadetailImMedicineList[0].medicineDetailName}]]</li>
 							 		<li id="Medicine_detail">복약안내: [[${diadetailImMedicineList[0].medicineMedicationGuide}]]</li>
