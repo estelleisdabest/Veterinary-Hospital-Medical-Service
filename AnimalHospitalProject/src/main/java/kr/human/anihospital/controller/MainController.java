@@ -143,10 +143,6 @@ public class MainController {
 		return "hospitalAdd";
 	}
 
-	@GetMapping("/hospitalEdit")
-	public String hospitalEdit() {
-		return "hospitalEdit";
-	}
 
 	// 약국 위치 조회
 	@GetMapping("/pharmacyMap")

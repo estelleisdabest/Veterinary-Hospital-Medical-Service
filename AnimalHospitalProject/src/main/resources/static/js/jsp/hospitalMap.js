@@ -42,7 +42,12 @@ window.onload = function() {
 					'   <p style="font-size:11pt">' + data[i].animalHospitalAddress + '<br />',
 					'' + data[i].animalHospitalPhoneNo + '<br />',
 					'</p>',
-					'</div>'
+					'</div>',
+					'<form action="hospitalEdit" method="post">',
+					'<input type="hidden" name="seq" value="' + data[i].seqAnimalHospital + '" />',
+					'<input type="submit" class="btn btn-primary" name="notice_add" id="notice_add" value="수정하기" ',
+					'style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">',
+					'</form>'
 				].join('');
 
 				var infoWindow = new naver.maps.InfoWindow({

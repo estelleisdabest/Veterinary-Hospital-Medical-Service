@@ -2,10 +2,10 @@ package kr.human.anihospital.controller;
 
 import java.util.Map;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -26,7 +26,7 @@ public class PharmacyInfoController {
 		return "redirect:pharmacyMap";
 	}
 
-	@GetMapping("/pharmacyInfoEdit")
+	@PostMapping("/pharmacyInfoEdit")
 	public String pharmacyInfoEdit(@RequestParam int seq, Model model) {
 		model.addAttribute("model", pharmacyInfoService.selectPharmacy(seq));
 		model.addAttribute("seq", seq);
