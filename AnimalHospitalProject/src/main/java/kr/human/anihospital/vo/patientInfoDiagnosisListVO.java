@@ -1,7 +1,5 @@
 package kr.human.anihospital.vo;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,7 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class patientInfoDiagnosisListVO {
+	private String animalName;
 	private String animalHospitalName;
-	private Date diagnosisDate;
+	private String diagnosisDate;
 	private String diagnosisSymptom;
 }

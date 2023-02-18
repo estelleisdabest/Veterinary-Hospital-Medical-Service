@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.human.anihospital.service.PatientInfoService;
 import kr.human.anihospital.vo.PatientInfoVO;
@@ -21,7 +22,6 @@ public class PatientInfoController {
 	
 	@GetMapping(value = "/patientInfo")
 	public String selectPatientInfoDiagnosis(Model model) throws Exception {
-		int seqAnimal = 1;
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		PatientInfoVO patientInfoVO = null;
 		pidliat = patientInfoService.selectPatientInfoDiagnosis();
