@@ -4,7 +4,8 @@
 <mapper namespace="kr.human.anihospital.mapper.AnimalLookupDetailMapper">
 	<select id="selectAnimalLookupDetail" resultType="AnimalLookupDetailVO" parameterType="int">
 			SELECT 
-				d.seq_animal as seqAnimal,
+				a.seq_animal as seqAnimal,
+				p.seq_protector AS seqProtector,
 				d.seq_diagnosis as seqDiagnosis,
 				a.animal_name as animalName,
 				d.diagnosis_symptom as diagnosisSymptom, 
@@ -16,7 +17,9 @@
 						JOIN protector as p ON d.seq_protector = p.seq_protector
 						JOIN animalhospital as ah ON ah.seq_animal_hospital = d.seq_animal_hospital
 			WHERE
-				a.seq_animal = 10
+				p.seq_protector = #{seqProtector}
+			AND	
+				a.seq_animal = #{seqAnimal}
 			ORDER BY
 				d.diagnosis_date desc
 	</select>

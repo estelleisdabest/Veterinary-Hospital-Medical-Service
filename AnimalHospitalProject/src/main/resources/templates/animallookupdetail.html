@@ -71,7 +71,7 @@
 											등록된 진료내역이 없습니다.
 										</td>	
 									</tr>
-									<tr th:each="animalLookupDetail : ${animalLookupDetail}" th:if="${!#lists.isEmpty(animalLookupDetail)}">
+									<tr th:each="animalLookupDetail : ${animalLookupDetail}" th:onclick="|location.href='@{/diagnosis(seqDiagnosis=${animalLookupDetail.seqDiagnosis})}'|">
 										<td th:text = "${animalLookupDetail.seqDiagnosis}"></td>
 										<td th:text = "${animalLookupDetail.animalName}"></td>
 										<td th:text = "${animalLookupDetail.diagnosisSymptom}"></td>
@@ -80,6 +80,7 @@
 									</tr>
 								</tbody>
 							</table>
+							<br />
 							<nav aria-label="Page navigation example">
 								<ul class="pagination">
 									<li class="page-item"><a class="page-link" href="#"
