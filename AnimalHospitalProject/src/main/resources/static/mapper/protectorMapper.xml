@@ -69,7 +69,7 @@
 			 Animal as a join Postscript as p on a.seq_doctor=p.seq_doctor
 			   join Animalhospital as ah on p.seq_doctor=ah.seq_doctor
 			   join Diagnosis as d on ah.seq_doctor=d.seq_doctor
-		WHERE a.seq_protector=#{seqProtector}
+		WHERE a.seq_protector = #{seqProtector}
 		group by animal_name
 	</select>
 </mapper>

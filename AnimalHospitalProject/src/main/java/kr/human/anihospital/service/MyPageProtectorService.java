@@ -59,7 +59,7 @@ public class MyPageProtectorService {
 			e.printStackTrace();
 		}
 		log.info("매퍼에서 넘어온 값 {}", oneProtectorPatientListVO);
-		return oneProtectorPatientListVO;
+		return oneProtectorPatientListVO; 
 	}
 	
 	// 리스트 조회할 메서드

@@ -27,7 +27,7 @@ public class MyPageProtectorController {
 	public String myPageProtector(@RequestParam(required = false, defaultValue = "1") int seqProtector, Model model) {
 		ProtectorVO protectInfo = myPageProtectorService.selectProtector(seqProtector);
 		model.addAttribute("protectInfo", protectInfo);
-		
+		 
 		List<PatientDiagnosisListVO> patientDiagnosisList = myPageProtectorService.selectPatientDiagnosisList(seqProtector);
 		model.addAttribute("patientDiagnosisList", patientDiagnosisList);
 		
