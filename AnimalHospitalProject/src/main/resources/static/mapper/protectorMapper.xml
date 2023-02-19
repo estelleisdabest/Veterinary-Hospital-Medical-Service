@@ -41,5 +41,35 @@
 			ORDER BY 
 				dia.diagnosis_date DESC
 	</select>
-
+	
+	<select id="selectOneProtectorPatientList" parameterType="int" resultType="OneProtectorPatientListVO">
+		SELECT 	
+			a.animal_name as animalName, 
+			(date_format(now(),'%Y') - date_format(animal_age,'%Y')) AS animalAge, 
+			a.animal_type AS animalType, 
+			a.animal_size AS animalSize, 
+			a.animal_weight AS animalWeight,
+			p.protector_id AS protectorId, 
+			p.protector_name AS protectorName, 
+			p.protector_phoneNo AS protectorPhone, 
+			p.protector_address AS protectorAddress
+		from 
+			Animal AS a join protector AS p ON a.seq_protector=p.seq_protector
+		WHERE 
+			a.seq_protector = #{seqProtector}
+	</select>
+	
+	<select id="selectOneProtectorPostcriptList" parameterType="int" resultType="OneProtectorPostscriptListVO">
+			select 
+			a.animal_name as animalName, 
+			p.postscript_satisfaction AS postscriptSatisfaction, 
+			ah.animal_hospital_name as animalHospitalname, 
+			d.diagnosis_date AS diagnosisDate
+		FROM 
+			 Animal as a join Postscript as p on a.seq_doctor=p.seq_doctor
+			   join Animalhospital as ah on p.seq_doctor=ah.seq_doctor
+			   join Diagnosis as d on ah.seq_doctor=d.seq_doctor
+		WHERE a.seq_protector = #{seqProtector}
+		group by animal_name
+	</select>
 </mapper>

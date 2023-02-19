@@ -10,9 +10,13 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Slf4j
 public class PostscriptSaveService {
+	// selectAll 매퍼
 	@Autowired
 	PostscriptSaveMapper postscriptSaveMapper;
-	
+
+	//----------------------------------------------------------------------------------------------------
+	// 후기 저장 메서드
+	//----------------------------------------------------------------------------------------------------
 	public void insertPostscriptInfo (PostscriptVO postscriptVO) {
 		try {
 			log.info("컨트롤러에서 넘어온 값(서비스) : {}", postscriptVO);

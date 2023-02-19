@@ -9,7 +9,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class PostscriptVO {
+	//-----------------------------------------------------------
+	// 후기 내용을 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqPostscript;
 	private int seqProtector;
 	private int seqDoctor;
