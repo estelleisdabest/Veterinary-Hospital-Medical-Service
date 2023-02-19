@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.human.anihospital.service.MyPageProtectorService;
+import kr.human.anihospital.vo.OneProtectorPatientListVO;
+import kr.human.anihospital.vo.OneProtectorPostscriptListVO;
 import kr.human.anihospital.vo.PatientDiagnosisListVO;
 import kr.human.anihospital.vo.ProtectorVO;
 import lombok.extern.slf4j.Slf4j;
@@ -29,6 +31,16 @@ public class MyPageProtectorController {
 		List<PatientDiagnosisListVO> patientDiagnosisList = myPageProtectorService.selectPatientDiagnosisList(seqProtector);
 		model.addAttribute("patientDiagnosisList", patientDiagnosisList);
 		
+		List<OneProtectorPatientListVO> oneProtectorPatientListVO = null;
+		oneProtectorPatientListVO = myPageProtectorService.selectOneProtectorPatientList(9);
+		model.addAttribute("oneProtectorPatient", oneProtectorPatientListVO);
+		log.info("service에서 넘어온 값 {} ", oneProtectorPatientListVO);
+		
+		List<OneProtectorPostscriptListVO> oneProtectorPostscriptListVO = null;
+		oneProtectorPostscriptListVO = myPageProtectorService.selectOneProtectorPostcriptList(9);
+		model.addAttribute("postscriptList",oneProtectorPostscriptListVO);
+		// 제대로 데이터가 담겨 있는지 로그에 찍어보기
+		log.info("service에서 넘어온 값 {}" ,oneProtectorPostscriptListVO);
 		return "myPageProtector";
 		
 	}

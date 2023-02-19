@@ -94,7 +94,7 @@
 						<h3>환자 정보</h3>
 						&nbsp;<input type="button" class="btn btn-primary" onclick="location.href='/patientAdd'" value="환자등록" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;">
 						<p />
-						<div class="card mb-3" style="width: 88%;">
+						<div class="card mb-3" style="width: 88%;" th:each="oneProtectorPatient : ${oneProtectorPatient}">
 							<div class="row g-1">
 								<div class="col-md-4">
 									<img src="img/dog.jpg" class="img-fluid rounded-start"
@@ -102,66 +102,17 @@
 								</div>
 								<div class="col-md-8">
 									<div class="card-body">
-										<h5 class="animalName" style="text-align: center;">두둥</h5>
+										<h5 style="text-align: center; font-weight: bold; font-size: 20px;"th:text="${oneProtectorPatient.animalName}"></h5>
+										<hr/>
 										<p class="card-text">
-											나이 : 3살 <br /> 품종 : 멀티즈<br /> 사이즈 : 소형<br /> 몸무게 : 5kg<br />
 										</p>
-										<div align="right">
-											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
+										<div>
+										나이 : <span th:text="${oneProtectorPatient.animalAge}" ></span><br>
+										품종 : <span th:text="${oneProtectorPatient.animalType}"></span><br>
+										사이즈 : <span th:text="${oneProtectorPatient.animalSize}"></span><br>
+										몸무게 : <span th:text="${oneProtectorPatient.animalWeight}"></span><br>
 										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card mb-3" style="width: 88%;">
-							<div class="row g-1">
-								<div class="col-md-4">
-									<img src="img/dog3.png" class="img-fluid rounded-start"alt="...">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="animalName" style="text-align: center;">나비</h5>
-										<p class="card-text">
-											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
-										</p>
-										<div align="right">
-											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card mb-3" style="width: 88%;">
-							<div class="row g-1">
-								<div class="col-md-4">
-									<img src="img/cat.jpg" class="img-fluid rounded-start"
-										alt="..." style="width: 100%; height: 100%;">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="animalName" style="text-align: center;">나비</h5>
-										<p class="card-text">
-											나이 : 1살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
-										</p>
-										<div align="right">
-											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="card mb-3" style="width: 88%;">
-							<div class="row g-1">
-								<div class="col-md-4">
-									<img src="img/dog2.jpg" class="img-fluid rounded-start"
-										alt="..." style="width: 100%; height: 100%;">
-								</div>
-								<div class="col-md-8">
-									<div class="card-body">
-										<h5 class="animalName" style="text-align: center;">나비</h5>
-										<p class="card-text">
-											나이 : 2살 <br /> 품종 : 길냥이<br /> 사이즈 : 소형<br /> 몸무게 : 4kg<br />
-										</p>
+											
 										<div align="right">
 											<input type="button" class="btn btn-primary" onclick="location.href='/patientInfoEditProtector'" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" value="정보수정">
 										</div>
@@ -170,9 +121,9 @@
 							</div>
 						</div>
 					</div>
+						
 					<div id="rightContent">
-						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
+						<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; margin-left: auto;">
 							<h5 style="margin-left: 10px; margin-bottom: 10px; margin-top: 10px;">
 								<b>이전 진료 내역</b>
 							</h5>
@@ -191,7 +142,13 @@
 												</tr>
 											</thead>
 											<tbody>
-												<tr th:each="patientDiagnosisList : ${patientDiagnosisList}" style="font-size: 10pt; text-align: center; vertical-align: middle;">
+												<tr>
+													<td th:if="${#lists.isEmpty(patientDiagnosisList)}"
+													colspan="5" style="text-align: center;">
+														등록된 진료내역이 없습니다.
+													</td>
+												</tr>
+												<tr th:each="patientDiagnosisList : ${patientDiagnosisList}" th:if="${!#lists.isEmpty(patientDiagnosisList)}" style="font-size: 10pt; text-align: center; vertical-align: middle;">
 													<td th:text="${patientDiagnosisList.animalName}"  style="text-align: center;"></td>
 													<td th:text="${patientDiagnosisList.animalHospitalName}"  style="text-align: center;"></td>
 													<td th:text="${patientDiagnosisList.diagnosisDate}" style="text-align: center;"></td>
@@ -208,8 +165,7 @@
 							</div>
 						</div>
 						<p>
-						<div
-							style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; border-radius: 10px; width: 550px; height:400px; margin-left: auto;">
+						<div style="padding: 10px; margin-bottom: 10px; border: 1px solid #DDDDDD; width:550px; border-radius: 10px; margin-left: auto; margin: auto;">
 							<h5>
 								<b>작성 한 후기</b>
 							</h5>
@@ -217,51 +173,30 @@
 								<div class="full graph_head"></div>
 								<div class="table_section padding_infor_info">
 									<div class="table-responsive-sm">
-										<table class="table" style="text-align: center">
+										<table class="table" style="text-align: center" >
 											<thead>
-												<tr>
-													<th style="width: 16%">환자명</th>
-													<th style="width: 17%">별점</th>
-													<th style="width: 20%">진료병원</th>
+												<tr style="text-align: center">
+													<th style="width: 15%">환자명</th>
+													<th style="width: 12%">별점</th>
+													<th style="width: 30%">진료병원</th>
 													<th style="width: 16%">진료일</th>
 												</tr>
 											</thead>
 											<tbody>
-												<tr>
-													<td>토리</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2023.01.10</td>
-												</tr>
-												<tr>
-													<td>두둥</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2022.01.30</td>
-												</tr>
-												<tr>
-													<td>토리</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2021.12.30</td>
-												</tr>
-												<tr>
-													<td>나비</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2021.09.30</td>
-												</tr>
-												<tr>
-													<td>두둥</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2021.07.10</td>
-												</tr>
-												<tr>
-													<td>두둥</td>
-													<td>★★★★★</td>
-													<td>A병원</td>
-													<td>2021.04.05</td>
+												<tr th:each="postscriptList : ${postscriptList}" style="font-size: 10pt; text-align: center; vertical-align: middle;">
+													<td th:text="${postscriptList.animalName}"  style="text-align: center;"></td>
+													<td style="text-align: center">
+													<span th:switch="${postscriptList.postscriptSatisfaction}" >
+														<span th:case="'1'">★</span>
+														<span th:case="'2'">★★</span>
+														<span th:case="'3'">★★★</span>
+														<span th:case="'4'">★★★★</span>
+														<span th:case="'5'">★★★★★</span>
+													</span>
+													</td>
+													<td th:text="${postscriptList.animalHospitalname}" style="text-align: center;"></td>
+													<td th:text="${postscriptList.diagnosisDate}" style="text-align: center;"></td>
+											
 												</tr>
 											</tbody>
 										</table>						
