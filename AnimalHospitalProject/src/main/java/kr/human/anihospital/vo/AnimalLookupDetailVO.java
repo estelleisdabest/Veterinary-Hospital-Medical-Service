@@ -8,7 +8,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class AnimalLookupDetailVO {
+	//-----------------------------------------------------------
+	// 보호자, 환자에 따른 특정 환자의 진료내역 리스트를 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqAnimal;
+	private int seqProtector;
 	private int seqDiagnosis;
 	private String animalName;
 	private String diagnosisSymptom;
