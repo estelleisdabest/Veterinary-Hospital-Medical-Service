@@ -165,7 +165,7 @@ public class MainController {
 //		return "patientInfoEditProtector";
 //	}
 
-	// 진단서 작성
+//	// 진단서 작성
 //	@GetMapping("/diagnosisAdd")
 //	public String diagnosisAdd() {
 //		return "diagnosisAdd";

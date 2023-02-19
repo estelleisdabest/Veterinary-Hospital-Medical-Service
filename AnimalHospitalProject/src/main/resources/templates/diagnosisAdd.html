@@ -102,6 +102,7 @@ img {
 <body>
 	<div th:replace="~{fragment/header :: #header}"></div>
 	<main id="main">
+	<form method="post" action="diagnosisAddOk" id="diagnosisAddSubmit">
 		<!-- ======= Breadcrumbs Section ======= -->
 		<section class="breadcrumbs">
 			<div class="container">
@@ -124,8 +125,8 @@ img {
 								<h5>
 									<b> 보호자 주의사항</b>
 								</h5>
-								<input type="text" class="form-control" name="protectorImpt"
-									id="protectorImpt" data-rule="protectorImpt"
+								<input type="text" class="form-control" name="protectorImportantPoint"
+									id="protectorImportantPoint"
 									placeholder="보호자의 특징 및 주의해야 할 사항을 적어주세요." required="required">
 								<div class="validate"></div>
 							</div>
@@ -221,10 +222,10 @@ img {
 								<div class="validate"></div>
 							</div>
 							<div class="col-md-10 form-group">
-								<label for="visitdate">내원일</label>
+								<label for="diagnosisDate">내원일</label>
 								<!--현재날짜를 띄움-->
-								<input type="date" class="form-control" id="visitDate" />
-								<div class="validate" id="warningMessage6"></div>
+								<input type="date" class="form-control" id="diagnosisDate" />
+								<div class="diagnosisDate" id="warningMessage6"></div>
 							</div>
 						</div>
 						<br />
@@ -233,21 +234,10 @@ img {
 								<div class="validate"></div>
 							</div>
 							<div class="col-md-10 form-group">
-								<label for="nextVisitDate">다음내원 예정일</label> <input type="date"
-									class="form-control" id="nextVisitDate" />
-								<div class="validate"></div>
-							</div>
-						</div>
-						<br />
-						<div class="row">
-							<div class="col-md-10 form-group">
-								<div class="validate"></div>
-							</div>
-							<div class="col-md-10 form-group">
-								<label for="symptom">증상</label>
+								<label for="diagnosisSymptom">증상</label>
 								<!-- 의사가 진단한 내용 띄움 -->
-								<input type="text" class="form-control" name="symptom"
-									id="symptom" data-rule="species" placeholder="증상을 입력해주세요.">
+								<input type="text" class="form-control" name="diagnosisSymptom"
+									id="diagnosisSymptom" placeholder="증상을 입력해주세요.">
 								<div class="validate" id="warningMessage7"></div>
 							</div>
 						</div>
@@ -339,7 +329,7 @@ img {
 							</div>
 							<div class="col-md-10 form-group">
 								<label for="recoFeed">추천사료 및 영양제</label>
-								<%-- 의사가 추가한 엑셀파일 목록을 띄움 --%>
+								<!-- 의사가 추가한 엑셀파일 목록을 띄움 -->
 								<div class="form-control" style="margin-bottom: 4px;">
 									<ul id="recoFeed_list">
 										<li>신장질환 추천 사료(소형견).xlsx</li>
@@ -393,6 +383,7 @@ img {
 				style="border-radius: 50px; width: 110px; text-align: center; color: white;">
 		</div>
 		<br />
+		</form>
 	</main>
 	<!-- End #main -->
 	<!-- Template Main JS File -->
@@ -400,43 +391,32 @@ img {
 </body>
 <script>
 	// 내원일 에 오늘 날짜 넣기
-	const TIME_ZONE = 3240 * 10000;
-	document.getElementById('visitDate').value = new Date(+new Date() + TIME_ZONE).toISOString().substring(0, 10);
+const TIME_ZONE = 3240 * 10000;
+	document.getElementById('diagnosisDate').value = new Date(+new Date() + TIME_ZONE).toISOString().substring(0, 10);
 	
 	$(function () {
 		$('#diagnosis_add').on('click', function () {
-			var visitDate = $('#visitDate').val();
-			var symptom = $('#symptom').val();
-			
-			if(visitDate == null || visitDate.trim().length == 0) {
-				$('#visitDate').attr('style', 'border-color: #dc3545;');
-				$('#visitDate').val('');
-				$('#warningMessage6').html('<div id="warning6"><b style="color: red;">진료 일자를 입력해주세요</b></div>');
-				$('#visitDate').focus();
-			} else if (symptom == null || symptom.trim().length == 0) {
-				$('#symptom').attr('style', 'border-color: #dc3545;');
-				$('#symptom').val('');
+			var diagnosisSymptom = $('#diagnosisSymptom').val();
+			if(diagnosisSymptom == null || diagnosisSymptom.trim().length == 0) {
+				$('#diagnosisSymptom').attr('style', 'border-color: #dc3545;');
+				$('#diagnosisSymptom').val('');
 				$('#warningMessage7').html('<div id="warning7"><b style="color: red;">환자의 증상을 입력해주세요</b></div>');
-				$('#symptom').focus();
+				$('#diagnosisSymptom').focus();
 			} else {
 				var result = window.confirm('입력하신 내용대로 진료 내역을 작성 하시겠습니까?');
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
-	   				location.href='/patientInfo';
+					$("#diagnosisAddSubmit").submit();
+				} else if (!result) {
+					alert('취소 되었습니다.');
 				}
 			}
 		});
 	});
 
-	$('#visitDate').on('input', function() {
-		if ($('#visitDate').val() != '') {
-			$('#visitDate').attr('style', 'border-color : #ced4da;');
-			$('#warning6').remove();
-		}
-	});
-	$('#symptom').on('input', function() {
-		if ($('#symptom').val() != '') {
-			$('#symptom').attr('style', 'border-color : #ced4da;');
+	$('#diagnosisSymptom').on('input', function() {
+		if ($('#diagnosisSymptom').val() != '') {
+			$('#diagnosisSymptom').attr('style', 'border-color : #ced4da;');
 			$('#warning7').remove();
 		}
 	});
