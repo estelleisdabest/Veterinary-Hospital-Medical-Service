@@ -8,7 +8,7 @@
 				notice_content = #{noticeContent}, 
 				notice_update_date = now()
 			WHERE
-				seq_notice = 1
+				seq_notice = #{seqNotice}
 	</update>
 	
 	<select id="selectOneDetailNotice" resultType="NoticeOneDetailVO">
