@@ -63,9 +63,9 @@
 									<tr>
 										<th style="width: 8%">진료번호</th>
 										<th style="width: 8%">환자명</th>
-										<th style="width: 50%">진료내용</th>
+										<th style="width: 40%">진료내용</th>
 										<th style="width: 15%">진료병원</th>
-										<th style="width: 8%">진료일</th>
+										<th style="width: 15%">진료일</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -74,7 +74,7 @@
 										colspan="5" style="text-align: center;">등록된 진료내역이
 											없습니다.</td>
 									</tr>
-									<tr th:each="animallookup : ${animallookup}" th:if="${!#lists.isEmpty(animallookup)}">
+									<tr th:each="animallookup : ${animallookup}" th:if="${!#lists.isEmpty(animallookup)}" th:onclick="|location.href='@{/animallookupdetail(seqProtector=${animallookup.seqProtector}, seqAnimal=${animallookup.seqAnimal})}'|">
 										<td th:text = "${animallookup.seqDiagnosis}"></td>
 										<td th:text = "${animallookup.animalName}"></td>
 										<td th:text = "${animallookup.diagnosisSymptom}"></td>
