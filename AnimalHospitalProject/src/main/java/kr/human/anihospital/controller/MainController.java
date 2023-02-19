@@ -59,11 +59,12 @@ public class MainController {
 //		return "animallookup";
 //	}
 
-	// 환자 조회 (한 환자의 진료 이력 리스트)
-	@GetMapping("/animallookupdetail")
-	public String animallookupdetail() {
-		return "animallookupdetail";
-	}
+	/*
+	 * // 환자 조회 (한 환자의 진료 이력 리스트)
+	 * 
+	 * @GetMapping("/animallookupdetail") public String animallookupdetail() {
+	 * return "animallookupdetail"; }
+	 */
 
 	/*
 	 * // 진료 내역
