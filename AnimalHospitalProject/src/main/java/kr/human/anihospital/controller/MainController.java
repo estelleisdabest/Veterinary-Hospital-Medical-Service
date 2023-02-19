@@ -178,11 +178,11 @@ public class MainController {
 		return "patientInfoEditProtector";
 	}
 
-	// 진단서 작성
-	@GetMapping("/diagnosisAdd")
-	public String diagnosisAdd() {
-		return "diagnosisAdd";
-	}
+//	// 진단서 작성
+//	@GetMapping("/diagnosisAdd")
+//	public String diagnosisAdd() {
+//		return "diagnosisAdd";
+//	}
 
 //	// 진단서 상세
 //	@GetMapping("/noticeDetail")
