@@ -47,7 +47,7 @@ $(function() {
 					'<form action="pharmacyInfoEdit" method="post">',
 					'<input type="hidden" name="seq" value="' + data[i].seqPharmacyLocation + '" />',
 					'<input type="submit" class="btn btn-primary" name="notice_add" id="notice_add" value="수정하기" ',
-					'style="border-radius: 50px; width: 110px; text-align: center; float: right; color: white;">',
+					'style="border-radius: 50px; width: 90px; text-align: center; float: right; color: white;">',
 					'</form>'
 				].join('');
 				var infoWindow = new naver.maps.InfoWindow({
