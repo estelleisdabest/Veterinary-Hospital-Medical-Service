@@ -61,15 +61,15 @@
 		<div id="editform">       
 			<div class="col-md-4 form-group" style="margin: auto;">작성자 <br />
 				<input type="hidden" name="seqNotice" id="seqNotice" th:value="${noticeOneDatailList[0].seqNotice}">
-				<div id="username" class="form-control" style="width: 700px; background-color: #F0F8FF;">
+				<div id="doctorName" class="form-control" style="width: 700px; background-color: #F0F8FF;" th:value="${noticeOneDatailList[0].doctorName}" th:text="${noticeOneDatailList[0].doctorName}">
 					[[${noticeOneDatailList[0].doctorName}]]
 				</div> <br />
 					진료병원 <br />
-				<div id="animalHospital" class="form-control" style="width: 700px; background-color: #F0F8FF;">
+				<div id="animalHospitalName" class="form-control" style="width: 700px; background-color: #F0F8FF;">
 					[[${noticeOneDatailList[0].animalHospitalName}]]
 				</div> <br />
 					작성일 <br />
-				<div class="form-control" id="writeDate" style="width: 700px; background-color: #F0F8FF;">
+				<div class="form-control" id="noticeUpdateDate" style="width: 700px; background-color: #F0F8FF;">
 					[[${noticeOneDatailList[0].noticeUpdateDate}]]
 				</div> <br />
 					제목 <br />
@@ -112,6 +112,9 @@ $(function(){
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
 					var seqNoticeVar = $("#seqNotice").val();
+					var doctorNameVar = $("#doctorName").val();
+					var animalHospitalVar = $("#animalHospitalName").val();
+					var noticeWriteDateVar = $("#noticeUpdateDate").val();
 					var noticeSubjectVar = $("#noticeSubject").val();
 					var noticeContentVar = $("#noticeContent").val();
 					$.ajax({

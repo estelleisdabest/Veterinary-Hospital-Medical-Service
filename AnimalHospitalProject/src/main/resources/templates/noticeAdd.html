@@ -106,18 +106,16 @@ $(function(){
 				var result = window.confirm('작성한 내용을 추가하시겠습니까?');
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
-					var noticeAddDate = $("#writeDate").val();
-					var noticeAddSubject = $("#noticeSubject").val();
-					var noticeAddContent = $("#noticeContent").val();
+					var noticeSubjectVal = $("#noticeSubject").val();
+					var noticeContentVal = $("#noticeContent").val();
 					$.ajax({
-						url: "/noticeAddOk",
+						url: "/noticeAdd",
 						dataType: "text",
 						type: "post",
 						contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 						data: {
-							noticeAddDate : noticeAddDate,
-							noticeAddSubject : noticeAddSubject,
-							noticeAddContent: noticeAddContent
+							noticeSubject : noticeSubjectVal,
+							noticeContent : noticeContentVal
 						},
 						success: function(data) {
 							location.href='/notice';
