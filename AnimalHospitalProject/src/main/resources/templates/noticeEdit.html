@@ -40,7 +40,7 @@
 	textarea {
 	border-radius: 5px;
 	border: 1px solid gray;
-	resize: none
+	resize: none;
 	}
 </style>
 </head>
@@ -61,26 +61,22 @@
 		<div id="editform">       
 			<div class="col-md-4 form-group" style="margin: auto;">작성자 <br />
 				<input type="hidden" name="seqNotice" id="seqNotice" th:value="${noticeOneDatailList[0].seqNotice}">
-				<div id="username" class="form-control" name="username" style="width: 700px;">
+				<div id="username" class="form-control" style="width: 700px; background-color: #F0F8FF;">
 					[[${noticeOneDatailList[0].doctorName}]]
 				</div> <br />
 					진료병원 <br />
-				<div id="animalHospital" class="form-control" name="animalHospital" style="width: 700px;">
+				<div id="animalHospital" class="form-control" style="width: 700px; background-color: #F0F8FF;">
 					[[${noticeOneDatailList[0].animalHospitalName}]]
 				</div> <br />
 					작성일 <br />
-				<div type="date" class="form-control"  id="writeDate" value="2023-01-30" style="width: 700px;" >
+				<div class="form-control" id="writeDate" style="width: 700px; background-color: #F0F8FF;">
 					[[${noticeOneDatailList[0].noticeUpdateDate}]]
 				</div> <br />
 					제목 <br />
-				<textarea id="noticeSubject" class="form-control" name="noticeSubject" rows="1" cols="100" maxlength="50" required="required" style="width: 700px;"> 
-					[[${noticeOneDatailList[0].noticeSubject}]]
-				</textarea>
+				<textarea id="noticeSubject" class="form-control" name="noticeSubject" rows="1" maxlength="50" th:value="${noticeOneDatailList[0].noticeSubject}" th:text="${noticeOneDatailList[0].noticeSubject}" required="required" style="width: 700px;"></textarea>
 				<div id="warningMessage1"></div>
 				<br />내용<br />
-				<textarea id="noticeContent" class="form-control" name="noticeContent" rows="20" cols="100" maxlength="500" required="required" style="width: 700px;"> 
-					[[${noticeOneDatailList[0].noticeContent}]]
-				</textarea>
+				<textarea id="noticeContent" class="form-control" name="noticeContent" rows="20" cols="100" maxlength="500" required="required" style="width: 700px;" th:value="${noticeOneDatailList[0].noticeContent}" th:text="${noticeOneDatailList[0].noticeContent}"></textarea>
 				<div id="warningMessage2"></div>
 				<br />
 			</div>
@@ -115,23 +111,23 @@ $(function(){
 				var result = window.confirm('작성한 내용으로 수정하시겠습니까?');
 				if (result) {
 					alert('정상적으로 처리되었습니다.');
-
-					var noticeSubject = $("#noticeSubject").val();
-					var noticeContent = $("#noticeContent").val();
-					
+					var seqNoticeVar = $("#seqNotice").val();
+					var noticeSubjectVar = $("#noticeSubject").val();
+					var noticeContentVar = $("#noticeContent").val();
 					$.ajax({
-						url:"noticeEdit",
+						url:"/noticeEdit",
 						dataType: "text",
 						type: "post",
 						contentType:"application/x-www-form-urlencoded; charset=UTF-8",
 						data: {
-							noticeSubject : noticeSubject,
-							noticeContent : noticeContent
+							seqNotice : seqNoticeVar,
+							noticeSubject : noticeSubjectVar,
+							noticeContent : noticeContentVar
 						},
-						success: function (data) {
-							location.href='notice';
+						success: function(data) {
+							location.href='/notice';
 						},
-						error: function (data) {
+						error: function(data) {
 							alert("Error");
 						}
 					});					

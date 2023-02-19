@@ -11,9 +11,13 @@ import kr.human.anihospital.vo.NoticeListVO;
 @Service("NoticeService")
 public class NoticeServiceImpl implements NoticeService {
 
+	// selectAll 매퍼
 	@Autowired
 	NoticeMapper noticeMapper;
-
+	
+	//----------------------------------------------------------------------------------------------------
+	// 모든 공지를 화면에 표시해줄 메서드
+	//----------------------------------------------------------------------------------------------------
 	@Override
 	public List<NoticeListVO> selectNoticeList() {
 		List<NoticeListVO> noticeList = null;
