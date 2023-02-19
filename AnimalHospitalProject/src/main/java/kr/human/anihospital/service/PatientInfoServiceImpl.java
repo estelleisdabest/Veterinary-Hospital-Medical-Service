@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import kr.human.anihospital.mapper.PatientInfoMapper;
+import kr.human.anihospital.vo.PatientInfoVO;
 import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 import lombok.extern.slf4j.Slf4j;
 
-@Service
+@Service("PatientInfoService")
 @Slf4j
 public class PatientInfoServiceImpl implements PatientInfoService {
 	
@@ -24,7 +25,19 @@ public class PatientInfoServiceImpl implements PatientInfoService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		log.info("patientInfoMapper에서 넘어온 값(서비스) : {}", pidliat);
+		log.info("selectPatientInfoDiagnosis 실행한 값(서비스) : {}", pidliat);
 		return pidliat;
+	}
+
+	@Override
+	public PatientInfoVO selectPatientInfo() {
+		PatientInfoVO patientInfoVO = null;
+		try {
+			patientInfoVO = patientInfoMapper.selectPatientInfo();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		log.info("selectPatientInfo 실행한 값(서비스) : {}", patientInfoVO);
+		return patientInfoVO;
 	}
 }

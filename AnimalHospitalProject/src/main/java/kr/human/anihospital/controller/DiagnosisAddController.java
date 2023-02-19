@@ -1,12 +1,14 @@
 package kr.human.anihospital.controller;
 
 import java.util.List;
+
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -31,7 +33,8 @@ public class DiagnosisAddController {
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		PatientInfoVO patientInfoVO = null;
 		
-			pidliat = diagnosisAddService.selectPatientInfoDiagnosis();
+		pidliat = diagnosisAddService.selectPatientInfoDiagnosis();
+
 		patientInfoVO  = diagnosisAddService.selectPatientInfo();
 		
 		model.addAttribute("pidliat",pidliat);
@@ -42,7 +45,7 @@ public class DiagnosisAddController {
 		
 		return"diagnosisAdd";
 	}
-	
+  
 	// 주의사항 update & 진료내용 insert
 	@PostMapping(value = "/diagnosisAddOk")
 	   public String updateProtectorImportantPoint(@RequestParam Map<String, String>  map, Model model) throws Exception{

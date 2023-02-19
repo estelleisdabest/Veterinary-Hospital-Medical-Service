@@ -47,12 +47,6 @@ public class MainController {
 		return "noticeAdd";
 	}
 
-	// 공지 사항 수정 및 삭제
-	@GetMapping("/noticeEdit")
-	public String noticeEdit() {
-		return "noticeEdit";
-	}
-
 	// 환자 정보 수정 (의사 용)
 	@GetMapping("/patientInfoEditDoctor")
 	public String patientInfoEditDoctor() {
@@ -65,11 +59,12 @@ public class MainController {
 //		return "animallookup";
 //	}
 
-	// 환자 조회 (한 환자의 진료 이력 리스트)
-	@GetMapping("/animallookupdetail")
-	public String animallookupdetail() {
-		return "animallookupdetail";
-	}
+	/*
+	 * // 환자 조회 (한 환자의 진료 이력 리스트)
+	 * 
+	 * @GetMapping("/animallookupdetail") public String animallookupdetail() {
+	 * return "animallookupdetail"; }
+	 */
 
 	/*
 	 * // 진료 내역
@@ -143,10 +138,6 @@ public class MainController {
 		return "hospitalAdd";
 	}
 
-	@GetMapping("/hospitalEdit")
-	public String hospitalEdit() {
-		return "hospitalEdit";
-	}
 
 	// 약국 위치 조회
 	@GetMapping("/pharmacyMap")
@@ -160,11 +151,7 @@ public class MainController {
 		return "pharmacyInfoAdd";
 	}
 
-	// 약국 위치 수정
-	@GetMapping("/pharmacyInfoEdit")
-	public String pharmacyInfoEdit() {
-		return "pharmacyInfoEdit";
-	}
+	
 
 	// 환자 정보 및 이전 진료 내역
 //	@GetMapping("/patientInfo")
@@ -173,10 +160,10 @@ public class MainController {
 //	}
 
 	// 환자 정보 수정 (보호자 용)
-	@GetMapping("/patientInfoEditProtector")
-	public String patientInfoEditProtector() {
-		return "patientInfoEditProtector";
-	}
+//	@GetMapping("/patientInfoEditProtector")
+//	public String patientInfoEditProtector() {
+//		return "patientInfoEditProtector";
+//	}
 
 //	// 진단서 작성
 //	@GetMapping("/diagnosisAdd")

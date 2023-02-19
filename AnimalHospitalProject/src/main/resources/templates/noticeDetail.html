@@ -32,7 +32,7 @@
 	width: 20%;
 }
 #animalHospital, #username, #writeDate, #subject, #content{
-	background-color: #E6E6FA
+	background-color:  #F0F8FF;
 }
 </style>
 <script
@@ -56,7 +56,7 @@
 				<div id="noticeForm">
 					<div class="col-md-4 form-group" style="margin: auto;">
 						작성자 <br />
-						<input type="hidden" name="seqNotice" id="seqNotice" value="#seqNotice">
+						<input type="hidden" name="seqNotice" id="seqNotice" th:value="${noticeList.seqNotice}">
 						<div id="username" class="form-control" name="username" style="width: 700px;">
 							[[${noticeList.doctorName}]]					
 						</div>
@@ -66,7 +66,7 @@
 						</div>
 						 <br /> 작성일 <br /> 
 						 <div class="form-control" id="writeDate" style="width: 700px;" >
-						 	[[${noticeList.noticeWriteDate}]]
+						 	[[${noticeList.noticeUpdateDate}]]
 						 </div>
 						 <br /> 제목 <br />
 						 <div id="subject" class="form-control" name="subject" style="width: 700px;">
@@ -86,10 +86,9 @@
 							class="btn btn-secondary"
 							style="border-radius: 50px; width: 110px; float: left; margin-left: 22%;"
 							onclick="history.go(-1)">이전페이지</button>
-						<button type="submit" id="modify_btn" name="modify_btn"
-							class="btn btn-primary bt-sm"
+						<button type="button" id="modify_btn" name="modify_btn" class="btn btn-primary bt-sm"
 							style="border-radius: 50px; width: 110px; display: inline; margin-left: 180px;"
-							onclick="location='/noticeEdit'">수정</button>
+							th:onclick="|location.href='@{/noticeEdit(seqNotice=${noticeList.seqNotice})}'|">수정</button>
 						<button type="submit" id="delete_btn" name="delete_btn" class="btn btn-danger bt-sm"
 							style="border-radius: 50px; width: 110px; display: inline; float: right; margin-right: 15%;">삭제</button>
 						<br />

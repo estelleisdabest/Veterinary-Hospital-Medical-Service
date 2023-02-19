@@ -52,7 +52,7 @@
 			</div>
 		</section>
 		<!-- End Breadcrumbs Section -->
-
+		<input type="hidden" name="seqProtector" th:value="${protectInfo.seqProtector}">
 		<section class="inner-page">
 			<div class="container">
 				<div class="row">
@@ -97,7 +97,7 @@
 					</div>
 					<div class="col-md-4 form-group mt-3">
 						<label for="birth">생년월일</label>
-						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled" th:value="${protectInfo.protectorAge}">
+						<input type="text" class="form-control" name="birthday" id="birthday" disabled="disabled" th:value="${#calendars.format(protectInfo.protectorAge,'yyyy-MM-dd')}">
 						<div id="uneditableBirthday" style="font-size: 9pt; color: red;"></div>
 					</div>
 					<div class="validate"></div>
@@ -175,5 +175,4 @@
 	<div th:replace="~{fragment/footer :: #footer}"></div>
 </body>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
 </html>

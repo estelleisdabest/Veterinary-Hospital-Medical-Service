@@ -7,12 +7,12 @@
 			n.seq_notice AS seqNotice,
 			d.doctor_name AS doctorName, 
 			a.animal_hospital_name AS animalHospitalName, 
-			date_format(n.notice_write_date, '%Y-%m-%d') AS noticeWriteDate,
+			date_format(n.notice_update_date, '%Y-%m-%d') AS noticeUpdateDate,
 			n.notice_subject AS noticeSubject,
 			n.notice_content AS noticeContent
 		FROM
 			notice AS n 
-			JOIN animalhospital AS a ON n.seq_doctor = a.seq_doctor
+			JOIN animalhospital AS a ON n.seq_animal_hospital = a.seq_animal_hospital
 			JOIN doctor AS d ON n.seq_doctor =d.seq_doctor
 		WHERE n.seq_notice = #{seq_notice}
 		GROUP BY n.seq_notice

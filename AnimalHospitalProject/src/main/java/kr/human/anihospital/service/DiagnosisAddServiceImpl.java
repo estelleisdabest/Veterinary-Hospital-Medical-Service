@@ -56,6 +56,7 @@ public class DiagnosisAddServiceImpl implements DiagnosisAddService {
 			e.printStackTrace();
 		}
 	}
+  
 	// 주의사항 입력 내용
 	@Override
 	public void updateProtectorImportantPoint(DiagnosisAddVO diagnosisAddVO) {

@@ -10,6 +10,7 @@ import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 
 @Mapper
 public interface DiagnosisAddMapper {
+
 	// 이전진료내역
 	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
 	// 환자 정보
