@@ -16,11 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 @Service("MyPageProtectorService")
 @Slf4j
 public class MyPageProtectorService {
+	
 	// selectAll 매퍼
 	@Autowired
 	MyPageProtectorMapper myPageProtectorMapper;
 	
+	//----------------------------------------------------------------------------------------------------
 	// 보호자 정보 조회할 메서드
+	//----------------------------------------------------------------------------------------------------
 	public ProtectorVO selectProtector(int seqProtector) {
 		// 보호자 정보를 담을 그릇 준비
 		ProtectorVO vo = new ProtectorVO();
@@ -35,7 +38,9 @@ public class MyPageProtectorService {
 		return vo;
 	}
 	
+	//----------------------------------------------------------------------------------------------------
 	// 보호자 정보 수정할 메서드
+	//----------------------------------------------------------------------------------------------------
 	public void updateProtector(Map<String, Object> map) {
 		
 		try {
@@ -48,7 +53,9 @@ public class MyPageProtectorService {
 		}
 	}
 	
+	//----------------------------------------------------------------------------------------------------
 	// 보호자의 모든 환자 이전 진료 내역 조회할 메서드
+	//----------------------------------------------------------------------------------------------------
 	public List<PatientDiagnosisListVO> selectPatientDiagnosisList(int seqProtector) {
 		List<PatientDiagnosisListVO> patientDiagnosisList = null;
 		// 모든 환자의 이전 진료 내역을 담을 그릇 준비하기
@@ -63,7 +70,9 @@ public class MyPageProtectorService {
 		return patientDiagnosisList;
 	}
 	
+	//----------------------------------------------------------------------------------------------------
 	//보호자의 환자 리스트 조회할 메서드
+	//----------------------------------------------------------------------------------------------------
 	public List<OneProtectorPatientListVO> selectOneProtectorPatientList (int seqProtector) {
 		// 보호자의 환자 리스트를 담을 그릇 준비하기
 		List<OneProtectorPatientListVO> oneProtectorPatientListVO = null;
@@ -78,7 +87,9 @@ public class MyPageProtectorService {
 		return oneProtectorPatientListVO;
 	}
 	
+	//----------------------------------------------------------------------------------------------------
 	// 후기 리스트 조회할 메서드
+	//----------------------------------------------------------------------------------------------------
 	public List<OneProtectorPostscriptListVO> selectOneProtectorPostcriptList (int seqProtector){
 		// 후기 리스트를 담을 그릇 준비하기
 		List<OneProtectorPostscriptListVO> oneProtectorPostscriptListVO = null;

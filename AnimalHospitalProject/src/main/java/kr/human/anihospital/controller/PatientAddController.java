@@ -1,8 +1,6 @@
 package kr.human.anihospital.controller;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +23,7 @@ public class PatientAddController {
 		log.info("받은 값 : {}", patientAddMap);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		AnimalVO animalVO = new AnimalVO();
-		animalVO.setSeqProtector(1);
+		animalVO.setSeqProtector(Integer.valueOf(patientAddMap.get("seqProtector")));
 		animalVO.setSeqDoctor(1);
 		animalVO.setAnimalName(patientAddMap.get("animalName"));
 		animalVO.setAnimalType(patientAddMap.get("animalType"));
