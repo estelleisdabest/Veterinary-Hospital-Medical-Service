@@ -56,16 +56,6 @@ input[name="medicineAdd"] {
 	border-radius: 50px;
 }
 
-input[name="medicineEdit"] {
-	height: 38px;
-	display: inline;
-	float: right;
-	margin-top: 4px;
-	margin-right: 5px;
-	font-size: 10pt;
-	border-radius: 50px;
-}
-
 label[id="recoFeedAdd_input"] {
 	height: 38px;
 	display: inline;
@@ -250,11 +240,13 @@ img {
 								<label for="medicine">처방</label>
 								<!-- 의사가 처방한 내용 띄움 -->
 								<div class="form-control">
-									<div class="col-md-8 ">
-										<label for="medicine_name">약품명</label> <input type="text"
-											class="form-control" list="medicine_name_option"
+									<div class="col-md-12 ">
+									<input type="hidden" id="seqMedicine" name="seqMedicine" value="1"> 
+										<label for="medicine_name">약품명</label> 
+										<input type="text"
+											class="form-control" id="medicineName" name="medicineName" list="medicine_name_option"
 											placeholder="약품명을 입력하세요." data-rule="text"
-											required="required">
+											required="required" th:value="${medicine.medicineName}">
 										<datalist id="medicine_name_option">
 											<option class="form-control" value="세라치오펩티다제">
 											<option class="form-control" value="올로원스점안액">
@@ -265,7 +257,7 @@ img {
 										<div class="validate"></div>
 										<label for="medicine_detail">약품상세명</label> <input type="text"
 											class="form-control" list="medicine_detail_option"
-											data-rule="text" required="required">
+											data-rule="text" required="required" id="medicineDetailName" name="medicineDetailName" th:value="${medicine.medicineDetailName}">
 										<datalist id="medicine_detail_option">
 											<option class="form-control" value="소염효소제">
 											<option class="form-control" value="항히스타민&항알러지약">
@@ -276,8 +268,8 @@ img {
 										</datalist>
 										<div class="validate"></div>
 										<label for="medication_guide">복약안내</label> <input type="text"
-											class="form-control" list="medication_guide_option"
-											data-rule="text" required="required">
+											class="form-control" id="medicinemedicationGuide" name="medicinemedicationGuide" list="medication_guide_option"
+											data-rule="text" required="required" th:value="${medicine.medicinemedicationGuide}">
 										<datalist id="medication_guide_option">
 											<option class="form-control" value="하루 3회 / 식후 30분">
 											<option class="form-control" value="하루 3회 / 식전 30분">
@@ -285,8 +277,10 @@ img {
 											<option class="form-control" value="하루 1회 / 취침 전">
 											<option class="form-control" value="증상 발생 시 수시">
 										</datalist>
+										<input type="button" class="btn btn-primary" id="medicineAdd" name="medicineAdd" value="추가" style="width: 90px; text-align: center; color: white;"/>
 										<div class="validate"></div>
 										<br />
+										<br/>
 									</div>
 									<table style="text-align: left; font-size: 10pt;"
 										class="form-control">
@@ -300,9 +294,9 @@ img {
 										</thead>
 										<tbody>
 											<tr>
-												<td style="vertical-align: middle;">세라치오펩티다제</td>
-												<td style="vertical-align: middle;">소염효소제</td>
-												<td style="text-align: left;">하루 3회 / 식후 30분</td>
+												<td style="vertical-align: middle;" th:text="${medicine.medicineName}">세라치오펩티다제</td>
+												<td style="vertical-align: middle;" th:text="${medicine.medicineDetailName}">소염효소제</td>
+												<td style="text-align: left;" th:text="${medicine.medicinemedicationGuide}">하루 3회 / 식후 30분</td>
 												<td><i class="bi bi-x-square"></i></td>
 											</tr>
 											<tr>

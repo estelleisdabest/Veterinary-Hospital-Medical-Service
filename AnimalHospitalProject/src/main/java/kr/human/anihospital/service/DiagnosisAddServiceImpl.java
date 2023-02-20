@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import kr.human.anihospital.mapper.DiagnosisAddMapper;
 import kr.human.anihospital.vo.DiagnosisAddVO;
+import kr.human.anihospital.vo.MedicineVO;
 import kr.human.anihospital.vo.PatientInfoVO;
 import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 import lombok.extern.slf4j.Slf4j;
@@ -84,5 +85,23 @@ public class DiagnosisAddServiceImpl implements DiagnosisAddService {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	// ----------------------------------------------------------------------------------------------
+	// 처방약을 조회할 내용을 가져올 메서드
+	// ----------------------------------------------------------------------------------------------
+	@Override
+	public MedicineVO selectMedicine() throws Exception {
+		// 처방약 내용을 담을 그릇 준비하기
+		MedicineVO medicineVO = null;
+		try {
+			// 데이터를 가져올 mapper 부르기
+			medicineVO = diagnosisAddMapper.selectMedicine();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		// 가저온 데이터 로그로 찍어보기
+		log.info("selectMedicine mapper에서 넘어온 값(서비스) : {}", medicineVO);
+		return medicineVO ;
 	}
 }

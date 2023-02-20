@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.human.anihospital.service.DiagnosisAddService;
 import kr.human.anihospital.vo.DiagnosisAddVO;
+import kr.human.anihospital.vo.MedicineVO;
 import kr.human.anihospital.vo.PatientInfoVO;
 import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 import lombok.extern.slf4j.Slf4j;
@@ -36,14 +37,20 @@ public class DiagnosisAddController {
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		// 화면에 넘길 데이터를 담을 그릇(VO) 준비
 		PatientInfoVO patientInfoVO = null;
+		// 화면에 넘길 데이터를 담을 그릇(VO) 준비
+		MedicineVO medicineVO = null;
 		// 데이터 그릇(List)에 담기
 		pidliat = diagnosisAddService.selectPatientInfoDiagnosis();
 		// 데이터 그릇(VO)에 담기
 		patientInfoVO  = diagnosisAddService.selectPatientInfo();
+		
+		medicineVO = diagnosisAddService.selectMedicine();
 		// 받아온 데이터(List)를 화면에 넘겨주기
 		model.addAttribute("pidliat",pidliat);
 		// 받아온 데이터(VO)를 화면에 넘겨주기
 		model.addAttribute("patientInfoVO", patientInfoVO);
+		
+		model.addAttribute("medicine", medicineVO);
 		// 제대로 데이터가 담겨 있는지 로그에 찍어보기(List)
 		log.info("selectPatientInfoDiagnosis메서드 호출 : {}",  pidliat);
 		// 제대로 데이터가 담겨 있는지 로그에 찍어보기(VO)

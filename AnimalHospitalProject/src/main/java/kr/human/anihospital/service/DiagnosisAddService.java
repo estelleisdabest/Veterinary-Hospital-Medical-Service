@@ -4,6 +4,7 @@ import java.util.List;
 
 
 import kr.human.anihospital.vo.DiagnosisAddVO;
+import kr.human.anihospital.vo.MedicineVO;
 import kr.human.anihospital.vo.PatientInfoVO;
 import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 
@@ -27,4 +28,10 @@ public interface DiagnosisAddService {
 	// 주의사항 수정 및 수정 내용을 화면에 돌려줄 메서드
 	// ----------------------------------------------------------------------------------------------
 	void updateProtectorImportantPoint(DiagnosisAddVO diagnosisAddVO) throws Exception;
+
+	// ----------------------------------------------------------------------------------------------
+	// 처방약을 조회할 내용을 가져올 메서드
+	// ----------------------------------------------------------------------------------------------
+	MedicineVO selectMedicine() throws Exception;
+	
 }

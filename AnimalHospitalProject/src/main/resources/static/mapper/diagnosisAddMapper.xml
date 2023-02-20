@@ -63,4 +63,15 @@
 			WHERE
 				seq_protector = #{seqProtector}
    </update>
+   <!-- 처방약을 조회하는 SQL -->
+   <select id="selectMedicine" resultType="MedicineVO">
+		SELECT 
+			medicine_name as medicineName,
+			medicine_detail_name as medicineDetailName,
+			medicinemedication_guide as medicinemedicationGuide
+		FROM 
+			Medicine
+		WHERE
+			seq_medicine = 2
+   </select>
 </mapper>
