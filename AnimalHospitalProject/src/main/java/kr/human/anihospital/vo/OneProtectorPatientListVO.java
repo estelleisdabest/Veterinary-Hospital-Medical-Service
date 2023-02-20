@@ -19,6 +19,6 @@ public class OneProtectorPatientListVO {
 	private String protectorId;
 	private String protectorName; 
 	private String protectorPhone;
-	private String protectorAddress; 
+	private String protectorAddress;
 
 }
