@@ -11,6 +11,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DoctorVO {
+	//-----------------------------------------------------------
+	// 의사 정보를 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqDoctor;
 	private String doctorId;
 	private String doctorPassword;
