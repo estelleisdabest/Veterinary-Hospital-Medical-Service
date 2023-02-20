@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class DiagnosisAnimalVO {
+	//-----------------------------------------------------------
+	// 진료내역 화면에서 환자 정보를 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqDiagnosis;
 	private int seqAnimal;
 	private String animalPicture;

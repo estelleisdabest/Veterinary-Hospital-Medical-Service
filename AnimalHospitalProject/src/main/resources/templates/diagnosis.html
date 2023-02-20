@@ -246,7 +246,7 @@ $(function() {
 							</div>
 							<div align="right">
 							<input type="button" class="btn btn-primary btn" id="updateBtn"
-										onclick="location.href='/postscriptUpdate'" value="수정하기" 
+										th:onclick="|location.href='@{/postscriptUpdate(seqPostscript=${postOneDiagnosisVO.seqPostscript})}'|" value="수정하기" 
 											style="border-radius: 50px; margin-right: 10px; color: white;"/>
 							<input type="submit" class="btn btn-danger btn" name="deleteBtn" id="deleteBtn" value="삭제하기" 
 											style="border-radius: 50px; margin-right: 10px; color: white;"/>
