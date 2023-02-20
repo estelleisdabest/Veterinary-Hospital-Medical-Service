@@ -23,7 +23,7 @@
 				d.diagnosis_date desc
 	</select>
 	
-	<select id="selectAnimalLookupDetail" resultType="AnimalLookupDetailVO" parameterType="int">
+	<select id="selectAnimalLookupDetail" resultType="animallookupVO" parameterType="int">
 			SELECT 
 				a.seq_animal as seqAnimal,
 				p.seq_protector AS seqProtector,

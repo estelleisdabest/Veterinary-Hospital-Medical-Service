@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.human.anihospital.service.AnimallookupService;
-import kr.human.anihospital.vo.AnimalLookupDetailVO;
 import kr.human.anihospital.vo.AnimallookupVO;
 import lombok.extern.slf4j.Slf4j;
 
@@ -53,14 +52,14 @@ public class AnimallookupController {
 		log.info("selectAnimalLookupDetail 컨트롤러 받은 값 seq : {}, {}", seqAnimal, seqProtector);
 		
 		// 화면에 넘길 데이터를 담을 그릇 준비
-		List<AnimalLookupDetailVO> animalLookupDetail = null;
+		List<AnimallookupVO> animalLookup = null;
 		// 데이터 그릇에 담기
-		animalLookupDetail = animallookupService.selectAnimalLookupDetail(seqAnimal, seqProtector);
+		animalLookup = animallookupService.selectAnimalLookupDetail(seqAnimal, seqProtector);
 		// 받아온 데이터 화면에 넘겨주기
-		model.addAttribute("animalLookupDetail", animalLookupDetail);
+		model.addAttribute("animalLookupDetail", animalLookup);
 		
 		// 제대로 데이터가 담겨 있는지 로그에 찍어보기
-		log.info("selectAnimalLookupDetail 서비스에서 넘어온 값(컨트롤러) : {}", animalLookupDetail);
+		log.info("selectAnimalLookupDetail 서비스에서 넘어온 값(컨트롤러) : {}", animalLookup);
 		
 		// animallookupdetail에 띄울 값 표시 종료 ---------------------------------------------------------------------
 		

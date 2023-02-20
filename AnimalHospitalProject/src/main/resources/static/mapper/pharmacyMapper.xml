@@ -8,7 +8,7 @@
 	</select>
 
 	<select id="selectPharmacy" parameterType="int"
-		resultType="kr.human.anihospital.vo.PharmacyLocationVO">
+		resultType="PharmacyLocationVO">
 		select
 		animal_pharmacy_name animalPharmacyName,
 		animal_pharmacy_address animalPharmacyAddress,
@@ -25,7 +25,7 @@
 		seq_pharmacy_location = #{seq}
 	</select>
 	<select id="selectPharmacyList"
-		resultType="kr.human.anihospital.vo.PharmacyLocationVO">
+		resultType="PharmacyLocationVO">
 		select
 		animal_pharmacy_name animalPharmacyName,
 		animal_pharmacy_address animalPharmacyAddress,
@@ -42,14 +42,14 @@
 	</select>
 
 	<insert id="insertPharmacy"
-		parameterType="kr.human.anihospital.vo.PharmacyLocationVO">
+		parameterType="PharmacyLocationVO">
 		insert into
 		PharmacyLocation
 		(animal_pharmacy_name,animal_pharmacy_address,animal_pharmacy_phoneNo,seq_pharmacy_location,pharmacy_location_latitude,pharmacy_location_longitude)
 		values (#{animalPharmacyName},#{animalPharmacyAddress},#{animalPharmacyPhoneNo},#{seqPharmacyLocation},#{pharmacyLocationLatitude},#{pharmacyLocationLongitude})
 	</insert>
 	<update id="updatePharmacy"
-		parameterType="kr.human.anihospital.vo.PharmacyLocationVO">
+		parameterType="PharmacyLocationVO">
 		update
 		PharmacyLocation
 		set
