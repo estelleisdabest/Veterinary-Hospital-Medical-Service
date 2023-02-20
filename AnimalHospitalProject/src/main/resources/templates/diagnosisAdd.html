@@ -351,17 +351,29 @@ img {
 									<h5>
 										<b>이전 진료 내역</b>
 									</h5>
-									<table th:each="pidliat : ${pidliat}">
-										<tr>
-											<td th:text="${pidliat.animalHospitalName}"></td>
-										</tr>
-										<tr>
-											<td th:text="${pidliat.diagnosisDate}"></td>
-										</tr>
-										<tr>
-											<td th:text="${pidliat.diagnosisSymptom}"></td>
-										</tr>
-									</table>
+									<div class="white_shd full margin_bottom_30">
+										<div class="full graph_head"></div>
+										<div class="table_section padding_infor_info">
+											<div class="table-responsive-sm">
+												<table class="table" style="text-align: center;" >
+													<thead>
+														<tr style="text-align: center">
+															<th style="width: 20%">진료병원</th>
+															<th style="width: 16%">증상</th>
+															<th style="width: 13%">진료일</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr th:each="pidliat : ${pidliat}" style="font-size: 10pt; text-align: center; vertical-align: middle;">
+															<td th:text="${pidliat.animalHospitalName}"  style="text-align: center;"></td>
+															<td th:text="${pidliat.diagnosisSymptom}"  style="text-align: center;"></td>
+															<td th:text="${pidliat.diagnosisDate}" style="text-align: center;"></td>
+														</tr>
+													</tbody>
+												</table>						
+											</div>
+										</div>
+									</div>
 									<br />
 								</div>
 							</div>

@@ -6,13 +6,17 @@
 	<!-- 이전 진료 내역을 조회하는 SQL-->
 	<select id="selectPatientInfoDiagnosis" resultType="kr.human.anihospital.vo.patientInfoDiagnosisListVO">
 		    SELECT 
-				dia.diagnosis_date AS diagnosisDate,
+				date_format(dia.diagnosis_date, '%Y-%m-%d') AS diagnosisDate,
 				dia.diagnosis_symptom AS diagnosisSymptom,
 				ah.animal_hospital_name AS animalHospitalName
 			FROM
 				diagnosis AS dia JOIN animalhospital AS ah ON dia.seq_animal_hospital = ah.seq_animal_hospital
-			WHERE dia.seq_doctor = 1 AND dia.seq_animal = 1
-			ORDER BY dia.diagnosis_date DESC
+			WHERE 
+				dia.seq_doctor = 1 
+			AND 
+				dia.seq_animal = 1
+			ORDER BY 
+				dia.diagnosis_date DESC
 	</select>
 	
 	<!-- 환자 정보를 조회하는 SQL -->

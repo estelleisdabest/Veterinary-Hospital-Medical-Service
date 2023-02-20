@@ -18,19 +18,33 @@ public class HospitalServiceImpl implements HospitalService {
 	@Autowired
 	PlatformTransactionManager manager;
 
+	//----------------------------------------------------------------------------------------------------
+	// 병원정보를 추가해줄 메서드
+	//----------------------------------------------------------------------------------------------------
 	@Override
 	public void insertAnimalHospitalInfo(AnimalHospitalVO animalHospitalVO) throws Exception {
+		// insert를 실행할 mapper부르기
 		hospitalMapper.insertAnimalHospital(animalHospitalVO);
+		// insert하려는 데이터가 잘 넘어오고 있는지 로그로 확인해보기
 		log.info(animalHospitalVO.getSeqDoctor() + animalHospitalVO.getAnimalHospitalName()
 				+ animalHospitalVO.getAnimalHospitalAddress() + animalHospitalVO.getAnimalHospitalPhoneNo());
 	}
+	
+	//----------------------------------------------------------------------------------------------------
+	// 병원정보를 수정해줄 메서드
+	//----------------------------------------------------------------------------------------------------
 	@Override
 	public void updateAnimalHospitalInfo(AnimalHospitalVO animalHospitalVO) throws Exception {
+		// update를 실행할 mapper부르기
 		hospitalMapper.updateAnimalHospital(animalHospitalVO);
+		// update하려는 데이터가 잘 넘어오고 있는지 로그로 확인해보기
 		log.info(animalHospitalVO.getSeqDoctor() + animalHospitalVO.getAnimalHospitalName()
 				+ animalHospitalVO.getAnimalHospitalAddress() + animalHospitalVO.getAnimalHospitalPhoneNo());
 	}
 
+	//----------------------------------------------------------------------------------------------------
+	// 병원정보를 보여줄 메서드(seq)
+	//----------------------------------------------------------------------------------------------------
 	@Override
 	public AnimalHospitalVO selectHospital(int seq) throws Exception {
 		AnimalHospitalVO animalHospitalVO = new AnimalHospitalVO();

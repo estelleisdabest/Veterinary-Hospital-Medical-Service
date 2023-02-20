@@ -17,12 +17,21 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class PatientAddController {
+	
 	@Autowired
 	PatientAddService patientAddService;
 	
+	//----------------------------------------------------------------------------------------------------
+	// 환자 등록을 할 메서드
+	//----------------------------------------------------------------------------------------------------	
 	@PostMapping("/patientAdd")
 	public String insertPatient(@RequestParam Map<String, String> patientAddMap, Model model ) throws Exception{
+		// 환자 등록 화면 - insert처리 시작-----------------------------------------------------------------
+		
+		// 화면에서 넘어온 데이터 찍어보기
 		log.info("받은 값 : {}", patientAddMap);
+		
+		// 화면에서 수정한 값 그릇에 담아 넘기기
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		AnimalVO animalVO = new AnimalVO();
 		animalVO.setSeqProtector(1);
@@ -36,7 +45,7 @@ public class PatientAddController {
 		animalVO.setAnimalImportantSymptom(patientAddMap.get("animalImportantSymptom"));
 		
 		patientAddService.insertPatient(animalVO);
-		
+		// 환자 등록 화면 - insert처리 종료-----------------------------------------------------------------
 		return "animallookup";
 	}
 }
