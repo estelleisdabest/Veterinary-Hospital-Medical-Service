@@ -3,7 +3,7 @@
                         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.human.anihospital.mapper.DoctorInfoMapper">
 	<select id="viewMyInfoDoctor" parameterType="int"
-		resultType="kr.human.anihospital.vo.DoctorVO">
+		resultType="DoctorVO">
 		SELECT
 			seq_doctor seqDoctor,
 			doctor_id doctorId,
