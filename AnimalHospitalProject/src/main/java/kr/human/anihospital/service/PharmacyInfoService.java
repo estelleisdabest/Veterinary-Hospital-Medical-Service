@@ -14,12 +14,18 @@ import kr.human.anihospital.vo.PharmacyLocationVO;
 @Transactional
 public class PharmacyInfoService {
 
+	// selectAll 매퍼
 	@Autowired
 	PharmacyInfoMapper pharmacyInfoMapper;
 
+	//-----------------------------------------------------------
+	// 약국을 선택하는 Service
+	//-----------------------------------------------------------
 	public PharmacyLocationVO selectPharmacy(int seq) {
+		// 해당 하는 약국 정보를 Mapper에 넘겨주기
 		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
 		try {
+			// Mapper에 SQL실행 시 필요한 데이터 넘겨주기 및 실행할 메서드 부르기
 			pharmacyLocationVO = pharmacyInfoMapper.selectPharmacy(seq);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -27,9 +33,14 @@ public class PharmacyInfoService {
 		return pharmacyLocationVO;
 	}
 
+	//-----------------------------------------------------------
 	// 약국을 신규 등록하는 Service.
+	//-----------------------------------------------------------
 	public void insertPharmacy(Map<String, String> map) {
+		// 해당 약국정보의 내용을 Mapper에 넘겨주기
 		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
+		
+		
 		pharmacyLocationVO.setAnimalPharmacyName(map.get("pharmacy_name"));
 		pharmacyLocationVO
 				.setAnimalPharmacyAddress(map.get("input_pharmacy_address") + " " + map.get("pharmacy_address_detail"));
@@ -37,15 +48,18 @@ public class PharmacyInfoService {
 		pharmacyLocationVO.setPharmacyLocationLatitude(map.get("pharmacy_location_latitude"));
 		pharmacyLocationVO.setPharmacyLocationLongitude(map.get("pharmacy_location_longitude"));
 		try {
+			// Mapper에 SQL실행 시 필요한 데이터 넘겨주기 및 실행할 메서드 부르기
 			pharmacyInfoMapper.insertPharmacy(pharmacyLocationVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
+	//-----------------------------------------------------------
 	// 약국을 수정하는 Service.
-	// 매개변수 seq를 필요로 하는 것은 추후 수정할 필요가 있습니다.
+	//-----------------------------------------------------------
 	public void updatePharmacy(Map<String, String> map, int seq) {
+		// 해당 약국정보의 내용을 Mapper에 넘겨주기
 		PharmacyLocationVO pharmacyLocationVO = new PharmacyLocationVO();
 		pharmacyLocationVO.setSeqPharmacyLocation(seq);
 		pharmacyLocationVO.setAnimalPharmacyName(map.get("pharmacy_name"));
@@ -55,6 +69,7 @@ public class PharmacyInfoService {
 		pharmacyLocationVO.setPharmacyLocationLatitude(map.get("pharmacy_location_latitude"));
 		pharmacyLocationVO.setPharmacyLocationLongitude(map.get("pharmacy_location_longitude"));
 		try {
+			// Mapper에 SQL실행 시 필요한 데이터 넘겨주기 및 실행할 메서드 부르기
 			pharmacyInfoMapper.updatePharmacy(pharmacyLocationVO);
 		} catch (SQLException e) {
 			e.printStackTrace();
