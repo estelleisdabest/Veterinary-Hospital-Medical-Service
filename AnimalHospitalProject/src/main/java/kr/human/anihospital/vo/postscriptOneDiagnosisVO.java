@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class postscriptOneDiagnosisVO {
+	private int seqPostscript;
 	private String postscriptUpdateDate;
 	private String animalHospitalName;
 	private int postscriptSatisfaction;
