@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PharmacyLocationVO {
+	//-----------------------------------------------------------
+	// 약국 정보를 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqPharmacyLocation;
 	private String animalPharmacyName;
 	private String animalPharmacyAddress;
