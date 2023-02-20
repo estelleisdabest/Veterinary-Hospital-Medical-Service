@@ -58,6 +58,7 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 		return postOneDiagnosisVO;
 	}
 
+	// diagnosis(진료기록)화면의 진료후기 삭제하기
 	@Override
 	public void deletePostscript(int seqPostscript){
 		try {

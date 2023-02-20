@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class postscriptOneDiagnosisVO {
+	//-----------------------------------------------------------
+	// 진료화면에 띄워줄 후기 내용을 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqPostscript;
 	private String postscriptUpdateDate;
 	private String animalHospitalName;
