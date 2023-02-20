@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatientListVO {
+	//-----------------------------------------------------------
+	// 환자 정보를 가지고 있는 VO
+	//-----------------------------------------------------------
 	private int seqAnimal;
 	private int seqProtector;
 	private int seqDoctor;

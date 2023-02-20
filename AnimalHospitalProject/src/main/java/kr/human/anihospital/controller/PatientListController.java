@@ -19,15 +19,26 @@ public class PatientListController {
 	@Autowired
 	PatientListService patientListService;
 	
+	//----------------------------------------------------------------------------------------------------
+	// 환자 정보를 리스트로 화면에 표시해줄 메서드
+	//----------------------------------------------------------------------------------------------------
 	@GetMapping(value = "/patientList")
 	public String selectPatientList(Model model) throws Exception {
+		//----------------------------------------------------------------------------------------------------
+		// 해당 진료내역 정보를 리스트로 화면에 띄울 값 표시 시작
+		
+		// 화면에 넘길 데이터를 담을 그릇 준비
 		List<PatientListVO> patientList = null;
-		// 여기서 서비스를 호출해서 리스트에 넣고
+		// 데이터 그릇에 담기
 		patientList = patientListService.selectPatientList();
-		// 모델에 등록
+		// 받아온 데이터 화면에 넘겨주기
 		model.addAttribute("patientList", patientList);
-		log.info("selectPatientList메서드 호출 : {}",  patientList);
-		// 뷰로 간다.
+		
+		// 제대로 데이터가 담겨 있는지 로그에 찍어보기
+		log.info("selectPatientList 서비스에서 넘어온 값(컨트롤러) : {}",  patientList);
+		
+		// 해당 진료내역 정보를 리스트로 화면에 띄울 값 표시 종료
+		//----------------------------------------------------------------------------------------------------
 		return "patientList";
 	}
 }
