@@ -46,6 +46,7 @@
 	
 	<select id="selectPostscriptOneDiagnosis" resultType="postscriptOneDiagnosisVO">
 			select 
+				d.seq_diagnosis AS seqDiagnosis,
 				p.seq_postscript as seqPostscript,
 				date_format(p.postscript_update_date, '%Y-%m-%d') as postscriptUpdateDate,
 				a.animal_hospital_name as animalHospitalName, 
@@ -55,7 +56,7 @@
 				diagnosis as d inner JOIN postscript AS p on p.seq_diagnosis = d.seq_diagnosis  
 							inner join animalhospital as a on d.seq_animal_hospital = a.seq_animal_hospital
 			where
-				d.seq_diagnosis = 100
+				d.seq_diagnosis = #{seqDiagnosis}
 	</select>
 	<delete id="deletePostscript" parameterType="int">
 		delete from postscript where seq_postscript = #{seqPostscript};

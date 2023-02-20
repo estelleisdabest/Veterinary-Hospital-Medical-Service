@@ -18,54 +18,73 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 	@Autowired
 	DiagnosisMapper diagnosisMapper;
 	
-	// diagnosis(진료기록)화면의 환자 정보 가져오기
+	// ----------------------------------------------------------------------------------------------------
+	// 해당 진료내역의 환자 정보를 화면에 표시해줄 메서드
+	// ----------------------------------------------------------------------------------------------------
 	@Override
 	public DiagnosisAnimalVO selectDiagnosisAnimalInfo(int seqDiagnosis) {
+		// 해당 진료내역의 환자 정보를 Mapper에 넘겨주기
 		DiagnosisAnimalVO diagnosisAnimalVO = null;
 		try {
+			// Mapper에 SQL 실행 시 필요한 데이터 넘겨주기 및 실행할 메서드 부르기
 			diagnosisAnimalVO = diagnosisMapper.selectDiagnosisAnimalInfo(seqDiagnosis);		
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		log.info("selectDiagnosisAnimalInfo 서비스 : {}", diagnosisAnimalVO);
+		// Mapper가 실행되고 나서 가져온 데이터 확인하기
+		log.info("selectDiagnosisAnimalInfo Mapper에서 넘어온 값(서비스) : {}", diagnosisAnimalVO);
 		return diagnosisAnimalVO;
 	}
 
-	// diagnosis(진료기록)화면의 상세 진료 내역 및 처방목록 가져오기
+	// ----------------------------------------------------------------------------------------------------
+	// 해당 진료내역 정보를 리스트로 화면에 표시해줄 메서드
+	// ----------------------------------------------------------------------------------------------------
 	@Override
 	public List<DiagnosisDetailInMedicineVO> selectDiagnosisDetailInMedicine(int seqDiagnosis) {
+		// 해당 진료내역 정보를 리스트로 Mapper에 넘겨주기
 		List<DiagnosisDetailInMedicineVO> diadetailImMedicineList = null;
 		try {
+			// Mapper에 SQL 실행 시 필요한 데이터 넘겨주기 및 실행할 메서드 부르기
 			diadetailImMedicineList = diagnosisMapper.selectDiagnosisDetailInMedicine(seqDiagnosis);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		log.info("selectDiagnosisDetailInMedicine 서비스 : {}", diadetailImMedicineList);
+		// Mapper가 실행되고 나서 가져온 데이터 확인하기
+		log.info("selectDiagnosisDetailInMedicine Mapper에서 넘어온 값(서비스) : {}", diadetailImMedicineList);
 		return diadetailImMedicineList;
 	}
 	
-	// diagnosis(진료기록)화면의 진료후기 가져오기
+	// ----------------------------------------------------------------------------------------------------
+	// 해당 진료내역의 후기 내용을 화면에 표시해줄 메서드
+	// ----------------------------------------------------------------------------------------------------
 	@Override
-	public postscriptOneDiagnosisVO selectPostscriptOneDiagnosis() {
+	public postscriptOneDiagnosisVO selectPostscriptOneDiagnosis(int seqDiagnosis) {
+		// 해당 진료내역의 후기 내용을 Mapper에 넘겨주기
 		postscriptOneDiagnosisVO postOneDiagnosisVO = new postscriptOneDiagnosisVO();
 		try {
-			postOneDiagnosisVO = diagnosisMapper.selectPostscriptOneDiagnosis();
+			// Mapper에 SQL 실행 시 실행할 메서드 부르기
+			postOneDiagnosisVO = diagnosisMapper.selectPostscriptOneDiagnosis(seqDiagnosis);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		log.info("selectPostscriptOneDiagnosis 서비스 : {}", postOneDiagnosisVO);
+		// Mapper가 실행되고 나서 가져온 데이터 확인하기
+		log.info("selectPostscriptOneDiagnosis Mapper에서 넘어온 값(서비스) : {}", postOneDiagnosisVO);
 		
 		return postOneDiagnosisVO;
 	}
 
-	// diagnosis(진료기록)화면의 진료후기 삭제하기
+	// ----------------------------------------------------------------------------------------------------
+	// 해당 진료내역의 후기 내용을 삭제할 메서드
+	// ----------------------------------------------------------------------------------------------------
 	@Override
 	public void deletePostscript(int seqPostscript){
 		try {
+			// 해당 진료내역의 후기 내용을 삭제
 			diagnosisMapper.deletePostscript(seqPostscript);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		log.info("deletePostscript2 서비스 : {}",diagnosisMapper);
+		// Mapper가 실행되고 나서 가져온 데이터 확인하기
+		log.info("deletePostscript2 서비스 : {}", diagnosisMapper);
 	}
 }
