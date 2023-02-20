@@ -154,7 +154,8 @@
 													<td th:text="${patientDiagnosisList.diagnosisDate}" style="text-align: center;"></td>
 													<td th:text="${patientDiagnosisList.diagnosisSymptom}" style="text-align: center;"></td>
 													<td style="text-align: center;">
-														<input type="button" class="btn btn-primary" value="상세보기" th:onclick="|location.href='@{/diagnosis(seqDiagnosis=${patientDiagnosisList.seqDiagnosis})}'|" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
+														<input type="button" class="btn btn-primary" value="상세보기"
+															th:onclick="|location.href='@{/diagnosis(seqDiagnosis=${patientDiagnosisList.seqDiagnosis})}'|" style="border-radius: 50px; width: 90px; margin: auto; text-align: center; color: white;" />
 													</td>
 												</tr>
 											</tbody>
@@ -182,6 +183,11 @@
 												</tr>
 											</thead>
 											<tbody>
+												<tr>
+													<td th:if="${#lists.isEmpty(postscriptList)}"
+													colspan="5" style="text-align: center;">
+														등록된 후기가 없습니다.
+													</td>
 												<tr th:each="postscriptList : ${postscriptList}" style="font-size: 10pt; text-align: center; vertical-align: middle;">
 													<td th:text="${postscriptList.animalName}"  style="text-align: center;"></td>
 													<td style="text-align: center">
