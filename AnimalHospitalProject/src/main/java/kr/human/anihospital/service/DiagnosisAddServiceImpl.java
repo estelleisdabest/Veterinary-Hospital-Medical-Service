@@ -73,14 +73,14 @@ public class DiagnosisAddServiceImpl implements DiagnosisAddService {
 	}
 
 	//----------------------------------------------------------------------------------------------------
-	// 주의사항 입력을 수정해줄 메서드
+	// 입력한 주의사항 내용을 수정해줄 메서드
 	//----------------------------------------------------------------------------------------------------
 	@Override
 	public void updateProtectorImportantPoint(DiagnosisAddVO diagnosisAddVO) {
 		// 수정할 내용을 mapper에 넘겨주기
 		try {
 			log.info("수정할 주의사항을 서비스에서 받은 값(서비스) : {}", diagnosisAddVO);
-			// insert를 실행할 mapper 부르기
+			// update를 실행할 mapper 부르기
 			diagnosisAddMapper.updateProtectorImportantPoint(diagnosisAddVO);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -100,7 +100,7 @@ public class DiagnosisAddServiceImpl implements DiagnosisAddService {
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
-		// 가저온 데이터 로그로 찍어보기
+		// 가져온 데이터 로그로 찍어보기
 		log.info("selectMedicine mapper에서 넘어온 값(서비스) : {}", medicineVO);
 		return medicineVO ;
 	}

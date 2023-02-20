@@ -8,5 +8,8 @@ import kr.human.anihospital.vo.AnimalVO;
 
 @Mapper
 public interface PatientAddMapper {
+	//----------------------------------------------------------------------------------------------------
+	// 환자등록을 해줄 메서드
+	//----------------------------------------------------------------------------------------------------
 	void insertPatient(AnimalVO animalVO) throws SQLException;
 }
