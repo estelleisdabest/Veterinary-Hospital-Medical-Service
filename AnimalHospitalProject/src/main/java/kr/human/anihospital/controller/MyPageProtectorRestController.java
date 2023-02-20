@@ -18,7 +18,9 @@ public class MyPageProtectorRestController {
 	@Autowired
 	MyPageProtectorService myPageProtectorService;
 	
-	// Ajax로 보호자 정보 처리를 하는 컨트롤러(seq처리 O)
+	//----------------------------------------------------------------------------------------------------
+	// Ajax로 보호자 정보 처리를 하는 컨트롤러
+	//----------------------------------------------------------------------------------------------------
 	@PostMapping("/editMyPageProtectorOk")
 	public String editMyPageProtectorOk(@RequestParam Map<String, Object> map, Model model) {
 		log.info("수정값 : {}", map);
