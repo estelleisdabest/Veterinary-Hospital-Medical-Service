@@ -73,13 +73,17 @@
 					<div id="mainContainer">
 						<h4>
 							<b>환자 정보</b> 
-							<button type="button" class="btn btn-primary bt-sm" name="patientInfoEditDoctor" onclick="location='patientInfoEditDoctor'" style="border-radius:50px;">수정</button>
+							<!-- onclick="location='patientInfoEditDoctor'"  -->
+							<button type="button" class="btn btn-primary bt-sm" name="patientInfoEditDoctor" id="patientInfoEditDoctor"  style="border-radius:50px;">수정</button>
 						</h4>
 						<br />
 						<br />
 						<img src="img/dog.jpg" alt="...">
 						<div class="row"></div>
 							<br />
+						<form action="patientInfoEditDoctor" method="post" id="patientInfoEditDoctorSubmit">
+						<input type="hidden" id="seqAnimal" name="seqAnimal"  th:value="${patientInfoVO.seqAnimal}">
+						</form>
 						<div class="row">
 							<div class="col-md-8 form-group">
 								<div class="validate"></div>
@@ -88,7 +92,7 @@
 								<label for="name">이름</label>
 								<!-- 환자정보 추가했을 때 입력된 정보를 띄움 -->
 								<div class="form-control" name="name" id="name" style="width: 700px;">
-									[[${patientInfoVO.animalName}]]
+									[[${patientInfoVO.animalName}]] 
 								</div>
 								<div class="validate"></div>
 							</div>
@@ -208,5 +212,13 @@
 	<!-- End #main -->
 	<!-- Template Main JS File -->
 	<div th:replace="~{fragment/footer :: #footer}"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('#patientInfoEditDoctor').on('click', function() {
+		$('#patientInfoEditDoctorSubmit').submit();
+	});
+});
+</script>
 </body>
 </html>

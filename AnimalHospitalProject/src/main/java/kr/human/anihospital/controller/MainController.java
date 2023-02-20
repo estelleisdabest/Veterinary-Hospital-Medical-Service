@@ -47,11 +47,11 @@ public class MainController {
 		return "noticeAdd";
 	}
 
-	// 환자 정보 수정 (의사 용)
-	@GetMapping("/patientInfoEditDoctor")
-	public String patientInfoEditDoctor() {
-		return "patientInfoEditDoctor";
-	}
+//	// 환자 정보 수정 (의사 용)
+//	@GetMapping("/patientInfoEditDoctor")
+//	public String patientInfoEditDoctor() {
+//		return "patientInfoEditDoctor";
+//	}
 
 	// 환자 조회 페이지
 //	@GetMapping("/animallookup")

@@ -15,25 +15,25 @@ import lombok.extern.slf4j.Slf4j;
 @Controller
 @Slf4j
 public class PatientInfoEditDoctorController {
-	
+
 	@Autowired
 	PatientInfoEditDoctorService patientInfoEditDoctorService;
-	
-	// 나중에 seq 처리 해줘야함
+
 	@PostMapping("/patientInfoEditDoctor")
-	public String patientInfoEditDoctor(@RequestParam Map<String, String> animalMap, Model model) throws Exception {
-		log.info(" PatientInfoEditDoctorController 수정값 : {}", animalMap);
+	public String patientInfoEditDoctor(@RequestParam int seqAnimal, Model model) throws Exception {
 		AnimalVO animalVO = new AnimalVO();
-		animalVO.setSeqAnimal(56);
-		animalVO.setSeqProtector(1);
-		animalVO.setSeqDoctor(1);
-		animalVO.setAnimalName(animalMap.get("animalName"));
-		animalVO.setAnimalType(animalMap.get("animalType"));
-		animalVO.setAnimalSize(animalMap.get("animalSize"));
-		animalVO.setAnimalWeight(Float.parseFloat(animalMap.get("animalWeight")));
-		animalVO.setAnimalGender(Boolean.parseBoolean(animalMap.get("animalGender")));
-		animalVO.setAnimalImportantSymptom(animalMap.get("animalImportantSymptom"));
-		patientInfoEditDoctorService.updateAnimalDoctor(animalVO);
-		return "patientInfo";
+		animalVO = patientInfoEditDoctorService.patientInfoDoctor(seqAnimal);
+		log.info("patientInfo에서 받은 seq : {}", seqAnimal);
+		model.addAttribute("animalVO", animalVO);
+		log.info("animalVO : {}", animalVO);
+		return "patientInfoEditDoctor";
+	}
+
+	@PostMapping("/patientInfoEditDoctorOk")
+	public String patientInfoEditDoctorOk(@RequestParam Map<String, Object> map) throws Exception {
+		log.info("수정값 : {} ", map);
+		patientInfoEditDoctorService.updateAnimalDoctor(map);
+		int seqAnimal = Integer.parseInt(String.valueOf(map.get("seqAnimal")));
+		return "redirect:patientInfo?seqAnimal="+seqAnimal;
 	}
 }

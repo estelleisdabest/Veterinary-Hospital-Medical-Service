@@ -21,11 +21,13 @@ public class PatientInfoController {
 	PatientInfoService patientInfoService;
 	
 	@GetMapping(value = "/patientInfo")
-	public String selectPatientInfoDiagnosis(Model model) throws Exception {
+	public String selectPatientInfoDiagnosis(@RequestParam int seqAnimal,Model model) throws Exception {
+		// patientList에서 환자 1명의 seq를 받아와야함
+		log.info("받은 seq : {}",seqAnimal);
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		PatientInfoVO patientInfoVO = null;
 		pidliat = patientInfoService.selectPatientInfoDiagnosis();
-		patientInfoVO = patientInfoService.selectPatientInfo();
+		patientInfoVO = patientInfoService.selectPatientInfo(seqAnimal);
 		model.addAttribute("pidliat", pidliat);
 		model.addAttribute("patientInfoVO", patientInfoVO);
 		log.info("selectPatientInfoDiagnosis메서드 호출(컨트롤러) : {}",  pidliat);

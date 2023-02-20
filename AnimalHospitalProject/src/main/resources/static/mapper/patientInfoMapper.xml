@@ -21,7 +21,8 @@
 	</select>
 	
 	<select id="selectPatientInfo" resultType="PatientInfoVO" parameterType="int">
-		    SELECT 
+		    SELECT
+		    	seq_animal AS seqAnimal,
 				animal_name AS animalName,
 				animal_type AS animalType,
 				animal_size AS animalSize,
@@ -31,6 +32,6 @@
 			FROM 
 				animal
 			WHERE 
-				seq_animal = 1
+				seq_animal = #{seqAnimal}
 	</select>
 </mapper>

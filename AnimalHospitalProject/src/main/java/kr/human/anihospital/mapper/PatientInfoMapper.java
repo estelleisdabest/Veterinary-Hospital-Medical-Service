@@ -10,5 +10,5 @@ import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 @Mapper
 public interface PatientInfoMapper {
 	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
-	PatientInfoVO selectPatientInfo() throws Exception;
+	PatientInfoVO selectPatientInfo(int seqAnimal) throws Exception;
 }
