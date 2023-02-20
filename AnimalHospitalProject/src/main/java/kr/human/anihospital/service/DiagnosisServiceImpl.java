@@ -47,13 +47,24 @@ public class DiagnosisServiceImpl implements DiagnosisService{
 	// diagnosis(진료기록)화면의 진료후기 가져오기
 	@Override
 	public postscriptOneDiagnosisVO selectPostscriptOneDiagnosis() {
-		postscriptOneDiagnosisVO postOneDiagnosisVO = null;
+		postscriptOneDiagnosisVO postOneDiagnosisVO = new postscriptOneDiagnosisVO();
 		try {
 			postOneDiagnosisVO = diagnosisMapper.selectPostscriptOneDiagnosis();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		log.info("selectPostscriptOneDiagnosis 서비스 : {}", postOneDiagnosisVO);
+		
 		return postOneDiagnosisVO;
+	}
+
+	@Override
+	public void deletePostscript(int seqPostscript){
+		try {
+			diagnosisMapper.deletePostscript(seqPostscript);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		log.info("deletePostscript2 서비스 : {}",diagnosisMapper);
 	}
 }

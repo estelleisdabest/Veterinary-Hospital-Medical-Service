@@ -22,6 +22,7 @@
 
 <!-- Template Main CSS File -->
 <link href="css/style.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <style type="text/css">
 	#gridContainer {
 		display: grid;
@@ -112,8 +113,32 @@
 	
 </style>
 <script type="text/javascript">
-// 해당 일자에 후기 내용이 없을 경우 수정하기 버튼이 보이지않고 작성하기 버튼이 보여야 한다.
-// 해당 일자에 후기 내용이 있을 경우 작성하기 버튼은 보이지 않으며 수정하기 버튼을 보여야 한다.
+$(function() {
+	$('#deleteBtn').on('click', function() {
+		var result = window.confirm('정말로 삭제하시겠습니까?');
+		if (result) {
+			alert('정상적으로 삭제되었습니다.');
+			var seqPostscript1 = $("#seqPostscript").val();
+			$.ajax({
+				url:"/deletePostscript",
+				type: "post",
+				dataType: "text",
+				contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+				data: {
+					seqPostscript : seqPostscript1
+				},
+				success: function (data) {
+					location.href='/diagnosis';
+				},
+				error: function (data) {
+					alert("Error");
+				}
+			});
+		} else if (!result) {
+			alert('취소 되었습니다.');
+		}
+	});
+});
 </script>
 </head>
 <body class="sb-nav-fixed">
@@ -169,63 +194,63 @@
 					</div>
 					<div id="rightContent">
 					<!-- 후기 -->
-						<div id="postscriptUpdateAndDelete" th:if="${postOneDiagnosisVO.postscriptSatisfaction != null}">
-						<div id="Postscript">
-							<h5 style="margin-top: 10px;">후기</h5>
-								<hr />
-							<table>
-								<tr>
-									<td>작성일 : [[${postOneDiagnosisVO.postscriptUpdateDate}]]</td>
-								</tr>
-								<tr>
-									<td>진료병원 : [[${postOneDiagnosisVO.animalHospitalName}]]</td>
-								</tr>
-								<tr>
-									<td id="PostscriptBold" >별점 : 
-										<span th:switch="${postOneDiagnosisVO.postscriptSatisfaction}">
-											<span th:case="'1'">★</span>
-											<span th:case="'2'">★★</span>
-											<span th:case="'3'">★★★</span>
-											<span th:case="'4'">★★★★</span>
-											<span th:case="'5'">★★★★★</span>
-										</span>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<div id="PostscriptBold">내용</div>
-										<!-- 내용 길 경우 자바스크립트 이용해서 자동줄바꿈 -->
-											<div id="PostscriptContent">
-												[[${postOneDiagnosisVO.postscriptContent}]]
-										</div>
-									</td>
-								</tr>
-							</table>
+						<div id="postscriptSave" th:if="${postOneDiagnosisVO == null}">
+							<div id="Postscript">
+								<h5 style="margin-top: 10px;">후기</h5>
+									<hr />
+								<table>
+									<tr>
+										<td>등록된 후기가 없습니다.</td>
+									</tr>
+								</table>
+							</div>
+							<div align="right">
+							<input type="button" class="btn btn-primary btn" id="saveBtn"
+										onclick="location.href='/postscriptSave'" value="작성하기" 
+											style="border-radius: 50px; margin-right: 10px; color: white;"/>
+							</div>
 						</div>
-						<div align="right">
-						<input type="button" class="btn btn-primary btn" id="updateBtn"
-									onclick="location.href='/postscriptUpdate'" value="수정하기" 
-										style="border-radius: 50px; margin-right: 10px; color: white;"/>
-						<input type="button" class="btn btn-danger btn" id="deleteBtn"
-									onclick="location.href=''" value="삭제하기" 
-										style="border-radius: 50px; margin-right: 10px; color: white;"/>
-						</div>
-						</div>
-						<div id="postscriptSave" th:if="${postOneDiagnosisVO.postscriptSatisfaction == null}">
-						<div id="Postscript">
-							<h5 style="margin-top: 10px;">후기</h5>
-								<hr />
-							<table>
-								<tr>
-									<td>등록된 후기가 없습니다.</td>
-								</tr>
-							</table>
-						</div>
-						<div align="right">
-						<input type="button" class="btn btn-primary btn" id="saveBtn"
-									onclick="location.href='/postscriptSave'" value="작성하기" 
-										style="border-radius: 50px; margin-right: 10px; color: white;"/>
-						</div>
+						<div id="postscriptUpdateAndDelete" th:if="${postOneDiagnosisVO != null}">
+							<div id="Postscript">
+								<h5 style="margin-top: 10px;">후기</h5>
+								<input type="hidden" id="seqPostscript" name="seqPostscript" th:value="${postOneDiagnosisVO.seqPostscript}"/>
+									<hr />
+								<table>
+									<tr>
+										<td>작성일 : [[${postOneDiagnosisVO.postscriptUpdateDate}]]</td>
+									</tr>
+									<tr>
+										<td>진료병원 : [[${postOneDiagnosisVO.animalHospitalName}]]</td>
+									</tr>
+									<tr>
+										<td id="PostscriptBold" >별점 : 
+											<span th:switch="${postOneDiagnosisVO.postscriptSatisfaction}">
+												<span th:case="'1'">★</span>
+												<span th:case="'2'">★★</span>
+												<span th:case="'3'">★★★</span>
+												<span th:case="'4'">★★★★</span>
+												<span th:case="'5'">★★★★★</span>
+											</span>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div id="PostscriptBold">내용</div>
+<!-- 											내용 길 경우 자바스크립트 이용해서 자동줄바꿈 -->
+												<div id="PostscriptContent">
+													[[${postOneDiagnosisVO.postscriptContent}]]
+											</div>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<div align="right">
+							<input type="button" class="btn btn-primary btn" id="updateBtn"
+										onclick="location.href='/postscriptUpdate'" value="수정하기" 
+											style="border-radius: 50px; margin-right: 10px; color: white;"/>
+							<input type="submit" class="btn btn-danger btn" name="deleteBtn" id="deleteBtn" value="삭제하기" 
+											style="border-radius: 50px; margin-right: 10px; color: white;"/>
+							</div>
 						</div>
 						<p/>
 						<!-- 환자 정보 -->
