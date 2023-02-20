@@ -91,7 +91,7 @@ input[name="searchPatientBtn"] {
 									</tr>
 								</thead>
 								<tbody>
-									<tr th:each="patientList : ${patientList}">
+									<tr th:each="patientList : ${patientList}" th:onclick="|location.href='@{/patientInfo(seqAnimal=${patientList.seqAnimal})}'|">
 										<td th:text="${patientList.protectorName}"></td>
 										<td th:text="${patientList.animalName}"></td>
 										<td th:text="${patientList.animalAge}"></td>

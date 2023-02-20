@@ -30,10 +30,10 @@ public class PatientInfoServiceImpl implements PatientInfoService {
 	}
 
 	@Override
-	public PatientInfoVO selectPatientInfo() {
+	public PatientInfoVO selectPatientInfo(int seqAnimal) {
 		PatientInfoVO patientInfoVO = null;
 		try {
-			patientInfoVO = patientInfoMapper.selectPatientInfo();
+			patientInfoVO = patientInfoMapper.selectPatientInfo(seqAnimal);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

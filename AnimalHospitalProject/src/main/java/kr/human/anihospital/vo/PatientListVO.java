@@ -8,6 +8,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PatientListVO {
+	private int seqAnimal;
+	private int seqProtector;
+	private int seqDoctor;
 	private String protectorName;
 	private String animalName;
 	private String animalType;

@@ -7,5 +7,5 @@ import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 
 public interface PatientInfoService {
 	List<patientInfoDiagnosisListVO> selectPatientInfoDiagnosis() throws Exception;
-	PatientInfoVO selectPatientInfo() throws Exception;
+	PatientInfoVO selectPatientInfo(int seqAnimal) throws Exception;
 }
