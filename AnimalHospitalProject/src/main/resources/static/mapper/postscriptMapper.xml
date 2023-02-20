@@ -14,10 +14,10 @@
 				postscript_satisfaction,
 				postscript_update_date
 			) values (
-				1,
-				1,
-				91,
-				1,
+				#{seqProtector},
+				#{seqDoctor},
+				#{seqDiagnosis},
+				#{seqAnimal},
 				now(),
 				#{postscriptContent},
 				#{postscriptSatisfactionrating},
