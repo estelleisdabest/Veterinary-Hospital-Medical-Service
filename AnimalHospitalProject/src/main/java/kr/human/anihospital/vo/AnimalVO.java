@@ -23,5 +23,7 @@ public class AnimalVO {
 	private Date animalJoinDate;
 	private String animalPicture;
 	private String animalVideo;
+	private String filePath;
+	private String vidfilePath;
 	private Date animalUpdateDate;
 }
