@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.human.anihospital.service.PatientInfoEditProtectorService;
 import kr.human.anihospital.vo.AnimalVO;
@@ -47,7 +48,8 @@ public class PatientInfoEditProtectorController {
 	// 환자 정보 추가 메서드 -- seq 작업 필요
 	//----------------------------------------------------------------------------------------------------
 	@PostMapping("/patientAdd")
-	public String insertPatient(@RequestParam Map<String, String> patientAddMap, Model model ) throws Exception{
+    //여기에도 MultipartFile file,file 받아준 후 //예외처리
+	public String insertPatient(@RequestParam Map<String, String> patientAddMap, Model model, MultipartFile file,  MultipartFile vidfile ) throws Exception{
 		log.info("받은 값 : {}", patientAddMap);
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		AnimalVO animalVO = new AnimalVO();
@@ -61,7 +63,12 @@ public class PatientInfoEditProtectorController {
 		animalVO.setAnimalGender(Boolean.parseBoolean(patientAddMap.get("animalGender")));
 		animalVO.setAnimalImportantSymptom(patientAddMap.get("animalImportantSymptom"));
 		
-		patientInfoEditProtectorService.insertPatient(animalVO);
+		animalVO.setAnimalPicture(patientAddMap.get("animalPicture"));
+		animalVO.setAnimalVideo(patientAddMap.get("animalVideo"));
+		animalVO.setFilePath(patientAddMap.get("filePath"));
+		animalVO.setVidfilePath(patientAddMap.get("vidfilePath"));
+		
+		patientInfoEditProtectorService.insertPatient(animalVO,file,vidfile);
 		
 		return "animallookup";
 	}

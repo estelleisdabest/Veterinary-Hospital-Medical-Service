@@ -52,6 +52,8 @@
 					animal_join_date, 
 					animal_picture,
 					animal_video,
+					file_path,
+					vid_file_path,
 					animal_update_date) 
 			VALUES
 					(1,
@@ -64,8 +66,10 @@
 					 #{animalGender}, 					 
 					 #{animalImportantSymptom}, 
 					 now(), 
-					 'xxx.xxx', 
-					 'xxx.xxx', 
+					 #{animalPicture}, 					 
+					 #{animalVideo}, 					 
+					 #{filePath}, 					 
+					 #{vidfilePath}, 					 
 					 now()
 					 )
 	</insert>
