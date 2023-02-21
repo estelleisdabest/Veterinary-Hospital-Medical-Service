@@ -30,9 +30,9 @@ public class DiagnosisAddController {
 	// 이전 진료내역 & 환자정보 & 처방약을 가져올 메서드
 	// ----------------------------------------------------------------------------------------------------------------------
 	@GetMapping(value = "/diagnosisAdd")
-	public String selectPatientInfoDiagnosis(Model model) throws Exception{
+	public String selectPatientInfoDiagnosis(@RequestParam int seqAnimal,Model model) throws Exception{
 		// 화면에 표시할 select 시작 ----------------------------------------------------------------------------------------
-		int seqAnimal = 1;
+		//int seqAnimal = 1;
 		// 화면에 넘길 데이터를 담을 그릇(List) 준비 (이전진료내역)
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		// 화면에 넘길 데이터를 담을 그릇(VO) 준비 (환자정보)
@@ -43,7 +43,7 @@ public class DiagnosisAddController {
 		// 데이터 그릇(List)에 담기 (이전진료내역)
 		pidliat = diagnosisAddService.selectPatientInfoDiagnosis();
 		// 데이터 그릇(VO)에 담기 (환자정보)
-		patientInfoVO  = diagnosisAddService.selectPatientInfo();
+		patientInfoVO  = diagnosisAddService.selectPatientInfo(seqAnimal);
 		// 데이터 그릇(VO)에 담기 (처방약)
 		medicineVO = diagnosisAddService.selectMedicine();
 		

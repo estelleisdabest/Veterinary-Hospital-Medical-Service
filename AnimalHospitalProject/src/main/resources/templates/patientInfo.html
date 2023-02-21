@@ -83,6 +83,7 @@
 							<br />
 						<form action="patientInfoEditDoctor" method="post" id="patientInfoEditDoctorSubmit">
 						<input type="hidden" id="seqAnimal" name="seqAnimal"  th:value="${patientInfoVO.seqAnimal}">
+						<input type="hidden" id="seqProtector" name="seqProtector"  th:value="${patientInfoVO.seqProtector}">
 						</form>
 						<div class="row">
 							<div class="col-md-8 form-group">
@@ -168,8 +169,9 @@
 						</div>
 						<br />
 					</div>
-					<div id="rightContainer">
-					<button type="button" class="btn btn-primary bt-sm" name="diagnosisAdd" onclick="location='diagnosisAdd'" style="border-radius:50px; float: right;">진료내용 작성</button>
+					<div id="rightContainer">									<!-- onclick="location='diagnosisAdd'" -->
+					<button type="button" class="btn btn-primary bt-sm" name="diagnosisAdd" th:onclick="|location.href='@{/diagnosisAdd(seqAnimal=${patientInfoVO.seqAnimal})}'|"
+					style="border-radius:50px; float: right;">진료내용 작성</button>
 					<br /><br />
 						<div id="lastDiagnosis">
 							<div>

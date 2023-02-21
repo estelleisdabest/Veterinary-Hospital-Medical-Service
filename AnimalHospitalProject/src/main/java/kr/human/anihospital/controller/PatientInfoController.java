@@ -23,7 +23,7 @@ public class PatientInfoController {
 	@GetMapping(value = "/patientInfo")
 	public String selectPatientInfoDiagnosis(@RequestParam int seqAnimal,Model model) throws Exception {
 		// patientList에서 환자 1명의 seq를 받아와야함
-		log.info("받은 seq : {}",seqAnimal);
+		log.info("PatientList에서 받은 seqAnimal : {}",seqAnimal);
 		List<patientInfoDiagnosisListVO> pidliat = null;
 		PatientInfoVO patientInfoVO = null;
 		pidliat = patientInfoService.selectPatientInfoDiagnosis();
