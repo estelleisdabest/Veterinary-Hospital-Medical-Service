@@ -20,9 +20,10 @@
 	</select>
 	
 	<!-- 환자 정보를 조회하는 SQL -->
-	<select id="selectPatientInfo" resultType="PatientInfoVO">
+	<select id="selectPatientInfo" resultType="PatientInfoVO" parameterType="int">
 		    SELECT 
 		    	seq_animal as seqAnimal,
+		    	seq_protector as seqProtector,
 				animal_name AS animalName,
 				animal_type AS animalType,
 				animal_size AS animalSize,
@@ -31,7 +32,7 @@
 				animal_weight AS animalWeight,
 				animal_important_symptom as animalImportantSymptom 
 			FROM animal
-			WHERE seq_animal = 1
+			WHERE seq_animal = #{seqAnimal}
 	</select>
   
 	<!-- 진료 내용 추가하는 SQL -->
@@ -48,8 +49,8 @@
 				medicine_update_date
 			 )VALUES (
 				1, 
-				1, 
-				1, 
+				#{seqAnimal}, 
+				#{seqProtector}, 
 				1, 
 				1, 
 				now(), 

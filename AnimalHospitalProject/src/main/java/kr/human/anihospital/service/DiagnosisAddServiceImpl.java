@@ -42,12 +42,12 @@ public class DiagnosisAddServiceImpl implements DiagnosisAddService {
 	// 환자 정보를 화면에 표시해줄 메서드
 	//----------------------------------------------------------------------------------------------------
 	@Override
-	public PatientInfoVO selectPatientInfo() {
+	public PatientInfoVO selectPatientInfo(int seqAnimal) {
 		// 화자 정보를 담을 그릇 준비하기
 		PatientInfoVO patientInfoVO = null;
 		try {
 			// 데이터를 가져올 mapper 부르기
-			patientInfoVO = diagnosisAddMapper.selectPatientInfo();
+			patientInfoVO = diagnosisAddMapper.selectPatientInfo(seqAnimal);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

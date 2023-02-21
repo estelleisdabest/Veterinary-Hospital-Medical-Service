@@ -23,6 +23,7 @@
 	<select id="selectPatientInfo" resultType="PatientInfoVO" parameterType="int">
 		    SELECT
 		    	seq_animal AS seqAnimal,
+		    	seq_protector AS seqProtector,
 				animal_name AS animalName,
 				animal_type AS animalType,
 				animal_size AS animalSize,
