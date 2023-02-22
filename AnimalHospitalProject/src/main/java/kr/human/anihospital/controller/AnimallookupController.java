@@ -40,29 +40,4 @@ public class AnimallookupController {
 		
 		return "animallookup";
 	}
-	
-	//----------------------------------------------------------------------------------------------------
-	// 한 명의 보호자에 따른 특정 환자의 진료내역 리스트를 화면에 표시해줄 메서드
-	//----------------------------------------------------------------------------------------------------
-	@GetMapping(value = "/animallookupdetail")
-	public String selectAnimalLookupDetail(@RequestParam int seqAnimal, @RequestParam int seqProtector, Model model) throws Exception{
-		// animallookupdetail에 띄울 값 표시 시작 ---------------------------------------------------------------------
-		
-		// 제대로 데이터가 담겨 있는지 로그에 찍어보기
-		log.info("selectAnimalLookupDetail 컨트롤러 받은 값 seq : {}, {}", seqAnimal, seqProtector);
-		
-		// 화면에 넘길 데이터를 담을 그릇 준비
-		List<AnimallookupVO> animalLookup = null;
-		// 데이터 그릇에 담기
-		animalLookup = animallookupService.selectAnimalLookupDetail(seqAnimal, seqProtector);
-		// 받아온 데이터 화면에 넘겨주기
-		model.addAttribute("animalLookupDetail", animalLookup);
-		
-		// 제대로 데이터가 담겨 있는지 로그에 찍어보기
-		log.info("selectAnimalLookupDetail 서비스에서 넘어온 값(컨트롤러) : {}", animalLookup);
-		
-		// animallookupdetail에 띄울 값 표시 종료 ---------------------------------------------------------------------
-		
-		return "animallookupdetail";
-	}
 }

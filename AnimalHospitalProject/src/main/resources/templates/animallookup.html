@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>환자 조회</title>
+<title>진료 조회</title>
 <meta content="" name="description">
 <meta content="" name="keywords">
 <!-- Favicons -->
@@ -40,7 +40,7 @@
 			<br />
 			<div class="section-title">
 				<h2 style="font-weight: bold; font-size: 30px;">
-					<br />환자 조회
+					<br />진료 조회
 				</h2>
 			</div>
 		</div>
@@ -74,7 +74,7 @@
 										colspan="5" style="text-align: center;">등록된 진료내역이
 											없습니다.</td>
 									</tr>
-									<tr th:each="animallookup : ${animallookup}" th:if="${!#lists.isEmpty(animallookup)}" th:onclick="|location.href='@{/animallookupdetail(seqProtector=${animallookup.seqProtector}, seqAnimal=${animallookup.seqAnimal})}'|">
+									<tr th:each="animallookup : ${animallookup}" th:if="${!#lists.isEmpty(animallookup)}" th:onclick="|location.href='@{/diagnosis(seqProtector=${animallookup.seqProtector}, seqAnimal=${animallookup.seqAnimal},seqDiagnosis=${animallookup.seqDiagnosis})}'|">
 										<td th:text = "${animallookup.seqDiagnosis}"></td>
 										<td th:text = "${animallookup.animalName}"></td>
 										<td th:text = "${animallookup.diagnosisSymptom}"></td>
