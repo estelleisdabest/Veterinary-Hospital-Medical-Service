@@ -83,6 +83,10 @@ public class MainController {
 	public String doctorMemberJoin() {
 		return "doctorMemberJoin";
 	}
+	@GetMapping("/docDiagnosis")
+	public String docDiagnosis() {
+		return "docDiagnosis";
+	}
 
 	// 보호자 전용 회원가입
 	@GetMapping("/protectorMemberJoin")
