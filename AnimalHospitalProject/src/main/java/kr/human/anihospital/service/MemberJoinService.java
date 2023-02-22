@@ -1,11 +1,14 @@
 package kr.human.anihospital.service;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.human.anihospital.mapper.MemberJoinMapper;
 import kr.human.anihospital.vo.DoctorVO;
@@ -38,7 +41,7 @@ public class MemberJoinService {
 		}
 	}
 
-	public void doctorMemberJoin(Map<String, Object> map) {
+	public void doctorMemberJoin(Map<String, Object> map, MultipartFile file) {
 		DoctorVO doctorVO = new DoctorVO();
 		try {
 			doctorVO.setDoctorId(String.valueOf(map.get("email")));
@@ -59,6 +62,23 @@ public class MemberJoinService {
 			doctorVO.setDoctorSay(String.valueOf(map.get("greetingMessage")));
 			doctorVO.setDoctorWorkSpace(String.valueOf(map.get("careerMessage")));
 			doctorVO.setDoctorEducation(String.valueOf(map.get("educationMessage")));
+			
+			// 저장할 경로를 지정
+			  String projectPath = System.getProperty("user.dir") + "\\src\\main\\resources\\static\\files";
+		        // UUID(식별자)를 사용해 사용해 랜덤으로 이름 만들어줌
+		        UUID uuid = UUID.randomUUID();
+
+		        // 랜덤식별자_원래 파일 이름 = 저장될 파일이름 지정
+		        String fileName = uuid + "_" + file.getOriginalFilename();
+
+		        // File이 생성되며, 이름은 "name", projectPath 라는 경로에 담긴다
+		        File saveFile = new File(projectPath, fileName);
+		        file.transferTo(saveFile);
+		        //DB에 파일 넣기
+		        doctorVO.setDoctorPicture(fileName);
+		        //저장되는 경로 설정 
+		        doctorVO.setFilePath("/files/" + fileName);
+
 			memberJoinMapper.doctorMemberJoin(doctorVO);
 		} catch (Exception e) {
 			e.printStackTrace();

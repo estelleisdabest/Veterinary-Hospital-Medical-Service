@@ -31,5 +31,5 @@ public class DoctorVO {
 	private String doctorWorkSpace;
 	private String doctorEducation;
 	private Date doctorUpdateDate; // 회원정보 수정일
-
+	private String filePath;
 }
