@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import kr.human.anihospital.service.MemberJoinService;
 import lombok.extern.slf4j.Slf4j;
@@ -27,9 +28,9 @@ public class MemberJoinController {
 
 	// 의사 회원가입
 	@PostMapping("/doctorMemberJoinOk")
-	public String doctorMemberJoinOk(@RequestParam Map<String, Object> map) {
+	public String doctorMemberJoinOk(@RequestParam Map<String, Object> map, MultipartFile file) {
 		log.info("의사 회원가입정보 : {}", map);
-		memberJoinService.doctorMemberJoin(map);
+		memberJoinService.doctorMemberJoin(map,file);
 		return "redirect:signin";
 	}
 
