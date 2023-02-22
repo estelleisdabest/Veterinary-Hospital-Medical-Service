@@ -131,32 +131,6 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="address1">주소</label>
-						<div class="wrap">
-							<input type="text" class="form-control" readonly="readonly" name="address1" id="address1"
-								placeholder="주소찾기 버튼을 눌러주세요">
-							&nbsp;
-							<input type="button" name="address_kakao" id="address_kakao" class="btn btn-primary" value="주소찾기"
-								style="border-radius: 50px; width: 110px; margin: auto; text-align: center; float: right; color: white;">
-						</div>
-						<div class="validate" id="ad1Message"></div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 form-group mt-3">
-						<div class="validate"></div>
-					</div>
-					<div class="col-md-4 form-group mt-3">
-						<label for="address2">상세주소</label>
-						<input type="text" class="form-control" name="address2" id="address2" placeholder="수정할 상세주소를 입력해주세요.">
-						<div class="validate" id="ad2Message"></div>
-					</div>
-				</div>
-				<div class="row">
 					<p></p>
 					<p>
 					<div class="col-md-4 form-group" style="margin: auto;">
@@ -174,5 +148,4 @@
 	<!-- Template Main JS File -->
 	<div th:replace="~{fragment/footer :: #footer}"></div>
 </body>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 </html>
