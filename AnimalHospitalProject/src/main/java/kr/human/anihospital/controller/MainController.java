@@ -109,6 +109,12 @@ public class MainController {
 	public String serviceIntroduce() {
 		return "serviceIntroduce";
 	}
+	
+	// 의사 진료내용 조회
+	@GetMapping("/docDiagnosis")
+	public String docDiagnosis() {
+		return "docDiagnosis";
+	}
 
 	// 스케줄 관리
 	@GetMapping("/scheduleDoctor")
