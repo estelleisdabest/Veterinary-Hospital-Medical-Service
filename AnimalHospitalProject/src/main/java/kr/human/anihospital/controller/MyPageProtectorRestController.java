@@ -23,8 +23,11 @@ public class MyPageProtectorRestController {
 	//----------------------------------------------------------------------------------------------------
 	@PostMapping("/editMyPageProtectorOk")
 	public String editMyPageProtectorOk(@RequestParam Map<String, Object> map, Model model) {
+		// 화면에서 넘어오고 있는 값 찍어보기
 		log.info("수정값 : {}", map);
+		// 보호자 정보 수정하기
 		myPageProtectorService.updateProtector(map);
+		
 		return "성공";
 	}
 }

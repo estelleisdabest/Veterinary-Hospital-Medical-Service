@@ -1,14 +1,11 @@
 package kr.human.anihospital.controller;
 
-import java.util.List;
-
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -16,7 +13,6 @@ import kr.human.anihospital.service.DiagnosisAddService;
 import kr.human.anihospital.vo.DiagnosisAddVO;
 import kr.human.anihospital.vo.MedicineVO;
 import kr.human.anihospital.vo.PatientInfoVO;
-import kr.human.anihospital.vo.patientInfoDiagnosisListVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller

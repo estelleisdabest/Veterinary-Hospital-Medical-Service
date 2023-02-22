@@ -1,6 +1,5 @@
 package kr.human.anihospital.controller;
 
-
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +60,4 @@ public class PostscriptController {
 		log.info("서비스에서 넘어온 값2(컨트롤러) : {}",postscriptVO);
 		return "diagnosis";
 	}
-	
-	
-	
 }
