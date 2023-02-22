@@ -33,29 +33,21 @@ public class DiagnosisAddController {
 	public String selectPatientInfoDiagnosis(@RequestParam int seqAnimal,Model model) throws Exception{
 		// 화면에 표시할 select 시작 ----------------------------------------------------------------------------------------
 		//int seqAnimal = 1;
-		// 화면에 넘길 데이터를 담을 그릇(List) 준비 (이전진료내역)
-		List<patientInfoDiagnosisListVO> pidliat = null;
 		// 화면에 넘길 데이터를 담을 그릇(VO) 준비 (환자정보)
 		PatientInfoVO patientInfoVO = null;
 		// 화면에 넘길 데이터를 담을 그릇(VO) 준비 (처방약)
 		MedicineVO medicineVO = null;
 		
-		// 데이터 그릇(List)에 담기 (이전진료내역)
-		pidliat = diagnosisAddService.selectPatientInfoDiagnosis();
 		// 데이터 그릇(VO)에 담기 (환자정보)
 		patientInfoVO  = diagnosisAddService.selectPatientInfo(seqAnimal);
 		// 데이터 그릇(VO)에 담기 (처방약)
 		medicineVO = diagnosisAddService.selectMedicine();
 		
-		// 받아온 데이터(List)를 화면에 넘겨주기 (이전진료내역)
-		model.addAttribute("pidliat",pidliat);
 		// 받아온 데이터(VO)를 화면에 넘겨주기 (환자정보)
 		model.addAttribute("patientInfoVO", patientInfoVO);
 		// 받아온 데이터(VO)를 화면에 넘겨주기 (처방약)
 		model.addAttribute("medicine", medicineVO);
 		
-		// 제대로 데이터가 담겨 있는지 로그에 찍어보기(List) (이전진료내역)
-		log.info("selectPatientInfoDiagnosis메서드 호출 : {}",  pidliat);
 		// 제대로 데이터가 담겨 있는지 로그에 찍어보기(VO) (환자정보)
 		log.info("selectPatientInfo메서드 호출 : {}",  patientInfoVO);
 		// 제대로 데이터가 담겨 있는지 로그에 찍어보기(VO) (처방약)
@@ -75,11 +67,6 @@ public class DiagnosisAddController {
 		log.info("진료내용 작성화면에서 수정한 값(컨트롤러) : {}", map);
 		// 화면에서 update & insert 한 값 그릇에 담아 넘기기
 	      DiagnosisAddVO diagnosisAddVO = new DiagnosisAddVO();
-	      // 주의사항 update
- 	      diagnosisAddVO.setSeqProtector(1);
-	      diagnosisAddVO.setProtectorImportantPoint(map.get("protectorImportantPoint"));
-	      // 수정 서비스 호출
-	      diagnosisAddService.updateProtectorImportantPoint(diagnosisAddVO);
 	      // 진료내용 insert
 	      diagnosisAddVO.setSeqProtector(1);
 	      diagnosisAddVO.setSeqAnimal(1);
