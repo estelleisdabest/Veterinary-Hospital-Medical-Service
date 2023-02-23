@@ -177,7 +177,7 @@ public class MainController {
 //		return "noticeDetail";
 //	}
 	
-   // 의사 스케줄 등록
+   // 의사스케줄 등록
    @GetMapping("/scheduleDoctorAdd")
    public String scheduleDoctorAdd() {
       return "scheduleDoctorAdd";
