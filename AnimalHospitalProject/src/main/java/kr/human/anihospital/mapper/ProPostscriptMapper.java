@@ -2,16 +2,16 @@ package kr.human.anihospital.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import kr.human.anihospital.vo.PostscriptVO;
+import kr.human.anihospital.vo.ProPostscriptVO;
 
 @Mapper
-public interface PostscriptMapper {
+public interface ProPostscriptMapper {
 	//----------------------------------------------------------------------------------------------------
 	// 후기 추가 메서드, 
 	//----------------------------------------------------------------------------------------------------
-	void insertPostscript(PostscriptVO postscriptVO ) throws Exception;
+	void insertPostscript(ProPostscriptVO proPostscriptVO ) throws Exception;
 	//----------------------------------------------------------------------------------------------------
 	// 후기 수정 메서드
 	//----------------------------------------------------------------------------------------------------
-	void updatePostscript(PostscriptVO postscriptVO) throws Exception;
+	void updatePostscript(ProPostscriptVO proPostscriptVO) throws Exception;
 }

@@ -24,15 +24,15 @@ public class MainController {
 	}
 
 	// 후기 작성
-	@GetMapping("/postscriptSave")
+	@GetMapping("/ProPostscriptAdd")
 	public String postscriptSave() {
-		return "postscriptSave";
+		return "ProPostscriptAdd";
 	}
 
 	// 후기 수정
-	@GetMapping("/postscriptUpdate")
+	@GetMapping("/ProPostscriptEdit")
 	public String postscriptUpdate() {
-		return "postscriptUpdate";
+		return "ProPostscriptEdit";
 	}
 
 	// 공지 사항
