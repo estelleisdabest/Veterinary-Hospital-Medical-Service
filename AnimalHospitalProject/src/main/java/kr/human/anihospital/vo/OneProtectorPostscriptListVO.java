@@ -13,8 +13,12 @@ public class OneProtectorPostscriptListVO {
 	//-----------------------------------------------------------
 	// 한 보호자의 환자(들)의 후기(들)의 내용을 가지고 있는 VO
 	//----------------------------------------------------------
+	private int seqAnimal;
+	private int seqProtector;
+	private int seqPostscript;
 	private String animalName; 
 	private int postscriptSatisfaction;
 	private String animalHospitalname;
-	private Date diagnosisDate;
+	private String postscriptContent;
+	
 }
