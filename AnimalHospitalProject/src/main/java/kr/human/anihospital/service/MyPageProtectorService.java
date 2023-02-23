@@ -16,14 +16,13 @@ import lombok.extern.slf4j.Slf4j;
 @Service("MyPageProtectorService")
 @Slf4j
 public class MyPageProtectorService {
-	
 	// selectAll 매퍼
 	@Autowired
 	MyPageProtectorMapper myPageProtectorMapper;
 	
-	//----------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------	
 	// 보호자 정보 조회할 메서드
-	//----------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------	
 	public ProtectorVO selectProtector(int seqProtector) {
 		// 보호자 정보를 담을 그릇 준비
 		ProtectorVO vo = new ProtectorVO();
@@ -37,10 +36,10 @@ public class MyPageProtectorService {
 		log.info("selectProtector 실행 mapper에서 돌아온 값(서비스): {}", vo);
 		return vo;
 	}
-	
+
 	//----------------------------------------------------------------------------------------------------
 	// 보호자 정보 수정할 메서드
-	//----------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------	
 	public void updateProtector(Map<String, Object> map) {
 		
 		try {
@@ -53,9 +52,9 @@ public class MyPageProtectorService {
 		}
 	}
 	
-	//----------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------	
 	// 보호자의 모든 환자 이전 진료 내역 조회할 메서드
-	//----------------------------------------------------------------------------------------------------
+	//----------------------------------------------------------------------------------------------------	
 	public List<PatientDiagnosisListVO> selectPatientDiagnosisList(int seqProtector) {
 		List<PatientDiagnosisListVO> patientDiagnosisList = null;
 		// 모든 환자의 이전 진료 내역을 담을 그릇 준비하기
@@ -69,7 +68,7 @@ public class MyPageProtectorService {
 		log.info("selectPatientDiagnosisList 실행 mapper에서 돌아온 값(서비스): {}", patientDiagnosisList);
 		return patientDiagnosisList;
 	}
-	
+
 	//----------------------------------------------------------------------------------------------------
 	//보호자의 환자 리스트 조회할 메서드
 	//----------------------------------------------------------------------------------------------------
@@ -101,8 +100,6 @@ public class MyPageProtectorService {
 		}
 		// 가져온 데이터 로그로 찍어보기
 		log.info("selectOneProtectorPostcriptList 실행 mapper에서 돌아온 값(서비스): {}", oneProtectorPostscriptListVO);
-		return oneProtectorPostscriptListVO;
-		
-	}
-	
+		return oneProtectorPostscriptListVO;		
+	}	
 }
