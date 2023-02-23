@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class PostscriptVO {
+public class ProPostscriptVO {
 	//-----------------------------------------------------------
 	// 후기 내용을 가지고 있는 VO
 	//-----------------------------------------------------------
