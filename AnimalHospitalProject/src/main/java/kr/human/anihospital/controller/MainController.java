@@ -182,4 +182,28 @@ public class MainController {
 //	public String noticeDetail() {
 //		return "noticeDetail";
 //	}
+	
+   // 의사스케줄 등록
+   @GetMapping("/scheduleDoctorAdd")
+   public String scheduleDoctorAdd() {
+      return "scheduleDoctorAdd";
+   }
+
+   // 의사 스케줄 수정 및 삭제
+   @GetMapping("/scheduleDoctorEdit")
+   public String scheduleDoctorEdit() {
+	   return "scheduleDoctorEdit";
+   }
+
+   // 보호자 스케줄(예약) 등록
+   @GetMapping("/scheduleProtectorAdd")
+   public String scheduleProtectorAdd() {
+	   return "scheduleProtectorAdd";
+   }
+   
+   // 보호자 스케줄(예약 수정 및 삭제
+   @GetMapping("/scheduleProtectorEdit")
+   public String scheduleProtectorEdit() {
+	   return "scheduleProtectorEdit";
+   }
 }
