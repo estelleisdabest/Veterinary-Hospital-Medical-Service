@@ -16,5 +16,6 @@ public class OneProtectorPostscriptListVO {
 	private String animalName; 
 	private int postscriptSatisfaction;
 	private String animalHospitalname;
-	private Date diagnosisDate;
+	private String postscriptContent;
+	
 }

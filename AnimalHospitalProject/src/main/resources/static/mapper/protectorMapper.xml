@@ -60,15 +60,14 @@
 	</select>
 	
 	<select id="selectOneProtectorPostcriptList" parameterType="int" resultType="OneProtectorPostscriptListVO">
-			select 
+		select 
 			a.animal_name as animalName, 
 			p.postscript_satisfaction AS postscriptSatisfaction, 
-			ah.animal_hospital_name as animalHospitalname, 
-			d.diagnosis_date AS diagnosisDate
+			p.postscript_content AS postscriptContent,
+			ah.animal_hospital_name as animalHospitalname
 		FROM 
 			 Animal as a join Postscript as p on a.seq_doctor=p.seq_doctor
 			   join Animalhospital as ah on p.seq_doctor=ah.seq_doctor
-			   join Diagnosis as d on ah.seq_doctor=d.seq_doctor
 		WHERE a.seq_protector=#{seqProtector}
 		group by animal_name
 	</select>
